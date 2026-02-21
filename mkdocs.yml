@@ -55,26 +55,26 @@ nav:
       - 'What is Arch Linux?': Archlinux-Guida/about-arch.md
       - 'Download': Download/archlinux.md
       - 'Derivatives': Download/Derivate.md
-      - '- Installazione di Arch Linux': 'Archlinux-Guida/arch-guida.md'
+      # - '- Installazione di Arch Linux': 'Archlinux-Guida/arch-guida.md'
       - '- Arch Linux Installation': 'en/Archlinux-Guide/guide.md'
       - '- Instalación de Arch Linux': 'en/Archlinux-Guide/guida-es.md'
       - '- Instalação do Arch Linux': 'en/Archlinux-Guide/guida-pt.md'
-      - '- Installation d Arch Linux': 'en/Archlinux-Guide/guida-fr.md'
-      - '- Arch Linux Installation': 'en/Archlinux-Guide/guida-de.md'
-      - '- Arch Linuxのインストール': 'en/Archlinux-Guide/guida-jp.md'
-      - '- 安装Arch Linux': 'en/Archlinux-Guide/guida-cn.md'
-      - '- Arch Linux Installation': 'en/Archlinux-Guide/guida-in.md'
+      # - '- Installation d Arch Linux': 'en/Archlinux-Guide/guida-fr.md'
+      # - '- Arch Linux Installation': 'en/Archlinux-Guide/guida-de.md'
+      # - '- Arch Linuxのインストール': 'en/Archlinux-Guide/guida-jp.md'
+      # - '- 安装Arch Linux': 'en/Archlinux-Guide/guida-cn.md'
+      # - '- Arch Linux Installation': 'en/Archlinux-Guide/guida-in.md'
   - 'Other Guides':
       - 'Comandi Linux': 'Altre-Guide/comandi-linux.md'
-      - 'File System': 'Altre-Guide/filesystem.md'
+      # - 'File System': 'Altre-Guide/filesystem.md'
       - 'Pacman': 'Altre-Guide/Pacman.md'
       - 'AUR': 'Altre-Guide/aur.md'
       - 'Yay': 'Altre-Guide/yay.md'
       - 'Fstab': 'Altre-Guide/fstab.md'
       - 'Vim': 'Altre-Guide/vim.md'
       - 'Nano': 'Altre-Guide/nano.md'
-      - 'Nvidia': 'Altre-Guide/nvidia.md'
-      - 'AMD Manjaro mesa-codecs': 'Altre-Guide/amd.md'
+      # - 'Nvidia': 'Altre-Guide/nvidia.md'
+      # - 'AMD Manjaro mesa-codecs': 'Altre-Guide/amd.md'
       - 'Sudoers.d': 'Altre-Guide/sudoers.md'
       - 'Reflector': 'Altre-Guide/reflector.md'
       - 'Downgrade': 'Altre-Guide/downgrade.md'
@@ -86,15 +86,6 @@ nav:
       - 'Timeshift': 'Altre-Guide/timeshift.md'
       - 'User Management': 'Altre-Guide/gestione-utenti.md'
       - 'NordVPN': 'Altre-Guide/nordvpn.md'
-
-# markdown_extensions:
-#   - attr_list
-#   - pymdownx.tabbed:
-#       alternate_style: true
-#   - pymdownx.superfences
-#   - codehilite
-#   - toc:
-#       permalink: true
 
 markdown_extensions:
   - attr_list
