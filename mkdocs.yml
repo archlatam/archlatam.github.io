@@ -11,15 +11,17 @@ copyright: Copyright &copy; 2024 ArchLatam
 theme:
   name: material
   language: es
-  scheme: slate
+  custom_dir: overrides
   palette:
     - media: "(prefers-color-scheme: light)"
+      scheme: light
       primary: custom
       accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: custom
       accent: custom
       toggle:
@@ -39,6 +41,8 @@ extra:
       link: https://github.com/archlatam
     - icon: fontawesome/brands/discord
       link: https://discord.gg/4r8AmxSB2B
+  css:
+    - stylesheets/colors.css
 
 nav:
   - Home: index.md

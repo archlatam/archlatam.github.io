@@ -1,8 +1,0 @@
-:root {
-    --md-header-bg-color: #2e3440;
-}
-
-[data-md-color-scheme="slate"] .md-header,
-[data-md-color-scheme="default"] .md-header {
-    background-color: #2e3440 !important;
-}
