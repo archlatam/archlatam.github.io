@@ -5,6 +5,11 @@ body, .md-container {
   background-color: #292e39;
 }
 
+/* Tabs menu background */
+.md-tabs {
+  background-color: #3b4252;
+}
+
 /* Header background */
 .md-header {
   background-color: #1e2129;
