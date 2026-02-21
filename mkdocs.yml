@@ -18,6 +18,7 @@ theme:
     - navigation.top
     - navigation.tracking
     - navigation.tabs
+  custom_dir: overrides
 
 nav:
   - Home: index.md
