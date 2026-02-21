@@ -49,6 +49,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/archlatam
 
+extra:
   consent:
     title: Política de Cookies
     description: >-
