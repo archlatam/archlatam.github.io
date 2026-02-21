@@ -2,7 +2,7 @@
 
 ## ArchLatam - Comunidad Latinoamericana de Linux
 
-![banner](images/)
+![banner](images/archlatam.png)
 
 ArchLatam es una comunidad latinoamericana dedicada a la distribución de Arch Linux y software libre. Esta comunidad está compuesta por apasionados de Linux y tecnologías de código abierto que se unen para compartir información, recursos y conocimientos sobre Arch Linux y sus diversas modificaciones.
 
@@ -25,4 +25,3 @@ Si eres apasionado de Arch Linux, apoya nuestra comunidad y ayúdanos a crecer c
 
 ---
 
-*Última actualización: 2024*
