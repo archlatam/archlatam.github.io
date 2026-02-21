@@ -10,7 +10,6 @@ copyright: Copyright &copy; 2024 ArchLatam
 
 theme:
   name: material
-  custom_dir: overrides
   language: es
   palette:
     - media: "(prefers-color-scheme: dark)"
