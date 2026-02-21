@@ -1,0 +1,3176 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Arch Linux LATAM Community">
+      
+      
+        <meta name="author" content="ArchLatam Team">
+      
+      
+        <link rel="canonical" href="https://archlatam.github.io/Archlinux-Guida/arch-guida/">
+      
+      
+        <link rel="prev" href="../../Download/Derivate/">
+      
+      
+        <link rel="next" href="../../en/Archlinux-Guide/guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>- Installazione di Arch Linux - ArchLatam</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/colors.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fonts.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installazione-di-arch-linux" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="ArchLatam" class="md-header__button md-logo" aria-label="ArchLatam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ArchLatam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              - Installazione di Arch Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="light" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/archlatam/archlatam.github.io" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    archlatam/archlatam.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../about-arch/" class="md-tabs__link">
+          
+  
+  
+  Arch Linux
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Altre-Guide/comandi-linux/" class="md-tabs__link">
+          
+  
+  
+  Other Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ArchLatam" class="md-nav__button md-logo" aria-label="ArchLatam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ArchLatam
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/archlatam/archlatam.github.io" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    archlatam/archlatam.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arch Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-arch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is Arch Linux?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Download/archlinux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Download/Derivate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Derivatives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Installazione di Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Installazione di Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-verifica-firma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Verifica Firma
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configurazione-iniziale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configurazione iniziale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-connessione-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Connessione Internet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-preparazione-del-disco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Preparazione del disco
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Preparazione del disco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bios-mbr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bios-MBR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bios-MBR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partizionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partizionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formattare-le-partizioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formattare le Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaggio-delle-partizioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montaggio delle Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uefi-ext4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UEFI ext4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UEFI ext4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partizionamento_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partizionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formattare-le-partizioni_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formattare le Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaggio-delle-partizioni_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montaggio delle Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uefi-btrfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UEFI btrfs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UEFI btrfs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partizionamento_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partizionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formattare-le-partizioni_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formattare le Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaggio-delle-partizioni_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montaggio delle Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uefi-lvm-ext4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UEFI lvm-ext4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UEFI lvm-ext4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partizionamento_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partizionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creazione-volume-fisico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creazione volume fisico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creazione-gruppo-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creazione gruppo volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creazione-volume-logici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creazione Volume Logici
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formattare-le-partizioni_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formattare le Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaggio-delle-partizioni_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montaggio delle Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estendere-un-gruppo-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estendere un gruppo lvm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mirrorlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Mirrorlist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-pacstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Pacstrap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-generare-fstab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Generare Fstab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-chroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Chroot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Chroot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localizzazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Localizzazione
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostname-e-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hostname e Hosts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utente-e-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utente e Root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkinitcpio-per-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mkinitcpio per lvm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Bootloader
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Bootloader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grub-bios-mbr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GRUB (Bios-MBR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grub-uefi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GRUB (UEFI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-boot-ext4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd-boot (EXT4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-boot-btrfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd-boot (BTRFS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-boot-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd-boot (LVM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-pacchetti-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Pacchetti Base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-ambiente-grafico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Ambiente Grafico
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Ambiente Grafico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gnome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gnome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xfce4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xfce4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lxde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lxde
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plasma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cinnamon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cinnamon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-servizi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Servizi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-zram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Zram
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/Archlinux-Guide/guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Arch Linux Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/Archlinux-Guide/guida-es/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Instalación de Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Instalação do Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/Archlinux-Guide/guida-fr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Installation d Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/Archlinux-Guide/guida-de/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Arch Linux Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/Archlinux-Guide/guida-jp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Arch Linuxのインストール
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/Archlinux-Guide/guida-cn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - 安装Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/Archlinux-Guide/guida-in/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    - Arch Linux Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/comandi-linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comandi Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/filesystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/Pacman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pacman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/aur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AUR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/yay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/fstab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fstab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/vim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/nano/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nano
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/nvidia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nvidia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/amd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD Manjaro mesa-codecs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/sudoers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sudoers.d
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/reflector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/downgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Downgrade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/permessi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permessi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/grub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/systemdboot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systemd-Boot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/firewald/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firewalld
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/rsync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rsync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/timeshift/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timeshift
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/gestione-utenti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altre-Guide/nordvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NordVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-verifica-firma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Verifica Firma
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configurazione-iniziale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configurazione iniziale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-connessione-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Connessione Internet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-preparazione-del-disco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Preparazione del disco
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Preparazione del disco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bios-mbr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bios-MBR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bios-MBR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partizionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partizionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formattare-le-partizioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formattare le Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaggio-delle-partizioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montaggio delle Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uefi-ext4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UEFI ext4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UEFI ext4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partizionamento_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partizionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formattare-le-partizioni_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formattare le Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaggio-delle-partizioni_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montaggio delle Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uefi-btrfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UEFI btrfs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UEFI btrfs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partizionamento_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partizionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formattare-le-partizioni_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formattare le Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaggio-delle-partizioni_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montaggio delle Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uefi-lvm-ext4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UEFI lvm-ext4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UEFI lvm-ext4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partizionamento_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partizionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creazione-volume-fisico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creazione volume fisico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creazione-gruppo-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creazione gruppo volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creazione-volume-logici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creazione Volume Logici
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formattare-le-partizioni_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formattare le Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaggio-delle-partizioni_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montaggio delle Partizioni
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estendere-un-gruppo-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estendere un gruppo lvm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mirrorlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Mirrorlist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-pacstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Pacstrap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-generare-fstab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Generare Fstab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-chroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Chroot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Chroot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localizzazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Localizzazione
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostname-e-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hostname e Hosts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utente-e-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utente e Root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkinitcpio-per-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mkinitcpio per lvm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Bootloader
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Bootloader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grub-bios-mbr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GRUB (Bios-MBR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grub-uefi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GRUB (UEFI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-boot-ext4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd-boot (EXT4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-boot-btrfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd-boot (BTRFS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-boot-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd-boot (LVM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-pacchetti-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Pacchetti Base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-ambiente-grafico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Ambiente Grafico
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Ambiente Grafico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gnome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gnome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xfce4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xfce4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lxde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lxde
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plasma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cinnamon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cinnamon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-servizi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Servizi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-zram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Zram
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="installazione-di-arch-linux">Installazione di Arch Linux<a class="headerlink" href="#installazione-di-arch-linux" title="Permanent link">&para;</a></h1>
+<h2 id="1-verifica-firma">1. Verifica Firma<a class="headerlink" href="#1-verifica-firma" title="Permanent link">&para;</a></h2>
+<p>Si consiglia di verificare la firma dell'immagine prima dell'uso, in particolare durante il download da un mirror HTTP, dove i download sono generalmente soggetti a essere intercettati per fornire immagini dannose.</p>
+<p>Su un sistema con <em>GnuPG</em> installato, scarica la firma <a href="https://archlinux.org/download/#checksums">ISO PGP</a>  nella directory ISO e verificala con:</p>
+<p><code>$ gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig</code></p>
+<p>In alternativa, da un'installazione esistente di Arch Linux eseguire:</p>
+<p><code>$ pacman-key -v archlinux-version-x86_64.iso.sig</code></p>
+<p><br><br></p>
+<h2 id="2-configurazione-iniziale">2. Configurazione iniziale<a class="headerlink" href="#2-configurazione-iniziale" title="Permanent link">&para;</a></h2>
+<p>Per iniziare dobbiamo definire la lingua della tastiera, la lingua predefinita senza immettere il comando e' <code>US</code>. I layout disponibili possono essere elencati con: </p>
+<p><code># ls /usr/share/kbd/keymaps/**/*.map.gz</code></p>
+<p>impostiamo la lingua della nostra tastiera con il comando:</p>
+<p><code># loadkeys it</code></p>
+<p>I caratteri della console si trovano in <strong>/usr/share/kbd/consolefonts/</strong> e possono anche essere impostati con setfont. Ad esempio, per utilizzare uno dei caratteri più grandi adatti agli schermi HiDPI, eseguire:</p>
+<p><code># setfont ter-132b</code></p>
+<p><br><br></p>
+<h2 id="3-connessione-internet">3. Connessione Internet<a class="headerlink" href="#3-connessione-internet" title="Permanent link">&para;</a></h2>
+<p>Se avete connesso la machina a internet mediante cavo o macchina virtuale, possiamo verificare il nostro indirizzo ip acquisito attraverso questo comando :</p>
+<p><code># ip a</code></p>
+<p>La connessione può essere verificata con un test tramite il comando ping:</p>
+<p><code># ping -c 3 archlinux.org</code></p>
+<p>Collegarsi alla rete wifi utilizzando lo strumento iwctl:</p>
+<ul>
+<li><code># iwctl</code> Avviare iwctl</li>
+<li><code># device list</code>  Trova il nome del tuo dispositivo esempio wlan0</li>
+<li><code># station wlan0 scan</code> Scansiona le reti wireless disponibili</li>
+<li><code># station wlan0 get-networks</code> Acquisiamo la lista delle rete</li>
+<li><code># station wlan0</code> connect nometuarete  Connessione alla rete</li>
+<li><code># exit</code> </li>
+</ul>
+<p>Se nel caso in cui i nostri dispositivi siano disabilitati e non riusciamo a eseguire <strong>iwctl</strong>:</p>
+<ul>
+<li><code># rfkill list</code>  verifichiamo lo stato dei dispositivi blocked o unblocked</li>
+<li><code># rfkill unblock all</code> sblocchiamo tutti i nostri dispositivi bloccati blocked</li>
+<li><code># systemctl restart iwd</code>  riavviamo il servizio iwd</li>
+</ul>
+<p>Riprovare <code># iwctl</code> e procedere come sopra.</p>
+<p><br><br></p>
+<h2 id="4-preparazione-del-disco">4. Preparazione del disco<a class="headerlink" href="#4-preparazione-del-disco" title="Permanent link">&para;</a></h2>
+<p>Scegli quale tipo di installazione affrontare e dopo aver preparato il disco salta al punto <strong>(5)</strong></p>
+<ul>
+<li><a href="#bios-mbr">Bios-MBR ext4</a></li>
+<li><a href="#uefi-ext4">UEFI EXT4</a></li>
+<li><a href="#uefi-btrfs">UEFI btrfs</a></li>
+<li><a href="#uefi-lvm-ext4">UEFI lvm EXT4</a></li>
+</ul>
+<p><br><br></p>
+<h3 id="bios-mbr">Bios-MBR<a class="headerlink" href="#bios-mbr" title="Permanent link">&para;</a></h3>
+<h4 id="partizionamento">Partizionamento<a class="headerlink" href="#partizionamento" title="Permanent link">&para;</a></h4>
+<p>Individuamo il nostro disco per conoscere la nomenclatura da usare ad Esempio: in caso di <strong>SSD /dev/sda</strong> oppure nel caso di <strong>M.2 /dev/nvme0n1</strong> infine il <strong>Disco Virtuale /dev/vda</strong>.</p>
+<p><code># lsblk -l</code></p>
+<p>Una volta individuata la nomenclatura del nostro disco usiamo <strong>cfdisk</strong>, qui ipotizzeremo di avere <strong>/dev/sda</strong>. Potrebbe essere richiesto il tipo di tabella di partizionamento se il disco e' vergine, in questo caso andiamo a selezionare <strong>DOS</strong>:</p>
+<p><code># cfdisk /dev/sda</code></p>
+<p>Creiamo le partizioni necessarie all'installazione base, ipotizzando di avere un disco <strong>SSD</strong> da <strong>128GiB</strong>:</p>
+<ul>
+<li><code># 4Gib</code>   Creiamo una partizione per la swap e selezioniamo tipo swap</li>
+<li><code># 124Gib</code>  Creiamo la partizione Root</li>
+<li><code># write (yes)</code> e <code>quit</code>  Scriviamo le modifiche e usciamo</li>
+</ul>
+<h4 id="formattare-le-partizioni">Formattare le Partizioni<a class="headerlink" href="#formattare-le-partizioni" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code># mkswap /dev/sda1</code> La partizione per la swap</li>
+<li><code># mkfs.ext4 /dev/sda2</code> La partizione Root in EXT4</li>
+</ul>
+<h4 id="montaggio-delle-partizioni">Montaggio delle Partizioni<a class="headerlink" href="#montaggio-delle-partizioni" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code># mount /dev/sda2 /mnt</code> Montiamo la partizione root</li>
+<li><code># swapon /dev/sda1</code> Montiamo la partizione di swap</li>
+</ul>
+<p><br><br></p>
+<h3 id="uefi-ext4">UEFI ext4<a class="headerlink" href="#uefi-ext4" title="Permanent link">&para;</a></h3>
+<h4 id="partizionamento_1">Partizionamento<a class="headerlink" href="#partizionamento_1" title="Permanent link">&para;</a></h4>
+<p>Individuamo il nostro disco per conoscere la nomenclatura da usare ad Esempio: in caso di <strong>SSD /dev/sda</strong> oppure nel caso di <strong>M.2 /dev/nvme0n1</strong> infine il <strong>Disco Virtuale /dev/vda</strong>.</p>
+<p><code># lsblk -l</code></p>
+<p>Una volta individuata la nomenclatura del nostro disco usiamo <strong>cfdisk</strong>, qui ipotizzeremo di avere <strong>/dev/sda</strong>. Potrebbe essere richiesto il tipo di tabella di partizionamento se il disco e' vergine, in questo caso andiamo a selezionare <strong>GUID Partition Table (GPT)</strong>:</p>
+<p><code># cfdisk /dev/sda</code></p>
+<p>Creiamo le partizioni necessarie all'installazione base, ipotizzando di avere un disco <strong>SSD</strong> da <strong>128GiB</strong>:</p>
+<ul>
+<li><code># 512Mib</code>  Creiamo la partizione EFI e scegliamo di tipo EFI system</li>
+<li><code># 4Gib</code>   Creiamo una partizione per la swap e selezioniamo tipo swap</li>
+<li><code># 23.5Gib</code>  Creiamo la partizione Root</li>
+<li><code># 100Gib</code>  Creiamo la partizione Home</li>
+<li><code># write (yes)</code> e <code>quit</code>  Scriviamo le modifiche e usciamo</li>
+</ul>
+<h4 id="formattare-le-partizioni_1">Formattare le Partizioni<a class="headerlink" href="#formattare-le-partizioni_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code># mkfs.vfat -F32 /dev/sda1</code> La partizione EFI system in FAT32 per il boot</li>
+<li><code># mkswap /dev/sda2</code> La partizione per la swap</li>
+<li><code># mkfs.ext4 /dev/sda3</code> La partizione Root in EXT4</li>
+<li><code># mkfs.ext4 /dev/sda4</code> La partizione Home in EXT4</li>
+</ul>
+<h4 id="montaggio-delle-partizioni_1">Montaggio delle Partizioni<a class="headerlink" href="#montaggio-delle-partizioni_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code># mount /dev/sda3 /mnt</code> Montiamo la partizione root</li>
+<li><code># mkdir -p /mnt/{home,boot}</code> creiamo la directory /home e la directory /boot</li>
+<li><code># mount /dev/sda4 /mnt/home</code> Montiamo la partizione home</li>
+<li><code># mount /dev/sda1 /mnt/boot</code> Montiamo la partizione di boot</li>
+<li><code># swapon /dev/sda2</code> Montiamo la partizione di swap</li>
+</ul>
+<p><br><br></p>
+<h3 id="uefi-btrfs">UEFI btrfs<a class="headerlink" href="#uefi-btrfs" title="Permanent link">&para;</a></h3>
+<h4 id="partizionamento_2">Partizionamento<a class="headerlink" href="#partizionamento_2" title="Permanent link">&para;</a></h4>
+<p>Individuamo il nostro disco per conoscere la nomenclatura da usare ad Esempio: in caso di <strong>SSD /dev/sda</strong> oppure nel caso di <strong>M.2 /dev/nvme0n1</strong> infine il <strong>Disco Virtuale /dev/vda</strong>.</p>
+<p><code># lsblk -l</code></p>
+<p>Una volta individuata la nomenclatura del nostro disco usiamo <strong>cfdisk</strong>, qui ipotizzeremo di avere <strong>/dev/sda</strong>. Potrebbe essere richiesto il tipo di tabella di partizionamento se il disco e' vergine, in questo caso andiamo a selezionare <strong>GUID Partition Table (GPT)</strong>:</p>
+<p><code># cfdisk /dev/sda</code></p>
+<p>Creiamo le partizioni necessarie all'installazione base, ipotizzando di avere un disco <strong>SSD</strong> da <strong>128GiB</strong>:</p>
+<ul>
+<li><code># 512Mib</code>  Creiamo la partizione EFI e scegliamo di tipo EFI system</li>
+<li><code># 27.5Gib</code>  Creiamo la partizione Root</li>
+<li><code># 100Gib</code>  Creiamo la partizione Home</li>
+<li><code># write (yes)</code> e <code>quit</code>  Scriviamo le modifiche e usciamo</li>
+</ul>
+<h4 id="formattare-le-partizioni_2">Formattare le Partizioni<a class="headerlink" href="#formattare-le-partizioni_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code># mkfs.vfat -F32 /dev/sda1</code> La partizione EFI system in FAT32 per il boot</li>
+<li><code># mkfs.btrfs /dev/sda2</code> La partizione Root in BTRFS</li>
+<li><code># mkfs.btrfs /dev/sda3</code> La partizione Home in BTRFS</li>
+</ul>
+<h4 id="montaggio-delle-partizioni_2">Montaggio delle Partizioni<a class="headerlink" href="#montaggio-delle-partizioni_2" title="Permanent link">&para;</a></h4>
+<p>Creiamo i sottovolumi <strong>@</strong> e <strong>@home</strong></p>
+<ul>
+<li>
+<p><code># mount /dev/sda2 /mnt</code>           </p>
+</li>
+<li>
+<p><code># btrfs su cr /mnt/@</code>  </p>
+</li>
+<li>
+<p><code># umount /mnt</code></p>
+</li>
+<li>
+<p><code># mount /dev/sda3 /mnt</code></p>
+</li>
+<li>
+<p><code># btrfs su cr /mnt/@home</code>      </p>
+</li>
+<li>
+<p><code># umount /mnt</code>                             </p>
+</li>
+<li>
+<p><code># mount -o noatime,ssd,space_cache=v2,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt</code> </p>
+</li>
+<li>
+<p><code># mkdir -p /mnt/{home,boot}</code> creiamo la directory /home e la directory /boot</p>
+</li>
+<li>
+<p><code># mount /dev/sda1 /mnt/boot</code> </p>
+</li>
+<li>
+<p><code># mount -o noatime,ssd,space_cache=v2,compress=zstd,discard=async,subvol=@home /dev/sda3 /mnt/home</code></p>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="uefi-lvm-ext4">UEFI lvm-ext4<a class="headerlink" href="#uefi-lvm-ext4" title="Permanent link">&para;</a></h3>
+<h4 id="partizionamento_3">Partizionamento<a class="headerlink" href="#partizionamento_3" title="Permanent link">&para;</a></h4>
+<p>Individuamo il nostro disco per conoscere la nomenclatura da usare ad Esempio: in caso di <strong>SSD /dev/sda</strong> oppure nel caso di <strong>M.2 /dev/nvme0n1</strong> infine il <strong>Disco Virtuale /dev/vda</strong>.</p>
+<p><code># lsblk -l</code></p>
+<p>Ipotizzando di avere <strong>3 dischi da 128GiB</strong>  da usare con <strong>LVM</strong> <strong>sda sdb sdc</strong> useremo lo strumento <strong>cfdisk</strong> un operazione alla volta per disco:</p>
+<ul>
+<li><code># cfdifk /dev/sda</code></li>
+<li><code># 512Mib</code> Creiamo la partizione EFI e scegliamo di tipo EFI system</li>
+<li><code># 127.5GiB</code> Creiamo la partizione e scegliamo di tipo LVM</li>
+<li><code># write (yes)</code> e <code>quit</code>  Scriviamo le modifiche e usciamo
+<br><br></li>
+<li><code># cfdifk /dev/sdb</code></li>
+<li><code># 128GiB</code> Creiamo la partizione e scegliamo di tipo LVM</li>
+<li><code># write (yes)</code> e <code>quit</code>  Scriviamo le modifiche e usciamo
+<br><br></li>
+<li><code># cfdifk /dev/sdc</code></li>
+<li><code># 128GiB</code> Creiamo la partizione e scegliamo di tipo LVM</li>
+<li><code># write (yes)</code> e <code>quit</code>  Scriviamo le modifiche e usciamo</li>
+</ul>
+<p>Per creare partizioni sotto LVM dobbiamo prima creare un volume fisico:</p>
+<h4 id="creazione-volume-fisico">Creazione volume fisico<a class="headerlink" href="#creazione-volume-fisico" title="Permanent link">&para;</a></h4>
+<p><code># pvcreate /dev/sda2 /dev/sdb1 /dev/sdc1</code></p>
+<h4 id="creazione-gruppo-volume">Creazione gruppo volume<a class="headerlink" href="#creazione-gruppo-volume" title="Permanent link">&para;</a></h4>
+<p>Crea e estendi il tuo gruppo volume, è necessario creare un gruppo di volumi su uno o piu' volumi fisici <code># vgcreate volume_group physical_volume</code> per esempio:</p>
+<p><code># vgcreate lvm /dev/sda2 /dev/sdb1 /dev/sdc1</code></p>
+<p>Questo comando imposterà prima le tre partizioni come volumi fisici (se necessario) e quindi creerà il gruppo di volumi con i tre volumi. Il comando ti avviserà se rileva un filesystem esistente su qualsiasi dispositivo.</p>
+<h4 id="creazione-volume-logici">Creazione Volume Logici<a class="headerlink" href="#creazione-volume-logici" title="Permanent link">&para;</a></h4>
+<p>Crea volumi logici, per una configurazione di base ne avremmo bisogno per root, swap e home.</p>
+<ul>
+<li><code># lvcreate -L 120G lvm -n root</code></li>
+<li><code># lvcreate -L 8G lvm -n swap</code></li>
+<li><code># lvcreate -l 100%FREE lvm -n home</code></li>
+</ul>
+<h4 id="formattare-le-partizioni_3">Formattare le Partizioni<a class="headerlink" href="#formattare-le-partizioni_3" title="Permanent link">&para;</a></h4>
+<p><code># mkfs.vfat -F32 /dev/sda1</code> La partizione EFI system in FAT32 per il boot</p>
+<ul>
+<li><code># mkfs.ext4 /dev/lvm/root</code></li>
+<li><code># mkfs.ext4 /dev/lvm/home</code></li>
+<li><code># mkswap /dev/lvm/swap</code> </li>
+</ul>
+<h4 id="montaggio-delle-partizioni_3">Montaggio delle Partizioni<a class="headerlink" href="#montaggio-delle-partizioni_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code># mount /dev/lvm/root /mnt</code></li>
+<li><code># mkdir -p /mnt/{home,boot}</code> creiamo la directory /home e la directory /boot</li>
+<li><code># mount /dev/lvm/home /mnt/home</code></li>
+<li><code># mount /dev/sda1 /mnt/boot</code> </li>
+<li><code># swapon /dev/lvm/swap</code></li>
+</ul>
+<h4 id="estendere-un-gruppo-lvm">Estendere un gruppo lvm<a class="headerlink" href="#estendere-un-gruppo-lvm" title="Permanent link">&para;</a></h4>
+<p>Se in futuro vorrete aggiungere un nuovo volume fisico al gruppo vediamo quale comando usare, ipotizzando un quarto disco sdd e di averlo partizionato come prima di tipo lvm, estendiamo lo spazio per esempio a <code>/dev/lvm/home</code>:</p>
+<ul>
+<li><code># pvcreate /dev/sdd1</code></li>
+<li><code># vgextend lvm /dev/sdd1</code></li>
+<li><code># lvextend -l +100%FREE /dev/lvm/home</code></li>
+</ul>
+<p><br><br></p>
+<h2 id="5-mirrorlist">5. Mirrorlist<a class="headerlink" href="#5-mirrorlist" title="Permanent link">&para;</a></h2>
+<p>Salviamo il mirrorlist per i repositoy in <strong>/etc/pacman.d/mirrorlist</strong> con lo strumento <strong>reflector</strong>, specificare il paese dove sincronizzare i server ad esempio <strong>it</strong>, e' possibile aggiungere piu paesi usando la virgola ad esempio <strong>it,us</strong>:</p>
+<p><code># reflector --verbose -c it -a 12 --sort rate --save /etc/pacman.d/mirrorlist</code></p>
+<p><br><br></p>
+<h2 id="6-pacstrap">6. Pacstrap<a class="headerlink" href="#6-pacstrap" title="Permanent link">&para;</a></h2>
+<p>Installiamo il <strong>kernel linux</strong> e i pacchetti base per creare il nostro arch, aggiungiamo anche un editor ad esempio <strong>vim</strong>, se stai seguendo l'installazione per <strong>lvm</strong> aggiungi al comando che segue il pacchetto <code>lvm2</code>:</p>
+<p><code># pacstrap -K /mnt base base-devel linux linux-firmware vim</code> </p>
+<p><br><br></p>
+<h2 id="7-generare-fstab">7. Generare Fstab<a class="headerlink" href="#7-generare-fstab" title="Permanent link">&para;</a></h2>
+<p>Il file /etc/fstab vi permette di controllare quali filesystem sono montati in fase di avvio sul vostro sistema Linux, comprese le partizioni di Windows e le condivisioni di rete:</p>
+<p><code># genfstab -U /mnt &gt; /mnt/etc/fstab</code></p>
+<p><br><br></p>
+<h2 id="8-chroot">8. Chroot<a class="headerlink" href="#8-chroot" title="Permanent link">&para;</a></h2>
+<p>Passiamo in chroot e configuriamo i seguenti passaggi: Configurazione del localtime, del systemclock, lingua, keyboard mappings, localhost, Password Root, Creazione User e password.</p>
+<p>entriamo in chroot:</p>
+<p><code># arch-chroot /mnt</code></p>
+<p><br><br></p>
+<h3 id="time-zone">Time zone<a class="headerlink" href="#time-zone" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code># ln -sf /usr/share/zoneinfo/Europe/Italy /etc/localtime</code></li>
+<li><code># hwclock --systohc</code></li>
+</ul>
+<p><br><br></p>
+<h3 id="localizzazione">Localizzazione<a class="headerlink" href="#localizzazione" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code># echo "it_IT.UTF-8 UTF-8" &gt;&gt; /etc/locale.gen</code></li>
+<li><code># locale-gen</code></li>
+<li><code># echo "LANG=it_IT.UTF-8" &gt;&gt; /etc/locale.conf</code></li>
+<li><code># echo "KEYMAP=it" &gt;&gt; /etc/vconsole.conf</code></li>
+</ul>
+<p><br><br></p>
+<h3 id="hostname-e-hosts">Hostname e Hosts<a class="headerlink" href="#hostname-e-hosts" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code># echo "NOMETUAMACCHINA" &gt; /etc/hostname</code></li>
+<li><code># echo "127.0.0.1 localhost" &gt;&gt; /etc/hosts</code></li>
+<li><code># echo "::1       localhost" &gt;&gt; /etc/hosts</code></li>
+</ul>
+<p><br><br></p>
+<h3 id="utente-e-root">Utente e Root<a class="headerlink" href="#utente-e-root" title="Permanent link">&para;</a></h3>
+<p>Configuriamo la password di Root, fai attenzione!</p>
+<p><code># passwd</code></p>
+<p>Configuriamo un nuovo utente in minuscolo creando con <code>-m</code> la directory <code>/home/NOMEUTENTE</code>, con <code>-G</code> il gruppo <code>wheel</code> e infine con <code>-s</code> la shell:</p>
+<p><code># useradd -mG wheel -s /bin/bash NOMEUTENTE</code></p>
+<p>Configuriamo il nome reale (quello che appare in grafica con l'iniziale maiuscola ad esempio <strong>"Alessio"</strong>) </p>
+<p><code># usermod -c 'NOMEREALE' NOMEUTENTE</code></p>
+<p>Configuriamo una password per l'utente appena aggiunto, fai attenzione!</p>
+<p><code># passwd NOMEUTENTE</code></p>
+<p>Configuriamo il file sudoers per il gruppo wheel</p>
+<p><code># echo "NOMEUTENTE ALL=(ALL:ALL) ALL" &gt;&gt; /etc/sudoers.d/NOMEUTENTE</code></p>
+<p><br><br></p>
+<h3 id="mkinitcpio-per-lvm">mkinitcpio per lvm<a class="headerlink" href="#mkinitcpio-per-lvm" title="Permanent link">&para;</a></h3>
+<p>aggiungere <strong>lvm2</strong> a hooks in <strong>/etc/mkinitcpio.conf</strong></p>
+<p><code>HOOKS="base udev ... block lvm2 filesystems"</code></p>
+<p>quindi usare il comando:</p>
+<p><code># mkinitcpio -p linux</code></p>
+<p><br><br></p>
+<h2 id="9-bootloader">9. Bootloader<a class="headerlink" href="#9-bootloader" title="Permanent link">&para;</a></h2>
+<h3 id="grub-bios-mbr">GRUB (Bios-MBR)<a class="headerlink" href="#grub-bios-mbr" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code># pacman -S grub</code></li>
+<li><code># grub-install --target=i386-pc /dev/sda</code></li>
+<li><code># grub-mkconfig -o /boot/grub/grub.cfg</code></li>
+</ul>
+<p><br><br></p>
+<h3 id="grub-uefi">GRUB (UEFI)<a class="headerlink" href="#grub-uefi" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code># pacman -S grub</code></li>
+<li><code># grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB</code></li>
+<li><code># grub-mkconfig -o /boot/grub/grub.cfg</code></li>
+</ul>
+<p>GRUB supporta completamente l'avvio protetto utilizzando chiavi CA o shim, tuttavia il comando di installazione è diverso a seconda di quale si intende utilizzare.</p>
+<p>Per utilizzare le chiavi CA il comando è:</p>
+<p><code># grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB --modules="tpm" --disable-shim-lock</code></p>
+<p>Per utilizzare shim-lock il comando è:</p>
+<p><code># grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB --modules="normal test efi_gop efi_uga search echo linux all_video gfxmenu gfxterm_background gfxterm_menu gfxterm loadenv configfile tpm"</code></p>
+<p><br><br></p>
+<h3 id="systemd-boot-ext4">Systemd-boot (EXT4)<a class="headerlink" href="#systemd-boot-ext4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code># pacman -S efibootmgr</code></li>
+<li><code># bootctl --path=/boot install</code></li>
+<li><code># echo "deafult arch-*" &gt;&gt; /boot/loader/loader.conf</code></li>
+<li><code># vim /boot/loader/entries/arch.conf</code></li>
+</ul>
+<p>adesso creiamo la configurazione del file <strong>arch.conf</strong> aperto con <strong>vim</strong>, e' importante scrivere la partizione di avvio della root corretta ad esempio <code>root=/dev/sdax</code> dove <code>x</code> sta per il numero di partizione della root.</p>
+<ul>
+<li><code>title   Arch Linux</code></li>
+<li><code>linux   /vmlinuz-linux</code></li>
+<li><code>initrd  /initramfs-linux.img</code></li>
+<li><code>options root=/dev/sdax rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_level=3</code></li>
+</ul>
+<p><br><br></p>
+<h3 id="systemd-boot-btrfs">Systemd-boot (BTRFS)<a class="headerlink" href="#systemd-boot-btrfs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code># pacman -S efibootmgr</code></li>
+<li><code># bootctl --path=/boot install</code></li>
+<li><code># echo "deafult arch-*" &gt;&gt; /boot/loader/loader.conf</code></li>
+<li><code># vim /boot/loader/entries/arch.conf</code></li>
+</ul>
+<p>adesso creiamo la configurazione del file <strong>arch.conf</strong> aperto con <strong>vim</strong>, e' importante scrivere la partizione di avvio della root corretta ad esempio <code>root=/dev/sdax</code> dove <code>x</code> sta per il numero di partizione della root, aggiungiamo il flag per il sottovolume <strong>@</strong>.</p>
+<ul>
+<li><code>title   Arch Linux</code></li>
+<li><code>linux   /vmlinuz-linux</code></li>
+<li><code>initrd  /initramfs-linux.img</code></li>
+<li><code>options root=/dev/sdax rootflags=subvol=@ rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_level=3</code></li>
+</ul>
+<p><br><br></p>
+<h3 id="systemd-boot-lvm">Systemd-boot (LVM)<a class="headerlink" href="#systemd-boot-lvm" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code># pacman -S efibootmgr</code></li>
+<li><code># bootctl --path=/boot install</code></li>
+<li><code># echo "deafult arch-*" &gt;&gt; /boot/loader/loader.conf</code></li>
+<li><code># vim /boot/loader/entries/arch.conf</code></li>
+</ul>
+<p>adesso creiamo la configurazione del file <strong>arch.conf</strong> aperto con <strong>vim</strong>, e' importante scrivere la partizione di avvio della root corretta ad esempio per <strong>lvm</strong> <code>root=/dev/mapper/lvm-root</code>.</p>
+<ul>
+<li><code>title   Arch Linux (LVM)</code></li>
+<li><code>linux   /vmlinuz-linux</code></li>
+<li><code>initrd  /initramfs-linux.img</code></li>
+<li><code>options root=/dev/mapper/lvm-root rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_level=3</code></li>
+</ul>
+<p><br><br></p>
+<h2 id="10-pacchetti-base">10. Pacchetti Base<a class="headerlink" href="#10-pacchetti-base" title="Permanent link">&para;</a></h2>
+<p><code># pacman -S xorg wpa_supplicant wireless_tools netctl net-tools iw networkmanager alsa-utils pipewire-pulse mtools dosfstools mtools ntfs-3g f2fs-tools dosfstools exfatprogs fuse firewalld acpi cronie git reflector bluez bluez-utils cups reflector</code></p>
+<p><br><br></p>
+<h2 id="11-ambiente-grafico">11. Ambiente Grafico<a class="headerlink" href="#11-ambiente-grafico" title="Permanent link">&para;</a></h2>
+<p>Scegli tra alcuni dei piu famosi ambienti desktop suggeriti:</p>
+<h3 id="gnome">Gnome<a class="headerlink" href="#gnome" title="Permanent link">&para;</a></h3>
+<p>Gnome completo con display manager GDM</p>
+<ul>
+<li><code># pacman -S gnome gnome-extra gdm</code> </li>
+<li><code># systemctl enable gdm</code></li>
+</ul>
+<h3 id="xfce4">Xfce4<a class="headerlink" href="#xfce4" title="Permanent link">&para;</a></h3>
+<p>xfce4 con display manager Lightdm</p>
+<ul>
+<li><code># pacman -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings</code></li>
+<li><code># systemctl enable lightdm</code></li>
+</ul>
+<h3 id="lxde">lxde<a class="headerlink" href="#lxde" title="Permanent link">&para;</a></h3>
+<p>lxde con display manger lightdm</p>
+<ul>
+<li><code># pacman -S lxde lxde-common lxsession openbox</code></li>
+<li><code># systemctl enable lightdm</code></li>
+</ul>
+<h3 id="mate">Mate<a class="headerlink" href="#mate" title="Permanent link">&para;</a></h3>
+<p>mate con display manger lightdm</p>
+<ul>
+<li><code># pacman -S mate mate-extra</code></li>
+<li><code># systemctl enable lightdm</code></li>
+</ul>
+<h3 id="plasma">Plasma<a class="headerlink" href="#plasma" title="Permanent link">&para;</a></h3>
+<p>plasma kde con display manager SDDM</p>
+<ul>
+<li><code># pacman -S plasma kde-applications sddm</code></li>
+<li><code># systemctl enable sddm</code></li>
+</ul>
+<h3 id="cinnamon">Cinnamon<a class="headerlink" href="#cinnamon" title="Permanent link">&para;</a></h3>
+<p>cinnamon con display manager Lightdm</p>
+<ul>
+<li><code># pacman -S cinnamon nemo-fileroller gnome-terminal lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings xdg-user-dirs-gtk</code></li>
+<li><code># systemctl enable lightdm</code></li>
+</ul>
+<p><br><br></p>
+<h2 id="12-servizi">12. Servizi<a class="headerlink" href="#12-servizi" title="Permanent link">&para;</a></h2>
+<p>Se hai abilitato il servizio per il display manager puoi passare ad abilitare gli altri servizi necessari.</p>
+<ul>
+<li><code># systemctl enable NetworkManager</code> Fai attenzione e' case sensitive.</li>
+<li><code># systemctl enable bluetooth</code></li>
+<li><code># systemctl enable reflector</code></li>
+<li><code># systemctl enable cronie</code></li>
+<li><code># systemctl enable firewalld</code> </li>
+</ul>
+<p><br><br></p>
+<h2 id="13-zram">13. Zram<a class="headerlink" href="#13-zram" title="Permanent link">&para;</a></h2>
+<p>L'esempio seguente descrive come configurare lo scambio su <em>zram</em> automaticamente all'avvio con una singola regola <em>udev</em>. Non dovrebbe essere necessario alcun pacchetto aggiuntivo per farlo funzionare.</p>
+<p>Carica esplicitamente il modulo all'avvio:</p>
+<ul>
+<li>
+<p><code># vim /etc/modules-load.d/zram.conf</code></p>
+</li>
+<li>
+<p><code>zram</code></p>
+</li>
+</ul>
+<p>Crea la seguente regola <em>udev</em> regolando l'attributo disksize come necessario per la misura della swap in questo esempio e' <em>16G</em>:</p>
+<ul>
+<li>
+<p><code># vim /etc/udev/rules.d/99-zram.rules</code></p>
+</li>
+<li>
+<p><code>ACTION=="add", KERNEL=="zram0", ATTR{comp_algorithm}="zstd", ATTR{disksize}="16G", RUN="/usr/bin/mkswap -U clear /dev/%k" , TAG+="systemd"</code></p>
+</li>
+</ul>
+<p>Aggiungi <strong>/dev/zram</strong> al tuo fstab con una priorità superiore a quella predefinita:</p>
+<ul>
+<li>
+<p><code># vim /etc/fstab</code></p>
+</li>
+<li>
+<p><code>/dev/zram0 none swap defaults,pri=100 0 0</code></p>
+</li>
+</ul>
+<p><br><br><br><br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 ArchLatam
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/4r8AmxSB2B" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/archlatam" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

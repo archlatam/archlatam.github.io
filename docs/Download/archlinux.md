@@ -1,42 +1,55 @@
-# Descarga de Arch Linux
+# Download live iso
 
-## Imagen ISO oficial
 
-Descarga la imagen ISO más reciente de Arch Linux desde el sitio oficial:
+## Archiso
 
-- **Página oficial**: https://archlinux.org/download/
-- **Mirrors**: https://archlinux.org/download/#mirrors
+![iso](../images/live/iso.png)
 
-## Requisitos del sistema
+Always updated, from the Italian server archmirror.it
+ 
+[Download :fontawesome-regular-circle-down:](https://mirror.rackspace.com/archlinux/iso/latest/archlinux-x86_64.iso)
 
-- **Procesador**: x86_64 (64-bit)
-- **RAM**: 512 MB mínimo, 2 GB recomendado
-- **Espacio en disco**: 2 GB para instalación base, más para sistema de archivos y swap
-- **Unidad óptica**: CD/DVD o USB para la instalación
+Signature verification
 
-## Verificar la imagen ISO
+It is recommended to verify the signature of the image before use, especially if it was downloaded from an HTTP mirror, where downloads may be subject to interception to provide malicious images. On a system with GnuPG installed, run the following command to download the PGP ISO signature > in the directory with the ISO file, and verify it with:
 
-Después de descargar, verifica la integridad del archivo:
+`$ gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig`
 
-```bash
-sha256sum archlinux-x86_64.iso
-```
+Alternatively, from an existing Arch Linux installation run:
 
-Compara el resultado con el hash publicado en la página de descarga.
+`$ pacman-key -v archlinux-version-x86_64.iso.sig`
 
-## Crear USB booteable
+<br><br><br><br>
 
-### En Linux
+## VM image
 
-```bash
-dd if=archlinux-x86_64.iso of=/dev/sdX bs=4M status=progress oflag=sync
-```
+![iso](../images/live/vm.png)
 
-### En Windows
+Official virtual machine images, the base image is designed for local use and is preconfigured with (user: arch - password: arch) and sshd running.
 
-Usa herramientas como Rufus o Etcher para crear un USB booteable.
+[Download :fontawesome-regular-circle-down:](https://gitlab.com/archlinux/arch-boxes)
 
-## Siguiente paso
+<br><br><br><br>
 
-Una vez tengas el USB listo, consulta la guía de instalación:
-[Instalación de Arch Linux](arch-guida.md)
+## Docker
+
+![iso](../images/live/dck.png)
+
+Official Docker image
+
+`docker pull archlinux`
+
+[Download :fontawesome-regular-circle-down:](https://hub.docker.com/_/archlinux)
+
+<br><br><br><br>
+
+## ARM
+
+![iso](../images/live/arm.png)
+
+Arch Linux ARM is a Linux distribution for ARM computers
+
+[Download :fontawesome-regular-circle-down:](https://archlinuxarm.org/about/downloads)
+
+
+<br><br><br><br>
