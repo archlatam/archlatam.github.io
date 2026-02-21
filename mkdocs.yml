@@ -59,9 +59,6 @@ nav:
 
 markdown_extensions:
   - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.two_stage_index
-      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.superfences
