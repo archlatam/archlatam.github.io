@@ -1,3 +1,4 @@
-.md-header {
+[data-theme="dark"] .md-header,
+[data-theme="dark"] .md-header--top {
     background-color: #2e3440 !important;
 }
