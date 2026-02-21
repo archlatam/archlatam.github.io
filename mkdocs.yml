@@ -11,19 +11,18 @@ copyright: Copyright &copy; 2024 ArchLatam
 theme:
   name: material
   language: es
-  custom_dir: stylesheets
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: light
-      primary: custom
-      accent: custom
+      primary: deep orange
+      accent: deep orange
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: custom
-      accent: custom
+      primary: deep orange
+      accent: deep orange
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
@@ -33,9 +32,6 @@ theme:
     - navigation.tabs
 
 extra:
-  palette:
-    primary: "#2e3440"
-    accent: "#2e3440"
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/archlatam
