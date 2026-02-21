@@ -11,7 +11,7 @@ copyright: Copyright &copy; 2024 ArchLatam
 theme:
   name: material
   language: es
-  custom_dir: overrides
+  custom_dir: docs/stylesheets
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: light
