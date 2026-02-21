@@ -12,13 +12,32 @@ theme:
   name: material
   language: es
   palette:
-    primary: cyan
-    accent: cyan
+    - media: "(prefers-color-scheme: light)"
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   features:
     - navigation.top
     - navigation.tracking
     - navigation.tabs
-  custom_dir: overrides
+
+extra:
+  palette:
+    primary: "#2e3440"
+    accent: "#2e3440"
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/archlatam
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/4r8AmxSB2B
 
 nav:
   - Home: index.md
@@ -39,10 +58,3 @@ markdown_extensions:
   - codehilite
   - toc:
       permalink: true
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/archlatam
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/4r8AmxSB2B
