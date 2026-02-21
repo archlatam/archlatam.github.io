@@ -6,15 +6,13 @@ site_author: ArchLatam Team
 repo_name: archlatam/archlatam.github.io
 repo_url: https://github.com/archlatam/archlatam.github.io
 
-copyright: Copyright &copy; 2024 ArchLatam
-
-font:
-  text: Inter
-  code: Fira Code
-
 theme:
   name: material
   language: es
+
+  font:
+    text: Inter
+    code: Fira Code
 
   features:
     - navigation.tabs
@@ -24,22 +22,25 @@ theme:
     - search.share
 
   palette:
-  - media: "(prefers-color-scheme: dark)"
-    scheme: slate
-    toggle:
-      icon: material/brightness-4
-      name: Switch to light mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
 
-  - media: "(prefers-color-scheme: light)"
-    scheme: light
-    toggle:
-      icon: material/brightness-7
-      name: Switch to dark mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
 
 extra_css:
   - stylesheets/colors.css
   - stylesheets/fonts.css
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascript/extra.js
 
 extra:
   social:
@@ -48,6 +49,17 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/archlatam
 
+  consent:
+    title: Política de Cookies
+    description: >-
+      Utilizamos cookies para reconocer tus visitas repetidas y tus preferencias,
+      así como para medir la eficacia de nuestra documentación y verificar si los
+      usuarios encuentran lo que están buscando. Con tu consentimiento, nos ayudas
+      a mejorar nuestra documentación.
+
+  version:
+    default: stable
+
 nav:
   - Home: index.md
 
@@ -55,54 +67,29 @@ nav:
       - 'What is Arch Linux?': Archlinux-Guida/about-arch.md
       - 'Download': Download/archlinux.md
       - 'Derivatives': Download/Derivate.md
-      # - '- Installazione di Arch Linux': 'Archlinux-Guida/arch-guida.md'
-      - '- Arch Linux Installation': 'en/Archlinux-Guide/guide.md'
-      - '- Instalación de Arch Linux': 'en/Archlinux-Guide/guida-es.md'
-      - '- Instalação do Arch Linux': 'en/Archlinux-Guide/guida-pt.md'
-      # - '- Installation d Arch Linux': 'en/Archlinux-Guide/guida-fr.md'
-      # - '- Arch Linux Installation': 'en/Archlinux-Guide/guida-de.md'
-      # - '- Arch Linuxのインストール': 'en/Archlinux-Guide/guida-jp.md'
-      # - '- 安装Arch Linux': 'en/Archlinux-Guide/guida-cn.md'
-      # - '- Arch Linux Installation': 'en/Archlinux-Guide/guida-in.md'
+      - '- Arch Linux Installation': en/Archlinux-Guide/guide.md
+      - '- Instalación de Arch Linux': en/Archlinux-Guide/guida-es.md
+      - '- Instalação do Arch Linux': en/Archlinux-Guide/guida-pt.md
+
   - 'Other Guides':
-      - 'Comandi Linux': 'Altre-Guide/comandi-linux.md'
-      # - 'File System': 'Altre-Guide/filesystem.md'
-      - 'Pacman': 'Altre-Guide/Pacman.md'
-      - 'AUR': 'Altre-Guide/aur.md'
-      - 'Yay': 'Altre-Guide/yay.md'
-      - 'Fstab': 'Altre-Guide/fstab.md'
-      - 'Vim': 'Altre-Guide/vim.md'
-      - 'Nano': 'Altre-Guide/nano.md'
-      # - 'Nvidia': 'Altre-Guide/nvidia.md'
-      # - 'AMD Manjaro mesa-codecs': 'Altre-Guide/amd.md'
-      - 'Sudoers.d': 'Altre-Guide/sudoers.md'
-      - 'Reflector': 'Altre-Guide/reflector.md'
-      - 'Downgrade': 'Altre-Guide/downgrade.md'
-      - 'Permessi': 'Altre-Guide/permessi.md'
-      - 'Grub': 'Altre-Guide/grub.md'
-      - 'Systemd-Boot': 'Altre-Guide/systemdboot.md'
-      - 'Firewalld': 'Altre-Guide/firewald.md'
-      - 'Rsync': 'Altre-Guide/rsync.md'
-      - 'Timeshift': 'Altre-Guide/timeshift.md'
-      - 'User Management': 'Altre-Guide/gestione-utenti.md'
-      - 'NordVPN': 'Altre-Guide/nordvpn.md'
-
-extra:
-  consent:
-    title: Cookie consent
-    description: >- 
-     Utilizamos cookies para reconocer tus visitas repetidas y tus preferencias,
-     así como para medir la eficacia de nuestra documentación y si los usuarios encuentran lo que están buscando.
-     Con tu consentimiento, nos estás ayudando a mejorar nuestra documentación.
-
-     
-  version:
-    default: stable
-
-extra_javascript:
-  - javascript/extra.js
-    
-copyright: ' '
+      - 'Comandi Linux': Altre-Guide/comandi-linux.md
+      - 'Pacman': Altre-Guide/Pacman.md
+      - 'AUR': Altre-Guide/aur.md
+      - 'Yay': Altre-Guide/yay.md
+      - 'Fstab': Altre-Guide/fstab.md
+      - 'Vim': Altre-Guide/vim.md
+      - 'Nano': Altre-Guide/nano.md
+      - 'Sudoers.d': Altre-Guide/sudoers.md
+      - 'Reflector': Altre-Guide/reflector.md
+      - 'Downgrade': Altre-Guide/downgrade.md
+      - 'Permessi': Altre-Guide/permessi.md
+      - 'Grub': Altre-Guide/grub.md
+      - 'Systemd-Boot': Altre-Guide/systemdboot.md
+      - 'Firewalld': Altre-Guide/firewald.md
+      - 'Rsync': Altre-Guide/rsync.md
+      - 'Timeshift': Altre-Guide/timeshift.md
+      - 'User Management': Altre-Guide/gestione-utenti.md
+      - 'NordVPN': Altre-Guide/nordvpn.md
 
 plugins:
   - search
