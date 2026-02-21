@@ -7,7 +7,15 @@ body, .md-container {
 
 /* Header background */
 .md-header {
-  background-color: #3b4252;
+  background-color: #1e2129;
+  box-shadow: 0 0 .2rem #0000, 0 .2rem .4rem #0000;
+  color: var(--md-primary-bg-color);
+  display: block;
+  left: 0;
+  position: sticky;
+  right: 0;
+  top: 0;
+  z-index: 4;
 }
 
 p, li{
