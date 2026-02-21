@@ -20,11 +20,11 @@ Los participantes de ArchLatam discuten en foros, charlan en grupos de redes soc
 - **Colaborador** - Joaquin (Pato) Decima
 
 
-[![paypal-donation-button](images/pp.png)](https://www.paypal.com/donate/?hosted_button_id=3C4YAF9NXMEWL)
+[![paypal-donation-button](images/pp.png)](https://paypal.me/eososlinux?country.x=AR&locale.x=es_XC)
 
 Apoya a la comunidad ArchLatam de Arch Linux realizando una donación para ayudarnos a crecer. Si eres un usuario apasionado de Arch Linux, dona hoy y ayúdanos a garantizar la continuidad de nuestros servicios, así como a ofrecer aún más soporte y recursos a todos nuestros miembros. ¡Gracias por tu apoyo!
 
-[Paypal Donation](https://www.paypal.com/donate/?hosted_button_id=3C4YAF9NXMEWL)
+[Paypal Donation](https://paypal.me/eososlinux?country.x=AR&locale.x=es_XC)
 
 <br><br>
 
