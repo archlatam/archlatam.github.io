@@ -1,5 +1,15 @@
 /*extra css archlatam*/
 
+/* Body background */
+body, .md-container {
+  background-color: #292e39;
+}
+
+/* Header background */
+.md-header {
+  background-color: #3b4252;
+}
+
 p, li{
   font-size: 18px!important;
   font-weight:400;
