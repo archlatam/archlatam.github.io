@@ -11,6 +11,7 @@ copyright: Copyright &copy; 2024 ArchLatam
 theme:
   name: material
   language: es
+  scheme: slate
   palette:
     - media: "(prefers-color-scheme: light)"
       primary: custom
