@@ -1,57 +1,70 @@
 site_name: ArchLatam
-site_description: Comunidad Latinoamericana de Arch Linux y Software Libre
 site_url: https://archlatam.github.io/
-site_author: ArchLatam Community
+site_description: Arch Linux LATAM Community
+site_author: ArchLatam Team
 
-repo_url: https://github.com/archlatam
-repo_name: GitHub
+repo_name: archlatam/archlatam.github.io
+repo_url: https://github.com/archlatam/archlatam.github.io
 
 copyright: Copyright &copy; 2024 ArchLatam
 
 theme:
   name: material
+  custom_dir: overrides
   language: es
   palette:
     - media: "(prefers-color-scheme: light)"
-      scheme: light
+      primary: blue grey
+      accent: blue
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+      primary: blue grey
+      accent: blue
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
   features:
-    - navigation.top
+    - navigation.instant
     - navigation.tracking
     - navigation.tabs
+    - search.highlight
+    - search.share
+
+extra_css:
+  - stylesheets/colors.css
+  - stylesheets/fonts.css
+  - stylesheets/extra.css
 
 extra:
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/archlatam
     - icon: fontawesome/brands/discord
       link: https://discord.gg/4r8AmxSB2B
-  css:
-    - stylesheets/colors.css
+    - icon: fontawesome/brands/github
+      link: https://github.com/archlatam
 
 nav:
   - Home: index.md
-  - Arch Linux:
-    - ¿Qué es Arch Linux?: Archlinux-Guida/about-arch.md
-    - Descarga: Download/archlinux.md
-    - Derivadas: Download/derivate.md
-  - Guías:
-    - Comandos Linux: Altre-Guide/comandi-linux.md
-    - Sistema de Archivos: Altre-Guide/filesystem.md
-    - Pacman: Altre-Guide/pacman.md
-    - AUR: Altre-Guide/aur.md
-  - English Guides:
-    - Arch Linux Installation: en/Archlinux-Guide/guide.md
+  - Arch Linux Guide:
+      - Archlinux-Guida/about-arch.md
+  - Download:
+      - Download/archlinux.md
+      - Download/derivate.md
+  - Other Guides:
+      - Altre-Guide/comandi-linux.md
+      - Altre-Guide/filesystem.md
+      - Altre-Guide/pacman.md
+      - Altre-Guide/aur.md
 
 markdown_extensions:
-  - admonition
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.two_stage_index
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
   - codehilite
   - toc:
       permalink: true
