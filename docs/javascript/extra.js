@@ -5,5 +5,7 @@
 
 // copyright
 
- var copy = document.getElementsByClassName('md-copyright__highlight')[0];
-copy.innerHTML = "Copyright &copy; 2022-" + (new Date().getFullYear()) + " Architalia Linux*";
+var copy = document.getElementsByClassName('md-copyright__highlight')[0];
+if (copy) {
+  copy.innerHTML = "Copyright &copy; 2022-" + (new Date().getFullYear()) + " Architalia Linux*";
+}
