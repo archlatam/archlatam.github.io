@@ -28,7 +28,6 @@ Apoya a la comunidad ArchLatam de Arch Linux realizando una donación para ayuda
 <img alt="" border="0" src="https://www.paypal.com/en_AR/i/scr/pixel.gif" width="1" height="1" />
 </form>
 
-[Paypal Donation](https://paypal.me/eososlinux?country.x=AR&locale.x=es_XC)
 
 <br><br>
 
