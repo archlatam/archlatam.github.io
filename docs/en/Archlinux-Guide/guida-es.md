@@ -23,7 +23,7 @@ Para empezar, necesitamos definir el idioma del teclado, el idioma predeterminad
 
 establezca el idioma de nuestro teclado con el comando:
 
-`# loadkeys it`
+`# loadkeys es`
 
 Los caracteres de la consola se pueden encontrar en **/usr/share/kbd/consolefonts/** y también se pueden establecer con setfont. Por ejemplo, para usar uno de los caracteres más grandes adecuados para pantallas HiDPI, ejecute:
 
@@ -301,17 +301,17 @@ Ingrese al chroot:
 
 ### Zona horaria
 
-- `# ln -sf /usr/share/zoneinfo/Europe/Italy /etc/localtime`
+- `# ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime`
 - `# hwclock --systohc`
 
 <br><br><br><br>
 
 ### Configuración regional
 
-- `# echo "it_IT.UTF-8 UTF-8" >> /etc/locale.gen`
+- `# echo "es_AR.UTF-8 UTF-8" >> /etc/locale.gen`
 - `# locale-gen`
-- `# echo "LANG=it_IT.UTF-8" >> /etc/locale.conf`
-- `# echo "KEYMAP=it" >> /etc/vconsole.conf`
+- `# echo "LANG=es_AR.UTF-8" >> /etc/locale.conf`
+- `# echo "KEYMAP=es" >> /etc/vconsole.conf`
 
 <br><br><br><br>
 

@@ -2405,7 +2405,7 @@
 <p>Para empezar, necesitamos definir el idioma del teclado, el idioma predeterminado sin introducir el comando es <code>US</code>. Las distribuciones disponibles se pueden listar con:</p>
 <p><code># ls /usr/share/kbd/keymaps/**/*.map.gz</code></p>
 <p>establezca el idioma de nuestro teclado con el comando:</p>
-<p><code># loadkeys it</code></p>
+<p><code># loadkeys es</code></p>
 <p>Los caracteres de la consola se pueden encontrar en <strong>/usr/share/kbd/consolefonts/</strong> y también se pueden establecer con setfont. Por ejemplo, para usar uno de los caracteres más grandes adecuados para pantallas HiDPI, ejecute:</p>
 <p><code># setfont ter-132b</code></p>
 <p><br><br><br><br></p>
@@ -2616,16 +2616,16 @@
 <p><br><br><br><br></p>
 <h3 id="zona-horaria">Zona horaria<a class="headerlink" href="#zona-horaria" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code># ln -sf /usr/share/zoneinfo/Europe/Italy /etc/localtime</code></li>
+<li><code># ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime</code></li>
 <li><code># hwclock --systohc</code></li>
 </ul>
 <p><br><br><br><br></p>
 <h3 id="configuracion-regional">Configuración regional<a class="headerlink" href="#configuracion-regional" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code># echo "it_IT.UTF-8 UTF-8" &gt;&gt; /etc/locale.gen</code></li>
+<li><code># echo "es_AR.UTF-8 UTF-8" &gt;&gt; /etc/locale.gen</code></li>
 <li><code># locale-gen</code></li>
-<li><code># echo "LANG=it_IT.UTF-8" &gt;&gt; /etc/locale.conf</code></li>
-<li><code># echo "KEYMAP=it" &gt;&gt; /etc/vconsole.conf</code></li>
+<li><code># echo "LANG=es_AR.UTF-8" &gt;&gt; /etc/locale.conf</code></li>
+<li><code># echo "KEYMAP=es" &gt;&gt; /etc/vconsole.conf</code></li>
 </ul>
 <p><br><br><br><br></p>
 <h3 id="hostname-y-hosts">Hostname y Hosts<a class="headerlink" href="#hostname-y-hosts" title="Permanent link">&para;</a></h3>
