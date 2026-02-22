@@ -54,7 +54,7 @@ extra:
     - stylesheets/colors.css
     - stylesheets/extra.css
     - javascript/extra.js
-    - assets/architalia fonts/
+    - assets/architalia-fonts/
 
   consent:
     title: Política de Cookies
