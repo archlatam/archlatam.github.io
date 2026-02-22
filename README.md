@@ -9,8 +9,6 @@ ArchLatam es una comunidad latinoamericana dedicada a Arch Linux y el software l
 
 - 🌐 [Sitio Web](https://archlatam.github.io/)
 - 🐙 [GitHub](https://github.com/archlatam)
-- 🦣 [Mastodon](https://mastodon.social/@archlatam)
-- 💬 [Telegram](https://t.me/archlatam)
 
 ## Contribuir
 
