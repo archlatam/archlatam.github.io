@@ -557,34 +557,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1403,10 +1375,10 @@
 <p>If your machine has multiple ways to connect to different networks (e.g., Ethernet and WiFi), you can decide that one connection is more reliable than the other. You could set your Ethernet connection in the "trusted" zone if it's only connected to a local network you've built, and put WiFi (which might be connected to the Internet) in the "public" zone with stricter restrictions.</p>
 <p><br>
 !!! note "Note"</p>
-<pre class="codehilite"><code>A zone can only be in an active state if it has one of these two conditions:
-The zone is assigned to a network interface
-Source IPs or network ranges are assigned to the zone.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="n">zone</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">active</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">these</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="nl">conditions:</span>
+<span class="n">The</span><span class="w"> </span><span class="n">zone</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">assigned</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="n">interface</span>
+<span class="n">Source</span><span class="w"> </span><span class="n">IPs</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="n">ranges</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">assigned</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">zone</span><span class="p">.</span>
+</code></pre></div>
 
 <p><br>
 The default zones include the following:</p>
@@ -1494,10 +1466,10 @@ The default zones include the following:</p>
 <p>There are a couple of methods to do this. First, for a more closed server, you can choose one of the more restrictive zones, assign your network device to it, add the SSH service as shown above, and then whitelist your public IP address like this:</p>
 <p><br>
 !!! warning "Warning"</p>
-<pre class="codehilite"><code>Never remove the SSH service from a remote server firewall!
-Remember, SSH is what you use to access your server. Unless you have another way to access the server physically, or its shell (i.e., through a control panel provided by the host), removing the SSH service will permanently block you.
-You will need to contact support to regain your access, or completely reinstall the operating system.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">Never</span><span class="w"> </span><span class="n">remove</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">SSH</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">firewall</span><span class="o">!</span>
+<span class="n">Remember</span><span class="p">,</span><span class="w"> </span><span class="n">SSH</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">access</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">server</span><span class="p">.</span><span class="w"> </span><span class="n">Unless</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">another</span><span class="w"> </span><span class="n">way</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">access</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">physically</span><span class="p">,</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">shell</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">e</span><span class="p">.,</span><span class="w"> </span><span class="n">through</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">control</span><span class="w"> </span><span class="n">panel</span><span class="w"> </span><span class="n">provided</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">host</span><span class="p">),</span><span class="w"> </span><span class="n">removing</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">SSH</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">permanently</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="n">you</span><span class="p">.</span>
+<span class="n">You</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">contact</span><span class="w"> </span><span class="n">support</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">regain</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">access</span><span class="p">,</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">completely</span><span class="w"> </span><span class="n">reinstall</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">operating</span><span class="w"> </span><span class="n">system</span><span class="p">.</span>
+</code></pre></div>
 
 <p><br></p>
 <ul>

@@ -552,34 +552,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1208,9 +1180,10 @@
 <li>Open a terminal and type the following command:
   <br></li>
 </ul>
-<pre class="highlight"><code>sudo pacman -S grub</code></pre>
-<pre class="codehilite"><code>&lt;br&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo pacman -S grub
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>&lt;br&gt;
+</code></pre></div>
 
 </li>
 <li>
@@ -1219,7 +1192,8 @@
 <li>Type the following command to generate the Grub configuration:
   <br></li>
 </ul>
-<pre class="highlight"><code>sudo grub-mkconfig -o /boot/grub/grub.cfg</code></pre>
+<div class="highlight"><pre><span></span><code>sudo grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre></div>
 <p><br></p>
 </li>
 <li>
@@ -1228,14 +1202,16 @@
 <li>
 <p>Open the Grub configuration file via the following command:</p>
 <p><br>
-      <pre class="highlight"><code>sudo nano /etc/default/grub</code></pre>
+      <div class="highlight"><pre><span></span><code>sudo nano /etc/default/grub
+</code></pre></div>
     - Navigate through the configuration file and modify the parameters according to your personal preferences.
       Example:
-      <pre class="highlight"><code>GRUB_DEFAULT=0
+      <div class="highlight"><pre><span></span><code>GRUB_DEFAULT=0
 GRUB_TIMEOUT=5
-GRUB_DISTRIBUTOR="Arch"
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
-GRUB_CMDLINE_LINUX="loglevel=3"</code></pre>
+GRUB_DISTRIBUTOR=&quot;Arch&quot;
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
+GRUB_CMDLINE_LINUX=&quot;loglevel=3&quot;
+</code></pre></div>
     - Save the changes and close the configuration file.</p>
 </li>
 </ul>
@@ -1248,7 +1224,8 @@ GRUB_CMDLINE_LINUX="loglevel=3"</code></pre>
 </ul>
 </li>
 </ol>
-<p><pre class="highlight"><code>sudo grub-mkconfig -o /boot/grub/grub.cfg</code></pre>
+<p><div class="highlight"><pre><span></span><code>sudo grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre></div>
 <br> <br><br> <br></p>
 <p>UEFI installation</p>
 <p>1 - Installing Grub:</p>

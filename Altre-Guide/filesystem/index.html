@@ -551,34 +551,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1772,13 +1744,13 @@
 <li><em>Extended partition</em></li>
 </ul>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>For each physical disk there can only be one extended partition, that is, a physical disk can have in the MBR partition table up to a maximum of:
+<div class="codehilite"><pre><span></span><code>For each physical disk there can only be one extended partition, that is, a physical disk can have in the MBR partition table up to a maximum of:
 
 1. Three primary partitions plus one extended partition
 2. Four primary partitions
 
 The extended partition cannot write data and format and can only contain logical partitions. The largest physical disk that can be recognized by the MBR partition table is **2 TB**.
-</code></pre>
+</code></pre></div>
 
 <h3 id="device-file-naming-conventions">Device file naming conventions<a class="headerlink" href="#device-file-naming-conventions" title="Permanent link">&para;</a></h3>
 <p>In the GNU/Linux world, everything is a file. For disks, they are recognized by the system as:</p>
@@ -1830,18 +1802,20 @@ The extended partition cannot write data and format and can only contain logical
 <h3 id="device-partition-number">Device partition number<a class="headerlink" href="#device-partition-number" title="Permanent link">&para;</a></h3>
 <p>The number after the block device (storage device) indicates a partition. For MBR partition tables, number 5 must be the first logical partition.</p>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>Attention! The partition number mentioned mainly refers to the number of block device (storage device) partitions.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Attention! The partition number mentioned mainly refers to the number of block device (storage device) partitions.
+</code></pre></div>
 
 <p>There are at least two commands for partitioning a disk: <code>fdisk</code> and <code>cfdisk</code>. Both commands have an interactive menu. <code>cfdisk</code> is more reliable and better optimized, so it is the best to use.</p>
 <p>The only reason to use <code>fdisk</code> is when you want to list all logical devices with the <code>-l</code> option. <code>fdisk</code> uses MBR partition tables, therefore it is not supported for <strong>GPT</strong> partition tables and cannot be used for disks larger than <strong>2 TB</strong>.</p>
-<pre class="highlight"><code>sudo fdisk -l
+<div class="highlight"><pre><span></span><code>sudo fdisk -l
 sudo fdisk -l /dev/sdc
-sudo fdisk -l /dev/sdc2</code></pre>
+sudo fdisk -l /dev/sdc2
+</code></pre></div>
 <h3 id="parted-command"><code>parted</code> command<a class="headerlink" href="#parted-command" title="Permanent link">&para;</a></h3>
 <p>The <code>parted</code> command (partition editor) is able to partition a disk without the drawbacks of <code>fdisk</code>.</p>
 <p>The <code>parted</code> command can be used both from the command line and interactively. It also has a recovery function capable of rewriting a deleted partition table.</p>
-<pre class="highlight"><code>parted [-l] [device]</code></pre>
+<div class="highlight"><pre><span></span><code>parted [-l] [device]
+</code></pre></div>
 <p>As a graphical interface, there is the very complete tool <code>gparted</code>: <em>Gnome</em> <em>PARtition</em> <em>EDitor</em>.</p>
 <p>The <code>gparted -l</code> command lists all logical devices on a computer.</p>
 <p>The <code>gparted</code> command, if run without arguments, will show an interactive mode with its internal options:</p>
@@ -1852,9 +1826,11 @@ sudo fdisk -l /dev/sdc2</code></pre>
 </ul>
 <h3 id="cfdisk-command"><code>cfdisk</code> command<a class="headerlink" href="#cfdisk-command" title="Permanent link">&para;</a></h3>
 <p>The <code>cfdisk</code> command is used to manage partitions.</p>
-<pre class="highlight"><code>cfdisk device</code></pre>
+<div class="highlight"><pre><span></span><code>cfdisk device
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>$ sudo cfdisk /dev/sda</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo cfdisk /dev/sda
+</code></pre></div>
 <p>The preparation, without <em>LVM</em>, of physical media takes place in five phases:</p>
 <ul>
 <li>Setting up the physical disk</li>
@@ -1887,12 +1863,12 @@ sudo fdisk -l /dev/sdc2</code></pre>
 <p><b><font color="blue">LE</b></font>: The smallest memory unit that can be allocated in a Logical Volume. In the same VG, PE and LE are equal and correspond one to one.</p>
 <p>The disadvantage is that if one of the physical volumes goes out of service, all logical volumes using this physical volume are lost. You need to use LVM on RAID disks.</p>
 <p>!!! note "Note"</p>
-<pre class="codehilite"><code>LVM is managed only by the operating system. Therefore the _BIOS_ needs at least one non-LVM partition for booting.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>LVM is managed only by the operating system. Therefore the <span class="ge">_BIOS_</span> needs at least one non-LVM partition for booting.
+</code></pre></div>
 
 <p>!!! info "Information"</p>
-<pre class="codehilite"><code>In the physical disk, the smallest storage unit is the **sector**; in the file system, the smallest storage unit of GNU/Linux is the **block**, which is called **cluster** in the Windows operating system; in RAID, the smallest storage unit is the **chunk**.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>In the physical disk, the smallest storage unit is the **sector**; in the file system, the smallest storage unit of GNU/Linux is the **block**, which is called **cluster** in the Windows operating system; in RAID, the smallest storage unit is the **chunk**.
+</code></pre></div>
 
 <h3 id="lvm-write-mechanism">LVM Write Mechanism<a class="headerlink" href="#lvm-write-mechanism" title="Permanent link">&para;</a></h3>
 <p>For storing data in <strong>LV</strong> there are several storage mechanisms, two of which are:</p>
@@ -1959,17 +1935,20 @@ sudo fdisk -l /dev/sdc2</code></pre>
 </table>
 <h4 id="pvcreate-command"><code>pvcreate</code> command<a class="headerlink" href="#pvcreate-command" title="Permanent link">&para;</a></h4>
 <p>The <code>pvcreate</code> command is used to create physical volumes. It transforms Linux partitions (or disks) into physical volumes.</p>
-<pre class="highlight"><code>pvcreate [-options] partition</code></pre>
+<div class="highlight"><pre><span></span><code>pvcreate [-options] partition
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>[root]# pvcreate /dev/hdb1
-pvcreate -- physical volume "/dev/hdb1" successfully created</code></pre>
+<div class="highlight"><pre><span></span><code>[root]# pvcreate /dev/hdb1
+pvcreate -- physical volume &quot;/dev/hdb1&quot; successfully created
+</code></pre></div>
 <p>It is also possible to use an entire disk (which makes it easier to increase disk size in virtual environments, for example).</p>
-<pre class="highlight"><code>[root]# pvcreate /dev/hdb
-pvcreate -- physical volume "/dev/hdb" successfully created
+<div class="highlight"><pre><span></span><code>[root]# pvcreate /dev/hdb
+pvcreate -- physical volume &quot;/dev/hdb&quot; successfully created
 
 # It can also be written in other ways, such as
 [root]# pvcreate /dev/sd{b,c,d}1
-[root]# pvcreate /dev/sd[b-d]1</code></pre>
+[root]# pvcreate /dev/sd[b-d]1
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1986,20 +1965,24 @@ pvcreate -- physical volume "/dev/hdb" successfully created
 </table>
 <h4 id="vgcreate-command"><code>vgcreate</code> command<a class="headerlink" href="#vgcreate-command" title="Permanent link">&para;</a></h4>
 <p>The <code>vgcreate</code> command is used to create volume groups. It groups one or more physical volumes into a volume group.</p>
-<pre class="highlight"><code>vgcreate &lt;VG_name&gt; &lt;PV_name...&gt; [option] </code></pre>
+<div class="highlight"><pre><span></span><code>vgcreate &lt;VG_name&gt; &lt;PV_name...&gt; [option] 
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>[root]# vgcreate volume1 /dev/hdb1
+<div class="highlight"><pre><span></span><code>[root]# vgcreate volume1 /dev/hdb1
 …
-vgcreate – volume group "volume1" successfully created and activated
+vgcreate – volume group &quot;volume1&quot; successfully created and activated
 
 [root]# vgcreate vg01 /dev/sd{b,c,d}1
-[root]# vgcreate vg02 /dev/sd[b-d]1</code></pre>
+[root]# vgcreate vg02 /dev/sd[b-d]1
+</code></pre></div>
 <h4 id="lvcreate-command"><code>lvcreate</code> command<a class="headerlink" href="#lvcreate-command" title="Permanent link">&para;</a></h4>
 <p>The <code>lvcreate</code> command creates logical volumes. The file system is then created on these logical volumes.</p>
-<pre class="highlight"><code>lvcreate -L size [-n name] VG_name</code></pre>
+<div class="highlight"><pre><span></span><code>lvcreate -L size [-n name] VG_name
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>[root]# lvcreate –L 600M –n VolLog1 volume1
-lvcreate -- logical volume "/dev/volume1/VolLog1" successfully created</code></pre>
+<div class="highlight"><pre><span></span><code>[root]# lvcreate –L 600M –n VolLog1 volume1
+lvcreate -- logical volume &quot;/dev/volume1/VolLog1&quot; successfully created
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2023,25 +2006,31 @@ lvcreate -- logical volume "/dev/volume1/VolLog1" successfully created</code></p
 </tbody>
 </table>
 <p>!!! info "Information"</p>
-<pre class="codehilite"><code>After creating a logical volume with the `lvcreate` command, the operating system naming rule is - `/dev/VG_name/LV_name`, this type of file is a soft link (otherwise known as a symbolic link). The link file points to files like `/dev/dm-0` and `/dev/dm-1`.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">After</span><span class="w"> </span><span class="n">creating</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">logical</span><span class="w"> </span><span class="n">volume</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`lvcreate`</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">operating</span><span class="w"> </span><span class="k">system</span><span class="w"> </span><span class="n">naming</span><span class="w"> </span><span class="n">rule</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n n-Quoted">`/dev/VG_name/LV_name`</span><span class="p">,</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">soft</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="p">(</span><span class="n">otherwise</span><span class="w"> </span><span class="n">known</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">symbolic</span><span class="w"> </span><span class="n">link</span><span class="p">).</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="n n-Quoted">`/dev/dm-0`</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n n-Quoted">`/dev/dm-1`</span><span class="p">.</span>
+</code></pre></div>
 
 <h3 id="lvm-commands-for-displaying-volume-information">LVM commands for displaying volume information<a class="headerlink" href="#lvm-commands-for-displaying-volume-information" title="Permanent link">&para;</a></h3>
 <h4 id="pvdisplay-command"><code>pvdisplay</code> command<a class="headerlink" href="#pvdisplay-command" title="Permanent link">&para;</a></h4>
 <p>The <code>pvdisplay</code> command allows you to view information about physical volumes.</p>
-<pre class="highlight"><code>pvdisplay /dev/PV_name</code></pre>
+<div class="highlight"><pre><span></span><code>pvdisplay /dev/PV_name
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>[root]# pvdisplay /dev/PV_name</code></pre>
+<div class="highlight"><pre><span></span><code>[root]# pvdisplay /dev/PV_name
+</code></pre></div>
 <h4 id="vgdisplay-command"><code>vgdisplay</code> command<a class="headerlink" href="#vgdisplay-command" title="Permanent link">&para;</a></h4>
 <p>The <code>vgdisplay</code> command allows you to view information about volume groups.</p>
-<pre class="highlight"><code>vgdisplay VG_name</code></pre>
+<div class="highlight"><pre><span></span><code>vgdisplay VG_name
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>[root]# vgdisplay volume1</code></pre>
+<div class="highlight"><pre><span></span><code>[root]# vgdisplay volume1
+</code></pre></div>
 <h4 id="lvdisplay-command"><code>lvdisplay</code> command<a class="headerlink" href="#lvdisplay-command" title="Permanent link">&para;</a></h4>
 <p>The <code>lvdisplay</code> command allows you to view information about logical volumes.</p>
-<pre class="highlight"><code>lvdisplay /dev/VG_name/LV_name</code></pre>
+<div class="highlight"><pre><span></span><code>lvdisplay /dev/VG_name/LV_name
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>[root]# lvdisplay /dev/volume1/VolLog1</code></pre>
+<div class="highlight"><pre><span></span><code>[root]# lvdisplay /dev/volume1/VolLog1
+</code></pre></div>
 <h3 id="preparing-physical-media">Preparing physical media<a class="headerlink" href="#preparing-physical-media" title="Permanent link">&para;</a></h3>
 <p>LVM preparation of physical media is as follows:</p>
 <ul>
@@ -2065,9 +2054,11 @@ lvcreate -- logical volume "/dev/volume1/VolLog1" successfully created</code></p
 <p>The Linux operating system is able to use various file systems (ext2, ext3, ext4, FAT16, FAT32, NTFS, HFS, BtrFS, JFS, XFS, ...).</p>
 <h3 id="mkfs-command"><code>mkfs</code> command<a class="headerlink" href="#mkfs-command" title="Permanent link">&para;</a></h3>
 <p>The <code>mkfs</code> command (make file system) allows you to create a Linux file system.</p>
-<pre class="highlight"><code>mkfs [-t fstype] filesys</code></pre>
+<div class="highlight"><pre><span></span><code>mkfs [-t fstype] filesys
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>[root]# mkfs -t ext4 /dev/sda1</code></pre>
+<div class="highlight"><pre><span></span><code>[root]# mkfs -t ext4 /dev/sda1
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2083,13 +2074,13 @@ lvcreate -- logical volume "/dev/volume1/VolLog1" successfully created</code></p
 </tbody>
 </table>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>Without a file system, it is impossible to use disk space.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Without a file system, it is impossible to use disk space.
+</code></pre></div>
 
 <p>Each file system has an identical structure on every partition. A <strong>Boot Sector</strong> and a <strong>Super block</strong> initialized by the system, then an <strong>Inode table</strong> and a <strong>Data block</strong> initialized by the administrator.</p>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>The only exception is the **swap** partition.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>The only exception is the **swap** partition.
+</code></pre></div>
 
 <h3 id="boot-sector">Boot sector<a class="headerlink" href="#boot-sector" title="Permanent link">&para;</a></h3>
 <p>The boot sector is the first sector of the bootable storage medium, that is cylinder 0, track 0, sector 1 (1 sector equals 512 bytes). It consists of three parts:</p>
@@ -2139,15 +2130,15 @@ lvcreate -- logical volume "/dev/volume1/VolLog1" successfully created</code></p
 <h3 id="inode-table">Inode table<a class="headerlink" href="#inode-table" title="Permanent link">&para;</a></h3>
 <p>The size of the <strong>inode table</strong> is defined at creation and is stored in the partition. It consists of records, called inodes, corresponding to the files created. Each record contains the addresses of the data blocks that make up the file.</p>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>The inode number is unique within a file system.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>The inode number is unique within a file system.
+</code></pre></div>
 
 <p>A copy is loaded into main memory as soon as the system is initialized. This copy is updated as soon as it is modified and the system saves it periodically (command <code>sync</code>).</p>
 <p>When the system shuts down, it also copies this table in memory to its block.</p>
 <p>A file is managed by its inode number.</p>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>The size of the inode table determines the maximum number of files the FS can contain.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>The size of the inode table determines the maximum number of files the FS can contain.
+</code></pre></div>
 
 <p>Information present in the <em>inode table</em>:</p>
 <ul>
@@ -2167,31 +2158,34 @@ lvcreate -- logical volume "/dev/volume1/VolLog1" successfully created</code></p
 <p><strong>To ensure file system consistency</strong>, an image of the superblock and inode table is loaded into memory (RAM) when the operating system loads, so that all I/O operations are performed through these system tables. When the user creates or modifies files, this memory image is updated first. The operating system must therefore regularly update the logical disk superblock (command <code>sync</code>).</p>
 <p>These tables are written to the hard disk when the system is shut down.</p>
 <p>!!! danger "Warning" </p>
-<pre class="codehilite"><code>In case of sudden shutdown, the file system may lose its consistency and cause data loss.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>In case of sudden shutdown, the file system may lose its consistency and cause data loss.
+</code></pre></div>
 
 <h3 id="file-system-repair">File System Repair<a class="headerlink" href="#file-system-repair" title="Permanent link">&para;</a></h3>
 <p>It is possible to verify the consistency of a file system with the <code>fsck</code> command.</p>
 <p>In case of errors, solutions are proposed to repair the inconsistencies. After repair, files that remain without entries in the inode table are attached to the <code>/lost+found</code> folder of the logical unit.</p>
 <h4 id="fsck-command"><code>fsck</code> command<a class="headerlink" href="#fsck-command" title="Permanent link">&para;</a></h4>
 <p>The <code>fsck</code> command is a console-mode integrity check and repair tool for Linux file systems.</p>
-<pre class="highlight"><code>fsck [-sACVRTNP] [ -t fstype ] filesys</code></pre>
+<div class="highlight"><pre><span></span><code>fsck [-sACVRTNP] [ -t fstype ] filesys
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>[root]# fsck /dev/sda1</code></pre>
+<div class="highlight"><pre><span></span><code>[root]# fsck /dev/sda1
+</code></pre></div>
 <p>To check the root partition, you can create a <code>forcefsck</code> file and reboot or run <code>shutdown</code> with the <code>-F</code> option.</p>
-<pre class="highlight"><code>[root]# touch /forcefsck
+<div class="highlight"><pre><span></span><code>[root]# touch /forcefsck
 [root]# reboot
 or
-[root]# shutdown –r -F now</code></pre>
+[root]# shutdown –r -F now
+</code></pre></div>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>The partition to be checked must be unmounted.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>The partition to be checked must be unmounted.
+</code></pre></div>
 
 <h2 id="file-system-organization">File System Organization<a class="headerlink" href="#file-system-organization" title="Permanent link">&para;</a></h2>
 <p>By definition, a file system is a tree directory structure built from a main directory (a logical device can contain only one file system).</p>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>In Linux everything is a file.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>In Linux everything is a file.
+</code></pre></div>
 
 <p>Text document, directory, binary, partition, network resource, screen, keyboard, Unix kernel, user program, ...</p>
 <p>Linux respects the <strong>FHS</strong> (Filesystems Hierarchy Standard) (see <code>man hier</code>) which defines folder names and their roles.</p>
@@ -2320,17 +2314,18 @@ or
 <h3 id="etcfstab-file"><code>/etc/fstab</code> file<a class="headerlink" href="#etcfstab-file" title="Permanent link">&para;</a></h3>
 <p>The <code>/etc/fstab</code> file is read at system startup and contains the mounts to be performed. Each file system to be mounted is described on a single line, with fields separated by spaces or tabs.</p>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>Lines are read in sequence (`fsck`, `mount`, `umount`).
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">Lines</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="k">read</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="p">(</span><span class="n n-Quoted">`fsck`</span><span class="p">,</span><span class="w"> </span><span class="n n-Quoted">`mount`</span><span class="p">,</span><span class="w"> </span><span class="n n-Quoted">`umount`</span><span class="p">).</span>
+</code></pre></div>
 
-<pre class="highlight"><code>/dev/mapper/VolGroup-lv_root   /         ext4    defaults        1   1
+<div class="highlight"><pre><span></span><code>/dev/mapper/VolGroup-lv_root   /         ext4    defaults        1   1
 UUID=46….92                    /boot     ext4    defaults        1   2
 /dev/mapper/VolGroup-lv_swap   swap      swap    defaults        0   0
 tmpfs                          /dev/shm  tmpfs   defaults        0   0
 devpts                         /dev/pts  devpts  gid=5,mode=620  0   0
 sysfs                          /sys      sysfs   defaults        0   0
 proc                           /proc     proc    defaults        0   0
-  1                              2         3        4            5   6</code></pre>
+  1                              2         3        4            5   6
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2367,31 +2362,33 @@ proc                           /proc     proc    defaults        0   0
 </table>
 <p>The <code>mount -a</code> command allows automatic mounting based on the contents of the <code>/etc/fstab</code> configuration file; mounted information is then written to <code>/etc/mtab</code>.</p>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>Only mount points listed in `/etc/fstab` will be mounted on reboot. In general, it is not recommended to write USB flash drives and removable hard disks to the `/etc/fstab` file, because when the external device is disconnected and restarted, the system will report that the device cannot be found, resulting in failure to boot. So what should I do? Temporary mounting, for example:
+<div class="codehilite"><pre><span></span><code><span class="nv">Only</span><span class="w"> </span><span class="nv">mount</span><span class="w"> </span><span class="nv">points</span><span class="w"> </span><span class="nv">listed</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span>`<span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">fstab</span>`<span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">mounted</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">reboot</span>.<span class="w"> </span><span class="nv">In</span><span class="w"> </span><span class="nv">general</span>,<span class="w"> </span><span class="nv">it</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">recommended</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">write</span><span class="w"> </span><span class="nv">USB</span><span class="w"> </span><span class="nv">flash</span><span class="w"> </span><span class="nv">drives</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">removable</span><span class="w"> </span><span class="nv">hard</span><span class="w"> </span><span class="nv">disks</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span>`<span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">fstab</span>`<span class="w"> </span><span class="nv">file</span>,<span class="w"> </span><span class="nv">because</span><span class="w"> </span><span class="nv">when</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">external</span><span class="w"> </span><span class="nv">device</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">disconnected</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">restarted</span>,<span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">system</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">report</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">device</span><span class="w"> </span><span class="nv">cannot</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">found</span>,<span class="w"> </span><span class="nv">resulting</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">failure</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">boot</span>.<span class="w"> </span><span class="nv">So</span><span class="w"> </span><span class="nv">what</span><span class="w"> </span><span class="nv">should</span><span class="w"> </span><span class="nv">I</span><span class="w"> </span><span class="k">do</span>?<span class="w"> </span><span class="nv">Temporary</span><span class="w"> </span><span class="nv">mounting</span>,<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">example</span>:
 
-```bash
-Shell &gt; mkdir /mnt/usb     
-Shell &gt; mount -t  vfat  /dev/sdb1  /mnt/usb  
+```<span class="nv">bash</span>
+<span class="nv">Shell</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">mkdir</span><span class="w"> </span><span class="o">/</span><span class="nv">mnt</span><span class="o">/</span><span class="nv">usb</span><span class="w">     </span>
+<span class="nv">Shell</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">mount</span><span class="w"> </span><span class="o">-</span><span class="nv">t</span><span class="w">  </span><span class="nv">vfat</span><span class="w">  </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sdb1</span><span class="w">  </span><span class="o">/</span><span class="nv">mnt</span><span class="o">/</span><span class="nv">usb</span><span class="w">  </span>
 
-# Read the information of the USB flash disk
-Shell &gt; cd /mnt/usb/
+#<span class="w"> </span><span class="nv">Read</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">information</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">USB</span><span class="w"> </span><span class="nv">flash</span><span class="w"> </span><span class="nv">disk</span>
+<span class="nv">Shell</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">cd</span><span class="w"> </span><span class="o">/</span><span class="nv">mnt</span><span class="o">/</span><span class="nv">usb</span><span class="o">/</span>
 
-# When not needed, execute the following command to pull out the USB flash disk
-Shell &gt; umount /mnt/usb
+#<span class="w"> </span><span class="nv">When</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">needed</span>,<span class="w"> </span><span class="nv">execute</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">following</span><span class="w"> </span><span class="nv">command</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">pull</span><span class="w"> </span><span class="nv">out</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">USB</span><span class="w"> </span><span class="nv">flash</span><span class="w"> </span><span class="nv">disk</span>
+<span class="nv">Shell</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">umount</span><span class="w"> </span><span class="o">/</span><span class="nv">mnt</span><span class="o">/</span><span class="nv">usb</span>
 ```
-</code></pre>
+</code></pre></div>
 
 <p>!!! info "Information"</p>
-<pre class="codehilite"><code>You can make a copy of the `/etc/mtab` file or copy its contents to `/etc/fstab`.
-If you want to view the UUID of the device partition, type the following command: `lsblk -o name,uuid`. UUID stands for `Universally Unique Identifier`.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">You</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">make</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">copy</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="err">`</span><span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">mtab</span><span class="err">`</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">copy</span><span class="w"> </span><span class="nx">its</span><span class="w"> </span><span class="nx">contents</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="err">`</span><span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">fstab</span><span class="err">`</span><span class="p">.</span>
+<span class="nx">If</span><span class="w"> </span><span class="nx">you</span><span class="w"> </span><span class="nx">want</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">view</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">UUID</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">device</span><span class="w"> </span><span class="nx">partition</span><span class="p">,</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">following</span><span class="w"> </span><span class="nx">command</span><span class="p">:</span><span class="w"> </span><span class="err">`</span><span class="nx">lsblk</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="nx">uuid</span><span class="err">`</span><span class="p">.</span><span class="w"> </span><span class="nx">UUID</span><span class="w"> </span><span class="nx">stands</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="err">`</span><span class="nx">Universally</span><span class="w"> </span><span class="nx">Unique</span><span class="w"> </span><span class="nx">Identifier</span><span class="err">`</span><span class="p">.</span>
+</code></pre></div>
 
 <h3 id="mount-management-commands">Mount management commands<a class="headerlink" href="#mount-management-commands" title="Permanent link">&para;</a></h3>
 <h4 id="mount-command"><code>mount</code> command<a class="headerlink" href="#mount-command" title="Permanent link">&para;</a></h4>
 <p>The <code>mount</code> command allows mounting and displaying logical units in the structure.</p>
-<pre class="highlight"><code>mount [-option] [device] [directory]</code></pre>
+<div class="highlight"><pre><span></span><code>mount [-option] [device] [directory]
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>[root]# mount /dev/sda7 /home</code></pre>
+<div class="highlight"><pre><span></span><code>[root]# mount /dev/sda7 /home
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2427,15 +2424,17 @@ If you want to view the UUID of the device partition, type the following command
 </tbody>
 </table>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>The `mount` command alone displays all mounted file systems.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n n-Quoted">`mount`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">alone</span><span class="w"> </span><span class="n">displays</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">mounted</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="n">systems</span><span class="p">.</span>
+</code></pre></div>
 
 <h4 id="umount-command"><code>umount</code> command<a class="headerlink" href="#umount-command" title="Permanent link">&para;</a></h4>
 <p>The <code>umount</code> command is used to unmount logical units.</p>
-<pre class="highlight"><code>umount [-option] [device] [directory]</code></pre>
+<div class="highlight"><pre><span></span><code>umount [-option] [device] [directory]
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>[root]# umount /home
-[root]# umount /dev/sda7</code></pre>
+<div class="highlight"><pre><span></span><code>[root]# umount /home
+[root]# umount /dev/sda7
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2463,8 +2462,8 @@ If you want to view the UUID of the device partition, type the following command
 </tbody>
 </table>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>When unmounting, you must not remain below the mount point. Otherwise, the following error message is displayed: `device is busy`.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>When unmounting, you must not remain below the mount point. Otherwise, the following error message is displayed: `device is busy`.
+</code></pre></div>
 
 <h2 id="file-naming-convention">File naming convention<a class="headerlink" href="#file-naming-convention" title="Permanent link">&para;</a></h2>
 <p>As in any system, to be able to navigate the tree structure and file management, it is important to follow file naming rules.</p>
@@ -2475,14 +2474,15 @@ If you want to view the UUID of the device partition, type the following command
 <li>Most files do not have the concept of extension. In the GNU/Linux world, most file extensions are not required, except some (e.g., .jpg, .mp4, .gif, etc.).</li>
 </ul>
 <p>Word groups separated by spaces must be enclosed in quotes:</p>
-<pre class="highlight"><code>[root]# mkdir "working dir"</code></pre>
+<div class="highlight"><pre><span></span><code>[root]# mkdir &quot;working dir&quot;
+</code></pre></div>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>Although there is nothing technically wrong with creating a file or directory with a space in it, it is generally a &quot;best practice&quot; to avoid and replace every space with an underscore.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Although there is nothing technically wrong with creating a file or directory with a space in it, it is generally a &quot;best practice&quot; to avoid and replace every space with an underscore.
+</code></pre></div>
 
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>The **.** at the beginning of the file name only serves to hide it from a simple `ls`.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="o">**</span><span class="p">.</span><span class="o">**</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">beginning</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">name</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="n">serves</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">hide</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">simple</span><span class="w"> </span><span class="n n-Quoted">`ls`</span><span class="p">.</span>
+</code></pre></div>
 
 <p>Examples of file extension convention:</p>
 <ul>
@@ -2496,9 +2496,10 @@ If you want to view the UUID of the device partition, type the following command
 <li><code>.html</code>: web page</li>
 </ul>
 <h3 id="file-name-details">File name details<a class="headerlink" href="#file-name-details" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code>[root]# ls -liah /usr/bin/passwd
+<div class="highlight"><pre><span></span><code>[root]# ls -liah /usr/bin/passwd
 266037 -rwsr-xr-x 1 root 59K mars 22 2019 /usr/bin/passwd
-1 2 3 4 5 6 7 8 9</code></pre>
+1 2 3 4 5 6 7 8 9
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2586,7 +2587,7 @@ If you want to view the UUID of the device partition, type the following command
 </table>
 <h4 id="additional-directory-description">Additional directory description<a class="headerlink" href="#additional-directory-description" title="Permanent link">&para;</a></h4>
 <p>In every directory there are two hidden files: <strong>.</strong> and <strong>.</strong>. You need to use <code>ls -al</code> to view them, for example:</p>
-<pre class="highlight"><code># . Indicates in the current directory, for example, it is necessary to run a script in a directory, usually:
+<div class="highlight"><pre><span></span><code># . Indicates in the current directory, for example, it is necessary to run a script in a directory, usually:
 Shell &gt; ./scripts
 
 # .. represents the directory one level above the current directory, for example:
@@ -2595,10 +2596,11 @@ Shell &gt; cd ..
 Shell &gt; pwd
 /
 
-# For an empty directory, its fourth part must be greater than or equal to 2. Because there are "." and ".."
+# For an empty directory, its fourth part must be greater than or equal to 2. Because there are &quot;.&quot; and &quot;..&quot;
 Shell &gt; mkdir /tmp/t1
 Shell &gt; ls -ldi /tmp/t1
-1179657 drwxr-xr-x 2 root root 4096 Nov 14 18:41 /tmp/t1</code></pre>
+1179657 drwxr-xr-x 2 root root 4096 Nov 14 18:41 /tmp/t1
+</code></pre></div>
 <h4 id="special-files">Special files<a class="headerlink" href="#special-files" title="Permanent link">&para;</a></h4>
 <p>To communicate with peripherals (hard disks, printers...), Linux uses interface files called special files (device file or special file). They allow identification by peripherals.</p>
 <p>These files are special because they don't contain data, but specify the access mode to communicate with the device.</p>
@@ -2607,13 +2609,14 @@ Shell &gt; ls -ldi /tmp/t1
 <li><strong>block</strong> mode</li>
 <li><strong>character</strong> mode</li>
 </ul>
-<pre class="highlight"><code># Block device file
+<div class="highlight"><pre><span></span><code># Block device file
 Shell &gt; ls -l /dev/sda
 brw-------   1   root  root  8, 0 jan 1 1970 /dev/sda
 
 # Character device file
 Shell &gt; ls -l /dev/tty0
-crw-------   1   root  root  8, 0 jan 1 1970 /dev/tty0</code></pre>
+crw-------   1   root  root  8, 0 jan 1 1970 /dev/tty0
+</code></pre></div>
 <h4 id="communication-files">Communication files<a class="headerlink" href="#communication-files" title="Permanent link">&para;</a></h4>
 <p>These are pipe files and sockets.</p>
 <ul>
@@ -2651,15 +2654,16 @@ crw-------   1   root  root  8, 0 jan 1 1970 /dev/tty0</code></pre>
 </tbody>
 </table>
 <p>Specific examples are as follows:</p>
-<pre class="highlight"><code># Permissions and the original file to which they point
+<div class="highlight"><pre><span></span><code># Permissions and the original file to which they point
 Shell &gt; ls -l /etc/rc.locol
 lrwxrwxrwx 1 root root 13 Oct 25 15:41 /etc/rc.local -&gt; rc.d/rc.local
 
-# When deleting the original file. "-s" represents the soft link option
+# When deleting the original file. &quot;-s&quot; represents the soft link option
 Shell &gt; touch /root/Afile
 Shell &gt; ln -s /root/Afile /root/slink1
-Shell &gt; rm -rf /root/Afile</code></pre>
-<pre class="highlight"><code>Shell &gt; cd /home/paul/
+Shell &gt; rm -rf /root/Afile
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Shell &gt; cd /home/paul/
 Shell &gt; ls –li letter
 666 –rwxr--r-- 1 root root … letter
 
@@ -2673,7 +2677,8 @@ Shell &gt; ls –li /home/*/*
 
 # If you use a hard link to a directory, you will be prompted:
 Shell &gt; ln  /etc/  /root/etc_hardlink
-ln: /etc: hard link not allowed for directory</code></pre>
+ln: /etc: hard link not allowed for directory
+</code></pre></div>
 <h2 id="file-attributes">File Attributes<a class="headerlink" href="#file-attributes" title="Permanent link">&para;</a></h2>
 <p>Linux is a multi-user operating system where file access control is essential.</p>
 <p>These controls are functions of:</p>
@@ -2737,8 +2742,8 @@ ln: /etc: hard link not allowed for directory</code></pre>
 </tbody>
 </table>
 <p>!!! info "Information"</p>
-<pre class="codehilite"><code>For directory permissions, `r` and `x` usually appear together. Moving or renaming a file depends on whether the directory containing the file has `w` permission, as does deleting a file.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">For</span><span class="w"> </span><span class="k">directory</span><span class="w"> </span><span class="n">permissions</span><span class="p">,</span><span class="w"> </span><span class="n n-Quoted">`r`</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n n-Quoted">`x`</span><span class="w"> </span><span class="n">usually</span><span class="w"> </span><span class="n">appear</span><span class="w"> </span><span class="n">together</span><span class="p">.</span><span class="w"> </span><span class="n">Moving</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">renaming</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="n">depends</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">whether</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">directory</span><span class="w"> </span><span class="n">containing</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n n-Quoted">`w`</span><span class="w"> </span><span class="n">permission</span><span class="p">,</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">deleting</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">file</span><span class="p">.</span>
+</code></pre></div>
 
 <h3 id="user-type-corresponding-to-basic-authorization">User type corresponding to basic authorization<a class="headerlink" href="#user-type-corresponding-to-basic-authorization" title="Permanent link">&para;</a></h3>
 <table>
@@ -2764,14 +2769,15 @@ ln: /etc: hard link not allowed for directory</code></pre>
 </tbody>
 </table>
 <p>!!! info "Information"</p>
-<pre class="codehilite"><code>In some commands you can designate all with **a** (all). **a = ugo**.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>In some commands you can designate all with **a** (all). **a = ugo**.
+</code></pre></div>
 
 <h3 id="attribute-management">Attribute management<a class="headerlink" href="#attribute-management" title="Permanent link">&para;</a></h3>
 <p>Displaying rights is done with the <code>ls -l</code> command. These are the last 9 characters of a 10-character block. More precisely 3 times 3 characters.</p>
-<pre class="highlight"><code>[root]# ls -l /tmp/myfile
+<div class="highlight"><pre><span></span><code>[root]# ls -l /tmp/myfile
 -rwxrw-r--  1  root  sys  ... /tmp/myfile
-  1  2 3       4     5</code></pre>
+  1  2 3       4     5
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2807,7 +2813,8 @@ ln: /etc: hard link not allowed for directory</code></pre>
 <p>Only the administrator and the owner of a file can modify its rights.</p>
 <h4 id="chmod-command"><code>chmod</code> command<a class="headerlink" href="#chmod-command" title="Permanent link">&para;</a></h4>
 <p>The <code>chmod</code> command allows you to modify access permissions to a file.</p>
-<pre class="highlight"><code>chmod [option] mode file</code></pre>
+<div class="highlight"><pre><span></span><code>chmod [option] mode file
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2823,8 +2830,8 @@ ln: /etc: hard link not allowed for directory</code></pre>
 </tbody>
 </table>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>File and directory rights are not dissociated. For some operations, you will need to know the rights of the directory containing the file. A write-protected file can be deleted by another user, provided the rights of the directory containing it allow this user to perform this operation.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nv">File</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">directory</span><span class="w"> </span><span class="nv">rights</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">dissociated</span>.<span class="w"> </span><span class="k">For</span><span class="w"> </span><span class="nv">some</span><span class="w"> </span><span class="nv">operations</span>,<span class="w"> </span><span class="nv">you</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">need</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">know</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">rights</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">directory</span><span class="w"> </span><span class="nv">containing</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">file</span>.<span class="w"> </span><span class="nv">A</span><span class="w"> </span><span class="nv">write</span><span class="o">-</span><span class="nv">protected</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">can</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">deleted</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">another</span><span class="w"> </span><span class="nv">user</span>,<span class="w"> </span><span class="nv">provided</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">rights</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">directory</span><span class="w"> </span><span class="nv">containing</span><span class="w"> </span><span class="nv">it</span><span class="w"> </span><span class="nv">allow</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">perform</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">operation</span>.
+</code></pre></div>
 
 <p>The mode indication can be an octal representation (e.g., <code>744</code>) or a symbolic representation ([<code>ugoa</code>][<code>+=-</code>][<code>rwxst</code>]).</p>
 <h5 id="octal-or-numeric-representation">Octal (or numeric) representation:<a class="headerlink" href="#octal-or-numeric-representation" title="Permanent link">&para;</a></h5>
@@ -2856,10 +2863,10 @@ ln: /etc: hard link not allowed for directory</code></pre>
 </table>
 <p>Add the three numbers to obtain a user-type permission. For example <strong>755=rwxr-xr-x</strong>.</p>
 <p>!!! info "Information"</p>
-<pre class="codehilite"><code>Sometimes you will see `chmod 4755`. The number 4 refers to the special **set uid** permission. Special permissions will not be expanded here for now, but only as basic notions.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Sometimes you will see <span class="sb">`chmod 4755`</span>. The number 4 refers to the special **set uid** permission. Special permissions will not be expanded here for now, but only as basic notions.
+</code></pre></div>
 
-<pre class="highlight"><code>[root]# ls -l /tmp/fil*
+<div class="highlight"><pre><span></span><code>[root]# ls -l /tmp/fil*
 -rwxrwx--- 1 root root … /tmp/file1
 -rwx--x--- 1 root root … /tmp/file2
 -rwx--xr-- 1 root root … /tmp/file3
@@ -2868,12 +2875,14 @@ ln: /etc: hard link not allowed for directory</code></pre>
 [root]# chmod -R 744 /tmp/file2
 [root]# ls -l /tmp/fic*
 -rwxr----x 1 root root … /tmp/file1
--rwxr--r-- 1 root root … /tmp/file2</code></pre>
+-rwxr--r-- 1 root root … /tmp/file2
+</code></pre></div>
 <h5 id="symbolic-representation">Symbolic representation<a class="headerlink" href="#symbolic-representation" title="Permanent link">&para;</a></h5>
 <p>This method can be considered as a "literal" association between a user type, an operator, and rights.</p>
-<pre class="highlight"><code>[root]# chmod -R u+rwx,g+wx,o-r /tmp/file1
+<div class="highlight"><pre><span></span><code>[root]# chmod -R u+rwx,g+wx,o-r /tmp/file1
 [root]# chmod g=x,o-r /tmp/file2
-[root]# chmod -R o=r /tmp/file3</code></pre>
+[root]# chmod -R o=r /tmp/file3
+</code></pre></div>
 <h2 id="default-rights-and-mask">Default rights and mask<a class="headerlink" href="#default-rights-and-mask" title="Permanent link">&para;</a></h2>
 <p>When a file or directory is created, it already has permissions.</p>
 <ul>
@@ -2883,21 +2892,22 @@ ln: /etc: hard link not allowed for directory</code></pre>
 <p>This behavior is defined by the <strong>default mask</strong>.</p>
 <p>The principle is to remove the value defined by the mask from the maximum rights without execution permission.</p>
 <p>!!! info "Information"</p>
-<pre class="codehilite"><code>The `/etc/login.defs` file defines the default UMASK, with a value of **022**. This means the permission to create a file is 755 (rwxr-xr-x). However, for security reasons, GNU/Linux does not include **x** permission for newly created files; this restriction applies to root (uid=0) and ordinary users (uid&gt;=1000).
+<div class="codehilite"><pre><span></span><code>The <span class="sb">`/etc/login.defs`</span> file defines the default UMASK, with a value of **022**. This means the permission to create a file is 755 (rwxr-xr-x). However, for security reasons, GNU/Linux does not include **x** permission for newly created files; this restriction applies to root (uid=0) and ordinary users (uid&gt;=1000).
 
 ```bash
-# root user
+<span class="gh">#</span> root user
 Shell &gt; touch a.txt
 Shell &gt; ll
 -rw-r--r-- 1 root root     0 Oct  8 13:00 a.txt
 ```
-</code></pre>
+</code></pre></div>
 
 <h3 id="umask-command"><code>umask</code> command<a class="headerlink" href="#umask-command" title="Permanent link">&para;</a></h3>
 <p>The <code>umask</code> command allows you to view and modify the mask.</p>
-<pre class="highlight"><code>umask [option] [mode]</code></pre>
+<div class="highlight"><pre><span></span><code>umask [option] [mode]
+</code></pre></div>
 <p>Example:
-<pre class="highlight"><code>$ umask 033
+<div class="highlight"><pre><span></span><code>$ umask 033
 $ umask
 0033
 $ umask -S
@@ -2910,7 +2920,8 @@ $ umask -S
 u=rwx,g=rx,o=w
 $ touch umask_025
 $ ls -la  umask_025
--rw-r---w- 1 architalia architalia 0 nov.   4 16:44 umask_025</code></pre></p>
+-rw-r---w- 1 architalia architalia 0 nov.   4 16:44 umask_025
+</code></pre></div></p>
 <table>
 <thead>
 <tr>
@@ -2926,16 +2937,16 @@ $ ls -la  umask_025
 </tbody>
 </table>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>`umask` does not affect existing files. `umask -S` displays file rights (without execution permission) of files that will be created. So it is not the display of the mask used to subtract the maximum value.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n n-Quoted">`umask`</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">affect</span><span class="w"> </span><span class="n">existing</span><span class="w"> </span><span class="n">files</span><span class="p">.</span><span class="w"> </span><span class="n n-Quoted">`umask -S`</span><span class="w"> </span><span class="n">displays</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="n">rights</span><span class="w"> </span><span class="p">(</span><span class="k">without</span><span class="w"> </span><span class="n">execution</span><span class="w"> </span><span class="n">permission</span><span class="p">)</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">created</span><span class="p">.</span><span class="w"> </span><span class="n">So</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">display</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">subtract</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="k">value</span><span class="p">.</span>
+</code></pre></div>
 
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>`umask` modifies the mask until logout.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n n-Quoted">`umask`</span><span class="w"> </span><span class="k">modifies</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="k">until</span><span class="w"> </span><span class="n">logout</span><span class="p">.</span>
+</code></pre></div>
 
 <p>!!! info "Information"</p>
-<pre class="codehilite"><code>The `umask` command belongs to bash built-in commands, so when using `man umask`, all built-in commands are displayed. If you only want to view the `umask` help, you need to use the command `help umask`.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n n-Quoted">`umask`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">belongs</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">bash</span><span class="w"> </span><span class="n">built</span><span class="o">-</span><span class="k">in</span><span class="w"> </span><span class="n">commands</span><span class="p">,</span><span class="w"> </span><span class="n">so</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n n-Quoted">`man umask`</span><span class="p">,</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">built</span><span class="o">-</span><span class="k">in</span><span class="w"> </span><span class="n">commands</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">displayed</span><span class="p">.</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`umask`</span><span class="w"> </span><span class="k">help</span><span class="p">,</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n n-Quoted">`help umask`</span><span class="p">.</span>
+</code></pre></div>
 
 <p>To keep the value, you need to modify the following profile files:</p>
 <p>For all users:</p>

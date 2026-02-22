@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://archlatam.github.io/Altre-Guide/comandi-linux/">
       
       
-        <link rel="prev" href="../../en/Archlinux-Guide/guida-pt/">
+        <link rel="prev" href="../../en/Archlinux-Guide/guida-es/">
       
       
         <link rel="next" href="../Pacman/">
@@ -544,34 +544,6 @@
     
   
     - Instalación de Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
   
 
     
@@ -2425,16 +2397,20 @@
 </ul>
 <p>The key sequence <kbd>CTRL</kbd> + <kbd>C</kbd> is used to interrupt a running command.</p>
 <p>The use of a command generally follows this sequence:</p>
-<pre class="highlight"><code class="language-bash">command [option(s)] [argument(s)]</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">command</span><span class="w"> </span><span class="o">[</span>option<span class="o">(</span>s<span class="o">)]</span><span class="w"> </span><span class="o">[</span>argument<span class="o">(</span>s<span class="o">)]</span>
+</code></pre></div>
 <p>The command name is often in <strong>lowercase</strong>.</p>
 <p>One space separates each object.</p>
 <p><strong>Short options</strong> start with a dash (<code>-l</code>), while <strong>long options</strong> start with two dashes (<code>--list</code>). A double dash (<code>--</code>) indicates the end of the options list.</p>
 <p>It is possible to group some short options together:</p>
-<pre class="highlight"><code class="language-bash">$ ls -l -i -a</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>-i<span class="w"> </span>-a
+</code></pre></div>
 <p>is equivalent to:</p>
-<pre class="highlight"><code class="language-bash">$ ls -lia</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia
+</code></pre></div>
 <p>After an option, there can be multiple arguments:</p>
-<pre class="highlight"><code class="language-bash">$ ls -lia /etc /home /var</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia<span class="w"> </span>/etc<span class="w"> </span>/home<span class="w"> </span>/var
+</code></pre></div>
 <p>In literature, the term "option" is equivalent to the term "parameter," which is more commonly used in programming. The optional nature of an option or argument is symbolized by the inclusion in square brackets <code>[</code> and <code>]</code>. When more than one option is possible, a vertical bar called "pipe" separates them <code>[a|e|i]</code>.</p>
 <h2 id="general-commands">General Commands<a class="headerlink" href="#general-commands" title="Permanent link">&para;</a></h2>
 <h3 id="apropos-whatis-and-man-commands"><code>apropos</code>, <code>whatis</code> and <code>man</code> commands<a class="headerlink" href="#apropos-whatis-and-man-commands" title="Permanent link">&para;</a></h3>
@@ -2460,20 +2436,24 @@
 </tbody>
 </table>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ apropos clear
-clear (1)            - clear the terminal screen
-clear_console (1)    - clear the console
-clearenv (3)         - clear the environment</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>apropos<span class="w"> </span>clear
+clear<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">            </span>-<span class="w"> </span>clear<span class="w"> </span>the<span class="w"> </span>terminal<span class="w"> </span>screen
+clear_console<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">    </span>-<span class="w"> </span>clear<span class="w"> </span>the<span class="w"> </span>console
+clearenv<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w">         </span>-<span class="w"> </span>clear<span class="w"> </span>the<span class="w"> </span>environment
+</code></pre></div>
 <p>To find the command that will allow you to change an account's password:</p>
-<pre class="highlight"><code class="language-bash">$ apropos --exact password -a change
-chage (1)            - change user password expiry information
-passwd (1)           - change user password</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>apropos<span class="w"> </span>--exact<span class="w"> </span>password<span class="w"> </span>-a<span class="w"> </span>change
+chage<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">            </span>-<span class="w"> </span>change<span class="w"> </span>user<span class="w"> </span>password<span class="w"> </span>expiry<span class="w"> </span>information
+passwd<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">           </span>-<span class="w"> </span>change<span class="w"> </span>user<span class="w"> </span>password
+</code></pre></div>
 <h4 id="whatis-command"><code>whatis</code> command<a class="headerlink" href="#whatis-command" title="Permanent link">&para;</a></h4>
 <p>The <code>whatis</code> command displays the description of the command passed as an argument:</p>
-<pre class="highlight"><code class="language-bash">whatis clear</code></pre>
+<div class="highlight"><pre><span></span><code>whatis<span class="w"> </span>clear
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ whatis clear
-clear (1)            - clear the terminal screen</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>whatis<span class="w"> </span>clear
+clear<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">            </span>-<span class="w"> </span>clear<span class="w"> </span>the<span class="w"> </span>terminal<span class="w"> </span>screen
+</code></pre></div>
 <h4 id="man-command"><code>man</code> command<a class="headerlink" href="#man-command" title="Permanent link">&para;</a></h4>
 <p>Once found with <code>apropos</code> or <code>whatis</code>, the manual is read by <code>man</code> ("Man is your friend"). This manual set is divided into 8 sections, grouping information by topic, the default section is 1:</p>
 <ol>
@@ -2489,19 +2469,23 @@ clear (1)            - clear the terminal screen</code></pre>
 </ol>
 <p>It is possible to access information on each section by typing <code>man x intro</code>, where <code>x</code> is the section number.</p>
 <p>The command:</p>
-<pre class="highlight"><code class="language-bash">man passwd</code></pre>
+<div class="highlight"><pre><span></span><code>man<span class="w"> </span>passwd
+</code></pre></div>
 <p>will tell the administrator the options, etc. of the passwd command. While:</p>
-<pre class="highlight"><code class="language-bash">$ man 5 passwd</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>man<span class="w"> </span><span class="m">5</span><span class="w"> </span>passwd
+</code></pre></div>
 <p>will inform you about files related to the command.</p>
 <p>Navigate the manual with the <kbd>↑</kbd> and <kbd>↓</kbd> arrows. Exit the manual by pressing <kbd>q</kbd>.</p>
 <h3 id="shutdown-command"><code>shutdown</code> command<a class="headerlink" href="#shutdown-command" title="Permanent link">&para;</a></h3>
 <p>The <code>shutdown</code> command allows you to <strong>electronically power off</strong> a Linux server, immediately or after a certain period of time.</p>
-<pre class="highlight"><code class="language-bash">shutdown [-h] [-r] time [message]</code></pre>
+<div class="highlight"><pre><span></span><code>shutdown<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-r<span class="o">]</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">[</span>message<span class="o">]</span>
+</code></pre></div>
 <p>Specify the shutdown time in the format <code>hh:mm</code> for a specific time, or <code>+mm</code> for a delay in minutes.</p>
 <p>To force an immediate shutdown, use the word <code>now</code> instead of time. In this case, the optional message is not sent to other users of the system.</p>
 <p>Examples:</p>
-<pre class="highlight"><code class="language-bash">[root]# shutdown -h 0:30 "Server shutdown at 0:30"
-[root]# shutdown -r +5</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root<span class="o">]</span><span class="c1"># shutdown -h 0:30 &quot;Server shutdown at 0:30&quot;</span>
+<span class="o">[</span>root<span class="o">]</span><span class="c1"># shutdown -r +5</span>
+</code></pre></div>
 <p>Options:</p>
 <table>
 <thead>
@@ -2525,9 +2509,10 @@ clear (1)            - clear the terminal screen</code></pre>
 <p>The <code>history</code> command displays the history of commands entered by the user.</p>
 <p>Commands are stored in the <code>.bash_history</code> file in the user's login directory.</p>
 <p>Example of a history command:</p>
-<pre class="highlight"><code class="language-bash">$ history
-147 man ls
-148 man history</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">history</span>
+<span class="m">147</span><span class="w"> </span>man<span class="w"> </span>ls
+<span class="m">148</span><span class="w"> </span>man<span class="w"> </span><span class="nb">history</span>
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2593,19 +2578,20 @@ clear (1)            - clear the terminal screen</code></pre>
 <p>The <code>clear</code> command clears the content of the terminal screen. More precisely, it moves the display so that the command prompt is at the top of the screen, on the first line.</p>
 <p>On a physical terminal, the display will be permanently hidden, while in a graphical interface, a scroll bar will allow you to go back in the virtual terminal history.</p>
 <p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>&lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;L&lt;/kbd&gt; will have the same effect as the `clear` command
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">kbd</span><span class="o">&gt;</span><span class="n">CTRL</span><span class="o">&lt;/</span><span class="n">kbd</span><span class="o">&gt;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">&lt;</span><span class="n">kbd</span><span class="o">&gt;</span><span class="n">L</span><span class="o">&lt;/</span><span class="n">kbd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">effect</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`clear`</span><span class="w"> </span><span class="n">command</span>
+</code></pre></div>
 
 <h3 id="echo-command"><code>echo</code> command<a class="headerlink" href="#echo-command" title="Permanent link">&para;</a></h3>
 <p>The <code>echo</code> command is used to display a string of characters.</p>
 <p>This command is most commonly used in administrative scripts to inform the user during execution.</p>
 <p>The <code>-n</code> option indicates no newline output string (by default, output string newline).</p>
-<pre class="highlight"><code class="language-bash">shell &gt; echo -n "123";echo "456"
-123456
+<div class="highlight"><pre><span></span><code>shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;123&quot;</span><span class="p">;</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;456&quot;</span>
+<span class="m">123456</span>
 
-shell &gt; echo "123";echo "456"
-123
-456</code></pre>
+shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;123&quot;</span><span class="p">;</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;456&quot;</span>
+<span class="m">123</span>
+<span class="m">456</span>
+</code></pre></div>
 <p>For various reasons, the script developer may need to use special sequences (starting with a <code>\</code> character). In this case, the <code>-e</code> option will be used, which will allow interpretation of the sequence.</p>
 <p>Among frequently used sequences, we can mention:</p>
 <table>
@@ -2640,16 +2626,18 @@ shell &gt; echo "123";echo "456"
 </table>
 <h3 id="date-command"><code>date</code> command<a class="headerlink" href="#date-command" title="Permanent link">&para;</a></h3>
 <p>The <code>date</code> command displays the date and time. The command has the following syntax:</p>
-<pre class="highlight"><code class="language-bash">date [-d yyyyMMdd] [format]</code></pre>
+<div class="highlight"><pre><span></span><code>date<span class="w"> </span><span class="o">[</span>-d<span class="w"> </span>yyyyMMdd<span class="o">]</span><span class="w"> </span><span class="o">[</span>format<span class="o">]</span>
+</code></pre></div>
 <p>Examples:</p>
-<pre class="highlight"><code class="language-bash">$ date
-Mon May 24 16:46:53 CEST 2021
-$ date -d 20210517 +%j
-137</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date
+Mon<span class="w"> </span>May<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">16</span>:46:53<span class="w"> </span>CEST<span class="w"> </span><span class="m">2021</span>
+$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span><span class="m">20210517</span><span class="w"> </span>+%j
+<span class="m">137</span>
+</code></pre></div>
 <p>In this last example, the <code>-d</code> option displays a specific date. The <code>+%j</code> option formats this date to show only the day of the year.</p>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>The format of a date may change based on the value of the language defined in the '$LANG' environment variable.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">date</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">change</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">language</span><span class="w"> </span><span class="n">defined</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="s1">&#39;$LANG&#39;</span><span class="w"> </span><span class="n">environment</span><span class="w"> </span><span class="n">variable</span><span class="o">.</span>
+</code></pre></div>
 
 <p>The date display can follow the following formats:</p>
 <table>
@@ -2731,19 +2719,23 @@ $ date -d 20210517 +%j
 </tbody>
 </table>
 <p>The <code>date</code> command also allows you to modify the system date and time. In this case, the <code>-s</code> option will be used.</p>
-<pre class="highlight"><code class="language-bash">[root]# date -s "2021-05-24 10:19"</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root<span class="o">]</span><span class="c1"># date -s &quot;2021-05-24 10:19&quot;</span>
+</code></pre></div>
 <p>The format to use with the <code>-s</code> option is as follows:</p>
-<pre class="highlight"><code class="language-bash">date -s "yyyy-MM-dd hh:mm[:ss]"</code></pre>
+<div class="highlight"><pre><span></span><code>date<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;yyyy-MM-dd hh:mm[:ss]&quot;</span>
+</code></pre></div>
 <h3 id="id-who-and-whoami-commands"><code>id</code>, <code>who</code> and <code>whoami</code> commands<a class="headerlink" href="#id-who-and-whoami-commands" title="Permanent link">&para;</a></h3>
 <p>The <code>id</code> command is used to display information about users and groups. By default, no user parameter is added and the information of the currently logged in user and group is displayed.</p>
-<pre class="highlight"><code class="language-bash">$ id architalia
-uid=1000(architalia) gid=1000(architalia) groups=1000(architalia),10(wheel)</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>id<span class="w"> </span>architalia
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>architalia<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>architalia<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>architalia<span class="o">)</span>,10<span class="o">(</span>wheel<span class="o">)</span>
+</code></pre></div>
 <p>The <code>-g</code>, <code>-G</code>, <code>-n</code> and <code>-u</code> options display the main group GID, subgroup GIDs, names instead of numeric identifiers, and the user's UID.</p>
 <p>The <code>whoami</code> command displays the login of the current user.</p>
 <p>The <code>who</code> command alone displays the names of connected users:</p>
-<pre class="highlight"><code class="language-bash">$ who
-architalia tty1   2021-05-24 10:30
-root     pts/0  2021-05-24 10:31</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>who
+architalia<span class="w"> </span>tty1<span class="w">   </span><span class="m">2021</span>-05-24<span class="w"> </span><span class="m">10</span>:30
+root<span class="w">     </span>pts/0<span class="w">  </span><span class="m">2021</span>-05-24<span class="w"> </span><span class="m">10</span>:31
+</code></pre></div>
 <p>Since Linux is multi-user, it is possible that more than one session is open on the same station, either physically or through the network. It is interesting to know which users are connected, if only to communicate with them by sending messages.</p>
 <ul>
 <li>tty: represents a terminal.</li>
@@ -2779,28 +2771,32 @@ root     pts/0  2021-05-24 10:31</code></pre>
 </ul>
 <h3 id="pwd-command"><code>pwd</code> command<a class="headerlink" href="#pwd-command" title="Permanent link">&para;</a></h3>
 <p>The <code>pwd</code> command (Print Working Directory) displays the absolute path of the current directory.</p>
-<pre class="highlight"><code class="language-bash">$ pwd
-/home/architalia</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">pwd</span>
+/home/architalia
+</code></pre></div>
 <p>To use a relative path to refer to a file or directory, or to use the <code>cd</code> command to move to another directory, you need to know its location in the file tree.</p>
 <p>Depending on the shell type and various parameters of its configuration file, the terminal prompt (also known as the command prompt) will display the absolute or relative path of the current directory.</p>
 <h3 id="cd-command"><code>cd</code> command<a class="headerlink" href="#cd-command" title="Permanent link">&para;</a></h3>
 <p>The <code>cd</code> command (Change Directory) allows you to change the current directory -- in other words, to move through the tree.</p>
-<pre class="highlight"><code class="language-bash">$ cd /tmp
-$ pwd
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/tmp
+$<span class="w"> </span><span class="nb">pwd</span>
 /tmp
-$ cd ../
-$ pwd
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../
+$<span class="w"> </span><span class="nb">pwd</span>
 /
-$ cd
-$ pwd
-/home/architalia</code></pre>
+$<span class="w"> </span><span class="nb">cd</span>
+$<span class="w"> </span><span class="nb">pwd</span>
+/home/architalia
+</code></pre></div>
 <p>As you can see in the last example above, the <code>cd</code> command without arguments moves the current directory to the <code>home directory</code>.</p>
 <h3 id="ls-command"><code>ls</code> command<a class="headerlink" href="#ls-command" title="Permanent link">&para;</a></h3>
 <p>The <code>ls</code> command displays the contents of a directory.</p>
-<pre class="highlight"><code class="language-bash">ls [-a] [-i] [-l] [directory1] [directory2] [...]</code></pre>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span><span class="o">[</span>-a<span class="o">]</span><span class="w"> </span><span class="o">[</span>-i<span class="o">]</span><span class="w"> </span><span class="o">[</span>-l<span class="o">]</span><span class="w"> </span><span class="o">[</span>directory1<span class="o">]</span><span class="w"> </span><span class="o">[</span>directory2<span class="o">]</span><span class="w"> </span><span class="o">[</span>...<span class="o">]</span>
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ ls /home
-.    ..    architalia</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>/home
+.<span class="w">    </span>..<span class="w">    </span>architalia
+</code></pre></div>
 <p>The main options of the <code>ls</code> command are:</p>
 <table>
 <thead>
@@ -2870,8 +2866,9 @@ $ pwd
 <ul>
 <li>Description of the columns generated by running the <code>ls -lia</code> command:</li>
 </ul>
-<pre class="highlight"><code class="language-bash">$ ls -lia /home
-78489 drwx------ 4 architalia architalia 4096 25 oct. 08:10 architalia</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia<span class="w"> </span>/home
+<span class="m">78489</span><span class="w"> </span>drwx------<span class="w"> </span><span class="m">4</span><span class="w"> </span>architalia<span class="w"> </span>architalia<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="m">25</span><span class="w"> </span>oct.<span class="w"> </span><span class="m">08</span>:10<span class="w"> </span>architalia
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2915,90 +2912,103 @@ $ pwd
 </tbody>
 </table>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>**Aliases** are often already positioned in common distributions.
+<div class="codehilite"><pre><span></span><code><span class="o">**</span><span class="n">Aliases</span><span class="o">**</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">often</span><span class="w"> </span><span class="n">already</span><span class="w"> </span><span class="n">positioned</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">common</span><span class="w"> </span><span class="n">distributions</span><span class="p">.</span>
 
-This is the case with the `ll` alias:
+<span class="n">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`ll`</span><span class="w"> </span><span class="n">alias</span><span class="o">:</span>
 
-```
-alias ll='ls -l --color=auto'
-```
-</code></pre>
+<span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span>
+<span class="n n-Quoted">alias ll=&#39;ls -l --color=auto&#39;</span>
+<span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
+</code></pre></div>
 
 <p>The <code>ls</code> command has many options. Here are some advanced usage examples:</p>
 <ul>
 <li>List files in <code>/etc</code> by last modification:</li>
 </ul>
-<pre class="highlight"><code class="language-bash">$ ls -ltr /etc
-total 1332
--rw-r--r--.  1 root root    662 29 may   2021 logrotate.conf
--rw-r--r--.  1 root root    272 17 may.   2021 mailcap
--rw-------.  1 root root    122 12 may.  2021 securetty
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-ltr<span class="w"> </span>/etc
+total<span class="w"> </span><span class="m">1332</span>
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">662</span><span class="w"> </span><span class="m">29</span><span class="w"> </span>may<span class="w">   </span><span class="m">2021</span><span class="w"> </span>logrotate.conf
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">272</span><span class="w"> </span><span class="m">17</span><span class="w"> </span>may.<span class="w">   </span><span class="m">2021</span><span class="w"> </span>mailcap
+-rw-------.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">122</span><span class="w"> </span><span class="m">12</span><span class="w"> </span>may.<span class="w">  </span><span class="m">2021</span><span class="w"> </span>securetty
 ...
--rw-r--r--.  2 root root     85 18 may.  17:04 resolv.conf
--rw-r--r--.  1 root root     44 18 may.  17:04 adjtime
--rw-r--r--.  1 root root    283 18 may.  17:05 mtab</code></pre>
+-rw-r--r--.<span class="w">  </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">     </span><span class="m">85</span><span class="w"> </span><span class="m">18</span><span class="w"> </span>may.<span class="w">  </span><span class="m">17</span>:04<span class="w"> </span>resolv.conf
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">     </span><span class="m">44</span><span class="w"> </span><span class="m">18</span><span class="w"> </span>may.<span class="w">  </span><span class="m">17</span>:04<span class="w"> </span>adjtime
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">283</span><span class="w"> </span><span class="m">18</span><span class="w"> </span>may.<span class="w">  </span><span class="m">17</span>:05<span class="w"> </span>mtab
+</code></pre></div>
 <ul>
 <li>List <code>/var</code> files larger than 1 megabyte but less than 1 gigabyte. The example here uses advanced <code>grep</code> commands with regular expressions. Novices shouldn't struggle too much, there will be a special tutorial to introduce these regular expressions in the future.</li>
 </ul>
-<pre class="highlight"><code class="language-bash">$ ls -lhR /var/ | grep ^\- | grep -E "[1-9]*\.[0-9]*M" 
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lhR<span class="w"> </span>/var/<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>^<span class="se">\-</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;[1-9]*\.[0-9]*M&quot;</span><span class="w"> </span>
 ...
--rw-r--r--. 1 apache apache 1.2M 10 may.  13:02 XB RiyazBdIt.ttf
--rw-r--r--. 1 apache apache 1.2M 10 may.  13:02 XB RiyazBd.ttf
--rw-r--r--. 1 apache apache 1.1M 10 may.  13:02 XB RiyazIt.ttf
-...</code></pre>
+-rw-r--r--.<span class="w"> </span><span class="m">1</span><span class="w"> </span>apache<span class="w"> </span>apache<span class="w"> </span><span class="m">1</span>.2M<span class="w"> </span><span class="m">10</span><span class="w"> </span>may.<span class="w">  </span><span class="m">13</span>:02<span class="w"> </span>XB<span class="w"> </span>RiyazBdIt.ttf
+-rw-r--r--.<span class="w"> </span><span class="m">1</span><span class="w"> </span>apache<span class="w"> </span>apache<span class="w"> </span><span class="m">1</span>.2M<span class="w"> </span><span class="m">10</span><span class="w"> </span>may.<span class="w">  </span><span class="m">13</span>:02<span class="w"> </span>XB<span class="w"> </span>RiyazBd.ttf
+-rw-r--r--.<span class="w"> </span><span class="m">1</span><span class="w"> </span>apache<span class="w"> </span>apache<span class="w"> </span><span class="m">1</span>.1M<span class="w"> </span><span class="m">10</span><span class="w"> </span>may.<span class="w">  </span><span class="m">13</span>:02<span class="w"> </span>XB<span class="w"> </span>RiyazIt.ttf
+...
+</code></pre></div>
 <p>Of course, using the <code>find</code> command is highly recommended.</p>
-<pre class="highlight"><code class="language-bash">$ find /var -size +1M -a -size -1024M -a -type f -exec ls -lh {} \;</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/var<span class="w"> </span>-size<span class="w"> </span>+1M<span class="w"> </span>-a<span class="w"> </span>-size<span class="w"> </span>-1024M<span class="w"> </span>-a<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-exec<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+</code></pre></div>
 <ul>
 <li>Show folder permissions:</li>
 </ul>
 <p>To know the permissions of a folder, for example <code>/etc</code>, the following command <strong>would not</strong> be appropriate:</p>
-<pre class="highlight"><code class="language-bash">$ ls -l /etc
-total 1332
--rw-r--r--.  1 root root     44 18 nov.  17:04 adjtime
--rw-r--r--.  1 root root   1512 12 janv.  2010 aliases
--rw-r--r--.  1 root root  12288 17 nov.  17:41 aliases.db
-drwxr-xr-x.  2 root root   4096 17 nov.  17:48 alternatives
-...</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc
+total<span class="w"> </span><span class="m">1332</span>
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">     </span><span class="m">44</span><span class="w"> </span><span class="m">18</span><span class="w"> </span>nov.<span class="w">  </span><span class="m">17</span>:04<span class="w"> </span>adjtime
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">1512</span><span class="w"> </span><span class="m">12</span><span class="w"> </span>janv.<span class="w">  </span><span class="m">2010</span><span class="w"> </span>aliases
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">12288</span><span class="w"> </span><span class="m">17</span><span class="w"> </span>nov.<span class="w">  </span><span class="m">17</span>:41<span class="w"> </span>aliases.db
+drwxr-xr-x.<span class="w">  </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">4096</span><span class="w"> </span><span class="m">17</span><span class="w"> </span>nov.<span class="w">  </span><span class="m">17</span>:48<span class="w"> </span>alternatives
+...
+</code></pre></div>
 <p>The previous command will display the contents of the folder (inside) by default. For the folder itself, you can use the <code>-d</code> option.</p>
-<pre class="highlight"><code class="language-bash">$ ls -ld /etc
-drwxr-xr-x. 69 root root 4096 18 nov.  17:05 /etc</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>/etc
+drwxr-xr-x.<span class="w"> </span><span class="m">69</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="m">18</span><span class="w"> </span>nov.<span class="w">  </span><span class="m">17</span>:05<span class="w"> </span>/etc
+</code></pre></div>
 <ul>
 <li>Sort by file size, largest first:</li>
 </ul>
-<pre class="highlight"><code class="language-bash">$ ls -lhS</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lhS
+</code></pre></div>
 <ul>
 <li>Date/time format with <code>-l</code>:</li>
 </ul>
-<pre class="highlight"><code class="language-bash">$ ls -l --time-style="+%Y-%m-%d %m-%d %H:%M" /
-total 12378
-dr-xr-x. 2 root root 4096 2014-11-23 11-23 03:13 bin
-dr-xr-x. 5 root root 1024 2014-11-23 11-23 05:29 boot</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>--time-style<span class="o">=</span><span class="s2">&quot;+%Y-%m-%d %m-%d %H:%M&quot;</span><span class="w"> </span>/
+total<span class="w"> </span><span class="m">12378</span>
+dr-xr-x.<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="m">2014</span>-11-23<span class="w"> </span><span class="m">11</span>-23<span class="w"> </span><span class="m">03</span>:13<span class="w"> </span>bin
+dr-xr-x.<span class="w"> </span><span class="m">5</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="m">2014</span>-11-23<span class="w"> </span><span class="m">11</span>-23<span class="w"> </span><span class="m">05</span>:29<span class="w"> </span>boot
+</code></pre></div>
 <ul>
 <li>Add trailing slash to the end of folders:</li>
 </ul>
 <p>By default, the <code>ls</code> command does not display the last slash of a folder. In some cases, like for scripts, for example, it is useful to display it:</p>
-<pre class="highlight"><code class="language-bash">$ ls -d /etc
-/etc/</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-d<span class="w"> </span>/etc
+/etc/
+</code></pre></div>
 <ul>
 <li>Hide certain extensions:</li>
 </ul>
-<pre class="highlight"><code class="language-bash">$ ls /etc --hide=*.conf</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>/etc<span class="w"> </span>--hide<span class="o">=</span>*.conf
+</code></pre></div>
 <h3 id="mkdir-command"><code>mkdir</code> command<a class="headerlink" href="#mkdir-command" title="Permanent link">&para;</a></h3>
 <p>The <code>mkdir</code> command creates a directory or a directory tree.</p>
-<pre class="highlight"><code class="language-bash">mkdir [-p] directory [directory] [...]</code></pre>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span><span class="o">[</span>-p<span class="o">]</span><span class="w"> </span>directory<span class="w"> </span><span class="o">[</span>directory<span class="o">]</span><span class="w"> </span><span class="o">[</span>...<span class="o">]</span>
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ mkdir /home/architalia/work</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>/home/architalia/work
+</code></pre></div>
 <p>The "architalia" directory must be present to create the "work" directory.</p>
 <p>Otherwise, you must use the <code>-p</code> option. The <code>-p</code> option creates parent directories if they don't exist.</p>
 <p>!!! Danger "Danger"</p>
-<pre class="codehilite"><code>It is not advisable to use Linux command names as directory or file names.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>It is not advisable to use Linux command names as directory or file names.
+</code></pre></div>
 
 <h3 id="touch-command"><code>touch</code> command<a class="headerlink" href="#touch-command" title="Permanent link">&para;</a></h3>
 <p>The <code>touch</code> command modifies the timestamp of a file or creates an empty file if the file does not exist.</p>
-<pre class="highlight"><code class="language-bash">touch [-t date] file</code></pre>
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span><span class="o">[</span>-t<span class="w"> </span>date<span class="o">]</span><span class="w"> </span>file
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ touch /home/architalia/myfile</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>touch<span class="w"> </span>/home/architalia/myfile
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3015,13 +3025,14 @@ dr-xr-x. 5 root root 1024 2014-11-23 11-23 05:29 boot</code></pre>
 </table>
 <p>Date format: <code>[YYYY]MMDDhhmm[ss]</code></p>
 <p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>The `touch` command is mainly used to create an empty file, but can be useful, for example, for incremental or differential backups. In fact, the only effect of running a `touch` on a file will be to force its saving during the next backup.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n n-Quoted">`touch`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">mainly</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="k">empty</span><span class="w"> </span><span class="k">file</span><span class="p">,</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">useful</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">example</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">incremental</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">differential</span><span class="w"> </span><span class="n">backups</span><span class="p">.</span><span class="w"> </span><span class="k">In</span><span class="w"> </span><span class="n">fact</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="n">effect</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">running</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n n-Quoted">`touch`</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">force</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">saving</span><span class="w"> </span><span class="n">during</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">next</span><span class="w"> </span><span class="k">backup</span><span class="p">.</span>
+</code></pre></div>
 
 <h3 id="rmdir-command"><code>rmdir</code> command<a class="headerlink" href="#rmdir-command" title="Permanent link">&para;</a></h3>
 <p>The <code>rmdir</code> command deletes an empty directory.</p>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ rmdir /home/architalia/work</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rmdir<span class="w"> </span>/home/architalia/work
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3037,15 +3048,16 @@ dr-xr-x. 5 root root 1024 2014-11-23 11-23 05:29 boot</code></pre>
 </tbody>
 </table>
 <p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>To delete a non-empty folder and its contents, use the `rm` command.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">To</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="k">empty</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">contents</span><span class="p">,</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`rm`</span><span class="w"> </span><span class="n">command</span><span class="p">.</span>
+</code></pre></div>
 
 <h3 id="rm-command"><code>rm</code> command<a class="headerlink" href="#rm-command" title="Permanent link">&para;</a></h3>
 <p>The <code>rm</code> command deletes a file or directory.</p>
-<pre class="highlight"><code class="language-bash">rm [-f] [-r] file [file] [...]</code></pre>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span><span class="o">[</span>-f<span class="o">]</span><span class="w"> </span><span class="o">[</span>-r<span class="o">]</span><span class="w"> </span>file<span class="w"> </span><span class="o">[</span>file<span class="o">]</span><span class="w"> </span><span class="o">[</span>...<span class="o">]</span>
+</code></pre></div>
 <p>!!! Danger "Danger"</p>
-<pre class="codehilite"><code>Any deletion of a file or directory is permanent.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Any deletion of a file or directory is permanent.
+</code></pre></div>
 
 <table>
 <thead>
@@ -3070,23 +3082,26 @@ dr-xr-x. 5 root root 1024 2014-11-23 11-23 05:29 boot</code></pre>
 </tbody>
 </table>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>The `rm` command does not ask for confirmation when deleting files. However, with an arch/arch distribution, `rm` asks for confirmation of deletion because the `rm` command is an `alias` of the command `rm -i`. Don't be surprised if on another distribution, like Debian, for example, you don't get a confirmation request.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n n-Quoted">`rm`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">ask</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">confirmation</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">deleting</span><span class="w"> </span><span class="n">files</span><span class="p">.</span><span class="w"> </span><span class="n">However</span><span class="p">,</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">arch</span><span class="o">/</span><span class="n">arch</span><span class="w"> </span><span class="n">distribution</span><span class="p">,</span><span class="w"> </span><span class="n n-Quoted">`rm`</span><span class="w"> </span><span class="n">asks</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">confirmation</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">deletion</span><span class="w"> </span><span class="n">because</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`rm`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n n-Quoted">`alias`</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n n-Quoted">`rm -i`</span><span class="p">.</span><span class="w"> </span><span class="n">Don</span><span class="s1">&#39;t be surprised if on another distribution, like Debian, for example, you don&#39;</span><span class="n">t</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">confirmation</span><span class="w"> </span><span class="n">request</span><span class="p">.</span>
+</code></pre></div>
 
 <p>Deleting a folder with the <code>rm</code> command, whether the folder is empty or not, requires adding the <code>-r</code> option.</p>
 <p>The end of options is signaled to the shell by a double dash <code>--</code>.</p>
 <p>In the example:</p>
-<pre class="highlight"><code class="language-bash">$ &gt;-hard-hard # To create an empty file called -hard-hard
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>&gt;-hard-hard<span class="w"> </span><span class="c1"># To create an empty file called -hard-hard</span>
 hard-hard
-[CTRL+C] To interrupt the creation of the file
-$ rm -f -- -hard-hard</code></pre>
+<span class="o">[</span>CTRL+C<span class="o">]</span><span class="w"> </span>To<span class="w"> </span>interrupt<span class="w"> </span>the<span class="w"> </span>creation<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>file
+$<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>--<span class="w"> </span>-hard-hard
+</code></pre></div>
 <p>The file name hard-hard starts with a <code>-</code>. Without the use of <code>--</code>, the shell would have interpreted the <code>-d</code> in <code>-hard-hard</code> as an option.</p>
 <h3 id="mv-command"><code>mv</code> command<a class="headerlink" href="#mv-command" title="Permanent link">&para;</a></h3>
 <p>The <code>mv</code> command moves and renames a file.</p>
-<pre class="highlight"><code class="language-bash">mv file [file ...] destination</code></pre>
+<div class="highlight"><pre><span></span><code>mv<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>file<span class="w"> </span>...<span class="o">]</span><span class="w"> </span>destination
+</code></pre></div>
 <p>Examples:</p>
-<pre class="highlight"><code class="language-bash">$ mv /home/architalia/file1 /home/architalia/file2
-$ mv /home/architalia/file1 /home/architalia/file2 /tmp</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2
+$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2<span class="w"> </span>/tmp
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3106,23 +3121,31 @@ $ mv /home/architalia/file1 /home/architalia/file2 /tmp</code></pre>
 </tbody>
 </table>
 <p>Some concrete cases will help you understand the difficulties that may arise:</p>
-<pre class="highlight"><code class="language-bash">$ mv /home/architalia/file1 /home/architalia/file2</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2
+</code></pre></div>
 <p>Renames <code>file1</code> to <code>file2</code>. If <code>file2</code> already exists, replaces the file content with <code>file1</code>.</p>
-<pre class="highlight"><code class="language-bash">$ mv /home/architalia/file1 /home/architalia/file2 /tmp</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2<span class="w"> </span>/tmp
+</code></pre></div>
 <p>Moves <code>file1</code> and <code>file2</code> to the <code>/tmp</code> folder.</p>
-<pre class="highlight"><code class="language-bash">$ mv file1 /repexist/file2</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>file1<span class="w"> </span>/repexist/file2
+</code></pre></div>
 <p>Moves <code>file1</code> to <code>repexist</code> and renames it <code>file2</code>.</p>
-<pre class="highlight"><code class="language-bash">$ mv file1 file2</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>file1<span class="w"> </span>file2
+</code></pre></div>
 <p><code>file1</code> is renamed to <code>file2</code>.</p>
-<pre class="highlight"><code class="language-bash">$ mv file1 /repexist</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>file1<span class="w"> </span>/repexist
+</code></pre></div>
 <p>If the destination folder exists, <code>file1</code> is moved to <code>/repexist</code>.</p>
-<pre class="highlight"><code class="language-bash">$ mv file1 /wrongrep</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>file1<span class="w"> </span>/wrongrep
+</code></pre></div>
 <p>If the destination directory doesn't exist, <code>file1</code> is renamed to <code>wrongrep</code> in the home directory.</p>
 <h3 id="cp-command"><code>cp</code> command<a class="headerlink" href="#cp-command" title="Permanent link">&para;</a></h3>
 <p>The <code>cp</code> command copies a file.</p>
-<pre class="highlight"><code class="language-bash">cp file [file ...] destination</code></pre>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>file<span class="w"> </span>...<span class="o">]</span><span class="w"> </span>destination
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ cp -r /home/architalia /tmp</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>/home/architalia<span class="w"> </span>/tmp
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3153,33 +3176,42 @@ $ mv /home/architalia/file1 /home/architalia/file2 /tmp</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="highlight"><code class="language-bash">cp file1 /repexist/file2</code></pre>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>file1<span class="w"> </span>/repexist/file2
+</code></pre></div>
 <p><code>file1</code> is copied to <code>/repexist</code> with the name <code>file2</code>.</p>
-<pre class="highlight"><code class="language-bash">$ cp file1 file2</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>file1<span class="w"> </span>file2
+</code></pre></div>
 <p><code>file1</code> is copied as <code>file2</code> in this folder.</p>
-<pre class="highlight"><code class="language-bash">$ cp file1 /repexist</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>file1<span class="w"> </span>/repexist
+</code></pre></div>
 <p>If the destination directory exists, <code>file1</code> is copied to <code>/repexist</code>.</p>
-<pre class="highlight"><code class="language-bash">$ cp file1 /wrongrep</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>file1<span class="w"> </span>/wrongrep
+</code></pre></div>
 <p>If the destination directory doesn't exist, <code>file1</code> is copied under the name <code>wrongrep</code> in the home directory.</p>
 <h2 id="display">Display<a class="headerlink" href="#display" title="Permanent link">&para;</a></h2>
 <h3 id="file-command"><code>file</code> command<a class="headerlink" href="#file-command" title="Permanent link">&para;</a></h3>
 <p>The <code>file</code> command displays the type of a file.</p>
-<pre class="highlight"><code class="language-bash">file file1 [files]</code></pre>
+<div class="highlight"><pre><span></span><code>file<span class="w"> </span>file1<span class="w"> </span><span class="o">[</span>files<span class="o">]</span>
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ file /etc/passwd /etc
-/etc/passwd:    ASCII text
-/etc:        directory</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>file<span class="w"> </span>/etc/passwd<span class="w"> </span>/etc
+/etc/passwd:<span class="w">    </span>ASCII<span class="w"> </span>text
+/etc:<span class="w">        </span>directory
+</code></pre></div>
 <h3 id="more-command"><code>more</code> command<a class="headerlink" href="#more-command" title="Permanent link">&para;</a></h3>
 <p>The <code>more</code> command displays the content of one or more files screen by screen.</p>
-<pre class="highlight"><code class="language-bash">more file1 [files]</code></pre>
+<div class="highlight"><pre><span></span><code>more<span class="w"> </span>file1<span class="w"> </span><span class="o">[</span>files<span class="o">]</span>
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ more /etc/passwd
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>more<span class="w"> </span>/etc/passwd
 root:x:0:0:root:/root:/bin/bash
-...</code></pre>
+...
+</code></pre></div>
 <p>Using the <kbd>ENTER</kbd> key, movement is line by line. Using the <kbd>SPACE</kbd> key, movement is page by page. <code>/text</code> allows you to search for the match in the file.</p>
 <h3 id="less-command"><code>less</code> command<a class="headerlink" href="#less-command" title="Permanent link">&para;</a></h3>
 <p>The <code>less</code> command displays the content of one or more files. The <code>less</code> command is interactive and has its own commands for use.</p>
-<pre class="highlight"><code class="language-bash">less file1 [files]</code></pre>
+<div class="highlight"><pre><span></span><code>less<span class="w"> </span>file1<span class="w"> </span><span class="o">[</span>files<span class="o">]</span>
+</code></pre></div>
 <p>Commands specific to <code>less</code> are:</p>
 <table>
 <thead>
@@ -3225,38 +3257,46 @@ root:x:0:0:root:/root:/bin/bash
 </table>
 <h3 id="cat-command"><code>cat</code> command<a class="headerlink" href="#cat-command" title="Permanent link">&para;</a></h3>
 <p>The <code>cat</code> command concatenates the contents of multiple files and displays the result on standard output.</p>
-<pre class="highlight"><code class="language-bash">cat file1 [files]</code></pre>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>file1<span class="w"> </span><span class="o">[</span>files<span class="o">]</span>
+</code></pre></div>
 <p>Example 1 - Display the contents of a file on standard output:</p>
-<pre class="highlight"><code class="language-bash">$ cat /etc/passwd</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>/etc/passwd
+</code></pre></div>
 <p>Example 2 - Display the contents of multiple files on standard output:</p>
-<pre class="highlight"><code class="language-bash">$ cat /etc/passwd /etc/group</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>/etc/passwd<span class="w"> </span>/etc/group
+</code></pre></div>
 <p>Example 3 - Combine the contents of multiple files into a single file using output redirection:</p>
-<pre class="highlight"><code class="language-bash">$ cat /etc/passwd /etc/group &gt; usersAndGroups.txt</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>/etc/passwd<span class="w"> </span>/etc/group<span class="w"> </span>&gt;<span class="w"> </span>usersAndGroups.txt
+</code></pre></div>
 <p>Example 4 - Display line numbering:</p>
-<pre class="highlight"><code class="language-bash">$ cat -n /etc/profile
-     1    # /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
-     2    # and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
-     3
-     4    if [ "`id -u`" -eq 0 ]; then
-     5      PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-     6    else
-    …</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>-n<span class="w"> </span>/etc/profile
+<span class="w">     </span><span class="m">1</span><span class="w">    </span><span class="c1"># /etc/profile: system-wide .profile file for the Bourne shell (sh(1))</span>
+<span class="w">     </span><span class="m">2</span><span class="w">    </span><span class="c1"># and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).</span>
+<span class="w">     </span><span class="m">3</span>
+<span class="w">     </span><span class="m">4</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;`id -u`&quot;</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="m">5</span><span class="w">      </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span>
+<span class="w">     </span><span class="m">6</span><span class="w">    </span><span class="k">else</span>
+<span class="w">    </span>…
+</code></pre></div>
 <p>Example 5 - shows line numbering of non-empty lines:</p>
-<pre class="highlight"><code class="language-bash">$ cat -b /etc/profile
-     1    # /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
-     2    # and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>-b<span class="w"> </span>/etc/profile
+<span class="w">     </span><span class="m">1</span><span class="w">    </span><span class="c1"># /etc/profile: system-wide .profile file for the Bourne shell (sh(1))</span>
+<span class="w">     </span><span class="m">2</span><span class="w">    </span><span class="c1"># and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).</span>
 
-     3    if [ "`id -u`" -eq 0 ]; then
-     4      PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-     5    else
-    …</code></pre>
+<span class="w">     </span><span class="m">3</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;`id -u`&quot;</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="m">4</span><span class="w">      </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span>
+<span class="w">     </span><span class="m">5</span><span class="w">    </span><span class="k">else</span>
+<span class="w">    </span>…
+</code></pre></div>
 <h3 id="tac-command"><code>tac</code> command<a class="headerlink" href="#tac-command" title="Permanent link">&para;</a></h3>
 <p>The <code>tac</code> command does almost the opposite of the <code>cat</code> command. Displays the contents of a file starting from the end (which is particularly interesting for reading logs!).</p>
 <p>Example: Display a log file showing the last line first:</p>
-<pre class="highlight"><code class="language-bash">[root]# tac /var/log/messages | less</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root<span class="o">]</span><span class="c1"># tac /var/log/messages | less</span>
+</code></pre></div>
 <h3 id="head-command"><code>head</code> command<a class="headerlink" href="#head-command" title="Permanent link">&para;</a></h3>
 <p>The <code>head</code> command displays the beginning of a file.</p>
-<pre class="highlight"><code class="language-bash">head [-n x] file</code></pre>
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>x<span class="o">]</span><span class="w"> </span>file
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3274,7 +3314,8 @@ root:x:0:0:root:/root:/bin/bash
 <p>By default (without the <code>-n</code> option), the <code>head</code> command will display the first 10 lines of the file.</p>
 <h3 id="tail-command"><code>tail</code> command<a class="headerlink" href="#tail-command" title="Permanent link">&para;</a></h3>
 <p>The <code>tail</code> command displays the end of a file.</p>
-<pre class="highlight"><code class="language-bash">tail [-f] [-n x] file</code></pre>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span><span class="o">[</span>-f<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>x<span class="o">]</span><span class="w"> </span>file
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3294,20 +3335,23 @@ root:x:0:0:root:/root:/bin/bash
 </tbody>
 </table>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">tail -n 3 /etc/passwd
-sshd:x:74:74:Privilege-separeted sshd:/var/empty /sshd:/sbin/nologin
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>/etc/passwd
+sshd:x:74:74:Privilege-separeted<span class="w"> </span>sshd:/var/empty<span class="w"> </span>/sshd:/sbin/nologin
 tcpdump::x:72:72::/:/sbin/nologin
-user1:x:500:500:grp1:/home/user1:/bin/bash</code></pre>
+user1:x:500:500:grp1:/home/user1:/bin/bash
+</code></pre></div>
 <p>With the <code>-f</code> option, file modification information will always be output unless the user exits the monitoring state with <kbd>CTRL</kbd> + <kbd>C</kbd>. This option is widely used to track log files in real time.</p>
 <p>Without the <code>-n</code> option, the <code>tail</code> command shows the last 10 lines of the file.</p>
 <h3 id="sort-command"><code>sort</code> command<a class="headerlink" href="#sort-command" title="Permanent link">&para;</a></h3>
 <p>The <code>sort</code> command sorts the lines of a file.</p>
 <p>It allows sorting the result of a command or the contents of a file in a specific order, numerical, alphabetical, by size (KB, MB, GB) or in reverse order.</p>
-<pre class="highlight"><code class="language-bash">sort [-k] [-n] [-u] [-o file] [-t] file</code></pre>
+<div class="highlight"><pre><span></span><code>sort<span class="w"> </span><span class="o">[</span>-k<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="o">]</span><span class="w"> </span><span class="o">[</span>-u<span class="o">]</span><span class="w"> </span><span class="o">[</span>-o<span class="w"> </span>file<span class="o">]</span><span class="w"> </span><span class="o">[</span>-t<span class="o">]</span><span class="w"> </span>file
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ sort -k 3,4 -t ":" -n /etc/passwd
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sort<span class="w"> </span>-k<span class="w"> </span><span class="m">3</span>,4<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="w"> </span>-n<span class="w"> </span>/etc/passwd
 root:x:0:0:root:/root:/bin/bash
-adm:x:3:4:adm:/var/adm/:/sbin/nologin</code></pre>
+adm:x:3:4:adm:/var/adm/:/sbin/nologin
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3345,54 +3389,60 @@ adm:x:3:4:adm:/var/adm/:/sbin/nologin</code></pre>
 <p>The <code>sort</code> command only sorts the file on the screen. The file is not modified by the sorting. To save the sort, use the <code>-o</code> option or output redirection <code>&gt;</code>.</p>
 <p>By default, numbers are sorted based on their character. Therefore, "110" will be before "20", which in turn will be before "3". The <code>-n</code> option must be specified so that numeric character blocks are sorted by their value.</p>
 <p>The <code>sort</code> command reverses the order of the results, with the <code>-r</code> option:</p>
-<pre class="highlight"><code class="language-bash">$ sort -k 3 -t ":" -n -r /etc/passwd
-nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
-systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
-polkitd:x:998:996:User for polkitd:/:/sbin/nologin</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sort<span class="w"> </span>-k<span class="w"> </span><span class="m">3</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="w"> </span>-n<span class="w"> </span>-r<span class="w"> </span>/etc/passwd
+nobody:x:65534:65534:Kernel<span class="w"> </span>Overflow<span class="w"> </span>User:/:/sbin/nologin
+systemd-coredump:x:999:997:systemd<span class="w"> </span>Core<span class="w"> </span>Dumper:/:/sbin/nologin
+polkitd:x:998:996:User<span class="w"> </span><span class="k">for</span><span class="w"> </span>polkitd:/:/sbin/nologin
+</code></pre></div>
 <p>In this example, the <code>sort</code> command will sort the contents of the <code>/etc/passwd</code> file from the largest uid (user identifier) to the smallest.</p>
 <p>Some advanced examples of using the <code>sort</code> command:</p>
 <ul>
 <li>Mixing values</li>
 </ul>
 <p>The <code>sort</code> command can also shuffle values with the <code>-R</code> option:</p>
-<pre class="highlight"><code class="language-bash">$ sort -R /etc/passwd</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sort<span class="w"> </span>-R<span class="w"> </span>/etc/passwd
+</code></pre></div>
 <ul>
 <li>Sorting IP addresses</li>
 </ul>
 <p>A system administrator is soon faced with processing IP addresses from logs of their services, such as SMTP, VSFTP or Apache. These addresses are typically extracted with the <code>cut</code> command.</p>
 <p>Here's an example with the <code>dns-client.txt</code> file:</p>
-<pre class="highlight"><code>192.168.1.10
+<div class="highlight"><pre><span></span><code>192.168.1.10
 192.168.1.200
 5.1.150.146
 208.128.150.98
-208.128.150.99</code></pre>
-<pre class="highlight"><code class="language-bash">$ sort -nr dns-client.txt
 208.128.150.99
-208.128.150.98
-192.168.1.200
-192.168.1.10
-5.1.150.146</code></pre>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span>dns-client.txt
+<span class="m">208</span>.128.150.99
+<span class="m">208</span>.128.150.98
+<span class="m">192</span>.168.1.200
+<span class="m">192</span>.168.1.10
+<span class="m">5</span>.1.150.146
+</code></pre></div>
 <ul>
 <li>Sorting files by removing duplicates</li>
 </ul>
 <p>The <code>sort</code> command knows how to remove duplicates from the file output using the <code>-u</code> option.</p>
 <p>Here's an example with the <code>colours.txt</code> file:</p>
-<p><pre class="highlight"><code>Red
+<p><div class="highlight"><pre><span></span><code>Red
 Green
 Blue
 Red
-Pink</code></pre>
-<pre class="highlight"><code>$ sort -u colours.txt
+Pink
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ sort -u colours.txt
 Blue
 Green
 Pink
-Red</code></pre></p>
+Red
+</code></pre></div></p>
 <ul>
 <li>Sorting files by size</li>
 </ul>
 <p>The <code>sort</code> command knows how to recognize file sizes, from commands like <code>ls</code> with the <code>-h</code> option.</p>
 <p>Here's an example with the <code>size.txt</code> file:</p>
-<pre class="highlight"><code>1.7G
+<div class="highlight"><pre><span></span><code>1.7G
 18M
 69K
 2.4M
@@ -3401,21 +3451,24 @@ Red</code></pre></p>
 6M
 124M
 12.4M
-4G</code></pre>
-<pre class="highlight"><code class="language-bash">$ sort -hr size.txt
-4.2G
 4G
-1.7G
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sort<span class="w"> </span>-hr<span class="w"> </span>size.txt
+<span class="m">4</span>.2G
+4G
+<span class="m">1</span>.7G
 124M
 18M
-12.4M
+<span class="m">12</span>.4M
 6M
-2.4M
-1.2M
-69K</code></pre>
+<span class="m">2</span>.4M
+<span class="m">1</span>.2M
+69K
+</code></pre></div>
 <h3 id="wc-command"><code>wc</code> command<a class="headerlink" href="#wc-command" title="Permanent link">&para;</a></h3>
 <p>The <code>wc</code> command counts the number of lines, words and/or bytes of a file.</p>
-<pre class="highlight"><code class="language-bash">wc [-l] [-m] [-w] file [files]</code></pre>
+<div class="highlight"><pre><span></span><code>wc<span class="w"> </span><span class="o">[</span>-l<span class="o">]</span><span class="w"> </span><span class="o">[</span>-m<span class="o">]</span><span class="w"> </span><span class="o">[</span>-w<span class="o">]</span><span class="w"> </span>file<span class="w"> </span><span class="o">[</span>files<span class="o">]</span>
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3445,7 +3498,8 @@ Red</code></pre></p>
 <h2 id="search">Search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h2>
 <h3 id="find-command"><code>find</code> command<a class="headerlink" href="#find-command" title="Permanent link">&para;</a></h3>
 <p>The <code>find</code> command searches for the location of files or folders.</p>
-<pre class="highlight"><code class="language-bash">find directory [-name name] [-type type] [-user login] [-date date]</code></pre>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>directory<span class="w"> </span><span class="o">[</span>-name<span class="w"> </span>name<span class="o">]</span><span class="w"> </span><span class="o">[</span>-type<span class="w"> </span>type<span class="o">]</span><span class="w"> </span><span class="o">[</span>-user<span class="w"> </span>login<span class="o">]</span><span class="w"> </span><span class="o">[</span>-date<span class="w"> </span>date<span class="o">]</span>
+</code></pre></div>
 <p>Since the options of the <code>find</code> command are numerous, it is better to refer to the <code>man</code> command.</p>
 <p>If the search folder is not specified, the <code>find</code> command will search from the current folder.</p>
 <table>
@@ -3468,32 +3522,35 @@ Red</code></pre></p>
 </table>
 <h3 id="-exec-option-of-the-find-command"><code>-exec</code> option of the <code>find</code> command<a class="headerlink" href="#-exec-option-of-the-find-command" title="Permanent link">&para;</a></h3>
 <p>It is possible to use the <code>-exec</code> option of the <code>find</code> command to execute a command on each line of the result:</p>
-<pre class="highlight"><code class="language-bash">$ find /tmp -name *.txt -exec rm -f {} \;</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/tmp<span class="w"> </span>-name<span class="w"> </span>*.txt<span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+</code></pre></div>
 <p>The above command searches for all files in the <code>/tmp</code> folder named <code>* .txt</code> and deletes them.</p>
 <p>!!! Tip "Understanding the <code>-exec</code> option"</p>
-<pre class="codehilite"><code>In the previous example, the `find` command will build a string representing the command to be executed.
+<div class="codehilite"><pre><span></span><code><span class="k">In</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">previous</span><span class="w"> </span><span class="n">example</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`find`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">string</span><span class="w"> </span><span class="n">representing</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">executed</span><span class="p">.</span>
 
-If the `find` command finds three files called `log1.txt`, `log2.txt` and `log3.txt`, then the `find` command will build the string by replacing the braces in the string `rm -f {} \;` with one of the search results, and will do it as many times as there are results.
+<span class="k">If</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`find`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">finds</span><span class="w"> </span><span class="n">three</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="n">called</span><span class="w"> </span><span class="n n-Quoted">`log1.txt`</span><span class="p">,</span><span class="w"> </span><span class="n n-Quoted">`log2.txt`</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n n-Quoted">`log3.txt`</span><span class="p">,</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`find`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">string</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">replacing</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">braces</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">string</span><span class="w"> </span><span class="n n-Quoted">`rm -f {} \;`</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">one</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">search</span><span class="w"> </span><span class="n">results</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">many</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">there</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">results</span><span class="p">.</span>
 
-This will give us:
+<span class="n">This</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">give</span><span class="w"> </span><span class="n">us</span><span class="o">:</span>
 
-```
-rm -f /tmp/log1.txt ; rm -f /tmp/log2.txt ; rm -f /tmp/log3.txt ;
-```
+<span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span>
+<span class="n n-Quoted">rm -f /tmp/log1.txt ; rm -f /tmp/log2.txt ; rm -f /tmp/log3.txt ;</span>
+<span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
 
-The character `;` is a special shell character that must be protected by `\` to prevent it from being interpreted too early by the `find` command (and not in the `-exec`).
-</code></pre>
+<span class="n">The</span><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="n n-Quoted">`;`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">special</span><span class="w"> </span><span class="n">shell</span><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">protected</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n n-Quoted">`\`</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">prevent</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">being</span><span class="w"> </span><span class="n">interpreted</span><span class="w"> </span><span class="n">too</span><span class="w"> </span><span class="n">early</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`find`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`-exec`</span><span class="p">).</span>
+</code></pre></div>
 
 <p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>`$ find /tmp -name *.txt -delete` does the same thing.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="sb">`$ find /tmp -name *.txt -delete`</span> does the same thing.
+</code></pre></div>
 
 <h3 id="whereis-command"><code>whereis</code> command<a class="headerlink" href="#whereis-command" title="Permanent link">&para;</a></h3>
 <p>The <code>whereis</code> command searches for files related to a command.</p>
-<pre class="highlight"><code class="language-bash">whereis [-b] [-m] [-s] command</code></pre>
+<div class="highlight"><pre><span></span><code>whereis<span class="w"> </span><span class="o">[</span>-b<span class="o">]</span><span class="w"> </span><span class="o">[</span>-m<span class="o">]</span><span class="w"> </span><span class="o">[</span>-s<span class="o">]</span><span class="w"> </span><span class="nb">command</span>
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ whereis -b ls
-ls: /bin/ls</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>whereis<span class="w"> </span>-b<span class="w"> </span>ls
+ls:<span class="w"> </span>/bin/ls
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3518,10 +3575,12 @@ ls: /bin/ls</code></pre>
 </table>
 <h3 id="grep-command"><code>grep</code> command<a class="headerlink" href="#grep-command" title="Permanent link">&para;</a></h3>
 <p>The <code>grep</code> command searches for a string in a file.</p>
-<pre class="highlight"><code class="language-bash">grep [-w] [-i] [-v] "string" file</code></pre>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="o">[</span>-w<span class="o">]</span><span class="w"> </span><span class="o">[</span>-i<span class="o">]</span><span class="w"> </span><span class="o">[</span>-v<span class="o">]</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span>file
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code class="language-bash">$ grep -w "root:" /etc/passwd
-root:x:0:0:root:/root:/bin/bash</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>grep<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;root:&quot;</span><span class="w"> </span>/etc/passwd
+root:x:0:0:root:/root:/bin/bash
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -3547,40 +3606,45 @@ root:x:0:0:root:/root:/bin/bash</code></pre>
 <p>The <code>grep</code> command returns the complete line containing the searched string.
 * The special character <code>^</code> is used to search for a string at the beginning of a line.
 * The special character <code>$</code> is used to search for a string at the end of a line.</p>
-<pre class="highlight"><code class="language-bash">$ grep -w "^root" /etc/passwd</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>grep<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;^root&quot;</span><span class="w"> </span>/etc/passwd
+</code></pre></div>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>This command is very powerful and it is highly recommended to consult its manual. It has numerous derivatives.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>This command is very powerful and it is highly recommended to consult its manual. It has numerous derivatives.
+</code></pre></div>
 
 <p>It is possible to search for a string in a file tree with the <code>-R</code> option.</p>
-<pre class="highlight"><code class="language-bash">grep -R "Virtual" /etc/httpd</code></pre>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;Virtual&quot;</span><span class="w"> </span>/etc/httpd
+</code></pre></div>
 <h2 id="meta-characters-wildcards">Meta-characters (wildcards)<a class="headerlink" href="#meta-characters-wildcards" title="Permanent link">&para;</a></h2>
 <p>Meta-characters replace one or more characters (or even an absence of characters) during a search. These meta-characters are also known as wildcards.</p>
 <p>They can be combined.</p>
 <p>The <code>*</code> character replaces a string consisting of any character. The character <code>*</code> can also represent an absence of characters.</p>
-<pre class="highlight"><code class="language-bash">$ find /home -name "test*"
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/home<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;test*&quot;</span>
 /home/architalia/test
 /home/architalia/test1
 /home/architalia/test11
 /home/architalia/tests
-/home/architalia/test362</code></pre>
+/home/architalia/test362
+</code></pre></div>
 <p>Meta-characters allow more complex searches by replacing all or part of a word. They simply replace unknowns with these special characters.</p>
 <p>The <code>?</code> character replaces a single character, whatever it is.</p>
-<pre class="highlight"><code class="language-bash">$ find /home -name "test?"
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/home<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;test?&quot;</span>
 /home/architalia/test1
-/home/architalia/tests</code></pre>
+/home/architalia/tests
+</code></pre></div>
 <p>Square brackets <code>[</code> and <code>]</code> are used to specify the values that a single character can take.</p>
-<pre class="highlight"><code class="language-bash">$ find /home -name "test[123]*"
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/home<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;test[123]*&quot;</span>
 /home/architalia/test1
 /home/architalia/test11
-/home/architalia/test362</code></pre>
+/home/architalia/test362
+</code></pre></div>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>Always surround words containing metacharacters with `&quot;` to prevent them from being replaced by file names that match the criteria.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Always surround words containing metacharacters with `&quot;` to prevent them from being replaced by file names that match the criteria.
+</code></pre></div>
 
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>Don't confuse shell metacharacters with regular expression metacharacters. The `grep` command uses regular expression metacharacters.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">Don</span><span class="s1">&#39;t confuse shell metacharacters with regular expression metacharacters. The `grep` command uses regular expression metacharacters.</span>
+</code></pre></div>
 
 <h2 id="redirections-and-pipes">Redirections and pipes<a class="headerlink" href="#redirections-and-pipes" title="Permanent link">&para;</a></h2>
 <h3 id="standard-input-and-output">Standard input and output<a class="headerlink" href="#standard-input-and-output" title="Permanent link">&para;</a></h3>
@@ -3596,48 +3660,56 @@ root:x:0:0:root:/root:/bin/bash</code></pre>
 <p>These streams point to device files, but since everything is a file in UNIX/Linux, I/O streams can easily be directed to other files. This principle is the strength of the shell.</p>
 <h3 id="input-redirection">Input Redirection<a class="headerlink" href="#input-redirection" title="Permanent link">&para;</a></h3>
 <p>It is possible to redirect the input stream from another file with the <code>&lt;</code> or <code>&lt;&lt;</code> character. The command will read the file instead of the keyboard:</p>
-<pre class="highlight"><code class="language-bash">$ ftp -in serverftp &lt;&lt; ftp-commands.txt</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ftp<span class="w"> </span>-in<span class="w"> </span>serverftp<span class="w"> </span>&lt;&lt;<span class="w"> </span>ftp-commands.txt
+</code></pre></div>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>Only commands that require keyboard input will be able to handle input redirection.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Only commands that require keyboard input will be able to handle input redirection.
+</code></pre></div>
 
 <p>Input redirection can also be used to simulate user interactivity. The command will read the input stream until it encounters the keyword defined after the input redirection.</p>
 <p>This function is used for interactive commands in scripts:</p>
-<pre class="highlight"><code class="language-bash">$ ftp -in serverftp &lt;&lt; END
-user alice password
-put file
-bye
-END</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ftp<span class="w"> </span>-in<span class="w"> </span>serverftp<span class="w"> </span><span class="s">&lt;&lt; END</span>
+<span class="s">user alice password</span>
+<span class="s">put file</span>
+<span class="s">bye</span>
+<span class="s">END</span>
+</code></pre></div>
 <p>The keyword <code>END</code> can be replaced by any word.</p>
-<pre class="highlight"><code class="language-bash">$ ftp -in serverftp &lt;&lt; STOP
-user alice password
-put file
-bye
-STOP</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ftp<span class="w"> </span>-in<span class="w"> </span>serverftp<span class="w"> </span><span class="s">&lt;&lt; STOP</span>
+<span class="s">user alice password</span>
+<span class="s">put file</span>
+<span class="s">bye</span>
+<span class="s">STOP</span>
+</code></pre></div>
 <p>The shell exits the <code>ftp</code> command when it receives a line containing only the keyword.</p>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>The final keyword, here `END` or `STOP`, must be the only word on the line and must be at the beginning of the line.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n">final</span><span class="w"> </span><span class="n">keyword</span><span class="p">,</span><span class="w"> </span><span class="n">here</span><span class="w"> </span><span class="n n-Quoted">`END`</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n n-Quoted">`STOP`</span><span class="p">,</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="n">word</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">beginning</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">line</span><span class="p">.</span>
+</code></pre></div>
 
 <p>Standard input redirection is rarely used because most commands accept a file name as an argument.</p>
 <p>The <code>wc</code> command could be used this way:</p>
-<pre class="highlight"><code class="language-bash">$ wc -l .bash_profile
-27 .bash_profile # the number of lines is followed by the file name
-$ wc -l &lt; .bash_profile
-27 # returns only the number of lines</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>.bash_profile
+<span class="m">27</span><span class="w"> </span>.bash_profile<span class="w"> </span><span class="c1"># the number of lines is followed by the file name</span>
+$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>&lt;<span class="w"> </span>.bash_profile
+<span class="m">27</span><span class="w"> </span><span class="c1"># returns only the number of lines</span>
+</code></pre></div>
 <h3 id="output-redirection">Output Redirection<a class="headerlink" href="#output-redirection" title="Permanent link">&para;</a></h3>
 <p>Standard output can be redirected to other files using the <code>&gt;</code> or <code>&gt;&gt;</code> characters.</p>
 <p>Simple redirection <code>&gt;</code> overwrites the contents of the output file:</p>
-<pre class="highlight"><code class="language-bash">$ date +%F &gt; date_file</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>+%F<span class="w"> </span>&gt;<span class="w"> </span>date_file
+</code></pre></div>
 <p>When the <code>&gt;&gt;</code> character is used, it indicates that the result of the command is appended to the file contents.</p>
-<pre class="highlight"><code class="language-bash">$ date +%F &gt;&gt; date_file</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>+%F<span class="w"> </span>&gt;&gt;<span class="w"> </span>date_file
+</code></pre></div>
 <p>In both cases, the file is automatically created when it doesn't exist.</p>
 <p>Standard error output can also be redirected to another file. This time it will be necessary to specify the channel number (which can be omitted for channels 0 and 1):</p>
-<pre class="highlight"><code class="language-bash">$ ls -R / 2&gt; errors_file
-$ ls -R / 2&gt;&gt; errors_file</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>/<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>errors_file
+$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>/<span class="w"> </span><span class="m">2</span>&gt;&gt;<span class="w"> </span>errors_file
+</code></pre></div>
 <h3 id="redirection-examples">Redirection examples<a class="headerlink" href="#redirection-examples" title="Permanent link">&para;</a></h3>
 <p>Redirecting 2 outputs to 2 files:</p>
-<pre class="highlight"><code class="language-bash">$ ls -R / &gt;&gt; ok_file 2&gt;&gt; nok_file</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>/<span class="w"> </span>&gt;&gt;<span class="w"> </span>ok_file<span class="w"> </span><span class="m">2</span>&gt;&gt;<span class="w"> </span>nok_file
+</code></pre></div>
 
 
 

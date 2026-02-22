@@ -551,34 +551,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1277,24 +1249,29 @@ This change mainly affects AMD graphics cards. (Intel GPUs don't use Mesa for vi
 <p><a href="https://forum.manjaro.org/t/stable-update-2022-12-06-kernels-mesa-plasma-cinnamon-nvidia-libreoffice-pipewire-virtualbox/128453">(source)</a></p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <p>Install required packages before running the script with:</p>
-<pre class="highlight"><code>sudo pacman -S --needed base-devel git </code></pre>
+<div class="highlight"><pre><span></span><code>sudo pacman -S --needed base-devel git 
+</code></pre></div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>Clone this repository then run the script:</p>
-<pre class="highlight"><code>git clone https://gitlab.com/th3bucch/manjaro-mesa-codecs.git
+<div class="highlight"><pre><span></span><code>git clone https://gitlab.com/th3bucch/manjaro-mesa-codecs.git
 cd manjaro-mesa-codecs
-./manjaro-mesa-codecs.sh</code></pre>
+./manjaro-mesa-codecs.sh
+</code></pre></div>
 <h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
 <p>Easiest way to run this script from everywhere on the system is to symlink it to one of the directories included in the <code>$PATH</code> global variable (i.e. <code>~/.local/bin</code>).
 Check which directories are included using <code>echo $PATH</code>.</p>
 <p><code>cd</code> inside the cloned repository then run:
-<pre class="highlight"><code>ln -s $(pwd)/manjaro-mesa-codecs.sh /home/$USER/.local/bin/manjaro-mesa-codecs</code></pre></p>
+<div class="highlight"><pre><span></span><code>ln -s $(pwd)/manjaro-mesa-codecs.sh /home/$USER/.local/bin/manjaro-mesa-codecs
+</code></pre></div></p>
 <p>the script will be available systemwide for your user with the command:
-<pre class="highlight"><code>manjaro-mesa-codecs</code></pre></p>
+<div class="highlight"><pre><span></span><code>manjaro-mesa-codecs
+</code></pre></div></p>
 <h2 id="pacman-hook">Pacman HOOK<a class="headerlink" href="#pacman-hook" title="Permanent link">&para;</a></h2>
 <p><em>TBD</em></p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>If <code>pacman</code> cannot verify the source code package returning <code>unknown public key *key-id*</code> message, just copy the provided <em>key-id</em> and import that with:
-<pre class="highlight"><code>gpg --recv-keys &lt;key-id&gt;</code></pre></p>
+<div class="highlight"><pre><span></span><code>gpg --recv-keys &lt;key-id&gt;
+</code></pre></div></p>
 
 
 

@@ -557,34 +557,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2070,8 +2042,8 @@
 <p>Multiple users can belong to the same group.</p>
 <p>Groups other than the primary group are called <strong>supplementary groups</strong>.</p>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>Each user has a primary group and can be invited into one or more supplementary groups.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Each user has a primary group and can be invited into one or more supplementary groups.
+</code></pre></div>
 
 <p>Groups and users are managed by their unique numerical identifiers <code>GID</code> and <code>UID</code>.</p>
 <ul>
@@ -2090,8 +2062,8 @@
 <li>/etc/login.defs</li>
 </ul>
 <p>!!! Danger "Danger"</p>
-<pre class="codehilite"><code>You should always use administration commands instead of manually editing files.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>You should always use administration commands instead of manually editing files.
+</code></pre></div>
 
 <h2 id="group-management">Group Management<a class="headerlink" href="#group-management" title="Permanent link">&para;</a></h2>
 <p>Modified files, added lines:</p>
@@ -2101,9 +2073,11 @@
 </ul>
 <h3 id="groupadd-command"><code>groupadd</code> command<a class="headerlink" href="#groupadd-command" title="Permanent link">&para;</a></h3>
 <p>The <code>groupadd</code> command adds a group to the system.
-<pre class="highlight"><code>groupadd [-g GID] group</code></pre></p>
+<div class="highlight"><pre><span></span><code>groupadd [-g GID] group
+</code></pre></div></p>
 <p>Example:</p>
-<pre class="highlight"><code>$ sudo groupadd -g 1012 GroupB</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo groupadd -g 1012 GroupB
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2132,24 +2106,26 @@
 <li>Different from the name of an existing user or system file.</li>
 </ul>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>Under **Debian**, the administrator should use, except in scripts intended to be portable across all Linux distributions, the `addgroup` and `delgroup` commands as specified in `man`:
+<div class="codehilite"><pre><span></span><code><span class="n">Under</span><span class="w"> </span><span class="o">**</span><span class="n">Debian</span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">administrator</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">except</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">scripts</span><span class="w"> </span><span class="n">intended</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">portable</span><span class="w"> </span><span class="n">across</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="n">distributions</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`addgroup`</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n n-Quoted">`delgroup`</span><span class="w"> </span><span class="n">commands</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n n-Quoted">`man`</span><span class="o">:</span>
 
-```
-$ man addgroup
-DESCRIPTION
-adduser and addgroup add users and groups to the system according to command line options and configuration information
-in /etc/adduser.conf. They are friendlier front ends to the low-level tools like useradd, groupadd and usermod programs,
-by default, choosing Debian policy conformant UID and GID values, creating a home directory with skeletal configuration,
-running a custom script, and other features.
-```
-</code></pre>
+<span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span>
+<span class="n n-Quoted">$ man addgroup</span>
+<span class="n n-Quoted">DESCRIPTION</span>
+<span class="n n-Quoted">adduser and addgroup add users and groups to the system according to command line options and configuration information</span>
+<span class="n n-Quoted">in /etc/adduser.conf. They are friendlier front ends to the low-level tools like useradd, groupadd and usermod programs,</span>
+<span class="n n-Quoted">by default, choosing Debian policy conformant UID and GID values, creating a home directory with skeletal configuration,</span>
+<span class="n n-Quoted">running a custom script, and other features.</span>
+<span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
+</code></pre></div>
 
 <h3 id="groupmod-command"><code>groupmod</code> command<a class="headerlink" href="#groupmod-command" title="Permanent link">&para;</a></h3>
 <p>The <code>groupmod</code> command allows you to modify an existing group on the system.</p>
-<pre class="highlight"><code>groupmod [-g GID] [-n name] group</code></pre>
+<div class="highlight"><pre><span></span><code>groupmod [-g GID] [-n name] group
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>$ sudo groupmod -g 1016 GroupP
-$ sudo groupmod -n GroupC GroupB</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo groupmod -g 1016 GroupP
+$ sudo groupmod -n GroupC GroupB
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2170,75 +2146,79 @@ $ sudo groupmod -n GroupC GroupB</code></pre>
 </table>
 <p>You can change a group's name, its <code>GID</code>, or both simultaneously.</p>
 <p>After modification, files belonging to the group have an unknown <code>GID</code>. They must be reassigned to the new <code>GID</code>.</p>
-<pre class="highlight"><code>$ sudo find / -gid 1002 -exec chgrp 1016 {} \;</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo find / -gid 1002 -exec chgrp 1016 {} \;
+</code></pre></div>
 <h3 id="groupdel-command"><code>groupdel</code> command<a class="headerlink" href="#groupdel-command" title="Permanent link">&para;</a></h3>
 <p>The <code>groupdel</code> command is used to delete an existing group on the system.</p>
-<pre class="highlight"><code>groupdel group</code></pre>
+<div class="highlight"><pre><span></span><code>groupdel group
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>$ sudo groupdel GroupC</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo groupdel GroupC
+</code></pre></div>
 <p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>When deleting a group, two conditions can occur:
+<div class="codehilite"><pre><span></span><code><span class="k">When</span><span class="w"> </span><span class="n">deleting</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">group</span><span class="p">,</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">conditions</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">occur</span><span class="o">:</span>
 
-* If a user has a unique primary group and you run the `groupdel` command on that group, it will indicate that there is a specific user under the group and that it cannot be deleted.
-* If a user belongs to a supplementary group (not the user's primary group) and that group is not the primary group of another user on the system, the `groupdel` command will delete the group without further prompts.
+<span class="o">*</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">unique</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`groupdel`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">group</span><span class="p">,</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">indicate</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">there</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">specific</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">under</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">cannot</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">deleted</span><span class="p">.</span>
+<span class="o">*</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">belongs</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">supplementary</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="p">(</span><span class="k">not</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">user</span><span class="s1">&#39;s primary group) and that group is not the primary group of another user on the system, the `groupdel` command will delete the group without further prompts.</span>
 
-Examples:
+<span class="s1">Examples:</span>
 
-```bash
-Shell &gt; useradd testa
-Shell &gt; id testa
-uid=1000(testa) gid=1000(testa) group=1000(testa)
-Shell &gt; groupdel testa
-groupdel: cannot remove the primary group of user 'testa'
+<span class="s1">```bash</span>
+<span class="s1">Shell &gt; useradd testa</span>
+<span class="s1">Shell &gt; id testa</span>
+<span class="s1">uid=1000(testa) gid=1000(testa) group=1000(testa)</span>
+<span class="s1">Shell &gt; groupdel testa</span>
+<span class="s1">groupdel: cannot remove the primary group of user &#39;</span><span class="n">testa</span><span class="s1">&#39;</span>
 
-Shell &gt; groupadd -g 1001 testb
-Shell &gt; usermod -G testb root
-Shell &gt; id root
-uid=0(root) gid=0(root) group=0(root),1001(testb)
-Shell &gt; groupdel testb
-```
-</code></pre>
-
-<p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>When deleting a user with the `userdel -r` command, the corresponding primary group is also deleted. The primary group name usually matches the user name.
-</code></pre>
+<span class="s1">Shell &gt; groupadd -g 1001 testb</span>
+<span class="s1">Shell &gt; usermod -G testb root</span>
+<span class="s1">Shell &gt; id root</span>
+<span class="s1">uid=0(root) gid=0(root) group=0(root),1001(testb)</span>
+<span class="s1">Shell &gt; groupdel testb</span>
+<span class="s1">```</span>
+</code></pre></div>
 
 <p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>Each group has a unique `GID`. A group can be used by multiple users as a supplementary group. By convention, the super administrator's GID is 0. GIDs reserved for some services or processes are 201~999, which are called system groups or pseudo-user groups. The GID for users is usually 1000 or greater. These are related to &lt;font color=red&gt;/etc/login.defs&lt;/font&gt;, which we will discuss later.
-
-```bash
-# Comment line ignored
-shell &gt; cat  /etc/login.defs
-MAIL_DIR        /var/spool/mail
-UMASK           022
-HOME_MODE       0700
-PASS_MAX_DAYS   99999
-PASS_MIN_DAYS   0
-PASS_MIN_LEN    5
-PASS_WARN_AGE   7
-UID_MIN                  1000
-UID_MAX                 60000
-SYS_UID_MIN               201
-SYS_UID_MAX               999
-GID_MIN                  1000
-GID_MAX                 60000
-SYS_GID_MIN               201
-SYS_GID_MAX               999
-CREATE_HOME     yes
-USERGROUPS_ENAB yes
-ENCRYPT_METHOD SHA512
-```
-</code></pre>
+<div class="codehilite"><pre><span></span><code>When deleting a user with the `userdel -r` command, the corresponding primary group is also deleted. The primary group name usually matches the user name.
+</code></pre></div>
 
 <p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>Since a user must necessarily be part of a group, it is better to create groups before adding users. Therefore, a group may have no members.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">Each</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">unique</span><span class="w"> </span><span class="n n-Quoted">`GID`</span><span class="p">.</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">multiple</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">supplementary</span><span class="w"> </span><span class="k">group</span><span class="p">.</span><span class="w"> </span><span class="k">By</span><span class="w"> </span><span class="n">convention</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">super</span><span class="w"> </span><span class="n">administrator</span><span class="s1">&#39;s GID is 0. GIDs reserved for some services or processes are 201~999, which are called system groups or pseudo-user groups. The GID for users is usually 1000 or greater. These are related to &lt;font color=red&gt;/etc/login.defs&lt;/font&gt;, which we will discuss later.</span>
+
+<span class="s1">```bash</span>
+<span class="s1"># Comment line ignored</span>
+<span class="s1">shell &gt; cat  /etc/login.defs</span>
+<span class="s1">MAIL_DIR        /var/spool/mail</span>
+<span class="s1">UMASK           022</span>
+<span class="s1">HOME_MODE       0700</span>
+<span class="s1">PASS_MAX_DAYS   99999</span>
+<span class="s1">PASS_MIN_DAYS   0</span>
+<span class="s1">PASS_MIN_LEN    5</span>
+<span class="s1">PASS_WARN_AGE   7</span>
+<span class="s1">UID_MIN                  1000</span>
+<span class="s1">UID_MAX                 60000</span>
+<span class="s1">SYS_UID_MIN               201</span>
+<span class="s1">SYS_UID_MAX               999</span>
+<span class="s1">GID_MIN                  1000</span>
+<span class="s1">GID_MAX                 60000</span>
+<span class="s1">SYS_GID_MIN               201</span>
+<span class="s1">SYS_GID_MAX               999</span>
+<span class="s1">CREATE_HOME     yes</span>
+<span class="s1">USERGROUPS_ENAB yes</span>
+<span class="s1">ENCRYPT_METHOD SHA512</span>
+<span class="s1">```</span>
+</code></pre></div>
+
+<p>!!! Tip "Tip"</p>
+<div class="codehilite"><pre><span></span><code>Since a user must necessarily be part of a group, it is better to create groups before adding users. Therefore, a group may have no members.
+</code></pre></div>
 
 <h3 id="etcgroup-file"><code>/etc/group</code> file<a class="headerlink" href="#etcgroup-file" title="Permanent link">&para;</a></h3>
 <p>This file contains Group information (separated by <code>:</code>).</p>
-<pre class="highlight"><code>$ sudo tail -1 /etc/group
+<div class="highlight"><pre><span></span><code>$ sudo tail -1 /etc/group
 GroupP:x:516:patrick
-  (1)  (2)(3)   (4)</code></pre>
+  (1)  (2)(3)   (4)
+</code></pre></div>
 <ul>
 <li>1: Group name.</li>
 <li>2: The group password is identified by an <code>x</code>. The group password is stored in <code>/etc/gshadow</code>.</li>
@@ -2249,9 +2229,10 @@ GroupP:x:516:patrick
 <p>Each line in <code>/etc/group</code> corresponds to a group. The main user information is stored in <code>/etc/passwd</code>.</p>
 <h3 id="etcgshadow-file"><code>/etc/gshadow</code> file<a class="headerlink" href="#etcgshadow-file" title="Permanent link">&para;</a></h3>
 <p>This file contains security information about groups (separated by <code>:</code>).</p>
-<pre class="highlight"><code>$ sudo grep GroupA /etc/gshadow
+<div class="highlight"><pre><span></span><code>$ sudo grep GroupA /etc/gshadow
 GroupA:$6$2,9,v...SBn160:alain:arch
-   (1)      (2)            (3)      (4)</code></pre>
+   (1)      (2)            (3)      (4)
+</code></pre></div>
 <ul>
 <li>1: Group name.</li>
 <li>2: Encrypted password.</li>
@@ -2259,8 +2240,8 @@ GroupA:$6$2,9,v...SBn160:alain:arch
 <li>4: Supplementary users of the group (excluding the unique primary user).</li>
 </ul>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>The group name in **/etc/group** and **/etc/gshadow** must match one-to-one, meaning each line in **/etc/group** must have a corresponding line in **/etc/gshadow**.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>The group name in **/etc/group** and **/etc/gshadow** must match one-to-one, meaning each line in **/etc/group** must have a corresponding line in **/etc/gshadow**.
+</code></pre></div>
 
 <p>An <code>!</code> in the password indicates the password is locked. Therefore, no user can use the password to access the group (since group members don't need it).</p>
 <h2 id="user-management_1">User Management<a class="headerlink" href="#user-management_1" title="Permanent link">&para;</a></h2>
@@ -2288,9 +2269,11 @@ GroupA:$6$2,9,v...SBn160:alain:arch
 </ul>
 <h3 id="useradd-command"><code>useradd</code> command<a class="headerlink" href="#useradd-command" title="Permanent link">&para;</a></h3>
 <p>The <code>useradd</code> command is used to add a user.</p>
-<pre class="highlight"><code>useradd [-u UID] [-g GID] [-d directory] [-s shell] login</code></pre>
+<div class="highlight"><pre><span></span><code>useradd [-u UID] [-g GID] [-d directory] [-s shell] login
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>$ sudo useradd -u 1000 -g 1013 -d /home/GroupC/carine carine</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo useradd -u 1000 -g 1013 -d /home/GroupC/carine carine
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2347,23 +2330,24 @@ GroupA:$6$2,9,v...SBn160:alain:arch
 <li>The UID and GID values of the user's primary group are automatically deduced. This is usually a unique value between 1000 and 60,000.</li>
 </ul>
 <p>!!! note "Note"</p>
-<pre class="codehilite"><code>The settings and defaults are obtained from the following configuration files:
+<div class="codehilite"><pre><span></span><code>The settings and defaults are obtained from the following configuration files:
 
 `/etc/login.defs` and `/etc/default/useradd`
-</code></pre>
+</code></pre></div>
 
-<pre class="highlight"><code class="language-bash">Shell &gt; useradd test1
+<div class="highlight"><pre><span></span><code>Shell<span class="w"> </span>&gt;<span class="w"> </span>useradd<span class="w"> </span>test1
 
-Shell &gt; tail -n 1 /etc/passwd
+Shell<span class="w"> </span>&gt;<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/passwd
 test1:x:1000:1000::/home/test1:/bin/bash
 
-Shell &gt; tail -n 1 /etc/shadow
+Shell<span class="w"> </span>&gt;<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/shadow
 test1:!!:19253:0:99999:7
 :::
 
-Shell &gt; tail -n 1 /etc/group ; tail -n 1 /etc/gshadow
+Shell<span class="w"> </span>&gt;<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/group<span class="w"> </span><span class="p">;</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/gshadow
 test1:x:1000:
-test1!::</code></pre>
+test1!::
+</code></pre></div>
 <p>Account naming rules:</p>
 <ul>
 <li>No accents, uppercase letters, or special characters;</li>
@@ -2373,29 +2357,32 @@ test1!::</code></pre>
 <li>The username can contain up to 32 characters.</li>
 </ul>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>The home directory tree must be created except for the last directory.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nv">The</span><span class="w"> </span><span class="nv">home</span><span class="w"> </span><span class="nv">directory</span><span class="w"> </span><span class="nv">tree</span><span class="w"> </span><span class="nv">must</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">created</span><span class="w"> </span><span class="nv">except</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">last</span><span class="w"> </span><span class="nv">directory</span>.
+</code></pre></div>
 
 <p>The last directory is created by the <code>useradd</code> command, which takes the opportunity to copy files from <code>/etc/skel</code> into it.</p>
 <p><strong>A user can belong to multiple groups in addition to their primary group.</strong></p>
 <p>Example:
-<pre class="highlight"><code>$ sudo useradd -u 1000 -g GroupA -G GroupP,GroupC albert</code></pre></p>
+<div class="highlight"><pre><span></span><code>$ sudo useradd -u 1000 -g GroupA -G GroupP,GroupC albert
+</code></pre></div></p>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>Under **Debian**, you will need to specify the `-m` option to force the creation of the login directory or set the `CREATE_HOME` variable in `/etc/login.defs`. In all cases, the administrator should use the `adduser` and `deluser` commands as specified in `man`, except in scripts intended to be transferred to all Linux distributions:
+<div class="codehilite"><pre><span></span><code><span class="n">Under</span><span class="w"> </span><span class="o">**</span><span class="n">Debian</span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`-m`</span><span class="w"> </span><span class="k">option</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">force</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">creation</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="k">directory</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`CREATE_HOME`</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n n-Quoted">`/etc/login.defs`</span><span class="p">.</span><span class="w"> </span><span class="k">In</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">cases</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">administrator</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`adduser`</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n n-Quoted">`deluser`</span><span class="w"> </span><span class="n">commands</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n n-Quoted">`man`</span><span class="p">,</span><span class="w"> </span><span class="k">except</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">scripts</span><span class="w"> </span><span class="n">intended</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">transferred</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="n">distributions</span><span class="o">:</span>
 
-```
-$ man useradd
-DESCRIPTION
-    **useradd** is a low level utility for adding users. On Debian, administrators should usually use **adduser(8)**
-     instead.
-```
-</code></pre>
+<span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span>
+<span class="n n-Quoted">$ man useradd</span>
+<span class="n n-Quoted">DESCRIPTION</span>
+<span class="n n-Quoted">    **useradd** is a low level utility for adding users. On Debian, administrators should usually use **adduser(8)**</span>
+<span class="n n-Quoted">     instead.</span>
+<span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
+</code></pre></div>
 
 <h4 id="default-values-for-user-creation">Default values for user creation.<a class="headerlink" href="#default-values-for-user-creation" title="Permanent link">&para;</a></h4>
 <p>Modify the <code>/etc/default/useradd</code> file.</p>
-<pre class="highlight"><code>useradd -D [-b directory] [-g group] [-s shell]</code></pre>
+<div class="highlight"><pre><span></span><code>useradd -D [-b directory] [-g group] [-s shell]
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>$ sudo useradd -D -g 1000 -b /home -s /bin/bash</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo useradd -D -g 1000 -b /home -s /bin/bash
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2432,9 +2419,11 @@ DESCRIPTION
 </table>
 <h3 id="usermod-command"><code>usermod</code> command<a class="headerlink" href="#usermod-command" title="Permanent link">&para;</a></h3>
 <p>The <code>usermod</code> command allows you to modify a user.</p>
-<pre class="highlight"><code>usermod [-u UID] [-g GID] [-d directory] [-m] login</code></pre>
+<div class="highlight"><pre><span></span><code>usermod [-u UID] [-g GID] [-d directory] [-m] login
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>$ sudo usermod -u 1044 carine</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo usermod -u 1044 carine
+</code></pre></div>
 <p>Options identical to the <code>useradd</code> command.</p>
 <table>
 <thead>
@@ -2475,39 +2464,43 @@ DESCRIPTION
 </tbody>
 </table>
 <p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>To be modified, a user must be logged out and have no running processes.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>To be modified, a user must be logged out and have no running processes.
+</code></pre></div>
 
 <p>After changing the identifier, files belonging to the user have an unknown <code>UID</code>. The new <code>UID</code> must be reassigned.</p>
 <p>Where <code>1000</code> is the old <code>UID</code> and <code>1044</code> is the new one. The examples are as follows:</p>
-<pre class="highlight"><code>$ sudo find / -uid 1000 -exec chown 1044: {} \;</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo find / -uid 1000 -exec chown 1044: {} \;
+</code></pre></div>
 <p>Locking and unlocking a user account, the examples are as follows:</p>
-<pre class="highlight"><code>Shell &gt; usermod -L test1
+<div class="highlight"><pre><span></span><code>Shell &gt; usermod -L test1
 Shell &gt; grep test1 /etc/shadow
 test1:!$6$n.hxglA.X5r7X0ex$qCXeTx.kQVmqsPLeuvIQnNidnSHvFiD7bQTxU7PLUCmBOcPNd5meqX6AEKSQvCLtbkdNCn.re2ixYxOeGWVFI0:19259:0:99999:7
 :::
 
-Shell &gt; usermod -U test1</code></pre>
+Shell &gt; usermod -U test1
+</code></pre></div>
 <p>The difference between the <code>-aG</code> option and the <code>-G</code> option can be explained by the following example:</p>
-<pre class="highlight"><code class="language-bash">Shell &gt; useradd test1
-Shell &gt; passwd test1
-Shell &gt; groupadd groupA ; groupadd groupB ; groupadd groupC ; groupadd groupD
-Shell &gt; id test1
-uid=1000(test1) gid=1000(test1) groups=1000(test1)
+<div class="highlight"><pre><span></span><code>Shell<span class="w"> </span>&gt;<span class="w"> </span>useradd<span class="w"> </span>test1
+Shell<span class="w"> </span>&gt;<span class="w"> </span>passwd<span class="w"> </span>test1
+Shell<span class="w"> </span>&gt;<span class="w"> </span>groupadd<span class="w"> </span>groupA<span class="w"> </span><span class="p">;</span><span class="w"> </span>groupadd<span class="w"> </span>groupB<span class="w"> </span><span class="p">;</span><span class="w"> </span>groupadd<span class="w"> </span>groupC<span class="w"> </span><span class="p">;</span><span class="w"> </span>groupadd<span class="w"> </span>groupD
+Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>test1
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>
 
-Shell &gt; gpasswd -a test1 groupA
-Shell &gt; id test1
-uid=1000(test1) gid=1000(test1) groups=1000(test1),1002(groupA)
+Shell<span class="w"> </span>&gt;<span class="w"> </span>gpasswd<span class="w"> </span>-a<span class="w"> </span>test1<span class="w"> </span>groupA
+Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>test1
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>,1002<span class="o">(</span>groupA<span class="o">)</span>
 
-Shell &gt; usermod -G groupB,groupC test1
-Shell &gt; id test1 
-uid=1000(test1) gid=1000(test1) gorups=1000(test1),1003(groupB),1004(groupC)
+Shell<span class="w"> </span>&gt;<span class="w"> </span>usermod<span class="w"> </span>-G<span class="w"> </span>groupB,groupC<span class="w"> </span>test1
+Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>test1<span class="w"> </span>
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gorups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>,1003<span class="o">(</span>groupB<span class="o">)</span>,1004<span class="o">(</span>groupC<span class="o">)</span>
 
-Shell &gt; usermod -aG groupD test1
-uid=1000(test1) gid=1000(test1) groups=1000(test1),1003(groupB),1004(groupC),1005(groupD)</code></pre>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>groupD<span class="w"> </span>test1
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>,1003<span class="o">(</span>groupB<span class="o">)</span>,1004<span class="o">(</span>groupC<span class="o">)</span>,1005<span class="o">(</span>groupD<span class="o">)</span>
+</code></pre></div>
 <h3 id="userdel-command"><code>userdel</code> command<a class="headerlink" href="#userdel-command" title="Permanent link">&para;</a></h3>
 <p>The <code>userdel</code> command allows you to delete a user account.</p>
-<pre class="highlight"><code>$ sudo userdel -r carine</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo userdel -r carine
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2523,15 +2516,16 @@ uid=1000(test1) gid=1000(test1) groups=1000(test1),1003(groupB),1004(groupC),100
 </tbody>
 </table>
 <p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>To be deleted, a user must be logged out and have no running processes.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>To be deleted, a user must be logged out and have no running processes.
+</code></pre></div>
 
 <p>The <code>userdel</code> command removes the corresponding lines in <code>/etc/passwd</code>, <code>/etc/shadow</code>, <code>/etc/group</code>, <code>/etc/gshadow</code>. As mentioned earlier, <code>userdel -r</code> will also delete the corresponding user's primary group.</p>
 <h3 id="etcpasswd-file"><code>/etc/passwd</code> file<a class="headerlink" href="#etcpasswd-file" title="Permanent link">&para;</a></h3>
 <p>This file contains user information (separated by <code>:</code>).</p>
-<pre class="highlight"><code>$ sudo head -1 /etc/passwd
+<div class="highlight"><pre><span></span><code>$ sudo head -1 /etc/passwd
 root:x:0:0:root:/root:/bin/bash
-(1)(2)(3)(4)(5)  (6)    (7)</code></pre>
+(1)(2)(3)(4)(5)  (6)    (7)
+</code></pre></div>
 <ul>
 <li>1: Login name;</li>
 <li>2: Password identification, <code>x</code> indicates the user has a password, the encrypted password is stored in the second field of <code>/etc/shadow</code>;</li>
@@ -2543,10 +2537,11 @@ root:x:0:0:root:/root:/bin/bash
 </ul>
 <h3 id="etcshadow-file"><code>/etc/shadow</code> file<a class="headerlink" href="#etcshadow-file" title="Permanent link">&para;</a></h3>
 <p>This file contains user security information (separated by <code>:</code>).
-<pre class="highlight"><code>$ sudo tail -1 /etc/shadow
+<div class="highlight"><pre><span></span><code>$ sudo tail -1 /etc/shadow
 root:$6$...:15399:0:99999:7
 :::
- (1)    (2)  (3) (4) (5) (6)(7,8,9)</code></pre></p>
+ (1)    (2)  (3) (4) (5) (6)(7,8,9)
+</code></pre></div></p>
 <ul>
 <li>1: Login name.</li>
 <li>2: Encrypted password. Uses the SHA512 encryption algorithm, defined by the <code>ENCRYPT_METHOD</code> in <code>/etc/login.defs</code>.</li>
@@ -2559,28 +2554,31 @@ root:$6$...:15399:0:99999:7
 <li>9: Reserved for future use.</li>
 </ul>
 <p>!!! Danger "Danger"</p>
-<pre class="codehilite"><code>For each line in `/etc/passwd`, there must be a corresponding line in `/etc/shadow`.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">For</span><span class="w"> </span><span class="nv">each</span><span class="w"> </span><span class="nv">line</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span>`<span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">passwd</span>`,<span class="w"> </span><span class="nv">there</span><span class="w"> </span><span class="nv">must</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">corresponding</span><span class="w"> </span><span class="nv">line</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span>`<span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">shadow</span>`.
+</code></pre></div>
 
 <p>For date and time conversion, refer to the following command format:</p>
-<pre class="highlight"><code class="language-bash"># The timestamp is converted to a date, "17718" indicates the timestamp to enter.
-Shell &gt; date -d "1970-01-01 17718 days" 
+<div class="highlight"><pre><span></span><code><span class="c1"># The timestamp is converted to a date, &quot;17718&quot; indicates the timestamp to enter.</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;1970-01-01 17718 days&quot;</span><span class="w"> </span>
 
-# The date is converted to a timestamp, "2018-07-06" indicates the date to fill in.
-Shell &gt; echo $(($(date --date="2018-07-06" +%s)/86400+1))</code></pre>
+<span class="c1"># The date is converted to a timestamp, &quot;2018-07-06&quot; indicates the date to fill in.</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(($(</span>date<span class="w"> </span>--date<span class="o">=</span><span class="s2">&quot;2018-07-06&quot;</span><span class="w"> </span>+%s<span class="k">)</span><span class="o">/</span><span class="m">86400</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
+</code></pre></div>
 <h2 id="file-owners">File Owners<a class="headerlink" href="#file-owners" title="Permanent link">&para;</a></h2>
 <p>!!! Danger "Danger"</p>
-<pre class="codehilite"><code>All files necessarily belong to a user and a group.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>All files necessarily belong to a user and a group.
+</code></pre></div>
 
 <p>The primary group of the user who creates the file is, by default, the file's owner group.</p>
 <h3 id="modification-commands">Modification commands<a class="headerlink" href="#modification-commands" title="Permanent link">&para;</a></h3>
 <h4 id="chown-command"><code>chown</code> command<a class="headerlink" href="#chown-command" title="Permanent link">&para;</a></h4>
 <p>The <code>chown</code> command allows you to change the owners of a file.
-<pre class="highlight"><code>chown [-R] [-v] login[:group] file</code></pre></p>
+<div class="highlight"><pre><span></span><code>chown [-R] [-v] login[:group] file
+</code></pre></div></p>
 <p>Examples:
-<pre class="highlight"><code>$ sudo chown root myfile
-$ sudo chown albert:GroupA myfile</code></pre></p>
+<div class="highlight"><pre><span></span><code>$ sudo chown root myfile
+$ sudo chown albert:GroupA myfile
+</code></pre></div></p>
 <table>
 <thead>
 <tr>
@@ -2600,20 +2598,27 @@ $ sudo chown albert:GroupA myfile</code></pre></p>
 </tbody>
 </table>
 <p>To change only the owning user:</p>
-<pre class="highlight"><code>$ sudo chown albert file</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo chown albert file
+</code></pre></div>
 <p>To change only the owning group:</p>
-<pre class="highlight"><code>$ sudo chown :GroupA file</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo chown :GroupA file
+</code></pre></div>
 <p>Change the owning user and group:</p>
-<pre class="highlight"><code>$ sudo chown albert:GroupA file</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo chown albert:GroupA file
+</code></pre></div>
 <p>In the following example, the assigned group will be the primary group of the specified user.</p>
-<pre class="highlight"><code>$ sudo chown albert: file</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo chown albert: file
+</code></pre></div>
 <p>Change the owner and group of all files in a directory</p>
-<pre class="highlight"><code>$ sudo chown -R albert:GroupA /dir1</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo chown -R albert:GroupA /dir1
+</code></pre></div>
 <h3 id="chgrp-command"><code>chgrp</code> command<a class="headerlink" href="#chgrp-command" title="Permanent link">&para;</a></h3>
 <p>The <code>chgrp</code> command allows you to change the owning group of a file.</p>
-<pre class="highlight"><code>chgrp [-R] [-v] group file</code></pre>
+<div class="highlight"><pre><span></span><code>chgrp [-R] [-v] group file
+</code></pre></div>
 <p>Example:
-<pre class="highlight"><code>$ sudo chgrp group1 file</code></pre></p>
+<div class="highlight"><pre><span></span><code>$ sudo chgrp group1 file
+</code></pre></div></p>
 <table>
 <thead>
 <tr>
@@ -2633,19 +2638,23 @@ $ sudo chown albert:GroupA myfile</code></pre></p>
 </tbody>
 </table>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>It is possible to apply an owner and owning group to a file by taking as reference those of another file:
-</code></pre>
+<div class="codehilite"><pre><span></span><code>It is possible to apply an owner and owning group to a file by taking as reference those of another file:
+</code></pre></div>
 
-<pre class="highlight"><code>chown [options] --reference=RRFILE FILE</code></pre>
+<div class="highlight"><pre><span></span><code>chown [options] --reference=RRFILE FILE
+</code></pre></div>
 <p>For example:</p>
-<pre class="highlight"><code>chown --reference=/etc/groups /etc/passwd</code></pre>
+<div class="highlight"><pre><span></span><code>chown --reference=/etc/groups /etc/passwd
+</code></pre></div>
 <h2 id="guest-management">Guest Management<a class="headerlink" href="#guest-management" title="Permanent link">&para;</a></h2>
 <h3 id="gpasswd-command"><code>gpasswd</code> command<a class="headerlink" href="#gpasswd-command" title="Permanent link">&para;</a></h3>
 <p>The <code>gpasswd</code> command allows you to manage a group.</p>
-<pre class="highlight"><code>gpasswd [-a login] [-A login] [-d login] [-M login] group</code></pre>
+<div class="highlight"><pre><span></span><code>gpasswd [-a login] [-A login] [-d login] [-M login] group
+</code></pre></div>
 <p>Examples:</p>
-<pre class="highlight"><code>$ sudo gpasswd -A alain GroupA
-[alain]$ gpasswd -a patrick GroupA</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo gpasswd -A alain GroupA
+[alain]$ gpasswd -a patrick GroupA
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2673,24 +2682,28 @@ $ sudo chown albert:GroupA myfile</code></pre></p>
 </tbody>
 </table>
 <p>The <code>gpasswd -M</code> command acts as a modification, not an addition.</p>
-<pre class="highlight"><code># gpasswd GroupeA
+<div class="highlight"><pre><span></span><code># gpasswd GroupeA
 New Password:
-Re-enter new password:</code></pre>
+Re-enter new password:
+</code></pre></div>
 <p>!!! note "Note"</p>
-<pre class="codehilite"><code>Besides using `gpasswd -a` to add users to a group, you can also use `usermod -G` or `usermod -AG` mentioned earlier.
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Besides using `gpasswd -a` to add users to a group, you can also use `usermod -G` or `usermod -AG` mentioned earlier.
+</code></pre></div>
 
 <h3 id="id-command"><code>id</code> command<a class="headerlink" href="#id-command" title="Permanent link">&para;</a></h3>
 <p>The <code>id</code> command displays the group names of a user.</p>
-<pre class="highlight"><code>id USER</code></pre>
+<div class="highlight"><pre><span></span><code>id USER
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>$ sudo id alain
-uid=1000(alain) gid=1000(GroupA) groupes=1000(GroupA),1016(GroupP)</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo id alain
+uid=1000(alain) gid=1000(GroupA) groupes=1000(GroupA),1016(GroupP)
+</code></pre></div>
 <h3 id="newgrp-command"><code>newgrp</code> command<a class="headerlink" href="#newgrp-command" title="Permanent link">&para;</a></h3>
 <p>The <code>newgrp</code> command can select a group, from the user's supplementary groups, as a new primary group <strong>temporarily</strong>. The <code>newgrp</code> command creates a new <strong>child shell</strong> (child process) each time the primary group of a user is changed. Be careful! <strong>child shell</strong> and <strong>sub shell</strong> are different.</p>
-<pre class="highlight"><code>newgrp [secondarygroups]</code></pre>
+<div class="highlight"><pre><span></span><code>newgrp [secondarygroups]
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>Shell &gt; useradd test1
+<div class="highlight"><pre><span></span><code>Shell &gt; useradd test1
 Shell &gt; passwd test1
 Shell &gt; groupadd groupA ; groupadd groupB 
 Shell &gt; usermod -G groupA,groupB test1
@@ -2722,14 +2735,17 @@ Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL
 Shell &gt; exit
 Shell &gt; logout
 Shell &gt; whoami
-root</code></pre>
+root
+</code></pre></div>
 <h2 id="protection">Protection<a class="headerlink" href="#protection" title="Permanent link">&para;</a></h2>
 <h3 id="passwd-command"><code>passwd</code> command<a class="headerlink" href="#passwd-command" title="Permanent link">&para;</a></h3>
 <p>The <code>passwd</code> command is used to manage a password.</p>
-<pre class="highlight"><code>passwd [-d] [-l] [-S] [-u] [login]</code></pre>
+<div class="highlight"><pre><span></span><code>passwd [-d] [-l] [-S] [-u] [login]
+</code></pre></div>
 <p>Examples:</p>
-<pre class="highlight"><code>Shell &gt; passwd -l albert
-Shell &gt; passwd -n 60 -x 90 -w 80 -i 10 patrick</code></pre>
+<div class="highlight"><pre><span></span><code>Shell &gt; passwd -l albert
+Shell &gt; passwd -n 60 -x 90 -w 80 -i 10 patrick
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2781,29 +2797,34 @@ Shell &gt; passwd -n 60 -x 90 -w 80 -i 10 patrick</code></pre>
 <ul>
 <li>Alain changes his password:</li>
 </ul>
-<pre class="highlight"><code>[alain]$ passwd</code></pre>
+<div class="highlight"><pre><span></span><code>[alain]$ passwd
+</code></pre></div>
 <ul>
 <li>root changes Alain's password</li>
 </ul>
-<pre class="highlight"><code>$ sudo passwd alain</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo passwd alain
+</code></pre></div>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>The `passwd` command is available for users to change their password (old password is required). The administrator can change all user passwords without restrictions.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n n-Quoted">`passwd`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">available</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">change</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="k">password</span><span class="w"> </span><span class="p">(</span><span class="k">old</span><span class="w"> </span><span class="k">password</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">required</span><span class="p">).</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">administrator</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="k">change</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">passwords</span><span class="w"> </span><span class="k">without</span><span class="w"> </span><span class="n">restrictions</span><span class="p">.</span>
+</code></pre></div>
 
 <p>They must respect security restrictions.</p>
 <p>When managing user accounts through shell scripts, it may be useful to set a default password after user creation.</p>
 <p>This can be done by passing the password to the <code>passwd</code> command.</p>
 <p>Example:</p>
-<pre class="highlight"><code>$ sudo echo "azerty,1" | passwd --stdin philippe</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo echo &quot;azerty,1&quot; | passwd --stdin philippe
+</code></pre></div>
 <p>!!! Warning "Warning"</p>
-<pre class="codehilite"><code>The password is entered in plain text, `passwd` takes care of encrypting it.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="k">password</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">entered</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">plain</span><span class="w"> </span><span class="kt">text</span><span class="p">,</span><span class="w"> </span><span class="n n-Quoted">`passwd`</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="n">care</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">encrypting</span><span class="w"> </span><span class="n">it</span><span class="p">.</span>
+</code></pre></div>
 
 <h3 id="chage-command"><code>chage</code> command<a class="headerlink" href="#chage-command" title="Permanent link">&para;</a></h3>
 <p>The <code>chage</code> command modifies user password expiration information.</p>
-<pre class="highlight"><code>chage [-d date] [-E date] [-I days] [-l] [-m days] [-M days] [-W days] [login]</code></pre>
+<div class="highlight"><pre><span></span><code>chage [-d date] [-E date] [-I days] [-l] [-m days] [-M days] [-W days] [login]
+</code></pre></div>
 <p>Example:</p>
-<pre class="highlight"><code>$ sudo chage -m 60 -M 90 -W 80 -I 10 alain</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo chage -m 60 -M 90 -W 80 -I 10 alain
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2843,11 +2864,12 @@ Shell &gt; passwd -n 60 -x 90 -w 80 -i 10 patrick</code></pre>
 </tbody>
 </table>
 <p>Examples:</p>
-<pre class="highlight"><code># The `chage` command also offers an interactive mode.
+<div class="highlight"><pre><span></span><code># The `chage` command also offers an interactive mode.
 $ sudo chage philippe
 
 # The `-d` option forces the password to be changed at login.
-$ sudo chage -d 0 philippe</code></pre>
+$ sudo chage -d 0 philippe
+</code></pre></div>
 <p><img alt="User account management with chage" src="../images/chage-timeline.png" /></p>
 <h2 id="advanced-management">Advanced Management<a class="headerlink" href="#advanced-management" title="Permanent link">&para;</a></h2>
 <p>Configuration files:</p>
@@ -2857,26 +2879,27 @@ $ sudo chage -d 0 philippe</code></pre>
 <li><code>/etc/skel</code></li>
 </ul>
 <p>!!! Note "Note"</p>
-<pre class="codehilite"><code>Modifying the `/etc/default/useradd` file is done with the `useradd` command.
+<div class="codehilite"><pre><span></span><code><span class="n">Modifying</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`/etc/default/useradd`</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">done</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`useradd`</span><span class="w"> </span><span class="n">command</span><span class="p">.</span>
 
-The other files must be modified with a text editor.
-</code></pre>
+<span class="n">The</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">modified</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="kt">text</span><span class="w"> </span><span class="n">editor</span><span class="p">.</span>
+</code></pre></div>
 
 <h3 id="etcdefaultuseradd-file"><code>/etc/default/useradd</code> file<a class="headerlink" href="#etcdefaultuseradd-file" title="Permanent link">&para;</a></h3>
 <p>This file contains the default data settings.</p>
 <p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>When creating a user, if options are not specified, the system uses the default values defined in `/etc/default/useradd`.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nv">When</span><span class="w"> </span><span class="nv">creating</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">user</span>,<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">options</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">specified</span>,<span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">system</span><span class="w"> </span><span class="nv">uses</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">default</span><span class="w"> </span><span class="nv">values</span><span class="w"> </span><span class="nv">defined</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span>`<span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">default</span><span class="o">/</span><span class="nv">useradd</span>`.
+</code></pre></div>
 
 <p>This file is modified by the <code>useradd -D</code> command (<code>useradd -D</code> without any other option displays the contents of the <code>/etc/default/useradd</code> file).</p>
-<pre class="highlight"><code>Shell &gt; grep -v ^# /etc/default/useradd 
+<div class="highlight"><pre><span></span><code>Shell &gt; grep -v ^# /etc/default/useradd 
 GROUP=100
 HOME=/home
 INACTIVE=-1
 EXPIRE=
 SHELL=/bin/bash
 SKEL=/etc/skel
-CREATE_MAIL_SPOOL=yes</code></pre>
+CREATE_MAIL_SPOOL=yes
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2916,40 +2939,44 @@ CREATE_MAIL_SPOOL=yes</code></pre>
 </tbody>
 </table>
 <p>If you don't need a primary group with the same name when creating users, you can do this:</p>
-<pre class="highlight"><code>Shell &gt; useradd -N test2
+<div class="highlight"><pre><span></span><code>Shell &gt; useradd -N test2
 Shell &gt; id test2
-uid=1001(test2) gid=100(users) groups=100(users)</code></pre>
+uid=1001(test2) gid=100(users) groups=100(users)
+</code></pre></div>
 <h3 id="etclogindefs-file"><code>/etc/login.defs</code> file<a class="headerlink" href="#etclogindefs-file" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-bash"># Comment line ignored
-shell &gt; cat  /etc/login.defs
-MAIL_DIR        /var/spool/mail
-UMASK           022
-HOME_MODE       0700
-PASS_MAX_DAYS   99999
-PASS_MIN_DAYS   0
-PASS_MIN_LEN    5
-PASS_WARN_AGE   7
-UID_MIN                  1000
-UID_MAX                 60000
-SYS_UID_MIN               201
-SYS_UID_MAX               999
-GID_MIN                  1000
-GID_MAX                 60000
-SYS_GID_MIN               201
-SYS_GID_MAX               999
-CREATE_HOME     yes
-USERGROUPS_ENAB yes
-ENCRYPT_METHOD SHA512</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># Comment line ignored</span>
+shell<span class="w"> </span>&gt;<span class="w"> </span>cat<span class="w">  </span>/etc/login.defs
+MAIL_DIR<span class="w">        </span>/var/spool/mail
+UMASK<span class="w">           </span><span class="m">022</span>
+HOME_MODE<span class="w">       </span><span class="m">0700</span>
+PASS_MAX_DAYS<span class="w">   </span><span class="m">99999</span>
+PASS_MIN_DAYS<span class="w">   </span><span class="m">0</span>
+PASS_MIN_LEN<span class="w">    </span><span class="m">5</span>
+PASS_WARN_AGE<span class="w">   </span><span class="m">7</span>
+UID_MIN<span class="w">                  </span><span class="m">1000</span>
+UID_MAX<span class="w">                 </span><span class="m">60000</span>
+SYS_UID_MIN<span class="w">               </span><span class="m">201</span>
+SYS_UID_MAX<span class="w">               </span><span class="m">999</span>
+GID_MIN<span class="w">                  </span><span class="m">1000</span>
+GID_MAX<span class="w">                 </span><span class="m">60000</span>
+SYS_GID_MIN<span class="w">               </span><span class="m">201</span>
+SYS_GID_MAX<span class="w">               </span><span class="m">999</span>
+CREATE_HOME<span class="w">     </span>yes
+USERGROUPS_ENAB<span class="w"> </span>yes
+ENCRYPT_METHOD<span class="w"> </span>SHA512
+</code></pre></div>
 <p><code>UMASK 022</code>: This means the permission to create a file is 755 (rwxr-xr-x). However, for security reasons, GNU/Linux does not include the <strong>x</strong> permission for newly created files; this restriction applies to root (uid=0) and regular users (uid&gt;=1000). For example:</p>
-<pre class="highlight"><code>Shell &gt; touch a.txt
+<div class="highlight"><pre><span></span><code>Shell &gt; touch a.txt
 Shell &gt; ll
--rw-r--r--  root root     0 Oct  8 13:00 a.txt</code></pre>
+-rw-r--r--  root root     0 Oct  8 13:00 a.txt
+</code></pre></div>
 <p><code>HOME_MODE 0700</code>: The permissions of a regular user's home directory. Does not work for root's home directory.</p>
-<pre class="highlight"><code>Shell &gt; ll -d /root
+<div class="highlight"><pre><span></span><code>Shell &gt; ll -d /root
 dr-xr-x---. 10 root root 4096 Oct  8 13:12 /root
 
 Shell &gt; ls -ld /home/test1/
-drwx------ 2 test1 test1 4096 Oct  8 13:10 /home/test1/</code></pre>
+drwx------ 2 test1 test1 4096 Oct  8 13:10 /home/test1/
+</code></pre></div>
 <p><code>USERGROUPS_ENAB yes</code>: "When deleting a user with the <code>userdel -r</code> command, the corresponding primary group is also deleted." Why? This is the reason.</p>
 <h3 id="etcskel-directory"><code>/etc/skel</code> directory<a class="headerlink" href="#etcskel-directory" title="Permanent link">&para;</a></h3>
 <p>When a user is created, their home directory and environment files are created. The files in the <code>/etc/skel/</code> directory are the template files needed to create users.</p>
@@ -2963,10 +2990,12 @@ drwx------ 2 test1 test1 4096 Oct  8 13:10 /home/test1/</code></pre>
 <h2 id="identity-switching">Identity Switching<a class="headerlink" href="#identity-switching" title="Permanent link">&para;</a></h2>
 <h3 id="su-command"><code>su</code> command<a class="headerlink" href="#su-command" title="Permanent link">&para;</a></h3>
 <p>The <code>su</code> command allows you to change the identity of the logged-in user.</p>
-<pre class="highlight"><code>su [-] [-c command] [login]</code></pre>
+<div class="highlight"><pre><span></span><code>su [-] [-c command] [login]
+</code></pre></div>
 <p>Examples:</p>
-<pre class="highlight"><code>$ sudo su - alain
-[albert]$ su - root -c "passwd alain"</code></pre>
+<div class="highlight"><pre><span></span><code>$ sudo su - alain
+[albert]$ su - root -c &quot;passwd alain&quot;
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -2988,24 +3017,24 @@ drwx------ 2 test1 test1 4096 Oct  8 13:10 /home/test1/</code></pre>
 <p>If login is not specified, it will be <code>root</code>.</p>
 <p>Standard users will need to type the password for the new identity.</p>
 <p>!!! Tip "Tip"</p>
-<pre class="codehilite"><code>You can use the `exit`/`logout` command to exit users that have been activated. Note that after user switching, there is no new `child shell` or `sub shell`, for example:
+<div class="codehilite"><pre><span></span><code><span class="n">You</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`exit`</span><span class="o">/</span><span class="n n-Quoted">`logout`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">exit</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">been</span><span class="w"> </span><span class="n">activated</span><span class="p">.</span><span class="w"> </span><span class="n">Note</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">switching</span><span class="p">,</span><span class="w"> </span><span class="n">there</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n n-Quoted">`child shell`</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n n-Quoted">`sub shell`</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">example</span><span class="o">:</span>
 
-```
-Shell &gt; whoami
-root
-Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL
-1
-0
+<span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span>
+<span class="n n-Quoted">Shell &gt; whoami</span>
+<span class="n n-Quoted">root</span>
+<span class="n n-Quoted">Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL</span>
+<span class="n n-Quoted">1</span>
+<span class="n n-Quoted">0</span>
 
-Shell &gt; su - test1
-Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL
-1
-0
-```
-</code></pre>
+<span class="n n-Quoted">Shell &gt; su - test1</span>
+<span class="n n-Quoted">Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL</span>
+<span class="n n-Quoted">1</span>
+<span class="n n-Quoted">0</span>
+<span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
+</code></pre></div>
 
 <p>Be careful! <code>su</code> and <code>su -</code> are different, as shown in the following example:</p>
-<pre class="highlight"><code>Shell &gt; whoami
+<div class="highlight"><pre><span></span><code>Shell &gt; whoami
 test1
 Shell &gt; su root
 Shell &gt; pwd
@@ -3018,8 +3047,9 @@ PWD=/home/test1
 HOME=/root
 MAIL=/var/spool/mail/test1
 LOGNAME=test1
-...</code></pre>
-<pre class="highlight"><code>Shell &gt; whoami
+...
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Shell &gt; whoami
 test1
 Shell &gt; su - root
 Shell &gt; pwd
@@ -3032,7 +3062,8 @@ PWD=/root
 HOME=/root
 MAIL=/var/spool/mail/root
 LOGNAME=root
-...</code></pre>
+...
+</code></pre></div>
 <p>So, when you want to change user, remember not to forget the <code>-</code>. Since the necessary environment variable files are not loaded, problems may occur when running some programs.</p>
 
 
