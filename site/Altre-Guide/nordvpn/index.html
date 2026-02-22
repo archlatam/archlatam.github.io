@@ -550,34 +550,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1199,13 +1171,15 @@
 
 <p>Installation and Configuration</p>
 <p>1 - Let's install nordvpn-bin:</p>
-<pre class="highlight"><code>$ git clone https://aur.archlinux.org/nordvpn-bin.git
+<div class="highlight"><pre><span></span><code>$ git clone https://aur.archlinux.org/nordvpn-bin.git
 $ cd nordvpn-bin
-$ makepkg -si</code></pre>
+$ makepkg -si
+</code></pre></div>
 <p>2 - Add the user to the nordvpn group, and enable the service:</p>
-<pre class="highlight"><code>$ sudo usermod -aG nordvpn $USER
+<div class="highlight"><pre><span></span><code>$ sudo usermod -aG nordvpn $USER
 $ sudo systemctl enable --now nordvpnd
-$ reboot</code></pre>
+$ reboot
+</code></pre></div>
 <p>3 - Log in to our account. Open the terminal and run the command:</p>
 <p><code>$ nordvpn login</code></p>
 <p>4 - Follow the instructions in the terminal by CTRL + clicking on the link in the terminal that will open in the browser, then log in.</p>

@@ -551,34 +551,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1234,7 +1206,7 @@
 <li><code>$ sudo mkdir -p /etc/pacman.d/hooks</code></li>
 <li><code>$ sudo vim /etc/pacman.d/hooks/nvidia.hook</code></li>
 </ul>
-<p><pre class="highlight"><code>[Trigger]
+<p><div class="highlight"><pre><span></span><code>[Trigger]
 Operation=Install
 Operation=Upgrade
 Operation=Remove
@@ -1246,86 +1218,97 @@ Target=nvidia
 Description=Update Nvidia module in initcpio
 Depends=mkinitcpio
 When=PostTransaction
-Exec=/usr/bin/mkinitcpio -P</code></pre>
+Exec=/usr/bin/mkinitcpio -P
+</code></pre></div>
 <br><br><br></p>
 <p>Create the blacklist file for <strong>nouveau</strong> as root.</p>
 <p><code># echo "blacklist nouveau" &gt; /etc/modprobe.d/blacklist-nvidia-nouveau.conf</code></p>
 <p><br><br><br></p>
 <p>Create the file 10-nvidia-drm-outputclass.conf.</p>
 <p><code>$ sudo vim /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</code></p>
-<p><pre class="highlight"><code>Section "OutputClass"
-Identifier "intel"
-MatchDriver "i915"
-Driver "modesetting"
+<p><div class="highlight"><pre><span></span><code>Section &quot;OutputClass&quot;
+Identifier &quot;intel&quot;
+MatchDriver &quot;i915&quot;
+Driver &quot;modesetting&quot;
 EndSection
 
-Section "OutputClass"
-Identifier "nvidia"
-MatchDriver "nvidia-drm"
-Driver "nvidia"
-Option "AllowEmptyInitialConfiguration"
-Option "PrimaryGPU" "yes"
-ModulePath "/usr/lib/nvidia/xorg"
-ModulePath "/usr/lib/xorg/modules"
-EndSection</code></pre>
+Section &quot;OutputClass&quot;
+Identifier &quot;nvidia&quot;
+MatchDriver &quot;nvidia-drm&quot;
+Driver &quot;nvidia&quot;
+Option &quot;AllowEmptyInitialConfiguration&quot;
+Option &quot;PrimaryGPU&quot; &quot;yes&quot;
+ModulePath &quot;/usr/lib/nvidia/xorg&quot;
+ModulePath &quot;/usr/lib/xorg/modules&quot;
+EndSection
+</code></pre></div>
 <br><br><br></p>
 <h3 id="display-manager">Display Manager<a class="headerlink" href="#display-manager" title="Permanent link">&para;</a></h3>
 <p>Proceed according to your display manager.</p>
 <p>Configuration if using <strong>GDM</strong></p>
 <p><code>$ sudo vim /usr/share/gdm/greeter/autostart/optimus.desktop</code></p>
-<pre class="highlight"><code>[Desktop Entry]
+<div class="highlight"><pre><span></span><code>[Desktop Entry]
 Type=Application
 Name=Optimus
-Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
+Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot;
 NoDisplay=true
-X-GNOME-Autostart-Phase=DisplayServer</code></pre>
+X-GNOME-Autostart-Phase=DisplayServer
+</code></pre></div>
 <p><code>$ sudo vim /etc/xdg/autostart/optimus.desktop</code></p>
-<p><pre class="highlight"><code>[Desktop Entry]
+<p><div class="highlight"><pre><span></span><code>[Desktop Entry]
 Type=Application
 Name=Optimus
-Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
+Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot;
 NoDisplay=true
-X-GNOME-Autostart-Phase=DisplayServer</code></pre>
+X-GNOME-Autostart-Phase=DisplayServer
+</code></pre></div>
 <br><br></p>
 <p>Configuration if using <strong>LightDM</strong> </p>
 <p><code>$ sudo vim /etc/lightdm/display_setup.sh</code></p>
-<p><pre class="highlight"><code>#!/bin/sh
+<p><div class="highlight"><pre><span></span><code>#!/bin/sh
 xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto</code></pre>
+xrandr --auto
+</code></pre></div>
 Add execute permission</p>
 <p><code>$ sudo chmod +x /etc/lightdm/display_setup.sh</code></p>
 <p><code>$ sudo vim /etc/lightdm/lightdm.conf</code></p>
-<pre class="highlight"><code>[Seat:*]
-display-setup-script=/etc/lightdm/display_setup.sh</code></pre>
+<div class="highlight"><pre><span></span><code>[Seat:*]
+display-setup-script=/etc/lightdm/display_setup.sh
+</code></pre></div>
 <p><br><br></p>
 <p>Configuration if using <strong>SDDM</strong></p>
 <p><code>$ sudo vim /usr/share/sddm/scripts/Xsetup</code></p>
-<p><pre class="highlight"><code>xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto</code></pre>
+<p><div class="highlight"><pre><span></span><code>xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+</code></pre></div>
 Add execute permission</p>
 <p><code>$ sudo chmod +x /usr/share/sddm/scripts/Xsetup</code></p>
 <p><br><br></p>
 <h3 id="mkinitcpio">Mkinitcpio<a class="headerlink" href="#mkinitcpio" title="Permanent link">&para;</a></h3>
 <p>Edit the mkinitcpio.conf file and add our configuration and the kernel modules</p>
 <p><code>$ sudo vim /etc/mkinitcpio.conf</code></p>
-<pre class="highlight"><code>MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)</code></pre>
+<div class="highlight"><pre><span></span><code>MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+</code></pre></div>
 <p><code>$ sudo mkinitcpio -P</code></p>
 <p><br><br></p>
 <h3 id="xinitrc">Xinitrc<a class="headerlink" href="#xinitrc" title="Permanent link">&para;</a></h3>
 <p>Add to the .xinitrc file or create it if it doesn't exist in ~/.xinitrc</p>
-<p><pre class="highlight"><code>xrandr --output &lt;output-name&gt; --set "PRIME Synchronization" 1</code></pre>
+<p><div class="highlight"><pre><span></span><code>xrandr --output &lt;output-name&gt; --set &quot;PRIME Synchronization&quot; 1
+</code></pre></div>
 <br><br></p>
 <p>Finally, add the kernel parameter to your bootloader configuration: <code>nvidia_drm.modeset=1</code></p>
 <p>GRUB:</p>
-<pre class="highlight"><code>GRUB_CMDLINE_LINUX="nvidia-drm.modeset=1"</code></pre>
+<div class="highlight"><pre><span></span><code>GRUB_CMDLINE_LINUX=&quot;nvidia-drm.modeset=1&quot;
+</code></pre></div>
 <p><code># grub-mkconfig -o /boot/grub/grub.cfg</code></p>
 <p><br><br> </p>
 <p>Systemd-boot:</p>
 <p>For example, if your configuration is in /boot/loader/entries/arch.conf</p>
-<p><pre class="highlight"><code>title   Arch Linux
+<p><div class="highlight"><pre><span></span><code>title   Arch Linux
 linux   /vmlinuz-linux
 initrd  /initramfs-linux.img
-options root=/dev/xxx rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_level=3 nvidia-drm.modeset=1</code></pre>
+options root=/dev/xxx rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_level=3 nvidia-drm.modeset=1
+</code></pre></div>
 <br><br></p>
 <p>Restart the machine
 <code>$ reboot</code></p>

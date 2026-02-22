@@ -552,34 +552,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1238,19 +1210,22 @@ Add the package to the pacman blacklist to prevent automatic updating in the fut
 <ol>
 <li>
 <p>Make sure you have AUR enabled on your system. If you haven't already, install the <code>yay</code> package which will allow you to access AUR packages. You can do this by following these commands:
-<pre class="highlight"><code># pacman -Syu
+<div class="highlight"><pre><span></span><code># pacman -Syu
 # pacman -S --needed git base-devel
 # git clone https://aur.archlinux.org/yay.git
 # cd yay
-# makepkg -si</code></pre></p>
+# makepkg -si
+</code></pre></div></p>
 </li>
 <li>
 <p>Install <code>downgrade</code> using <code>yay</code>:
-<pre class="highlight"><code>$ yay -S downgrade</code></pre></p>
+<div class="highlight"><pre><span></span><code>$ yay -S downgrade
+</code></pre></div></p>
 </li>
 <li>
 <p>Run <code>downgrade</code> to select and install a previous version of a package. For example, to downgrade the <code>package_name</code> package, you can use the following command:
-<pre class="highlight"><code>$ sudo downgrade package_name</code></pre></p>
+<div class="highlight"><pre><span></span><code>$ sudo downgrade package_name
+</code></pre></div></p>
 </li>
 <li>
 <p>Select the desired version from the menu that appears. <code>downgrade</code> will show you the different available versions and ask which one to install.</p>

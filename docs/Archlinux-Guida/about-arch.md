@@ -1,7 +1,6 @@
-## What is Arch Linux?
+## ¿Qué es Arch Linux?
 
+Arch Linux es una distribución Gnu/Linux desarrollada de forma independiente para uso general en arquitectura x86-64, donde la versión del software tiende a ser siempre la última estable disponible, siguiendo el modelo de lanzamiento continuo. La instalación predeterminada es un sistema base mínimo: el usuario configurará el sistema añadiendo únicamente lo que realmente necesita.
 
-Arch Linux is an independently developed Gnu/Linux distribution for general-purpose use on x86-64 architecture, where the software version tends to always be the latest stable available, following the rolling-release model. The default installation is a minimal base system: the user will then configure the system by adding only what they actually need.
-
-Visit the official [Archlinux.org](https://archlinux.org) website
+Visita el sitio web oficial [Archlinux.org](https://archlinux.org) website
 <br><br>

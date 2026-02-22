@@ -557,34 +557,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1348,14 +1320,15 @@
 <p><code>$ IgnoreGroup=vim</code></p>
 <h3 id="repositories">Repositories<a class="headerlink" href="#repositories" title="Permanent link">&para;</a></h3>
 <p>In this section you can define which repositories to use, as specified in <strong>pacman.conf</strong>. They can be defined directly here or you can add them from another file. All official repositories use the same file <strong>/etc/pacman.d/mirrorlist</strong> which contains a <code>$repo</code> variable in order to maintain a single list:</p>
-<pre class="highlight"><code>[core]
+<div class="highlight"><pre><span></span><code>[core]
 include = /etc/pacman.d/mirrorlist
 
 [extra]
 include = /etc/pacman.d/mirrorlist
 
 [multilib]
-include = /etc/pacman.d/mirrorlist</code></pre>
+include = /etc/pacman.d/mirrorlist
+</code></pre></div>
 <h3 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h3>
 <p>Here is an exhaustive list of pacman commands:</p>
 <h3 id="commands_1">Commands<a class="headerlink" href="#commands_1" title="Permanent link">&para;</a></h3>

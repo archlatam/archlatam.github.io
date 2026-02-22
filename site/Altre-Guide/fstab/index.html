@@ -552,34 +552,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1202,11 +1174,14 @@
 <p>fstab is a configuration file found on Unix and Linux operating systems that lists available storage devices and file systems and specifies how they should be mounted at system startup. The acronym stands for "file system table".</p>
 <p>Using fstab is useful because it allows precise control over partitions and eliminates the need to manually mount them each time the system starts. It also lets you specify mount options such as read/write permissions or the mount point.</p>
 <p>A typical fstab line has the following structure:
-<pre class="highlight"><code>device mount_point filesystem_type options 0 0</code></pre></p>
+<div class="highlight"><pre><span></span><code>device mount_point filesystem_type options 0 0
+</code></pre></div></p>
 <p>Examples of fstab lines:</p>
-<p><pre class="highlight"><code>/dev/sda1 / ext4 defaults 0 1</code></pre>
+<p><div class="highlight"><pre><span></span><code>/dev/sda1 / ext4 defaults 0 1
+</code></pre></div>
 In this example, /dev/sda1 is the storage device, / is the mount point, ext4 is the filesystem type, and defaults are the mount options. The numbers 0 1 at the end define the order in which filesystems are mounted at startup.</p>
-<p><pre class="highlight"><code>UUID=12345678-90ab-cdef-ghij-klmnopqrst /mnt/data ext4 rw,auto,user 0 0</code></pre>
+<p><div class="highlight"><pre><span></span><code>UUID=12345678-90ab-cdef-ghij-klmnopqrst /mnt/data ext4 rw,auto,user 0 0
+</code></pre></div>
 In this example, UUID=12345678-90ab-cdef-ghij-klmnopqrst represents the unique UUID of the storage device. /mnt/data is the mount point, ext4 is the filesystem type, and rw,auto,user are the mount options that define read/write permission and that the system should be mounted automatically at startup even for unprivileged users. Again, the numbers 0 0 at the end define the mount order.</p>
 <p>In summary, fstab is a very important configuration file for the Linux operating system because it specifies how storage devices should be mounted and managed at startup.</p>
 <p>On Arch Linux, working with fstab can help customize the system, for example:</p>

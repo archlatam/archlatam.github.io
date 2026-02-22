@@ -552,34 +552,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1220,10 +1192,11 @@
 <p>Configure the configuration file: In the configuration file, you can specify the desired options, such as the country from which to select mirrors (<code>--country</code>), the maximum age of mirrors (<code>--age</code>), the protocol type (<code>--protocol</code>) and the sorting type (<code>--sort</code>). Here is an example configuration file:</p>
 </li>
 </ol>
-<pre class="highlight"><code>--country Italy
+<div class="highlight"><pre><span></span><code>--country Italy
 --protocol https
 --latest 10
---sort rate</code></pre>
+--sort rate
+</code></pre></div>
 <p>This example selects the top 10 Italian mirrors (<code>--country Italy</code>), using the HTTPS protocol (<code>--protocol https</code>) and sorting them by speed (<code>--sort rate</code>).</p>
 <ol>
 <li>
@@ -1236,8 +1209,9 @@
 <p>Enable and start the <code>reflector.timer</code> service: Once the mirror lists have been successfully updated, you can enable and start the <code>reflector</code> service so that the mirror lists are automatically updated in the future. To do this, type:</p>
 </li>
 </ol>
-<pre class="highlight"><code>sudo systemctl enable reflector.timer
-sudo systemctl start reflector.timer</code></pre>
+<div class="highlight"><pre><span></span><code>sudo systemctl enable reflector.timer
+sudo systemctl start reflector.timer
+</code></pre></div>
 <p>The first command enables the <code>reflector.timer</code> service, while the second starts it immediately. From this moment on, the service will run automatically every time the system starts, updating the mirror lists based on the settings specified in the <code>reflector</code> configuration file.</p>
 
 

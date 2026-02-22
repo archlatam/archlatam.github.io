@@ -557,34 +557,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1393,7 +1365,8 @@
 
 <p>To set permissions for files and folders on Arch Linux, you can use the <code>chmod</code> command.</p>
 <p>The general syntax for using the <code>chmod</code> command is:</p>
-<pre class="highlight"><code>chmod [permissions] [file/folder]</code></pre>
+<div class="highlight"><pre><span></span><code>chmod [permissions] [file/folder]
+</code></pre></div>
 <p>Permissions can be specified in numeric or symbolic format.</p>
 <h3 id="numeric-permissions">Numeric Permissions<a class="headerlink" href="#numeric-permissions" title="Permanent link">&para;</a></h3>
 <p>Numeric permissions represent read, write, and execute permissions for the owner user, the owning group, and other users.</p>
@@ -1404,7 +1377,8 @@
 <li>1 = execute permission</li>
 </ul>
 <p>For example, to grant all permissions (read, write, and execute) to all users, you can use the following command:</p>
-<pre class="highlight"><code>chmod 777 [file/folder]</code></pre>
+<div class="highlight"><pre><span></span><code>chmod 777 [file/folder]
+</code></pre></div>
 <h3 id="symbolic-permissions">Symbolic Permissions<a class="headerlink" href="#symbolic-permissions" title="Permanent link">&para;</a></h3>
 <p>Symbolic permissions represent read, write, and execute permissions for the owner user, the owning group, and other users, using the symbols r, w, and x to represent permissions and the keywords u, g, and o to represent the owner user, the owning group, and other users respectively.</p>
 <ul>
@@ -1413,7 +1387,8 @@
 <li>x = execute permission</li>
 </ul>
 <p>For example, to grant all permissions (read, write, and execute) to all users, you can use the following command:</p>
-<pre class="highlight"><code>chmod ugo+rwx [file/folder]</code></pre>
+<div class="highlight"><pre><span></span><code>chmod ugo+rwx [file/folder]
+</code></pre></div>
 <h4 id="basic-settings">Basic settings<a class="headerlink" href="#basic-settings" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>u</code> indicates the permissions of the owner user of the file or folder</li>
@@ -1428,29 +1403,35 @@
 <li><code>=</code> sets the specified permissions (replaces any previous permissions)</li>
 </ul>
 <p>For example, to grant read, write, and execute permissions to the owner user, read permission to the owning group, and execute permission to other users, you can use the following command:</p>
-<pre class="highlight"><code>chmod u=rwx,g=r,o=x [file/folder]</code></pre>
+<div class="highlight"><pre><span></span><code>chmod u=rwx,g=r,o=x [file/folder]
+</code></pre></div>
 <h3 id="setting-permissions-recursively">Setting permissions recursively<a class="headerlink" href="#setting-permissions-recursively" title="Permanent link">&para;</a></h3>
 <p>To set permissions recursively for a directory and its contents, you can use the <code>-R</code> flag.</p>
 <p>For example, to grant all permissions (read, write, and execute) to the <code>documents</code> directory and its contents, you can use the following command:</p>
-<pre class="highlight"><code>chmod -R 777 documents/</code></pre>
+<div class="highlight"><pre><span></span><code>chmod -R 777 documents/
+</code></pre></div>
 <p>We suggest using this flag carefully, because the permissions set may have unintended effects on files and folders you do not want to modify.</p>
 <h3 id="practical-examples">Practical examples<a class="headerlink" href="#practical-examples" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Grant read and write permission to the owner user of the file <code>document.txt</code></li>
 </ol>
-<pre class="highlight"><code>chmod u+rw documento.txt </code></pre>
+<div class="highlight"><pre><span></span><code>chmod u+rw documento.txt 
+</code></pre></div>
 <ol>
 <li>Grant execute permission to all users for the <code>project1</code> folder</li>
 </ol>
-<pre class="highlight"><code>chmod a+x project1/</code></pre>
+<div class="highlight"><pre><span></span><code>chmod a+x project1/
+</code></pre></div>
 <ol>
 <li>Grant read permission to the owning group for the <code>project2</code> folder and its contents</li>
 </ol>
-<pre class="highlight"><code>chmod -R g+r project2/ </code></pre>
+<div class="highlight"><pre><span></span><code>chmod -R g+r project2/ 
+</code></pre></div>
 <ol>
 <li>Grant all permissions to the <code>documents</code> directory and its contents</li>
 </ol>
-<pre class="highlight"><code>chmod -R 777 documents/ </code></pre>
+<div class="highlight"><pre><span></span><code>chmod -R 777 documents/ 
+</code></pre></div>
 <p>Numeric permissions in <code>chmod</code> allow you to set read, write, and execute permissions using numeric notation.</p>
 <p>Numeric permissions are represented by a three-digit number, where each digit indicates read, write, and execute permissions for the owner (first digit), the group (second digit), and other users (third digit) respectively.</p>
 <p>Each digit is a number composed of three bits where the value of each bit represents a possible permission. The bits are multiplied by a specific value that refers to each permission.</p>
@@ -1476,15 +1457,18 @@
 <ul>
 <li>To set permissions of a file to owner (read/write), group (read), and other users (execute): </li>
 </ul>
-<pre class="highlight"><code>chmod 754 file.txt</code></pre>
+<div class="highlight"><pre><span></span><code>chmod 754 file.txt
+</code></pre></div>
 <ul>
 <li>To grant all permissions (read, write, and execute) to all users:</li>
 </ul>
-<pre class="highlight"><code>chmod 777 file.txt</code></pre>
+<div class="highlight"><pre><span></span><code>chmod 777 file.txt
+</code></pre></div>
 <ul>
 <li>To grant read-only permissions to everyone (owner, group, and other users):</li>
 </ul>
-<pre class="highlight"><code>chmod 444 file.txt</code></pre>
+<div class="highlight"><pre><span></span><code>chmod 444 file.txt
+</code></pre></div>
 <p>It is important to note that numeric notation overwrites all previous permissions of the file or folder. Additionally, if used with the <code>-R</code> option, it will modify permissions for all files and folders within the specified folder.</p>
 
 

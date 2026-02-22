@@ -70,7 +70,6 @@ nav:
       - 'Derivatives': Download/Derivate.md
       - '- Arch Linux Installation': en/Archlinux-Guide/guide.md
       - '- Instalación de Arch Linux': en/Archlinux-Guide/guida-es.md
-      - '- Instalação do Arch Linux': en/Archlinux-Guide/guida-pt.md
 
   - 'Other Guides':
       - 'Comandi Linux': Altre-Guide/comandi-linux.md

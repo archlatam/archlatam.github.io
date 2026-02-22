@@ -557,34 +557,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-pt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalação do Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1491,7 +1463,7 @@
 <h3 id="synchronization-between-two-local-directories">Synchronization between two local directories<a class="headerlink" href="#synchronization-between-two-local-directories" title="Permanent link">&para;</a></h3>
 <p><code># rsync -vrah ~/Desktop/Graphics /Volumes/ExternalDisk/backup</code></p>
 <p>In this example we synchronize the <strong>~/Desktop/Graphics</strong> directory with <strong>/Volume/ExternalDisk/backup</strong>, with verbose, recursive and archive options.</p>
-<pre class="highlight"><code># rsync -vrah ~/Desktop/Graphics /Volumes/ExternalDisk/backup
+<div class="highlight"><pre><span></span><code># rsync -vrah ~/Desktop/Graphics /Volumes/ExternalDisk/backup
 building file list ... done
 created directory /Volumes/ExternalDisk/backup
 backup/
@@ -1505,12 +1477,13 @@ backup/nasa1.png
 backup/nasa4.png
 
 sent 4.11M bytes  received 268 bytes  8.22M bytes/sec
-total size is 4.11M  speedup is 1.00</code></pre>
+total size is 4.11M  speedup is 1.00
+</code></pre></div>
 <p>The destination directory didn't exist, rsync created it automatically.</p>
 <p><br></p>
 <h3 id="viewing-transfer-progress">Viewing transfer progress<a class="headerlink" href="#viewing-transfer-progress" title="Permanent link">&para;</a></h3>
 <p>If we want to view progress during the transfer, we just need to use the <code>--progress</code> option</p>
-<p><pre class="highlight"><code>rsync -vrah --progress ~/Desktop/Graphics /Volumes/ExternalDisk/backup
+<p><div class="highlight"><pre><span></span><code>rsync -vrah --progress ~/Desktop/Graphics /Volumes/ExternalDisk/backup
 building file list ... 
 6 files to consider
 created directory /Volumes/ExternalDisk/backup
@@ -1531,7 +1504,8 @@ backup/nasa4.png
       54.68K 100%  970.88kB/s    0:00:00 (xfer#6, to-check=0/6)
 
 sent 4.11M bytes  received 268 bytes  8.22M bytes/sec
-total size is 4.11M  speedup is 1.00</code></pre>
+total size is 4.11M  speedup is 1.00
+</code></pre></div>
 <br></p>
 <h3 id="excluding-files-or-directories">Excluding files or directories<a class="headerlink" href="#excluding-files-or-directories" title="Permanent link">&para;</a></h3>
 <p>With the <code>--exclude</code> option, we can specify which files, file types or directories to exclude from synchronization. In this example we chose to ignore ".DS_Store" files created by the macOS system using the --exclude=.DS_Store option.</p>
@@ -1539,13 +1513,14 @@ total size is 4.11M  speedup is 1.00</code></pre>
 <p><br></p>
 <h3 id="the-delete-option">The --delete option<a class="headerlink" href="#the-delete-option" title="Permanent link">&para;</a></h3>
 <p>If a file or directory does not exist in the source, but already exists in the destination, with the <code>--delete</code> option we can delete it from the destination.</p>
-<p><pre class="highlight"><code>rsync -vrah --delete ~/Desktop/Graphics /Volumes/ExternalDisk/backup
+<p><div class="highlight"><pre><span></span><code>rsync -vrah --delete ~/Desktop/Graphics /Volumes/ExternalDisk/backup
 building file list ... done
 deleting test.txt
 ./
 
 sent 423 bytes  received 26 bytes  898.00 bytes/sec
-total size is 4.11M  speedup is 9151.07</code></pre>
+total size is 4.11M  speedup is 9151.07
+</code></pre></div>
 <br></p>
 <h3 id="performing-a-simulation-dry-run">Performing a simulation (dry run)<a class="headerlink" href="#performing-a-simulation-dry-run" title="Permanent link">&para;</a></h3>
 <p>If it's the first time we use rsync, or we want to preview what will happen once executed, it is possible to simulate an rsync command to ensure we don't perform incorrect operations. We add the <code>--dry-run</code> option</p>
