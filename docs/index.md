@@ -1,6 +1,6 @@
 ## ArchLatam Linux Community
 
-![banner-2026-2-24](./site/docs/images/archlatam.png)
+![banner-2026-2-24](images/archlatam.png)
 
 Archlatam es una comunidad dedicada a la distribución Arch Linux y sus derivados. Esta comunidad está formada por entusiastas de Linux y la tecnología de código abierto que se reúnen para compartir información, recursos y conocimientos sobre Arch Linux y sus diversas modificaciones.
 
@@ -13,6 +13,7 @@ En estos recursos, los usuarios pueden encontrar información detallada sobre c�
 - [:fontawesome-solid-house-circle-check: Sitio oficial](https://archlatam.github.io/site/)
 - [:fontawesome-brands-github: GitHub](https://github.com/archlatam)
 - [:fontawesome-brands-discord: Discord](https://discord.gg/4eF5pGNgyz)
+- [:fontawesome-solid-download: Descargar ISO](https://drive.google.com/file/d/1zIZdMy3yOYOONfzueWH81Keha4ztxuLF/view?usp=drive_link)
 
 <br>
 
