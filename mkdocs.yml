@@ -14,6 +14,7 @@ nav:
           - "Yay": "Altre-Guide/yay.md"
           - "Vim": "Altre-Guide/vim.md"
           - "Nano": "Altre-Guide/nano.md"
+          - "Reflector": "Altre-Guide/reflector.md"
 
 theme:
   name: material

@@ -1,22 +1,24 @@
-La funzione di `reflector` su ArchLinux è un'utility che consente di selezionare, scaricare e aggiornare l'elenco dei mirror ArchLinux. La sua funzione principale è quella di selezionare il mirror più veloce e affidabile in base alla posizione geografica dell'utente.
+# Reflector
 
-Ecco di seguito i comandi più utilizzati per la gestione di `reflector` su ArchLinux:
+La función de `reflector` en ArchLinux es una utilidad que permite seleccionar, descargar y actualizar la lista de mirrors de ArchLinux. Su función principal es seleccionar el mirror más rápido y fiable en función de la posición geográfica del usuario.
 
-- `sudo reflector --country <nome_paese> --age <età> --protocol <tipo_protocollo> --sort <tipo_ordinamento> --save <file_destinazione>` questocomando seleziona i mirror del paese specificato dall'utente (`--country`) e con un'età massima specificata in ore (`--age`). Si possono anche specificare il tipo di protocollo (`--protocol`) e il tipo di ordinamento (`--sort`). Infine, i risultati ottenuti possono essere salvati in un file specificato dall'utente (`--save`).
-- `sudo reflector --latest <n_migliori_mirrors> --protocol <tipo_protocollo> --sort <tipo_ordinamento> --save <file_destinazione>` con questo comando vengono selezionati i `n` (`--latest`) mirror più aggiornati, in base al protocollo (`--protocol`) e al tipo di ordinamento (`--sort`). Anche in questo caso, il risultato può essere salvato in un file specificato dall'utente (`--save`).
-- `sudo reflector --help` con questo comando si può avere una lista completa di tutti i comandi disponibili e una descrizione dettagliata delle opzioni di `reflector`.
+A continuación se presentan los comandos más utilizados para la gestión de `reflector` en ArchLinux:
 
-In generale, la funzione di `reflector` su ArchLinux è utile per mantenere aggiornati i propri mirror e assicurarsi di avere una connessione veloce e affidabile quando si effettuano operazioni di installazione o aggiornamento dei pacchetti sul sistema.
+- `sudo reflector --country <nombre_país> --age <edad> --protocol <tipo_protocolo> --sort <tipo_orden> --save <archivo_destino>` Este comando selecciona los mirrors del país especificado por el usuario (`--country`) y con una edad máxima especificada en horas (`--age`). También se puede especificar el tipo de protocolo (`--protocol`) y el tipo de ordenamiento (`--sort`). Finalmente, los resultados obtenidos pueden ser guardados en un archivo especificado por el usuario (`--save`).
+- `sudo reflector --latest <n_mejores_mirrors> --protocol <tipo_protocolo> --sort <tipo_orden> --save <archivo_destino>` Con este comando se seleccionan los `n` (`--latest`) mirrors más actualizados, en base al protocolo (`--protocol`) y al tipo de ordenamiento (`--sort`). También en este caso, el resultado puede ser guardado en un archivo especificado por el usuario (`--save`).
+- `sudo reflector --help` Con este comando se puede tener una lista completa de todos los comandos disponibles y una descripción detallada de las opciones de `reflector`.
 
-<br><br>
+En general, la función de `reflector` en ArchLinux es útil para mantener actualizados los mirrors y asegurarse de tener una conexión rápida y fiable cuando se realizan operaciones de instalación o actualización de paquetes en el sistema.
 
-Ecco di seguito i passi necessari per configurare e abilitare il servizio `reflector` su ArchLinux:
+---
 
-1. Installare `reflector`: Digitare `sudo pacman -S reflector` nel terminale per installare l'utility.
+A continuación se presentan los pasos necesarios para configurar y habilitar el servicio `reflector` en ArchLinux:
 
-2. Creare un file di configurazione personalizzato: Digitare `sudo cp /etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf.backup` per creare una copia di backup del file di configurazione predefinito. Successivamente, digitare `sudo nano /etc/xdg/reflector/reflector.conf` per aprire il file di configurazione con l'editor di testo `nano` (si può usare anche un altro editor di testo a piacere).
+1. Instalar `reflector`: Escribir `sudo pacman -S reflector` en la terminal para instalar la utilidad.
 
-3. Configurare il file di configurazione: Nel file di configurazione è possibile specificare le opzioni desiderate, come il paese da cui selezionare i mirror (`--country`), l'età massima dei mirror (`--age`), il tipo di protocollo (`--protocol`) e il tipo di ordinamento (`--sort`). Ecco un esempio di file di configurazione:
+2. Crear un archivo de configuración personalizado: Escribir `sudo cp /etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf.backup` para crear una copia de respaldo del archivo de configuración predeterminado. Después, escribir `sudo nano /etc/xdg/reflector/reflector.conf` para abrir el archivo de configuración con el editor de texto `nano` (también se puede usar otro editor de texto a elección).
+
+3. Configurar el archivo de configuración: En el archivo de configuración es posible especificar las opciones deseadas, como el país del cual seleccionar los mirrors (`--country`), la edad máxima de los mirrors (`--age`), el tipo de protocolo (`--protocol`) y el tipo de ordenamiento (`--sort`). Aquí hay un ejemplo de archivo de configuración:
 
 ```
 --country Italy
@@ -25,17 +27,17 @@ Ecco di seguito i passi necessari per configurare e abilitare il servizio `refle
 --sort rate
 ```
 
-Questo esempio seleziona i 10 migliori mirror italiani (`--country Italy`), utilizzando il protocollo HTTPS (`--protocol https`) e ordinandoli in base alla velocità (`--sort rate`).
+Este ejemplo selecciona los 10 mejores mirrors italianos (`--country Italy`), utilizando el protocolo HTTPS (`--protocol https`) y ordenándolos por velocidad (`--sort rate`).
 
-4. Salvare e chiudere il file di configurazione: Una volta terminata la configurazione, digitare `Ctrl+X`, poi `Y` e infine `Invio` per salvare le modifiche e chiudere l'editor di testo `nano`.
+4. Guardar y cerrar el archivo de configuración: Una vez terminada la configuración, escribir `Ctrl+X`, luego `Y` y finalmente `Enter` para guardar los cambios y cerrar el editor de texto `nano`.
 
-5. Eseguire `reflector` per aggiornare gli elenchi dei mirror: Digitare il comando `sudo reflector --verbose --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist` per eseguire `reflector` utilizzando le impostazioni configurate nell'ultimo passaggio. In questo esempio, i risultati ottenuti dall'esecuzione del comando vengono salvati nel file `/etc/pacman.d/mirrorlist`, che è il file da cui `pacman` legge l'elenco dei mirror al momento dell'aggiornamento dei pacchetti.
+5. Ejecutar `reflector` para actualizar las listas de mirrors: Escribir el comando `sudo reflector --verbose --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist` para ejecutar `reflector` usando la configuración establecida en el paso anterior. En este ejemplo, los resultados obtenidos de la ejecución del comando se guardan en el archivo `/etc/pacman.d/mirrorlist`, que es el archivo desde el cual `pacman` lee la lista de mirrors al momento de actualizar los paquetes.
 
-6. Abilitare e avviare il servizio `reflector.timer`: Una volta che gli elenchi dei mirror sono stati aggiornati con successo, è possibile abilitare e avviare il servizio di `reflector` in modo che gli elenchi dei mirror vengano aggiornati automaticamente in futuro. Per fare ciò, digitare:
+6. Habilitar e iniciar el servicio `reflector.timer`: Una vez que las listas de mirrors han sido actualizadas con éxito, es posible habilitar e iniciar el servicio de `reflector` para que las listas de mirrors se actualicen automáticamente en el futuro. Para hacer esto, escribir:
 
 ```
 sudo systemctl enable reflector.timer
 sudo systemctl start reflector.timer
 ```
 
-Il primo comando abilita il servizio `reflector.timer`, mentre il secondo lo avvia immediatamente. Da questo momento in poi, il servizio sarà eseguito automaticamente ogni volta che si avvia il sistema, aggiornando gli elenchi dei mirror in base alle impostazioni specificate nel file di configurazione di `reflector`.
+El primer comando habilita el servicio `reflector.timer`, mientras que el segundo lo inicia inmediatamente. A partir de este momento, el servicio se ejecutará automáticamente cada vez que se inicie el sistema, actualizando las listas de mirrors según la configuración especificada en el archivo de configuración de `reflector`.
