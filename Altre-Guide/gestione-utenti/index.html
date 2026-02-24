@@ -6,30 +6,20 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Arch Linux LATAM Community">
       
       
-        <meta name="author" content="ArchLatam Team">
       
-      
-        <link rel="canonical" href="https://archlatam.github.io/Altre-Guide/gestione-utenti/">
-      
-      
-        <link rel="prev" href="../timeshift/">
-      
-      
-        <link rel="next" href="../nordvpn/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>User Management - ArchLatam</title>
+        <title>Gestione utenti - archlatam</title>
       
     
     
@@ -39,6 +29,71 @@
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1%207.775V2.75C1%201.784%201.784%201%202.75%201h5.025c.464%200%20.91.184%201.238.513l6.25%206.25a1.75%201.75%200%200%201%200%202.474l-5.026%205.026a1.75%201.75%200%200%201-2.474%200l-6.25-6.25A1.75%201.75%200%200%201%201%207.775m1.5%200c0%20.066.026.13.073.177l6.25%206.25a.25.25%200%200%200%20.354%200l5.025-5.025a.25.25%200%200%200%200-.354l-6.25-6.25a.25.25%200%200%200-.177-.073H2.75a.25.25%200%200%200-.25.25ZM6%205a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%201.75v11.5c0%20.138.112.25.25.25h3.17a.75.75%200%200%201%200%201.5H2.75A1.75%201.75%200%200%201%201%2013.25V1.75C1%20.784%201.784%200%202.75%200h8.5C12.216%200%2013%20.784%2013%201.75v7.736a.75.75%200%200%201-1.5%200V1.75a.25.25%200%200%200-.25-.25h-8.5a.25.25%200%200%200-.25.25m13.274%209.537zl-4.557%204.45a.75.75%200%200%201-1.055-.008l-1.943-1.95a.75.75%200%200%201%201.062-1.058l1.419%201.425%204.026-3.932a.75.75%200%201%201%201.048%201.074M4.75%204h4.5a.75.75%200%200%201%200%201.5h-4.5a.75.75%200%200%201%200-1.5M4%207.75A.75.75%200%200%201%204.75%207h2a.75.75%200%200%201%200%201.5h-2A.75.75%200%200%201%204%207.75%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.5%207.75A.75.75%200%200%201%207.25%207h1a.75.75%200%200%201%20.75.75v2.75h.25a.75.75%200%200%201%200%201.5h-2a.75.75%200%200%201%200-1.5h.25v-2h-.25a.75.75%200%200%201-.75-.75M8%206a1%201%200%201%201%200-2%201%201%200%200%201%200%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.499.75a.75.75%200%200%201%201.5%200v.996C5.9%202.903%206.793%203.65%207.662%204.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873%2010.794-.045%2012.622.26%2014.408.558%2016%201.94%2016%204.25c0%201.278-.954%202.575-2.44%202.734l.146.508.065.22c.203.701.412%201.455.476%202.226.142%201.707-.4%203.03-1.487%203.898C11.714%2014.671%2010.27%2015%208.75%2015h-6a.75.75%200%200%201%200-1.5h1.376a4.5%204.5%200%200%201-.563-1.191%203.84%203.84%200%200%201-.05-2.063%204.65%204.65%200%200%201-2.025-.293.75.75%200%200%201%20.525-1.406c1.357.507%202.376-.006%202.698-.318l.009-.01a.747.747%200%200%201%201.06%200%20.75.75%200%200%201-.012%201.074c-.912.92-.992%201.835-.768%202.586.221.74.745%201.337%201.196%201.621H8.75c1.343%200%202.398-.296%203.074-.836.635-.507%201.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4%202.4%200%200%201-.507-.441%203.1%203.1%200%200%201-.633-1.248.75.75%200%200%201%201.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738%200%201.25-.615%201.25-1.25%200-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706%201.345-.46.92-.27%201.774.019%203.062l.042.19.01.05c.348.443.666.949.94%201.553a.75.75%200%201%201-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7%205.527c-.814-.68-1.75-1.462-2.692-2.619a3.7%203.7%200%200%200-1.023.88c-.406.495-.663%201.036-.722%201.508.116.122.306.21.591.239.388.038.797-.06%201.032-.19a.75.75%200%200%201%20.728%201.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75%205.677V5.5c0-.984.48-1.94%201.077-2.664.46-.559%201.05-1.055%201.673-1.353z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13.78%204.22a.75.75%200%200%201%200%201.06l-7.25%207.25a.75.75%200%200%201-1.06%200L2.22%209.28a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018L6%2010.94l6.72-6.72a.75.75%200%200%201%201.06%200%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.92%206.085h.001a.749.749%200%201%201-1.342-.67c.169-.339.436-.701.849-.977C6.845%204.16%207.369%204%208%204a2.76%202.76%200%200%201%201.637.525c.503.377.863.965.863%201.725%200%20.448-.115.83-.329%201.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6%206%200%200%200-.26.16%201%201%200%200%200-.276.245.75.75%200%200%201-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1%201%200%200%200%20.277-.245C8.96%206.514%209%206.427%209%206.25a.61.61%200%200%200-.262-.525A1.27%201.27%200%200%200%208%205.5c-.369%200-.595.09-.74.187a1%201%200%200%200-.34.398M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.344%202.343za8%208%200%200%201%2011.314%2011.314A8.002%208.002%200%200%201%20.234%2010.089a8%208%200%200%201%202.11-7.746m1.06%2010.253a6.5%206.5%200%201%200%209.108-9.275%206.5%206.5%200%200%200-9.108%209.275M6.03%204.97%208%206.94l1.97-1.97a.749.749%200%200%201%201.275.326.75.75%200%200%201-.215.734L9.06%208l1.97%201.97a.749.749%200%200%201-.326%201.275.75.75%200%200%201-.734-.215L8%209.06l-1.97%201.97a.749.749%200%200%201-1.275-.326.75.75%200%200%201%20.215-.734L6.94%208%204.97%206.03a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4.72.22a.75.75%200%200%201%201.06%200l1%20.999a3.5%203.5%200%200%201%202.441%200l.999-1a.748.748%200%200%201%201.265.332.75.75%200%200%201-.205.729l-.775.776c.616.63.995%201.493.995%202.444v.327q0%20.15-.025.292c.408.14.764.392%201.029.722l1.968-.787a.75.75%200%200%201%20.556%201.392L13%207.258V9h2.25a.75.75%200%200%201%200%201.5H13v.5q-.002.615-.141%201.186l2.17.868a.75.75%200%200%201-.557%201.392l-2.184-.873A5%205%200%200%201%208%2016a5%205%200%200%201-4.288-2.427l-2.183.873a.75.75%200%200%201-.558-1.392l2.17-.868A5%205%200%200%201%203%2011v-.5H.75a.75.75%200%200%201%200-1.5H3V7.258L.971%206.446a.75.75%200%200%201%20.558-1.392l1.967.787c.265-.33.62-.583%201.03-.722a1.7%201.7%200%200%201-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72%201.28a.75.75%200%200%201%200-1.06m.53%206.28a.75.75%200%200%200-.75.75V11a3.5%203.5%200%201%200%207%200V7.25a.75.75%200%200%200-.75-.75ZM6.173%205h3.654A.17.17%200%200%200%2010%204.827V4.5a2%202%200%201%200-4%200v.327c0%20.096.077.173.173.173%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5%205.782V2.5h-.25a.75.75%200%200%201%200-1.5h6.5a.75.75%200%200%201%200%201.5H11v3.282l3.666%205.76C15.619%2013.04%2014.543%2015%2012.767%2015H3.233c-1.776%200-2.852-1.96-1.899-3.458Zm-2.4%206.565a.75.75%200%200%200%20.633%201.153h9.534a.75.75%200%200%200%20.633-1.153L12.225%2010.5h-8.45ZM9.5%202.5h-3V6c0%20.143-.04.283-.117.403L4.73%209h6.54L9.617%206.403A.75.75%200%200%201%209.5%206Z%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1.75%202.5h10.5a.75.75%200%200%201%200%201.5H1.75a.75.75%200%200%201%200-1.5m4%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5m0%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5M2.5%207.75v6a.75.75%200%200%201-1.5%200v-6a.75.75%200%200%201%201.5%200%22/%3E%3C/svg%3E');}</style>
+
 
 
     
@@ -50,16 +105,16 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Inter";--md-code-font:"Fira Code"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/colors.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="../../stylesheets/fonts.css">
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/colors.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -77,7 +132,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -86,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#user-management" class="md-skip">
+        <a href="#gestione-utenti" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -95,19 +150,14 @@
       
     </div>
     
-      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
-        
-      </div>
-    
     
       
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="../.." title="ArchLatam" class="md-header__button md-logo" aria-label="ArchLatam" data-md-component="logo">
+    <a href="../.." title="archlatam" class="md-header__button md-logo" aria-label="archlatam" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/favicon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -118,13 +168,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            ArchLatam
+            archlatam
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              User Management
+              Gestione utenti
             
           </span>
         </div>
@@ -137,20 +187,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -181,11 +231,6 @@
       </label>
       <nav class="md-search__options" aria-label="Buscar">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
-            
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
-          </a>
-        
         <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -208,18 +253,6 @@
       
     
     
-      <div class="md-header__source">
-        <a href="https://github.com/archlatam/archlatam.github.io" title="Ir al repositorio" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
-    archlatam/archlatam.github.io
-  </div>
-</a>
-      </div>
-    
   </nav>
   
 </header>
@@ -239,55 +272,14 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
     
     
       <li class="md-tabs__item">
-        <a href="../../Archlinux-Guida/about-arch/" class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
   
-  Arch Linux
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../comandi-linux/" class="md-tabs__link">
-          
-  
-  
-  Other Guides
+  Home
 
         </a>
       </li>
@@ -317,26 +309,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="ArchLatam" class="md-nav__button md-logo" aria-label="ArchLatam" data-md-component="logo">
+    <a href="../.." title="archlatam" class="md-nav__button md-logo" aria-label="archlatam" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/favicon.png" alt="logo">
 
     </a>
-    ArchLatam
+    archlatam
   </label>
-  
-    <div class="md-nav__source">
-      <a href="https://github.com/archlatam/archlatam.github.io" title="Ir al repositorio" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
-    archlatam/archlatam.github.io
-  </div>
-</a>
-    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -346,9 +325,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -362,56 +357,15 @@
   
   
 
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Arch Linux
-  
-
-    
-  </span>
-  
-  
-
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Arch Linux
+    Home
   
 
           </label>
@@ -424,1145 +378,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Archlinux-Guida/about-arch/" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    What is Arch Linux?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Download/archlinux/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Download
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Download/Derivate/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Derivatives
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Arch Linux Installation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../en/Archlinux-Guide/guida-es/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    - Instalación de Arch Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Other Guides
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Other Guides
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../comandi-linux/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Comandi Linux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Pacman/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Pacman
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../aur/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AUR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../yay/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Yay
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fstab/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Fstab
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../vim/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Vim
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nano/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Nano
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sudoers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sudoers.d
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reflector/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reflector
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../downgrade/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Downgrade
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../permessi/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Permessi
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../grub/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Grub
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../systemdboot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Systemd-Boot
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../firewald/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Firewalld
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rsync/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Rsync
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../timeshift/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Timeshift
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    User Management
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    User Management
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        General
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#group-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Group Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Group Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#groupadd-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        groupadd command
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#groupmod-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        groupmod command
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#groupdel-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        groupdel command
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#etcgroup-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        /etc/group file
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#etcgshadow-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        /etc/gshadow file
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-management_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="User Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Definition
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#useradd-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        useradd command
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="useradd command">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#default-values-for-user-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Default values for user creation.
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#usermod-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        usermod command
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#userdel-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        userdel command
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#etcpasswd-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        /etc/passwd file
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#etcshadow-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        /etc/shadow file
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-owners" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        File Owners
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="File Owners">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#modification-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modification commands
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Modification commands">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#chown-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        chown command
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#chgrp-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        chgrp command
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#guest-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Guest Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Guest Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gpasswd-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        gpasswd command
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#id-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        id command
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#newgrp-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        newgrp command
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#protection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Protection
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Protection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#passwd-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        passwd command
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#chage-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        chage command
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advanced Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#etcdefaultuseradd-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        /etc/default/useradd file
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#etclogindefs-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        /etc/login.defs file
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#etcskel-directory" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        /etc/skel directory
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identity-switching" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Identity Switching
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Identity Switching">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#su-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        su command
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nordvpn/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NordVPN
+    Bienvenido
   
 
     
@@ -1610,10 +433,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
+  <a href="#generale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        General
+        Generale
       
     </span>
   </a>
@@ -1621,22 +444,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#group-management" class="md-nav__link">
+  <a href="#gestione-del-gruppo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Group Management
+        Gestione del gruppo
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Group Management">
+    <nav class="md-nav" aria-label="Gestione del gruppo">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#groupadd-command" class="md-nav__link">
+  <a href="#comando-groupadd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        groupadd command
+        comando groupadd
       
     </span>
   </a>
@@ -1644,10 +467,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#groupmod-command" class="md-nav__link">
+  <a href="#comando-groupmod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        groupmod command
+        Comando groupmod
       
     </span>
   </a>
@@ -1655,10 +478,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#groupdel-command" class="md-nav__link">
+  <a href="#comando-groupdel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        groupdel command
+        comando groupdel
       
     </span>
   </a>
@@ -1666,10 +489,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#etcgroup-file" class="md-nav__link">
+  <a href="#file-etcgroup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        /etc/group file
+        file /etc/group
       
     </span>
   </a>
@@ -1677,110 +500,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#etcgshadow-file" class="md-nav__link">
+  <a href="#file-etcgshadow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        /etc/gshadow file
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-management_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="User Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Definition
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#useradd-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        useradd command
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="useradd command">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#default-values-for-user-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Default values for user creation.
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#usermod-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        usermod command
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#userdel-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        userdel command
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#etcpasswd-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        /etc/passwd file
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#etcshadow-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        /etc/shadow file
+        file /etc/gshadow
       
     </span>
   </a>
@@ -1793,34 +516,45 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#file-owners" class="md-nav__link">
+  <a href="#gestione-utenti_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        File Owners
+        Gestione utenti
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="File Owners">
+    <nav class="md-nav" aria-label="Gestione utenti">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#modification-commands" class="md-nav__link">
+  <a href="#definizione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modification commands
+        Definizione
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Modification commands">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-useradd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando useradd
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="comando useradd">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#chown-command" class="md-nav__link">
+  <a href="#valori-predefiniti-per-la-creazione-dellutente" class="md-nav__link">
     <span class="md-ellipsis">
       
-        chown command
+        Valori predefiniti per la creazione dell'utente.
       
     </span>
   </a>
@@ -1833,38 +567,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chgrp-command" class="md-nav__link">
+  <a href="#comando-usermod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        chgrp command
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#guest-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Guest Management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Guest Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gpasswd-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        gpasswd command
+        comando usermod
       
     </span>
   </a>
@@ -1872,10 +578,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#id-command" class="md-nav__link">
+  <a href="#comando-userdel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        id command
+        comando userdel
       
     </span>
   </a>
@@ -1883,10 +589,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#newgrp-command" class="md-nav__link">
+  <a href="#file-etcpasswd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        newgrp command
+        file /etc/passwd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-etcshadow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        file /etc/shadow
       
     </span>
   </a>
@@ -1899,33 +616,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#protection" class="md-nav__link">
+  <a href="#proprietari-dei-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Protection
+        Proprietari dei file
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Protection">
+    <nav class="md-nav" aria-label="Proprietari dei file">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#passwd-command" class="md-nav__link">
+  <a href="#comandi-di-modifica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        passwd command
+        Comandi di modifica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandi di modifica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-chown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando chown
       
     </span>
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#chage-command" class="md-nav__link">
+  <a href="#comando-chgrp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        chage command
+        comando chgrp
       
     </span>
   </a>
@@ -1938,22 +672,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#advanced-management" class="md-nav__link">
+  <a href="#gestione-degli-ospiti" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advanced Management
+        Gestione degli ospiti
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Advanced Management">
+    <nav class="md-nav" aria-label="Gestione degli ospiti">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#etcdefaultuseradd-file" class="md-nav__link">
+  <a href="#comando-gpasswd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        /etc/default/useradd file
+        comando gpasswd
       
     </span>
   </a>
@@ -1961,10 +695,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#etclogindefs-file" class="md-nav__link">
+  <a href="#comando-id" class="md-nav__link">
     <span class="md-ellipsis">
       
-        /etc/login.defs file
+        comando id
       
     </span>
   </a>
@@ -1972,10 +706,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#etcskel-directory" class="md-nav__link">
+  <a href="#comando-newgrp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        /etc/skel directory
+        comando newgrp
       
     </span>
   </a>
@@ -1988,22 +722,111 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identity-switching" class="md-nav__link">
+  <a href="#protezione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Identity Switching
+        Protezione
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Identity Switching">
+    <nav class="md-nav" aria-label="Protezione">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#su-command" class="md-nav__link">
+  <a href="#commando-passwd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        su command
+        commando passwd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-chage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando chage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestione-avanzata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestione avanzata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestione avanzata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-etcdefaultuseradd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        file /etc/default/useradd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-etclogindefs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        file /etc/login.defs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directory-etcskel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        directory /etc/skel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cambiamento-di-identita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cambiamento di identità
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cambiamento di identità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-su" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando su
       
     </span>
   </a>
@@ -2031,27 +854,24 @@
                   
 
 
-  
-  
 
-
-<h1 id="user-management">User Management<a class="headerlink" href="#user-management" title="Permanent link">&para;</a></h1>
-<p>In this chapter, you will learn how to manage users.</p>
-<h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
-<p>Each user must have a group, which is called the user's <strong>primary group</strong>.</p>
-<p>Multiple users can belong to the same group.</p>
-<p>Groups other than the primary group are called <strong>supplementary groups</strong>.</p>
-<p>!!! Note "Note"</p>
-<div class="codehilite"><pre><span></span><code>Each user has a primary group and can be invited into one or more supplementary groups.
-</code></pre></div>
-
-<p>Groups and users are managed by their unique numerical identifiers <code>GID</code> and <code>UID</code>.</p>
+<h1 id="gestione-utenti">Gestione utenti</h1>
+<p>In questo capitolo imparerai come gestire gli utenti.</p>
+<h2 id="generale">Generale</h2>
+<p>Ogni utente deve avere un gruppo, che è chiamato il gruppo <strong>primario dell'utente</strong>.</p>
+<p>Diversi utenti possono far parte dello stesso gruppo.</p>
+<p>Gruppo diversi dal gruppo primario sono chiamati <strong>gruppi supplementari</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Ogni utente ha un gruppo primario e può essere invitato in uno o più gruppi supplementari.</p>
+</div>
+<p>I gruppi e gli utenti sono gestiti dai loro identificatori numerici unici <code>GID</code> e <code>UID</code>.</p>
 <ul>
-<li><code>UID</code>: <em>User IDentifier</em>. Unique user ID.</li>
-<li><code>GID</code>: <em>Group IDentifier</em>. Unique group identifier.</li>
+<li><code>UID</code>: <em>User IDentifier</em>. ID utente unico.</li>
+<li><code>GID</code>: <em>Group IDentifier</em>. Identificatore di gruppo unico.</li>
 </ul>
-<p>Both UID and GID are recognized by the kernel, which means the Super Admin is not necessarily the <strong>root</strong> user, as long as the <strong>uid=0</strong> user is the Super Admin.</p>
-<p>The user/group files are:</p>
+<p>Sia UID che GID sono riconosciuti dal kernel, il che significa che il Super Admin non è necessariamente l'utente <strong>root</strong>, purché l'utente <strong>uid=0</strong> sia il Super Admin.</p>
+<p>I file relativi agli utenti/gruppi sono:</p>
 <ul>
 <li>/etc/passwd</li>
 <li>/etc/shadow</li>
@@ -2061,889 +881,126 @@
 <li>/etc/default/useradd</li>
 <li>/etc/login.defs</li>
 </ul>
-<p>!!! Danger "Danger"</p>
-<div class="codehilite"><pre><span></span><code>You should always use administration commands instead of manually editing files.
-</code></pre></div>
-
-<h2 id="group-management">Group Management<a class="headerlink" href="#group-management" title="Permanent link">&para;</a></h2>
-<p>Modified files, added lines:</p>
+<div class="admonition danger">
+<p class="admonition-title">Pericolo</p>
+<p>Dovresti sempre usare i comandi di amministrazione invece di modificare manualmente i file.</p>
+</div>
+<h2 id="gestione-del-gruppo">Gestione del gruppo</h2>
+<p>File modificati, righe aggiunte:</p>
 <ul>
 <li><code>/etc/group</code></li>
 <li><code>/etc/gshadow</code></li>
 </ul>
-<h3 id="groupadd-command"><code>groupadd</code> command<a class="headerlink" href="#groupadd-command" title="Permanent link">&para;</a></h3>
-<p>The <code>groupadd</code> command adds a group to the system.
-<div class="highlight"><pre><span></span><code>groupadd [-g GID] group
+<h3 id="comando-groupadd">comando <code>groupadd</code></h3>
+<p>Il comando <code>groupadd</code> aggiunge un gruppo al sistema.
+<div class="highlight"><pre><span></span><code>groupadd [-f] [-g GID] group
 </code></pre></div></p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>$ sudo groupadd -g 1012 GroupB
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$ sudo groupadd -g 1012 GroupeB
 </code></pre></div>
 <table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Description</th>
+<th>Opzione</th>
+<th>Descrizione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>-g GID</code></td>
-<td>Defines the <code>GID</code> of the group to be created.</td>
+<td>Definisce il <code>GID</code> del gruppo da creare.</td>
 </tr>
 <tr>
 <td><code>-f</code></td>
-<td>The system chooses a <code>GID</code> if the one specified with <code>-g</code> option already exists.</td>
+<td>Il sistema sceglie un<code>GID</code> se quello specificato dall'opzione <code>-g</code> esiste già.</td>
 </tr>
 <tr>
 <td><code>-r</code></td>
-<td>Creates a system group with a <code>GID</code> between <code>SYS_GID_MIN</code> and <code>SYS_GID_MAX</code>. These two variables are defined in <code>/etc/login.defs</code>.</td>
+<td>Crea un gruppo di sistema con un <code>GID</code> tra <code>SYS_GID_MIN</code> e <code>SYS_GID_MAX</code>. Queste due variabili sono definite in <code>/etc/login.defs</code>.</td>
 </tr>
 </tbody>
 </table>
-<p>Group naming rules:</p>
+<p>Regole di denominazione del gruppo:</p>
 <ul>
-<li>No accents or special characters;</li>
-<li>Different from the name of an existing user or system file.</li>
+<li>Nessun accento o carattere speciale;</li>
+<li>Diverso dal nome di un utente o file di sistema esistenti.</li>
 </ul>
-<p>!!! Note "Note"</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Under</span><span class="w"> </span><span class="o">**</span><span class="n">Debian</span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">administrator</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">except</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">scripts</span><span class="w"> </span><span class="n">intended</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">portable</span><span class="w"> </span><span class="n">across</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="n">distributions</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`addgroup`</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n n-Quoted">`delgroup`</span><span class="w"> </span><span class="n">commands</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n n-Quoted">`man`</span><span class="o">:</span>
-
-<span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span>
-<span class="n n-Quoted">$ man addgroup</span>
-<span class="n n-Quoted">DESCRIPTION</span>
-<span class="n n-Quoted">adduser and addgroup add users and groups to the system according to command line options and configuration information</span>
-<span class="n n-Quoted">in /etc/adduser.conf. They are friendlier front ends to the low-level tools like useradd, groupadd and usermod programs,</span>
-<span class="n n-Quoted">by default, choosing Debian policy conformant UID and GID values, creating a home directory with skeletal configuration,</span>
-<span class="n n-Quoted">running a custom script, and other features.</span>
-<span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Sotto <strong>Debian</strong>, l'amministratore dovrebbe usare, tranne che negli script destinati ad essere portabili su tutte le distribuzioni Linux, i comandi <code>addgroup</code> e <code>delgroup</code> come specificato nel <code>man</code>:</p>
+<div class="highlight"><pre><span></span><code>$ man addgroup
+DESCRIPTION
+adduser and addgroup add users and groups to the system according to command line options and configuration information
+in /etc/adduser.conf. They are friendlier front ends to the low-level tools like useradd, groupadd and usermod programs,
+by default, choosing Debian policy conformant UID and GID values, creating a home directory with skeletal configuration,
+running a custom script, and other features.
 </code></pre></div>
-
-<h3 id="groupmod-command"><code>groupmod</code> command<a class="headerlink" href="#groupmod-command" title="Permanent link">&para;</a></h3>
-<p>The <code>groupmod</code> command allows you to modify an existing group on the system.</p>
-<div class="highlight"><pre><span></span><code>groupmod [-g GID] [-n name] group
+</div>
+<h3 id="comando-groupmod">Comando <code>groupmod</code></h3>
+<p>Il comando <code>groupmod</code> consente di modificare un gruppo esistente sul sistema.</p>
+<div class="highlight"><pre><span></span><code>groupmod [-g GID] [-n nom] group
 </code></pre></div>
-<p>Example:</p>
+<p>Esempio:</p>
 <div class="highlight"><pre><span></span><code>$ sudo groupmod -g 1016 GroupP
 $ sudo groupmod -n GroupC GroupB
 </code></pre></div>
 <table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Observations</th>
+<th>Opzione</th>
+<th>Osservazioni</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>-g GID</code></td>
-<td>New <code>GID</code> of the group to modify.</td>
+<td>Nuovo <code>GID</code> del gruppo da modificare.</td>
 </tr>
 <tr>
 <td><code>-n name</code></td>
-<td>New name.</td>
+<td>Nuovo nome.</td>
 </tr>
 </tbody>
 </table>
-<p>You can change a group's name, its <code>GID</code>, or both simultaneously.</p>
-<p>After modification, files belonging to the group have an unknown <code>GID</code>. They must be reassigned to the new <code>GID</code>.</p>
+<p>È possibile cambiare il nome di un gruppo, il  <code>GID</code> o entrambi simultaneamente.</p>
+<p>Dopo la modifica, i file appartenenti al gruppo hanno un <code>GID</code> sconosciuto. Devono essere riassegnati al nuovo <code>GID</code>.</p>
 <div class="highlight"><pre><span></span><code>$ sudo find / -gid 1002 -exec chgrp 1016 {} \;
 </code></pre></div>
-<h3 id="groupdel-command"><code>groupdel</code> command<a class="headerlink" href="#groupdel-command" title="Permanent link">&para;</a></h3>
-<p>The <code>groupdel</code> command is used to delete an existing group on the system.</p>
+<h3 id="comando-groupdel">comando <code>groupdel</code></h3>
+<p>Il comando <code>groupdel</code> si usa per eliminare un gruppo esistente sul sistema.</p>
 <div class="highlight"><pre><span></span><code>groupdel group
 </code></pre></div>
-<p>Example:</p>
+<p>Esempio:</p>
 <div class="highlight"><pre><span></span><code>$ sudo groupdel GroupC
 </code></pre></div>
-<p>!!! Tip "Tip"</p>
-<div class="codehilite"><pre><span></span><code><span class="k">When</span><span class="w"> </span><span class="n">deleting</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">group</span><span class="p">,</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">conditions</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">occur</span><span class="o">:</span>
-
-<span class="o">*</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">unique</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`groupdel`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">group</span><span class="p">,</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">indicate</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">there</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">specific</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">under</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">cannot</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">deleted</span><span class="p">.</span>
-<span class="o">*</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">belongs</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">supplementary</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="p">(</span><span class="k">not</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">user</span><span class="s1">&#39;s primary group) and that group is not the primary group of another user on the system, the `groupdel` command will delete the group without further prompts.</span>
-
-<span class="s1">Examples:</span>
-
-<span class="s1">```bash</span>
-<span class="s1">Shell &gt; useradd testa</span>
-<span class="s1">Shell &gt; id testa</span>
-<span class="s1">uid=1000(testa) gid=1000(testa) group=1000(testa)</span>
-<span class="s1">Shell &gt; groupdel testa</span>
-<span class="s1">groupdel: cannot remove the primary group of user &#39;</span><span class="n">testa</span><span class="s1">&#39;</span>
-
-<span class="s1">Shell &gt; groupadd -g 1001 testb</span>
-<span class="s1">Shell &gt; usermod -G testb root</span>
-<span class="s1">Shell &gt; id root</span>
-<span class="s1">uid=0(root) gid=0(root) group=0(root),1001(testb)</span>
-<span class="s1">Shell &gt; groupdel testb</span>
-<span class="s1">```</span>
-</code></pre></div>
-
-<p>!!! Tip "Tip"</p>
-<div class="codehilite"><pre><span></span><code>When deleting a user with the `userdel -r` command, the corresponding primary group is also deleted. The primary group name usually matches the user name.
-</code></pre></div>
-
-<p>!!! Tip "Tip"</p>
-<div class="codehilite"><pre><span></span><code><span class="k">Each</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">unique</span><span class="w"> </span><span class="n n-Quoted">`GID`</span><span class="p">.</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">multiple</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">supplementary</span><span class="w"> </span><span class="k">group</span><span class="p">.</span><span class="w"> </span><span class="k">By</span><span class="w"> </span><span class="n">convention</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">super</span><span class="w"> </span><span class="n">administrator</span><span class="s1">&#39;s GID is 0. GIDs reserved for some services or processes are 201~999, which are called system groups or pseudo-user groups. The GID for users is usually 1000 or greater. These are related to &lt;font color=red&gt;/etc/login.defs&lt;/font&gt;, which we will discuss later.</span>
-
-<span class="s1">```bash</span>
-<span class="s1"># Comment line ignored</span>
-<span class="s1">shell &gt; cat  /etc/login.defs</span>
-<span class="s1">MAIL_DIR        /var/spool/mail</span>
-<span class="s1">UMASK           022</span>
-<span class="s1">HOME_MODE       0700</span>
-<span class="s1">PASS_MAX_DAYS   99999</span>
-<span class="s1">PASS_MIN_DAYS   0</span>
-<span class="s1">PASS_MIN_LEN    5</span>
-<span class="s1">PASS_WARN_AGE   7</span>
-<span class="s1">UID_MIN                  1000</span>
-<span class="s1">UID_MAX                 60000</span>
-<span class="s1">SYS_UID_MIN               201</span>
-<span class="s1">SYS_UID_MAX               999</span>
-<span class="s1">GID_MIN                  1000</span>
-<span class="s1">GID_MAX                 60000</span>
-<span class="s1">SYS_GID_MIN               201</span>
-<span class="s1">SYS_GID_MAX               999</span>
-<span class="s1">CREATE_HOME     yes</span>
-<span class="s1">USERGROUPS_ENAB yes</span>
-<span class="s1">ENCRYPT_METHOD SHA512</span>
-<span class="s1">```</span>
-</code></pre></div>
-
-<p>!!! Tip "Tip"</p>
-<div class="codehilite"><pre><span></span><code>Since a user must necessarily be part of a group, it is better to create groups before adding users. Therefore, a group may have no members.
-</code></pre></div>
-
-<h3 id="etcgroup-file"><code>/etc/group</code> file<a class="headerlink" href="#etcgroup-file" title="Permanent link">&para;</a></h3>
-<p>This file contains Group information (separated by <code>:</code>).</p>
-<div class="highlight"><pre><span></span><code>$ sudo tail -1 /etc/group
-GroupP:x:516:patrick
-  (1)  (2)(3)   (4)
-</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p>Quando si elimina un gruppo, si possono verificare due condizioni:</p>
 <ul>
-<li>1: Group name.</li>
-<li>2: The group password is identified by an <code>x</code>. The group password is stored in <code>/etc/gshadow</code>.</li>
-<li>3: GID.</li>
-<li>4: Supplementary users of the group (excluding the unique primary user).</li>
+<li>Se un utente ha un gruppo primario unico e si lancia il comando <code>groupdel</code> su quel gruppo, verrà indicato che c'è un utente specifico sotto il gruppo e che non può essere cancellato.</li>
+<li>Se un utente appartiene a un gruppo supplementare (non il gruppo primario dell'utente) e tale gruppo non è il gruppo primario di un altro utente del sistema, il comando <code>groupdel</code> eliminerà il gruppo senza ulteriori richieste.</li>
 </ul>
-<p>!!! Note "Note"</p>
-<p>Each line in <code>/etc/group</code> corresponds to a group. The main user information is stored in <code>/etc/passwd</code>.</p>
-<h3 id="etcgshadow-file"><code>/etc/gshadow</code> file<a class="headerlink" href="#etcgshadow-file" title="Permanent link">&para;</a></h3>
-<p>This file contains security information about groups (separated by <code>:</code>).</p>
-<div class="highlight"><pre><span></span><code>$ sudo grep GroupA /etc/gshadow
-GroupA:$6$2,9,v...SBn160:alain:arch
-   (1)      (2)            (3)      (4)
-</code></pre></div>
-<ul>
-<li>1: Group name.</li>
-<li>2: Encrypted password.</li>
-<li>3: Group administrator name.</li>
-<li>4: Supplementary users of the group (excluding the unique primary user).</li>
-</ul>
-<p>!!! Warning "Warning"</p>
-<div class="codehilite"><pre><span></span><code>The group name in **/etc/group** and **/etc/gshadow** must match one-to-one, meaning each line in **/etc/group** must have a corresponding line in **/etc/gshadow**.
-</code></pre></div>
+<p>Esempi:</p>
+<div class="highlight"><pre><span></span><code>Shell<span class="w"> </span>&gt;<span class="w"> </span>useradd<span class="w"> </span>testa
+Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>testa
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>testa<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>testa<span class="o">)</span><span class="w"> </span><span class="nv">group</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>testa<span class="o">)</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>groupdel<span class="w"> </span>testa
+groupdel:<span class="w"> </span>cannot<span class="w"> </span>remove<span class="w"> </span>the<span class="w"> </span>primary<span class="w"> </span>group<span class="w"> </span>of<span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;testa&#39;</span>
 
-<p>An <code>!</code> in the password indicates the password is locked. Therefore, no user can use the password to access the group (since group members don't need it).</p>
-<h2 id="user-management_1">User Management<a class="headerlink" href="#user-management_1" title="Permanent link">&para;</a></h2>
-<h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
-<p>A user is defined as follows in the <code>/etc/passwd</code> file:</p>
-<ul>
-<li>1: Login name;</li>
-<li>2: Password identification, <code>x</code> indicates the user has a password, the encrypted password is stored in the second field of <code>/etc/shadow</code>;</li>
-<li>3: UID;</li>
-<li>4: GID of the primary group;</li>
-<li>5: Comments;</li>
-<li>6: Home directory;</li>
-<li>7: Shell (<code>/bin/bash</code>, <code>/bin/nologin</code>, ...).</li>
-</ul>
-<p>There are three types of users:</p>
-<ul>
-<li><strong>root(uid=0)</strong>: the system administrator;</li>
-<li><strong>system users(uid is one from 201~999)</strong>: Used by the system to manage access rights for applications;</li>
-<li><strong>normal user (uid&gt;=1000)</strong>: Another account to access the system.</li>
-</ul>
-<p>Modified files, added lines:</p>
-<ul>
-<li><code>/etc/passwd</code></li>
-<li><code>/etc/shadow</code></li>
-</ul>
-<h3 id="useradd-command"><code>useradd</code> command<a class="headerlink" href="#useradd-command" title="Permanent link">&para;</a></h3>
-<p>The <code>useradd</code> command is used to add a user.</p>
-<div class="highlight"><pre><span></span><code>useradd [-u UID] [-g GID] [-d directory] [-s shell] login
+Shell<span class="w"> </span>&gt;<span class="w"> </span>groupadd<span class="w"> </span>-g<span class="w"> </span><span class="m">1001</span><span class="w"> </span>testb
+Shell<span class="w"> </span>&gt;<span class="w"> </span>usermod<span class="w"> </span>-G<span class="w"> </span>testb<span class="w"> </span>root
+Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>root
+<span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span><span class="w"> </span><span class="nv">group</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span>,1001<span class="o">(</span>testb<span class="o">)</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>groupdel<span class="w"> </span>testb
 </code></pre></div>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>$ sudo useradd -u 1000 -g 1013 -d /home/GroupC/carine carine
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-u UID</code></td>
-<td><code>UID</code> of the user to create.</td>
-</tr>
-<tr>
-<td><code>-g GID</code></td>
-<td><code>GID</code> of the primary group. The <code>GID</code> here can also be a <code>group name</code>.</td>
-</tr>
-<tr>
-<td><code>-G GID1,[GID2]...</code></td>
-<td><code>GID</code> of supplementary groups. The <code>GID</code> here can also be a <code>group name</code>. Many supplementary groups can be specified, separated by commas.</td>
-</tr>
-<tr>
-<td><code>-d directory</code></td>
-<td>Creates the home directory.</td>
-</tr>
-<tr>
-<td><code>-s shell</code></td>
-<td>Specifies the user's shell.</td>
-</tr>
-<tr>
-<td><code>-c COMMENT</code></td>
-<td>Adds a comment.</td>
-</tr>
-<tr>
-<td><code>-U</code></td>
-<td>Adds the user to a group with the same name that is created at the same time. If not specified, creating a group with the same name happens during user creation.</td>
-</tr>
-<tr>
-<td><code>-M</code></td>
-<td>Does not create the user's home directory.</td>
-</tr>
-<tr>
-<td><code>-r</code></td>
-<td>Creates a system account.</td>
-</tr>
-</tbody>
-</table>
-<p>At creation, the account has no password and is locked.</p>
-<p>To unlock the account, a password must be assigned.</p>
-<p>When the <code>useradd</code> command has no options, it:</p>
-<ul>
-<li>Creates a home directory with the same name;</li>
-<li>Creates a primary group with the same name;</li>
-<li>The default shell is bash;</li>
-<li>The UID and GID values of the user's primary group are automatically deduced. This is usually a unique value between 1000 and 60,000.</li>
-</ul>
-<p>!!! note "Note"</p>
-<div class="codehilite"><pre><span></span><code>The settings and defaults are obtained from the following configuration files:
-
-`/etc/login.defs` and `/etc/default/useradd`
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>Shell<span class="w"> </span>&gt;<span class="w"> </span>useradd<span class="w"> </span>test1
-
-Shell<span class="w"> </span>&gt;<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/passwd
-test1:x:1000:1000::/home/test1:/bin/bash
-
-Shell<span class="w"> </span>&gt;<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/shadow
-test1:!!:19253:0:99999:7
-:::
-
-Shell<span class="w"> </span>&gt;<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/group<span class="w"> </span><span class="p">;</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/gshadow
-test1:x:1000:
-test1!::
-</code></pre></div>
-<p>Account naming rules:</p>
-<ul>
-<li>No accents, uppercase letters, or special characters;</li>
-<li>Although it is possible to use an uppercase username in Arch Linux, we do not recommend it;</li>
-<li>Optional: set the <code>-u</code>, <code>-g</code>, <code>-d</code>, and <code>-s</code> options at creation.</li>
-<li>Different from the name of an existing group or system file;</li>
-<li>The username can contain up to 32 characters.</li>
-</ul>
-<p>!!! Warning "Warning"</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">The</span><span class="w"> </span><span class="nv">home</span><span class="w"> </span><span class="nv">directory</span><span class="w"> </span><span class="nv">tree</span><span class="w"> </span><span class="nv">must</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">created</span><span class="w"> </span><span class="nv">except</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">last</span><span class="w"> </span><span class="nv">directory</span>.
-</code></pre></div>
-
-<p>The last directory is created by the <code>useradd</code> command, which takes the opportunity to copy files from <code>/etc/skel</code> into it.</p>
-<p><strong>A user can belong to multiple groups in addition to their primary group.</strong></p>
-<p>Example:
-<div class="highlight"><pre><span></span><code>$ sudo useradd -u 1000 -g GroupA -G GroupP,GroupC albert
-</code></pre></div></p>
-<p>!!! Note "Note"</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Under</span><span class="w"> </span><span class="o">**</span><span class="n">Debian</span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`-m`</span><span class="w"> </span><span class="k">option</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">force</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">creation</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="k">directory</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`CREATE_HOME`</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n n-Quoted">`/etc/login.defs`</span><span class="p">.</span><span class="w"> </span><span class="k">In</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">cases</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">administrator</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`adduser`</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n n-Quoted">`deluser`</span><span class="w"> </span><span class="n">commands</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n n-Quoted">`man`</span><span class="p">,</span><span class="w"> </span><span class="k">except</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">scripts</span><span class="w"> </span><span class="n">intended</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">transferred</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="n">distributions</span><span class="o">:</span>
-
-<span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span>
-<span class="n n-Quoted">$ man useradd</span>
-<span class="n n-Quoted">DESCRIPTION</span>
-<span class="n n-Quoted">    **useradd** is a low level utility for adding users. On Debian, administrators should usually use **adduser(8)**</span>
-<span class="n n-Quoted">     instead.</span>
-<span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
-</code></pre></div>
-
-<h4 id="default-values-for-user-creation">Default values for user creation.<a class="headerlink" href="#default-values-for-user-creation" title="Permanent link">&para;</a></h4>
-<p>Modify the <code>/etc/default/useradd</code> file.</p>
-<div class="highlight"><pre><span></span><code>useradd -D [-b directory] [-g group] [-s shell]
-</code></pre></div>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>$ sudo useradd -D -g 1000 -b /home -s /bin/bash
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-D</code></td>
-<td>Sets the default values for user creation.</td>
-</tr>
-<tr>
-<td><code>-b directory</code></td>
-<td>Sets the default login directory.</td>
-</tr>
-<tr>
-<td><code>-g group</code></td>
-<td>Sets the default group.</td>
-</tr>
-<tr>
-<td><code>-s shell</code></td>
-<td>Sets the default shell.</td>
-</tr>
-<tr>
-<td><code>-f</code></td>
-<td>Sets the number of days after password expiration before disabling the account.</td>
-</tr>
-<tr>
-<td><code>-e</code></td>
-<td>Sets the account disable date.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="usermod-command"><code>usermod</code> command<a class="headerlink" href="#usermod-command" title="Permanent link">&para;</a></h3>
-<p>The <code>usermod</code> command allows you to modify a user.</p>
-<div class="highlight"><pre><span></span><code>usermod [-u UID] [-g GID] [-d directory] [-m] login
-</code></pre></div>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>$ sudo usermod -u 1044 carine
-</code></pre></div>
-<p>Options identical to the <code>useradd</code> command.</p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-m</code></td>
-<td>Associated with the <code>-d</code> option. Moves the content from the old login directory to the new one. If the old home directory does not exist, creating a new home directory does not happen; the new home directory is created if it does not exist.</td>
-</tr>
-<tr>
-<td><code>-l login</code></td>
-<td>Changes the login name. After changing the login name, you also need to change the home directory name to match it.</td>
-</tr>
-<tr>
-<td><code>-e YYYY-MM-DD</code></td>
-<td>Changes the account expiration date.</td>
-</tr>
-<tr>
-<td><code>-L</code></td>
-<td>Permanently locks the account. That is, adds a <code>!</code> at the beginning of the password field in <code>/etc/shadow</code>.</td>
-</tr>
-<tr>
-<td><code>-U</code></td>
-<td>Unlocks the account.</td>
-</tr>
-<tr>
-<td><code>-a</code></td>
-<td>Adds the user's supplementary groups, which must be used together with the <code>-G</code> option.</td>
-</tr>
-<tr>
-<td><code>-G</code></td>
-<td>Modifies the user's supplementary groups and overwrites previous supplementary groups.</td>
-</tr>
-</tbody>
-</table>
-<p>!!! Tip "Tip"</p>
-<div class="codehilite"><pre><span></span><code>To be modified, a user must be logged out and have no running processes.
-</code></pre></div>
-
-<p>After changing the identifier, files belonging to the user have an unknown <code>UID</code>. The new <code>UID</code> must be reassigned.</p>
-<p>Where <code>1000</code> is the old <code>UID</code> and <code>1044</code> is the new one. The examples are as follows:</p>
-<div class="highlight"><pre><span></span><code>$ sudo find / -uid 1000 -exec chown 1044: {} \;
-</code></pre></div>
-<p>Locking and unlocking a user account, the examples are as follows:</p>
-<div class="highlight"><pre><span></span><code>Shell &gt; usermod -L test1
-Shell &gt; grep test1 /etc/shadow
-test1:!$6$n.hxglA.X5r7X0ex$qCXeTx.kQVmqsPLeuvIQnNidnSHvFiD7bQTxU7PLUCmBOcPNd5meqX6AEKSQvCLtbkdNCn.re2ixYxOeGWVFI0:19259:0:99999:7
-:::
-
-Shell &gt; usermod -U test1
-</code></pre></div>
-<p>The difference between the <code>-aG</code> option and the <code>-G</code> option can be explained by the following example:</p>
-<div class="highlight"><pre><span></span><code>Shell<span class="w"> </span>&gt;<span class="w"> </span>useradd<span class="w"> </span>test1
-Shell<span class="w"> </span>&gt;<span class="w"> </span>passwd<span class="w"> </span>test1
-Shell<span class="w"> </span>&gt;<span class="w"> </span>groupadd<span class="w"> </span>groupA<span class="w"> </span><span class="p">;</span><span class="w"> </span>groupadd<span class="w"> </span>groupB<span class="w"> </span><span class="p">;</span><span class="w"> </span>groupadd<span class="w"> </span>groupC<span class="w"> </span><span class="p">;</span><span class="w"> </span>groupadd<span class="w"> </span>groupD
-Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>test1
-<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>
-
-Shell<span class="w"> </span>&gt;<span class="w"> </span>gpasswd<span class="w"> </span>-a<span class="w"> </span>test1<span class="w"> </span>groupA
-Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>test1
-<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>,1002<span class="o">(</span>groupA<span class="o">)</span>
-
-Shell<span class="w"> </span>&gt;<span class="w"> </span>usermod<span class="w"> </span>-G<span class="w"> </span>groupB,groupC<span class="w"> </span>test1
-Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>test1<span class="w"> </span>
-<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gorups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>,1003<span class="o">(</span>groupB<span class="o">)</span>,1004<span class="o">(</span>groupC<span class="o">)</span>
-
-Shell<span class="w"> </span>&gt;<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>groupD<span class="w"> </span>test1
-<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>,1003<span class="o">(</span>groupB<span class="o">)</span>,1004<span class="o">(</span>groupC<span class="o">)</span>,1005<span class="o">(</span>groupD<span class="o">)</span>
-</code></pre></div>
-<h3 id="userdel-command"><code>userdel</code> command<a class="headerlink" href="#userdel-command" title="Permanent link">&para;</a></h3>
-<p>The <code>userdel</code> command allows you to delete a user account.</p>
-<div class="highlight"><pre><span></span><code>$ sudo userdel -r carine
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-r</code></td>
-<td>Deletes the user's home directory and mail files located in the <code>/var/spool/mail/</code> directory</td>
-</tr>
-</tbody>
-</table>
-<p>!!! Tip "Tip"</p>
-<div class="codehilite"><pre><span></span><code>To be deleted, a user must be logged out and have no running processes.
-</code></pre></div>
-
-<p>The <code>userdel</code> command removes the corresponding lines in <code>/etc/passwd</code>, <code>/etc/shadow</code>, <code>/etc/group</code>, <code>/etc/gshadow</code>. As mentioned earlier, <code>userdel -r</code> will also delete the corresponding user's primary group.</p>
-<h3 id="etcpasswd-file"><code>/etc/passwd</code> file<a class="headerlink" href="#etcpasswd-file" title="Permanent link">&para;</a></h3>
-<p>This file contains user information (separated by <code>:</code>).</p>
-<div class="highlight"><pre><span></span><code>$ sudo head -1 /etc/passwd
-root:x:0:0:root:/root:/bin/bash
-(1)(2)(3)(4)(5)  (6)    (7)
-</code></pre></div>
-<ul>
-<li>1: Login name;</li>
-<li>2: Password identification, <code>x</code> indicates the user has a password, the encrypted password is stored in the second field of <code>/etc/shadow</code>;</li>
-<li>3: UID.</li>
-<li>4: GID of the primary group;</li>
-<li>5: Comments;</li>
-<li>6: Home directory;</li>
-<li>7: Shell (<code>/bin/bash</code>, <code>/bin/nologin</code>, ...).</li>
-</ul>
-<h3 id="etcshadow-file"><code>/etc/shadow</code> file<a class="headerlink" href="#etcshadow-file" title="Permanent link">&para;</a></h3>
-<p>This file contains user security information (separated by <code>:</code>).
-<div class="highlight"><pre><span></span><code>$ sudo tail -1 /etc/shadow
-root:$6$...:15399:0:99999:7
-:::
- (1)    (2)  (3) (4) (5) (6)(7,8,9)
-</code></pre></div></p>
-<ul>
-<li>1: Login name.</li>
-<li>2: Encrypted password. Uses the SHA512 encryption algorithm, defined by the <code>ENCRYPT_METHOD</code> in <code>/etc/login.defs</code>.</li>
-<li>3: The time the password was last changed, in timestamp format, in days. The timestamp is based on January 1, 1970 as the standard time. Each day that passes, the timestamp increases by 1.</li>
-<li>4: Minimum password duration. That is, the time interval between two password changes (relative to the third field), in days. Defined by <code>PASS_MIN_DAYS</code> in <code>/etc/login.defs</code>, the default is 0, meaning when you change your password for the second time, there is no restriction. However, if it is 5, it means you cannot change the password within 5 days, and only after 5 days.</li>
-<li>5: Maximum password duration. That is, the password validity period (relative to the third field). Defined by <code>PASS_MAX_DAYS</code> in <code>/etc/login.defs</code>.</li>
-<li>6: The number of days of warning before password expiration (relative to the fifth field). The default is 7 days, defined by <code>PASS_WARN_AGE</code> in <code>/etc/login.defs</code>.</li>
-<li>7: Number of days of tolerance after password expiration (relative to the fifth field).</li>
-<li>8: Account expiration time, in timestamp format, in days. <strong>Note that account expiration differs from password expiration. In case of account expiration, the user cannot log in. In case of password expiration, the user is not allowed to log in using their password.</strong></li>
-<li>9: Reserved for future use.</li>
-</ul>
-<p>!!! Danger "Danger"</p>
-<div class="codehilite"><pre><span></span><code><span class="k">For</span><span class="w"> </span><span class="nv">each</span><span class="w"> </span><span class="nv">line</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span>`<span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">passwd</span>`,<span class="w"> </span><span class="nv">there</span><span class="w"> </span><span class="nv">must</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">corresponding</span><span class="w"> </span><span class="nv">line</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span>`<span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">shadow</span>`.
-</code></pre></div>
-
-<p>For date and time conversion, refer to the following command format:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># The timestamp is converted to a date, &quot;17718&quot; indicates the timestamp to enter.</span>
-Shell<span class="w"> </span>&gt;<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;1970-01-01 17718 days&quot;</span><span class="w"> </span>
-
-<span class="c1"># The date is converted to a timestamp, &quot;2018-07-06&quot; indicates the date to fill in.</span>
-Shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(($(</span>date<span class="w"> </span>--date<span class="o">=</span><span class="s2">&quot;2018-07-06&quot;</span><span class="w"> </span>+%s<span class="k">)</span><span class="o">/</span><span class="m">86400</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
-</code></pre></div>
-<h2 id="file-owners">File Owners<a class="headerlink" href="#file-owners" title="Permanent link">&para;</a></h2>
-<p>!!! Danger "Danger"</p>
-<div class="codehilite"><pre><span></span><code>All files necessarily belong to a user and a group.
-</code></pre></div>
-
-<p>The primary group of the user who creates the file is, by default, the file's owner group.</p>
-<h3 id="modification-commands">Modification commands<a class="headerlink" href="#modification-commands" title="Permanent link">&para;</a></h3>
-<h4 id="chown-command"><code>chown</code> command<a class="headerlink" href="#chown-command" title="Permanent link">&para;</a></h4>
-<p>The <code>chown</code> command allows you to change the owners of a file.
-<div class="highlight"><pre><span></span><code>chown [-R] [-v] login[:group] file
-</code></pre></div></p>
-<p>Examples:
-<div class="highlight"><pre><span></span><code>$ sudo chown root myfile
-$ sudo chown albert:GroupA myfile
-</code></pre></div></p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-R</code></td>
-<td>Recursively changes the owners of the directory and all files contained in it.</td>
-</tr>
-<tr>
-<td><code>-v</code></td>
-<td>Displays the changes.</td>
-</tr>
-</tbody>
-</table>
-<p>To change only the owning user:</p>
-<div class="highlight"><pre><span></span><code>$ sudo chown albert file
-</code></pre></div>
-<p>To change only the owning group:</p>
-<div class="highlight"><pre><span></span><code>$ sudo chown :GroupA file
-</code></pre></div>
-<p>Change the owning user and group:</p>
-<div class="highlight"><pre><span></span><code>$ sudo chown albert:GroupA file
-</code></pre></div>
-<p>In the following example, the assigned group will be the primary group of the specified user.</p>
-<div class="highlight"><pre><span></span><code>$ sudo chown albert: file
-</code></pre></div>
-<p>Change the owner and group of all files in a directory</p>
-<div class="highlight"><pre><span></span><code>$ sudo chown -R albert:GroupA /dir1
-</code></pre></div>
-<h3 id="chgrp-command"><code>chgrp</code> command<a class="headerlink" href="#chgrp-command" title="Permanent link">&para;</a></h3>
-<p>The <code>chgrp</code> command allows you to change the owning group of a file.</p>
-<div class="highlight"><pre><span></span><code>chgrp [-R] [-v] group file
-</code></pre></div>
-<p>Example:
-<div class="highlight"><pre><span></span><code>$ sudo chgrp group1 file
-</code></pre></div></p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-R</code></td>
-<td>Changes the owning groups of the directory and its contents (recursive).</td>
-</tr>
-<tr>
-<td><code>-v</code></td>
-<td>Displays the changes.</td>
-</tr>
-</tbody>
-</table>
-<p>!!! Note "Note"</p>
-<div class="codehilite"><pre><span></span><code>It is possible to apply an owner and owning group to a file by taking as reference those of another file:
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>chown [options] --reference=RRFILE FILE
-</code></pre></div>
-<p>For example:</p>
-<div class="highlight"><pre><span></span><code>chown --reference=/etc/groups /etc/passwd
-</code></pre></div>
-<h2 id="guest-management">Guest Management<a class="headerlink" href="#guest-management" title="Permanent link">&para;</a></h2>
-<h3 id="gpasswd-command"><code>gpasswd</code> command<a class="headerlink" href="#gpasswd-command" title="Permanent link">&para;</a></h3>
-<p>The <code>gpasswd</code> command allows you to manage a group.</p>
-<div class="highlight"><pre><span></span><code>gpasswd [-a login] [-A login] [-d login] [-M login] group
-</code></pre></div>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code>$ sudo gpasswd -A alain GroupA
-[alain]$ gpasswd -a patrick GroupA
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-a login</code></td>
-<td>Adds the user to the group. For the added user, this group is a supplementary group.</td>
-</tr>
-<tr>
-<td><code>-A login</code></td>
-<td>Sets the list of administrative users.</td>
-</tr>
-<tr>
-<td><code>-d USER</code></td>
-<td>Removes the user from the group.</td>
-</tr>
-<tr>
-<td><code>-M USER,...</code></td>
-<td>Sets the list of group members.</td>
-</tr>
-</tbody>
-</table>
-<p>The <code>gpasswd -M</code> command acts as a modification, not an addition.</p>
-<div class="highlight"><pre><span></span><code># gpasswd GroupeA
-New Password:
-Re-enter new password:
-</code></pre></div>
-<p>!!! note "Note"</p>
-<div class="codehilite"><pre><span></span><code>Besides using `gpasswd -a` to add users to a group, you can also use `usermod -G` or `usermod -AG` mentioned earlier.
-</code></pre></div>
-
-<h3 id="id-command"><code>id</code> command<a class="headerlink" href="#id-command" title="Permanent link">&para;</a></h3>
-<p>The <code>id</code> command displays the group names of a user.</p>
-<div class="highlight"><pre><span></span><code>id USER
-</code></pre></div>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>$ sudo id alain
-uid=1000(alain) gid=1000(GroupA) groupes=1000(GroupA),1016(GroupP)
-</code></pre></div>
-<h3 id="newgrp-command"><code>newgrp</code> command<a class="headerlink" href="#newgrp-command" title="Permanent link">&para;</a></h3>
-<p>The <code>newgrp</code> command can select a group, from the user's supplementary groups, as a new primary group <strong>temporarily</strong>. The <code>newgrp</code> command creates a new <strong>child shell</strong> (child process) each time the primary group of a user is changed. Be careful! <strong>child shell</strong> and <strong>sub shell</strong> are different.</p>
-<div class="highlight"><pre><span></span><code>newgrp [secondarygroups]
-</code></pre></div>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>Shell &gt; useradd test1
-Shell &gt; passwd test1
-Shell &gt; groupadd groupA ; groupadd groupB 
-Shell &gt; usermod -G groupA,groupB test1
-Shell &gt; id test1
-uid=1000(test1) gid=1000(test1) groups=1000(test1),1001(groupA),1002(groupB)
-Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL
-1
-0
-
-Shell &gt; su - test1
-Shell &gt; touch a.txt
-Shell &gt; ll
--rw-rw-r--  test1 test1 0 Oct  7 14:02 a.txt
-Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL
-1
-0
-
-# Generate a new child shell
-Shell &gt; newgrp groupA
-Shell &gt; touch b.txt
-Shell &gt; ll
--rw-rw-r--  test1 test1  0 Oct  7 14:02 a.txt
--rw-r--r--  test1 groupA 0 Oct  7 14:02 b.txt
-Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL
-2
-0
-
-# You can exit the child shell using the `exit` command
-Shell &gt; exit
-Shell &gt; logout
-Shell &gt; whoami
-root
-</code></pre></div>
-<h2 id="protection">Protection<a class="headerlink" href="#protection" title="Permanent link">&para;</a></h2>
-<h3 id="passwd-command"><code>passwd</code> command<a class="headerlink" href="#passwd-command" title="Permanent link">&para;</a></h3>
-<p>The <code>passwd</code> command is used to manage a password.</p>
-<div class="highlight"><pre><span></span><code>passwd [-d] [-l] [-S] [-u] [login]
-</code></pre></div>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code>Shell &gt; passwd -l albert
-Shell &gt; passwd -n 60 -x 90 -w 80 -i 10 patrick
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-d</code></td>
-<td>Permanently removes the password. Only for root (uid=0).</td>
-</tr>
-<tr>
-<td><code>-l</code></td>
-<td>Permanently locks the user account. Only for root (uid=0).</td>
-</tr>
-<tr>
-<td><code>-S</code></td>
-<td>Displays the account status. Only for root (uid=0).</td>
-</tr>
-<tr>
-<td><code>-u</code></td>
-<td>Permanently unlocks the user account. Only for root (uid=0).</td>
-</tr>
-<tr>
-<td><code>-e</code></td>
-<td>Permanently expires the password. Only for root (uid=0).</td>
-</tr>
-<tr>
-<td><code>-n DAYS</code></td>
-<td>Defines the minimum password duration. Permanent change. Only for root (uid=0).</td>
-</tr>
-<tr>
-<td><code>-x DAYS</code></td>
-<td>Defines the maximum password duration. Permanent change. Only for root (uid=0).</td>
-</tr>
-<tr>
-<td><code>-w DAYS</code></td>
-<td>Defines the warning time before expiration. Permanent change. Only for root (uid=0).</td>
-</tr>
-<tr>
-<td><code>-i DAYS</code></td>
-<td>Defines the delay before deactivation when the password expires. Permanent change. Only for root (uid=0).</td>
-</tr>
-</tbody>
-</table>
-<p>Using <code>password -l</code>, i.e., adding "!!" at the beginning of the password field of the corresponding user in <code>/etc/shadow</code>.</p>
-<p>Example:</p>
-<ul>
-<li>Alain changes his password:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>[alain]$ passwd
-</code></pre></div>
-<ul>
-<li>root changes Alain's password</li>
-</ul>
-<div class="highlight"><pre><span></span><code>$ sudo passwd alain
-</code></pre></div>
-<p>!!! Note "Note"</p>
-<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n n-Quoted">`passwd`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">available</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">change</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="k">password</span><span class="w"> </span><span class="p">(</span><span class="k">old</span><span class="w"> </span><span class="k">password</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">required</span><span class="p">).</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">administrator</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="k">change</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">passwords</span><span class="w"> </span><span class="k">without</span><span class="w"> </span><span class="n">restrictions</span><span class="p">.</span>
-</code></pre></div>
-
-<p>They must respect security restrictions.</p>
-<p>When managing user accounts through shell scripts, it may be useful to set a default password after user creation.</p>
-<p>This can be done by passing the password to the <code>passwd</code> command.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>$ sudo echo &quot;azerty,1&quot; | passwd --stdin philippe
-</code></pre></div>
-<p>!!! Warning "Warning"</p>
-<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="k">password</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">entered</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">plain</span><span class="w"> </span><span class="kt">text</span><span class="p">,</span><span class="w"> </span><span class="n n-Quoted">`passwd`</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="n">care</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">encrypting</span><span class="w"> </span><span class="n">it</span><span class="p">.</span>
-</code></pre></div>
-
-<h3 id="chage-command"><code>chage</code> command<a class="headerlink" href="#chage-command" title="Permanent link">&para;</a></h3>
-<p>The <code>chage</code> command modifies user password expiration information.</p>
-<div class="highlight"><pre><span></span><code>chage [-d date] [-E date] [-I days] [-l] [-m days] [-M days] [-W days] [login]
-</code></pre></div>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>$ sudo chage -m 60 -M 90 -W 80 -I 10 alain
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-I DAYS</code></td>
-<td>Defines the number of days of delay before deactivation, after password expiration. Permanent change.</td>
-</tr>
-<tr>
-<td><code>-l</code></td>
-<td>Displays the policy details.</td>
-</tr>
-<tr>
-<td><code>-m DAYS</code></td>
-<td>Defines the minimum password duration. Permanent change.</td>
-</tr>
-<tr>
-<td><code>-M DAYS</code></td>
-<td>Defines the maximum password duration. Permanent change.</td>
-</tr>
-<tr>
-<td><code>-d LAST_DAY</code></td>
-<td>Defines the number of days since the last password change. You can use day datetime style or YYYY-MM-DD style. Permanent change.</td>
-</tr>
-<tr>
-<td><code>-E EXPIRE_DATE</code></td>
-<td>Defines the account expiration date. You can use day datetime style or YYYY-MM-DD style. Permanent change.</td>
-</tr>
-<tr>
-<td><code>-W WARN_DAYS</code></td>
-<td>Defines the number of warning days before expiration. Permanent change.</td>
-</tr>
-</tbody>
-</table>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code># The `chage` command also offers an interactive mode.
-$ sudo chage philippe
-
-# The `-d` option forces the password to be changed at login.
-$ sudo chage -d 0 philippe
-</code></pre></div>
-<p><img alt="User account management with chage" src="../images/chage-timeline.png" /></p>
-<h2 id="advanced-management">Advanced Management<a class="headerlink" href="#advanced-management" title="Permanent link">&para;</a></h2>
-<p>Configuration files:</p>
-<ul>
-<li><code>/etc/default/useradd</code></li>
-<li><code>/etc/login.defs</code></li>
-<li><code>/etc/skel</code></li>
-</ul>
-<p>!!! Note "Note"</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Modifying</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`/etc/default/useradd`</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">done</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`useradd`</span><span class="w"> </span><span class="n">command</span><span class="p">.</span>
-
-<span class="n">The</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">modified</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="kt">text</span><span class="w"> </span><span class="n">editor</span><span class="p">.</span>
-</code></pre></div>
-
-<h3 id="etcdefaultuseradd-file"><code>/etc/default/useradd</code> file<a class="headerlink" href="#etcdefaultuseradd-file" title="Permanent link">&para;</a></h3>
-<p>This file contains the default data settings.</p>
-<p>!!! Tip "Tip"</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">When</span><span class="w"> </span><span class="nv">creating</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">user</span>,<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">options</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">specified</span>,<span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">system</span><span class="w"> </span><span class="nv">uses</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">default</span><span class="w"> </span><span class="nv">values</span><span class="w"> </span><span class="nv">defined</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span>`<span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">default</span><span class="o">/</span><span class="nv">useradd</span>`.
-</code></pre></div>
-
-<p>This file is modified by the <code>useradd -D</code> command (<code>useradd -D</code> without any other option displays the contents of the <code>/etc/default/useradd</code> file).</p>
-<div class="highlight"><pre><span></span><code>Shell &gt; grep -v ^# /etc/default/useradd 
-GROUP=100
-HOME=/home
-INACTIVE=-1
-EXPIRE=
-SHELL=/bin/bash
-SKEL=/etc/skel
-CREATE_MAIL_SPOOL=yes
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>GROUP</code></td>
-<td>Defines the GID of the default primary group.</td>
-</tr>
-<tr>
-<td><code>HOME</code></td>
-<td>Defines the path of the top-level directory of the common user's home directory.</td>
-</tr>
-<tr>
-<td><code>INACTIVE</code></td>
-<td>Number of days of tolerance after password expiration. Corresponds to the 7th field of the <code>/etc/shadow</code> file. The value <code>-1</code> means the tolerance period is disabled.</td>
-</tr>
-<tr>
-<td><code>EXPIRE</code></td>
-<td>Defines the account expiration date. Corresponds to the eighth field of the <code>/etc/shadow</code> file.</td>
-</tr>
-<tr>
-<td><code>SHELL</code></td>
-<td>Defines the command interpreter.</td>
-</tr>
-<tr>
-<td><code>SKEL</code></td>
-<td>Defines the login directory structure.</td>
-</tr>
-<tr>
-<td><code>CREATE_MAIL_SPOOL</code></td>
-<td>Defines the creation of the mailbox in <code>/var/spool/mail/</code>.</td>
-</tr>
-</tbody>
-</table>
-<p>If you don't need a primary group with the same name when creating users, you can do this:</p>
-<div class="highlight"><pre><span></span><code>Shell &gt; useradd -N test2
-Shell &gt; id test2
-uid=1001(test2) gid=100(users) groups=100(users)
-</code></pre></div>
-<h3 id="etclogindefs-file"><code>/etc/login.defs</code> file<a class="headerlink" href="#etclogindefs-file" title="Permanent link">&para;</a></h3>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p>Quando si elimina un utente con il comando <code>userdel -r</code>, viene eliminato anche il gruppo primario corrispondente. Il nome del gruppo primario di solito corrisponde al nome dell'utente.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p>Ogni gruppo ha un <code>GID</code> unico. Un gruppo può essere utilizzato da più utenti come gruppo supplementare. Per convenzione, il GID del super amministratore è 0. Il GIDS riservato ad alcuni servizi o processi sono 201~999, che sono chiamati gruppi di sistema o gruppi di utenti pseudo. Il GID per gli utenti è solitamente maggiore o uguale a 1000. Questi sono relativi a <font color=red>/etc/login.defs</font>, di cui parleremo più tardi.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Comment line ignored</span>
 shell<span class="w"> </span>&gt;<span class="w"> </span>cat<span class="w">  </span>/etc/login.defs
 MAIL_DIR<span class="w">        </span>/var/spool/mail
@@ -2965,75 +1022,828 @@ CREATE_HOME<span class="w">     </span>yes
 USERGROUPS_ENAB<span class="w"> </span>yes
 ENCRYPT_METHOD<span class="w"> </span>SHA512
 </code></pre></div>
-<p><code>UMASK 022</code>: This means the permission to create a file is 755 (rwxr-xr-x). However, for security reasons, GNU/Linux does not include the <strong>x</strong> permission for newly created files; this restriction applies to root (uid=0) and regular users (uid&gt;=1000). For example:</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p>Poiché un utente fa necessariamente parte di un gruppo, è meglio creare i gruppi prima di aggiungere gli utenti. Pertanto, un gruppo potrebbe non avere alcun membro.</p>
+</div>
+<h3 id="file-etcgroup">file <code>/etc/group</code></h3>
+<p>Questo file contiene le informazioni del Gruppo (divise da <code>:</code>).</p>
+<div class="highlight"><pre><span></span><code>$ sudo tail -1 /etc/group
+GroupP:x:516:patrick
+  (1)  (2)(3)   (4)
+</code></pre></div>
+<ul>
+<li>1: Nome del gruppo.</li>
+<li>2: La password del gruppo è identificata da una <code>x</code>. La password del gruppo è memorizzata in <code>/etc/gshadow</code>.</li>
+<li>3: GID.</li>
+<li>4: Utenti supplementari del gruppo (escluso l'utente primario unico).</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+</div>
+<p>Ogni riga nel file <code>/etc/group</code> corrisponde a un gruppo. Le informazioni principali dell'utente sono memorizzate in <code>/etc/passwd</code>.</p>
+<h3 id="file-etcgshadow">file <code>/etc/gshadow</code></h3>
+<p>Questo file contiene le informazioni di sicurezza sui gruppi (divisi da <code>:</code>).</p>
+<div class="highlight"><pre><span></span><code>$ sudo grep GroupA /etc/gshadow
+GroupA:$6$2,9,v...SBn160:alain:arch
+   (1)      (2)            (3)      (4)
+</code></pre></div>
+<ul>
+<li>1: Nome del gruppo.</li>
+<li>2: Password criptata.</li>
+<li>3: Nome dell'amministratore del gruppo.</li>
+<li>4: Utenti supplementari del gruppo (escluso l'utente primario unico).</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>Il nome del gruppo in <strong>/etc/group</strong> e <strong>/etc/gshadow</strong> deve corrispondere uno a uno, cioè ogni riga del file <strong>/etc/group</strong> deve avere una riga corrispondente nel file <strong>/etc/gshadow</strong>.</p>
+</div>
+<p>Un <code>!</code> nella password indica che la password è bloccata. Quindi nessun utente può utilizzare la password per accedere al gruppo (dal momento che i membri del gruppo non ne hanno bisogno).</p>
+<h2 id="gestione-utenti_1">Gestione utenti</h2>
+<h3 id="definizione">Definizione</h3>
+<p>Un utente è definito come segue nel file <code>/etc/passwd</code>:</p>
+<ul>
+<li>1: Login name;</li>
+<li>2: Identificazione della password, <code>x</code> indica che l'utente ha una password, la password criptata è memorizzata nel secondo campo di <code>/etc/shadow</code>;</li>
+<li>3: UID;</li>
+<li>4: GID del gruppo primario;</li>
+<li>5: Commenti;</li>
+<li>6: Home directory;</li>
+<li>7: Shell (<code>/bin/bash</code>, <code>/bin/nologin</code>, ...).</li>
+</ul>
+<p>Esistono tre tipi di utenti:</p>
+<ul>
+<li><strong>root(uid=0)</strong>: l'amministratore di sistema;</li>
+<li><strong>system users(uid è uno da 201~999)</strong>: Utilizzato dal sistema per gestire i diritti di accesso alle applicazioni;</li>
+<li><strong>utente normale (uid&gt;=1000)</strong>: Altro account per accedere al sistema.</li>
+</ul>
+<p>File modificati, righe aggiunte:</p>
+<ul>
+<li><code>/etc/passwd</code></li>
+<li><code>/etc/shadow</code></li>
+</ul>
+<h3 id="comando-useradd">comando <code>useradd</code></h3>
+<p>Il comando <code>useradd</code> è usato per aggiungere un utente.</p>
+<div class="highlight"><pre><span></span><code>useradd [-u UID] [-g GID] [-d directory] [-s shell] login
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$ sudo useradd -u 1000 -g 1013 -d /home/GroupC/carine carine
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-u UID</code></td>
+<td><code>UID</code> dell'utente da creare.</td>
+</tr>
+<tr>
+<td><code>-g GID</code></td>
+<td><code>GID</code> del gruppo primario. Il <code>GID</code> qui può anche essere un <code>nome di un gruppo</code>.</td>
+</tr>
+<tr>
+<td><code>-G GID1,[GID2]...</code></td>
+<td><code>GID</code> dei gruppi supplementari. Il <code>GID</code> qui può anche essere un <code>nome di un gruppo</code>. È possibile specificare molti gruppi supplementari separati da virgole.</td>
+</tr>
+<tr>
+<td><code>-d directory</code></td>
+<td>Crea la directory home.</td>
+</tr>
+<tr>
+<td><code>-s shell</code></td>
+<td>Specifica la shell dell'utente.</td>
+</tr>
+<tr>
+<td><code>-c COMMENT</code></td>
+<td>Aggiunge un commento.</td>
+</tr>
+<tr>
+<td><code>-U</code></td>
+<td>Aggiunge l'utente a un gruppo con lo stesso nome che viene creato nello stesso momento. Se non viene specificato, la creazione di un gruppo con lo stesso nome avviene durante la creazione dell'utente.</td>
+</tr>
+<tr>
+<td><code>-M</code></td>
+<td>Non crea la home directory dell'utente.</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>Crea un account di sistema.</td>
+</tr>
+</tbody>
+</table>
+<p>Alla creazione, l'account non ha una password ed è bloccato.</p>
+<p>Per sbloccare l'account è necessario assegnare una password.</p>
+<p>Quando il comando <code>useradd</code> non ha opzioni, appare:</p>
+<ul>
+<li>Crea una home directory con lo stesso nome;</li>
+<li>Crea un gruppo primario con lo stesso nome;</li>
+<li>La shell predefinita è bash;</li>
+<li>I valori UID e GID del gruppo primario dell'utente vengono automaticamente detratti. Questo è di solito un valore unico tra 1000 e 60.000.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Le impostazioni e i valori predefiniti si ottengono dai seguenti file di configurazione:</p>
+<p><code>/etc/login.defs</code> e <code>/etc/default/useradd</code></p>
+</div>
+<div class="highlight"><pre><span></span><code>Shell<span class="w"> </span>&gt;<span class="w"> </span>useradd<span class="w"> </span>test1
+
+Shell<span class="w"> </span>&gt;<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/passwd
+test1:x:1000:1000::/home/test1:/bin/bash
+
+Shell<span class="w"> </span>&gt;<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/shadow
+test1:!!:19253:0:99999:7
+:::
+
+Shell<span class="w"> </span>&gt;<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/group<span class="w"> </span><span class="p">;</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/etc/gshadow
+test1:x:1000:
+test1:!::
+</code></pre></div>
+<p>Regole di denominazione dell'account:</p>
+<ul>
+<li>Niente accenti, lettere maiuscole o caratteri speciali;</li>
+<li>Anche se è possibile utilizzare un nome utente in maiuscolo in archLinux, non lo raccomandiamo;</li>
+<li>Opzionale: imposta le opzioni <code>-u</code>, <code>-g</code>, <code>-d</code> e <code>-s</code> alla creazione.</li>
+<li>Diverso dal nome di un gruppo o file di sistema esistente;</li>
+<li>Il nome utente può contenere fino a 32 caratteri.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>L'albero delle home directory deve essere creato tranne che per l'ultima directory.</p>
+</div>
+<p>L'ultima directory è creata dal comando <code>useradd</code>, che coglie l'occasione per copiare i file da <code>/etc/skel</code> dentro di essa.</p>
+<p><strong>Un utente può appartenere a diversi gruppi oltre al proprio gruppo primario.</strong></p>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$ sudo useradd -u 1000 -g GroupA -G GroupP,GroupC albert
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Sotto <strong>Debian</strong>, dovrai specificare l'opzione <code>-m</code> per forzare la creazione della directory di login o impostare la variabile <code>CREATE_HOME</code> nel file <code>/etc/login.defs</code>. In tutti i casi, l'amministratore dovrebbe usare i comandi <code>adduser</code> e <code>deluser</code> come specificato in <code>man</code>, tranne che negli script destinati a essere trasferiti a tutte le distribuzioni Linux:</p>
+<div class="highlight"><pre><span></span><code>$ man useradd
+DESCRIPTION
+    **useradd** is a low level utility for adding users. On Debian, administrators should usually use **adduser(8)**
+     instead.
+</code></pre></div>
+</div>
+<h4 id="valori-predefiniti-per-la-creazione-dellutente">Valori predefiniti per la creazione dell'utente.</h4>
+<p>Modifica del file <code>/etc/default/useradd</code>.</p>
+<div class="highlight"><pre><span></span><code>useradd -D [-b directory] [-g group] [-s shell]
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$ sudo useradd -D -g 1000 -b /home -s /bin/bash
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-D</code></td>
+<td>Imposta i valori predefiniti per la creazione dell'utente.</td>
+</tr>
+<tr>
+<td><code>-b directory</code></td>
+<td>Imposta la directory di accesso predefinita.</td>
+</tr>
+<tr>
+<td><code>-g group</code></td>
+<td>Imposta il gruppo predefinito.</td>
+</tr>
+<tr>
+<td><code>-s shell</code></td>
+<td>Imposta la shell predefinita.</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td>Imposta il numero di giorni dopo la scadenza della password prima di disabilitare l'account.</td>
+</tr>
+<tr>
+<td><code>-e</code></td>
+<td>Imposta la data di disabilitazione dell'account.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comando-usermod">comando <code>usermod</code></h3>
+<p>Il comando <code>usermod</code> permette di modificare un utente.</p>
+<div class="highlight"><pre><span></span><code>usermod [-u UID] [-g GID] [-d directory] [-m] login
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$ sudo usermod -u 1044 carine
+</code></pre></div>
+<p>Opzioni identiche al comando <code>useradd</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-m</code></td>
+<td>Associato all'opzione <code>-d</code>. Sposta il contenuto della vecchia directory di login in quella nuova. Se la vecchia home directory non esiste, la creazione di una nuova home directory non avviene; la creazione della nuova home directory avviene se non esiste.</td>
+</tr>
+<tr>
+<td><code>-l login</code></td>
+<td>Modifica il nome di accesso. Dopo aver modificato il nome di accesso, è anche necessario modificare il nome della directory home per abbinarlo.</td>
+</tr>
+<tr>
+<td><code>-e YYYY-MM-DD</code></td>
+<td>Modifica la data di scadenza dell'account.</td>
+</tr>
+<tr>
+<td><code>-L</code></td>
+<td>Blocca l'account in modo permanente. Cioè, aggiunge un <code>!</code> all'inizio del campo della password <code>/etc/shadow</code>.</td>
+</tr>
+<tr>
+<td><code>-U</code></td>
+<td>Sblocca l'account.</td>
+</tr>
+<tr>
+<td><code>-a</code></td>
+<td>Aggiunge i gruppi supplementari dell'utente, che devono essere usati insieme all'opzione <code>-G</code>.</td>
+</tr>
+<tr>
+<td><code>-G</code></td>
+<td>Modifica i gruppi supplementari dell'utente e sovrascrive i gruppi supplementari precedenti.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p>Per essere modificato, un utente deve essere disconnesso e non avere processi in corso.</p>
+</div>
+<p>Dopo aver cambiato l'identificatore, i file appartenenti all'utente hanno un <code>UID</code> sconosciuto . Deve essere riassegnato il nuovo <code>UID</code>.</p>
+<p>Dove <code>1000</code> è il vecchio <code>UID</code> e <code>1044</code> quello nuovo. Gli esempi sono i seguenti:</p>
+<div class="highlight"><pre><span></span><code>$ sudo find / -uid 1000 -exec chown 1044: {} \;
+</code></pre></div>
+<p>Blocco e sblocco dell'account utente, gli esempi sono i seguenti:</p>
+<div class="highlight"><pre><span></span><code>Shell &gt; usermod -L test1
+Shell &gt; grep test1 /etc/shadow
+test1:!$6$n.hxglA.X5r7X0ex$qCXeTx.kQVmqsPLeuvIQnNidnSHvFiD7bQTxU7PLUCmBOcPNd5meqX6AEKSQvCLtbkdNCn.re2ixYxOeGWVFI0:19259:0:99999:7
+:::
+
+Shell &gt; usermod -U test1
+</code></pre></div>
+<p>La differenza tra l'opzione <code>-aG</code> e l'opzione <code>-G</code> può essere spiegata dal seguente esempio:</p>
+<div class="highlight"><pre><span></span><code>Shell<span class="w"> </span>&gt;<span class="w"> </span>useradd<span class="w"> </span>test1
+Shell<span class="w"> </span>&gt;<span class="w"> </span>passwd<span class="w"> </span>test1
+Shell<span class="w"> </span>&gt;<span class="w"> </span>groupadd<span class="w"> </span>groupA<span class="w"> </span><span class="p">;</span><span class="w"> </span>groupadd<span class="w"> </span>groupB<span class="w"> </span><span class="p">;</span><span class="w"> </span>groupadd<span class="w"> </span>groupC<span class="w"> </span><span class="p">;</span><span class="w"> </span>groupadd<span class="w"> </span>groupD
+Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>test1
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>
+
+Shell<span class="w"> </span>&gt;<span class="w"> </span>gpasswd<span class="w"> </span>-a<span class="w"> </span>test1<span class="w"> </span>groupA
+Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>test1
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>,1002<span class="o">(</span>groupA<span class="o">)</span>
+
+Shell<span class="w"> </span>&gt;<span class="w"> </span>usermod<span class="w"> </span>-G<span class="w"> </span>groupB,groupC<span class="w"> </span>test1
+Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>test1<span class="w"> </span>
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gorups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>,1003<span class="o">(</span>groupB<span class="o">)</span>,1004<span class="o">(</span>groupC<span class="o">)</span>
+
+Shell<span class="w"> </span>&gt;<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>groupD<span class="w"> </span>test1
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>test1<span class="o">)</span>,1003<span class="o">(</span>groupB<span class="o">)</span>,1004<span class="o">(</span>groupC<span class="o">)</span>,1005<span class="o">(</span>groupD<span class="o">)</span>
+</code></pre></div>
+<h3 id="comando-userdel">comando <code>userdel</code></h3>
+<p>Il comando <code>userdel</code> consente di eliminare l'account di un utente.</p>
+<div class="highlight"><pre><span></span><code>$ sudo userdel -r carine
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-r</code></td>
+<td>Cancella la directory home dell'utente e i file di posta che si trovano nella directory <code>/var/spool/mail/</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p>Per essere eliminato, un utente deve essere disconnesso e non avere processi in esecuzione.</p>
+</div>
+<p>Il comando <code>userdel</code> rimuove le righe corrispondenti in <code>/etc/passwd</code>, <code>/ etc/shadow</code>, <code>/etc/group</code>, <code>/etc/gshadow</code>. Come accennato in precedenza, <code>userdel -r</code> cancellerà anche il corrispondente gruppo primario dell'utente.</p>
+<h3 id="file-etcpasswd">file <code>/etc/passwd</code></h3>
+<p>Questo file contiene le informazioni utente (divise da <code>:</code>).</p>
+<div class="highlight"><pre><span></span><code>$ sudo head -1 /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+(1)(2)(3)(4)(5)  (6)    (7)
+</code></pre></div>
+<ul>
+<li>1: Login name;</li>
+<li>2: Identificazione della password, <code>x</code> indica che l'utente ha una password, la password criptata è memorizzata nel secondo campo di <code>/etc/shadow</code>;</li>
+<li>3: UID.</li>
+<li>4: GID del gruppo primario;</li>
+<li>5: Commenti;</li>
+<li>6: Home directory;</li>
+<li>7: Shell (<code>/bin/bash</code>, <code>/bin/nologin</code>, ...).</li>
+</ul>
+<h3 id="file-etcshadow">file <code>/etc/shadow</code></h3>
+<p>Questo file contiene le informazioni di sicurezza degli utenti (separate da <code>:</code>).
+<div class="highlight"><pre><span></span><code>$ sudo tail -1 /etc/shadow
+root:$6$...:15399:0:99999:7
+:::
+ (1)    (2)  (3) (4) (5) (6)(7,8,9)
+</code></pre></div></p>
+<ul>
+<li>1: Nome Login.</li>
+<li>2: Password criptata. Utilizza l'algoritmo di crittografia SHA512, definito dal <code>ENCRYPT_METHOD</code> di <code>/etc/login.defs</code>.</li>
+<li>3: L'ora in cui la password è stata cambiata l'ultima volta, il formato timestamp, in giorni. Il cosiddetto timestamp si basa sul 1 gennaio 1970 come orario standard. Ogni volta che un giorno passa, il timestamp è +1.</li>
+<li>4: Durata minima della password. Ovvero, l'intervallo di tempo tra due modifiche della password (relative al terzo campo), in giorni.  Definito dal <code>PASS_MIN_DAYS</code> di <code>/etc/login.defs</code>, il valore predefinito è 0, cioè, quando cambi la password per la seconda volta, non c'è alcuna restrizione. Tuttavia, se è 5, significa che non è permesso cambiare la password entro 5 giorni, e solo dopo 5 giorni.</li>
+<li>5: Durata massima della password. Cioè, il periodo di validità della password (relativo al terzo campo). Definito dal <code>PASS_MAX_DAYS</code> di <code>/etc/login.defs</code>.</li>
+<li>6: Il numero di giorni di avviso prima della scadenza della password (relativo al quinto campo). Il valore predefinito è di 7 giorni, definito dal <code>PASS_WARN_AGE</code> di <code>/etc/login.defs</code>.</li>
+<li>7: Numero di giorni di tolleranza dopo la scadenza della password (in relazione al quinto campo).</li>
+<li>8: Tempo di scadenza dell'account, il formato del timestamp, in giorni. <strong>Nota che la scadenza di un account differisce dalla scadenza di una password. In caso di scadenza di un account, l'utente non può effettuare il login. In caso di scadenza della password, all'utente non è consentito effettuare il login utilizzando la sua password.</strong></li>
+<li>9: Riservato per un uso futuro.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Pericolo</p>
+<p>Per ogni riga del file <code>/etc/passwd</code> deve esserci una riga corrispondente nel file <code>/etc/shadow</code>.</p>
+</div>
+<p>Per la conversione della data e dell'ora, fare riferimento al seguente formato di comando:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Il timestamp viene convertito in una data, &quot;17718&quot; indica il timestamp da inserire.</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;1970-01-01 17718 days&quot;</span><span class="w"> </span>
+
+<span class="c1"># La data è convertita in un timestamp, &quot;2018-07-06&quot; indica la data da compilare.</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(($(</span>date<span class="w"> </span>--date<span class="o">=</span><span class="s2">&quot;2018-07-06&quot;</span><span class="w"> </span>+%s<span class="k">)</span><span class="o">/</span><span class="m">86400</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
+</code></pre></div>
+<h2 id="proprietari-dei-file">Proprietari dei file</h2>
+<div class="admonition danger">
+<p class="admonition-title">Pericolo</p>
+<p>Tutti i file appartengono necessariamente a un utente e a un gruppo.</p>
+</div>
+<p>Il gruppo primario dell'utente che crea il file è, per impostazione predefinita, il gruppo proprietario del file.</p>
+<h3 id="comandi-di-modifica">Comandi di modifica</h3>
+<h4 id="comando-chown">comando <code>chown</code></h4>
+<p>Il comando <code>chown</code> consente di cambiare i proprietari di un file.
+<div class="highlight"><pre><span></span><code>chown [-R] [-v] login[:group] file
+</code></pre></div></p>
+<p>Esempi:
+<div class="highlight"><pre><span></span><code>$ sudo chown root myfile
+$ sudo chown albert:GroupA myfile
+</code></pre></div></p>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-R</code></td>
+<td>Cambia ricorsivamente i proprietari della directory e di tutti i file in essa contenuti.</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td>Visualizza le modifiche.</td>
+</tr>
+</tbody>
+</table>
+<p>Per cambiare solo l'utente proprietario:</p>
+<div class="highlight"><pre><span></span><code>$ sudo chown albert file
+</code></pre></div>
+<p>Per modificare solo il gruppo proprietario:</p>
+<div class="highlight"><pre><span></span><code>$ sudo chown :GroupA file
+</code></pre></div>
+<p>Modifica dell'utente e del gruppo proprietario:</p>
+<div class="highlight"><pre><span></span><code>$ sudo chown albert:GroupA file
+</code></pre></div>
+<p>Nell'esempio seguente, il gruppo assegnato sarà il gruppo primario dell'utente specificato.</p>
+<div class="highlight"><pre><span></span><code>$ sudo chown albert: file
+</code></pre></div>
+<p>Cambia il proprietario e il gruppo di tutti i file in una directory</p>
+<div class="highlight"><pre><span></span><code>$ sudo chown -R albert:GroupA /dir1
+</code></pre></div>
+<h3 id="comando-chgrp">comando <code>chgrp</code></h3>
+<p>Il comando <code>chgrp</code> consente di cambiare il gruppo proprietario di un file.</p>
+<div class="highlight"><pre><span></span><code>chgrp [-R] [-v] group file
+</code></pre></div>
+<p>Esempio:
+<div class="highlight"><pre><span></span><code>$ sudo chgrp group1 file
+</code></pre></div></p>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-R</code></td>
+<td>Modifica i gruppi proprietari della directory e dei suoi contenuti (ricorsivo).</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td>Visualizza le modifiche.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>È possibile applicare a un file un proprietario e un gruppo di proprietari prendendo come riferimento quelli di un altro file:</p>
+</div>
+<div class="highlight"><pre><span></span><code>chown [options] --reference=RRFILE FILE
+</code></pre></div>
+<p>Per esempio:</p>
+<div class="highlight"><pre><span></span><code>chown --reference=/etc/groups /etc/passwd
+</code></pre></div>
+<h2 id="gestione-degli-ospiti">Gestione degli ospiti</h2>
+<h3 id="comando-gpasswd">comando <code>gpasswd</code></h3>
+<p>Il comando <code>gpasswd</code> permette di gestire un gruppo.</p>
+<div class="highlight"><pre><span></span><code>gpasswd [-a login] [-A login] [-d login] [-M login] group
+</code></pre></div>
+<p>Esempi:</p>
+<div class="highlight"><pre><span></span><code>$ sudo gpasswd -A alain GroupA
+[alain]$ gpasswd -a patrick GroupA
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-a login</code></td>
+<td>Aggiunge l'utente al gruppo. Per l'utente aggiunto, questo gruppo è un gruppo supplementare.</td>
+</tr>
+<tr>
+<td><code>-A login</code></td>
+<td>Imposta l'elenco degli utenti amministrativi.</td>
+</tr>
+<tr>
+<td><code>-d USER</code></td>
+<td>Rimuove l'utente dal gruppo.</td>
+</tr>
+<tr>
+<td><code>-M USER,...</code></td>
+<td>Imposta l'elenco dei membri del gruppo.</td>
+</tr>
+</tbody>
+</table>
+<p>Il comando <code>gpasswd -M</code> agisce come una modifica, non come un'aggiunta.</p>
+<div class="highlight"><pre><span></span><code># gpasswd GroupeA
+New Password:
+Re-enter new password:
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Oltre a usare <code>gpasswd -a</code> per aggiungere utenti a un gruppo, si può anche usare <code>usermod -G</code> o <code>usermod -AG</code> menzionati prima.</p>
+</div>
+<h3 id="comando-id">comando <code>id</code></h3>
+<p>Il comando <code>id</code> visualizza i nomi del gruppo di un utente.</p>
+<div class="highlight"><pre><span></span><code>id USER
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$ sudo id alain
+uid=1000(alain) gid=1000(GroupA) groupes=1000(GroupA),1016(GroupP)
+</code></pre></div>
+<h3 id="comando-newgrp">comando <code>newgrp</code></h3>
+<p>Il comando <code>newgrp</code> può selezionare un gruppo, dai gruppi supplementari dell'utente, come nuovo gruppo primario <strong>temporaneo</strong>. Il comando <code>newgrp</code> ogni volta che viene cambiato il gruppo primario di un utente, crea una nuova <strong>child shell</strong> (child process). Fai attenzione! <strong>child shell</strong> e <strong>sub shell</strong> sono diverse.</p>
+<div class="highlight"><pre><span></span><code>newgrp [secondarygroups]
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>Shell &gt; useradd test1
+Shell &gt; passwd test1
+Shell &gt; groupadd groupA ; groupadd groupB 
+Shell &gt; usermod -G groupA,groupB test1
+Shell &gt; id test1
+uid=1000(test1) gid=1000(test1) groups=1000(test1),1001(groupA),1002(groupB)
+Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL
+1
+0
+
+Shell &gt; su - test1
+Shell &gt; touch a.txt
+Shell &gt; ll
+-rw-rw-r-- 1 test1 test1 0 10月  7 14:02 a.txt
+Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL
+1
+0
+
+# Generate a new child shell
+Shell &gt; newgrp groupA
+Shell &gt; touch b.txt
+Shell &gt; ll
+-rw-rw-r-- 1 test1 test1  0 10月  7 14:02 a.txt
+-rw-r--r-- 1 test1 groupA 0 10月  7 14:02 b.txt
+Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL
+2
+0
+
+# You can exit the child shell using the `exit` command
+Shell &gt; exit
+Shell &gt; logout
+Shell &gt; whoami
+root
+</code></pre></div>
+<h2 id="protezione">Protezione</h2>
+<h3 id="commando-passwd">commando <code>passwd</code></h3>
+<p>Il comando <code>passwd</code> viene utilizzato per gestire una password.</p>
+<div class="highlight"><pre><span></span><code>passwd [-d] [-l] [-S] [-u] [login]
+</code></pre></div>
+<p>Esempi:</p>
+<div class="highlight"><pre><span></span><code>Shell &gt; passwd -l albert
+Shell &gt; passwd -n 60 -x 90 -w 80 -i 10 patrick
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-d</code></td>
+<td>Rimuove in modo permanente la password. Solo per root (uid=0).</td>
+</tr>
+<tr>
+<td><code>-l</code></td>
+<td>Blocca in modo permanente l'account utente. Solo per root (uid=0).</td>
+</tr>
+<tr>
+<td><code>-S</code></td>
+<td>Visualizza lo stato dell'account. Solo per root (uid=0).</td>
+</tr>
+<tr>
+<td><code>-u</code></td>
+<td>Sblocca in modo permanente l'account utente. Solo per root (uid=0).</td>
+</tr>
+<tr>
+<td><code>-e</code></td>
+<td>Fa scadere definitivamente la password. Solo per root (uid=0).</td>
+</tr>
+<tr>
+<td><code>-n DAYS</code></td>
+<td>Definisce la durata minima della password. Cambiamento permanente. Solo per root (uid=0).</td>
+</tr>
+<tr>
+<td><code>-x DAYS</code></td>
+<td>Definisce la durata massima della password. Cambiamento permanente. Solo per root (uid=0).</td>
+</tr>
+<tr>
+<td><code>-w DAYS</code></td>
+<td>Definisce il tempo di avviso prima della scadenza. Cambiamento permanente. Solo per root (uid=0).</td>
+</tr>
+<tr>
+<td><code>-i DAYS</code></td>
+<td>Definisce il ritardo prima della disattivazione quando la password scade. Cambiamento permanente. Solo per root (uid=0).</td>
+</tr>
+</tbody>
+</table>
+<p>Usare <code>password -l</code>, cioè aggiungere "!!" all'inizio del campo della password dell'utente corrispondente a <code>/etc/shadow</code>.</p>
+<p>Esempio:</p>
+<ul>
+<li>Alain cambia la sua password:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[alain]$ passwd
+</code></pre></div>
+<ul>
+<li>root cambia la password di Alain</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ sudo passwd alain
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Il comando <code>passwd</code> è disponibile per gli utenti per modificare la loro password (è richiesta la vecchia password). L'amministratore può modificare le password di tutti gli utenti senza restrizioni.</p>
+</div>
+<p>Dovranno rispettare le restrizioni di sicurezza.</p>
+<p>Quando si gestiscono gli account utente tramite script di shell, può essere utile impostare una password predefinita dopo la creazione dell'utente.</p>
+<p>Questo può essere fatto passando la password al comando <code>passwd</code>.</p>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$ sudo echo &quot;azerty,1&quot; | passwd --stdin philippe
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>La password viene inserita in chiaro, <code>passwd</code> si occupa di crittografarla.</p>
+</div>
+<h3 id="comando-chage">comando <code>chage</code></h3>
+<p>Il comando <code>chage</code> modifica le informazioni sulla scadenza della password utente.</p>
+<div class="highlight"><pre><span></span><code>chage [-d date] [-E date] [-I days] [-l] [-m days] [-M days] [-W days] [login]
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$ sudo chage -m 60 -M 90 -W 80 -I 10 alain
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-I DAYS</code></td>
+<td>Definisce i giorni di ritardo prima della disattivazione, a password scaduta. Cambiamento permanente.</td>
+</tr>
+<tr>
+<td><code>-l</code></td>
+<td>Visualizza i dettagli della politica.</td>
+</tr>
+<tr>
+<td><code>-m DAYS</code></td>
+<td>Definisce la durata minima della password. Cambiamento permanente.</td>
+</tr>
+<tr>
+<td><code>-M DAYS</code></td>
+<td>Definisce la durata massima della password. Cambiamento permanente.</td>
+</tr>
+<tr>
+<td><code>-d LAST_DAY</code></td>
+<td>Definisce il numero di giorni dall'ultima modifica della password. È possibile utilizzare lo stile di data e ora dei giorni o lo stile YYYY-MM-DD. Cambiamento permanente.</td>
+</tr>
+<tr>
+<td><code>-E EXPIRE_DATE</code></td>
+<td>Definisce la data di scadenza dell'account. È possibile utilizzare lo stile di data e ora dei giorni o lo stile YYYY-MM-DD. Cambiamento permanente.</td>
+</tr>
+<tr>
+<td><code>-W WARN_DAYS</code></td>
+<td>Definisce il numero di giorni di avviso prima della scadenza. Cambiamento permanente.</td>
+</tr>
+</tbody>
+</table>
+<p>Esempi:</p>
+<div class="highlight"><pre><span></span><code># Il comando `chage` offre anche una modalità interattiva.
+$ sudo chage philippe
+
+# L&#39;opzione `-d` costringe la password a essere cambiata al login.
+$ sudo chage -d 0 philippe
+</code></pre></div>
+<p><img alt="Gestione degli account utente con chage" src="../images/chage-timeline.png" /></p>
+<h2 id="gestione-avanzata">Gestione avanzata</h2>
+<p>File di configurazione:</p>
+<ul>
+<li><code>/etc/default/useradd</code></li>
+<li><code>/etc/login.defs</code></li>
+<li><code>/etc/skel</code></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>La modifica del file <code>/etc/default/useradd</code> viene eseguita con il comando <code>useradd</code>.</p>
+<p>Gli altri file devono essere modificati con un editor di testo.</p>
+</div>
+<h3 id="file-etcdefaultuseradd">file <code>/etc/default/useradd</code></h3>
+<p>Questo file contiene le impostazioni predefinite dei dati.</p>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p>Quando si crea un utente, se le opzioni non sono specificate, il sistema utilizza i valori di default definiti in <code>/etc/default/useradd</code>.</p>
+</div>
+<p>Questo file è modificato dal comando <code>useradd -D</code> (<code>useradd -D</code> inserito senza nessun'altra opzione visualizza il contenuto del file <code>/etc/default/useradd</code>).</p>
+<div class="highlight"><pre><span></span><code>Shell &gt; grep -v ^# /etc/default/useradd 
+GROUP=100
+HOME=/home
+INACTIVE=-1
+EXPIRE=
+SHELL=/bin/bash
+SKEL=/etc/skel
+CREATE_MAIL_SPOOL=yes
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parametri</th>
+<th>Commento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GROUP</code></td>
+<td>Definisce il GID del gruppo primario predefinito.</td>
+</tr>
+<tr>
+<td><code>HOME</code></td>
+<td>Definisce il percorso della directory del livello superiore della home directory dell'utente comune.</td>
+</tr>
+<tr>
+<td><code>INACTIVE</code></td>
+<td>Numero di giorni di tolleranza dopo la scadenza della password. Corrisponde al 7° campo del file <code>/etc/shadow</code>. Il valore <code>-1</code> indica che il periodo di tolleranza è disattivato.</td>
+</tr>
+<tr>
+<td><code>EXPIRE</code></td>
+<td>Definisce la data di scadenza dell'account. Corrisponde all'ottavo campo del file <code>/etc/shadow</code>.</td>
+</tr>
+<tr>
+<td><code>SHELL</code></td>
+<td>Definisce l'interprete dei comandi.</td>
+</tr>
+<tr>
+<td><code>SKEL</code></td>
+<td>Definisce la struttura della directory di login.</td>
+</tr>
+<tr>
+<td><code>CREATE_MAIL_SPOOL</code></td>
+<td>Definisce la creazione della cassetta postale in <code>/var/spool/mail/</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Se non si ha bisogno di un gruppo primario con lo stesso nome quando si creano gli utenti, si può fare così:</p>
+<div class="highlight"><pre><span></span><code>Shell &gt; useradd -N test2
+Shell &gt; id test2
+uid=1001(test2) gid=100(users) groups=100(users)
+</code></pre></div>
+<h3 id="file-etclogindefs">file <code>/etc/login.defs</code></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Comment line ignored</span>
+shell<span class="w"> </span>&gt;<span class="w"> </span>cat<span class="w">  </span>/etc/login.defs
+MAIL_DIR<span class="w">        </span>/var/spool/mail
+UMASK<span class="w">           </span><span class="m">022</span>
+HOME_MODE<span class="w">       </span><span class="m">0700</span>
+PASS_MAX_DAYS<span class="w">   </span><span class="m">99999</span>
+PASS_MIN_DAYS<span class="w">   </span><span class="m">0</span>
+PASS_MIN_LEN<span class="w">    </span><span class="m">5</span>
+PASS_WARN_AGE<span class="w">   </span><span class="m">7</span>
+UID_MIN<span class="w">                  </span><span class="m">1000</span>
+UID_MAX<span class="w">                 </span><span class="m">60000</span>
+SYS_UID_MIN<span class="w">               </span><span class="m">201</span>
+SYS_UID_MAX<span class="w">               </span><span class="m">999</span>
+GID_MIN<span class="w">                  </span><span class="m">1000</span>
+GID_MAX<span class="w">                 </span><span class="m">60000</span>
+SYS_GID_MIN<span class="w">               </span><span class="m">201</span>
+SYS_GID_MAX<span class="w">               </span><span class="m">999</span>
+CREATE_HOME<span class="w">     </span>yes
+USERGROUPS_ENAB<span class="w"> </span>yes
+ENCRYPT_METHOD<span class="w"> </span>SHA512
+</code></pre></div>
+<p><code>UMASK 022</code>: Ciò significa che il permesso di creare un file è 755 (rwxr-xr-x). Tuttavia, per motivi di sicurezza, GNU/Linux non prevede il permesso <strong>x</strong> per i file appena creati; questa restrizione si applica a root (uid=0) e agli utenti ordinari (uid&gt;=1000). Per esempio:</p>
 <div class="highlight"><pre><span></span><code>Shell &gt; touch a.txt
 Shell &gt; ll
--rw-r--r--  root root     0 Oct  8 13:00 a.txt
+-rw-r--r-- 1 root root     0 Oct  8 13:00 a.txt
 </code></pre></div>
-<p><code>HOME_MODE 0700</code>: The permissions of a regular user's home directory. Does not work for root's home directory.</p>
+<p><code>HOME_MODE 0700</code>: I permessi della directory home di un utente ordinario. Non funziona per la directory home di root.</p>
 <div class="highlight"><pre><span></span><code>Shell &gt; ll -d /root
 dr-xr-x---. 10 root root 4096 Oct  8 13:12 /root
 
 Shell &gt; ls -ld /home/test1/
 drwx------ 2 test1 test1 4096 Oct  8 13:10 /home/test1/
 </code></pre></div>
-<p><code>USERGROUPS_ENAB yes</code>: "When deleting a user with the <code>userdel -r</code> command, the corresponding primary group is also deleted." Why? This is the reason.</p>
-<h3 id="etcskel-directory"><code>/etc/skel</code> directory<a class="headerlink" href="#etcskel-directory" title="Permanent link">&para;</a></h3>
-<p>When a user is created, their home directory and environment files are created. The files in the <code>/etc/skel/</code> directory are the template files needed to create users.</p>
-<p>These files are automatically copied from the <code>/etc/skel</code> directory.</p>
+<p><code>USERGROUPS_ENAB yes</code>: "Quando si elimina un utente con il comando <code>userdel -r</code>, viene eliminato anche il gruppo primario corrispondente." Perché? Questo è il motivo.</p>
+<h3 id="directory-etcskel">directory <code>/etc/skel</code></h3>
+<p>Quando viene creato un utente, vengono creati la sua home directory e i suoi file di ambiente. I file della directory <code>/etc/skel/</code> sono i modelli di file necessari per creare gli utenti.</p>
+<p>Questi file vengono copiati automaticamente dalla directory <code>/etc/skel</code>.</p>
 <ul>
 <li><code>.bash_logout</code></li>
 <li><code>.bash_profile</code></li>
 <li><code>.bashrc</code></li>
 </ul>
-<p>All files and directories placed in this directory will be copied to the user tree at the time of their creation.</p>
-<h2 id="identity-switching">Identity Switching<a class="headerlink" href="#identity-switching" title="Permanent link">&para;</a></h2>
-<h3 id="su-command"><code>su</code> command<a class="headerlink" href="#su-command" title="Permanent link">&para;</a></h3>
-<p>The <code>su</code> command allows you to change the identity of the logged-in user.</p>
+<p>Tutti i file e le directory collocati in questa directory saranno copiati nell'albero utente al momento della loro creazione.</p>
+<h2 id="cambiamento-di-identita">Cambiamento di identità</h2>
+<h3 id="comando-su">comando <code>su</code></h3>
+<p>Il comando <code>su</code> consente di cambiare l'identità dell'utente connesso.</p>
 <div class="highlight"><pre><span></span><code>su [-] [-c command] [login]
 </code></pre></div>
-<p>Examples:</p>
+<p>Esempi:</p>
 <div class="highlight"><pre><span></span><code>$ sudo su - alain
 [albert]$ su - root -c &quot;passwd alain&quot;
 </code></pre></div>
 <table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Description</th>
+<th>Opzione</th>
+<th>Descrizione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>-</code></td>
-<td>Loads the complete user environment.</td>
+<td>Carica l'ambiente completo dell'utente.</td>
 </tr>
 <tr>
-<td><code>-c command</code></td>
-<td>Executes the command under the specified user's identity.</td>
+<td><code>-c</code> comando</td>
+<td>Esegue il comando sotto l'identità dell'utente specificato.</td>
 </tr>
 </tbody>
 </table>
-<p>If login is not specified, it will be <code>root</code>.</p>
-<p>Standard users will need to type the password for the new identity.</p>
-<p>!!! Tip "Tip"</p>
-<div class="codehilite"><pre><span></span><code><span class="n">You</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`exit`</span><span class="o">/</span><span class="n n-Quoted">`logout`</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">exit</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">been</span><span class="w"> </span><span class="n">activated</span><span class="p">.</span><span class="w"> </span><span class="n">Note</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">switching</span><span class="p">,</span><span class="w"> </span><span class="n">there</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n n-Quoted">`child shell`</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n n-Quoted">`sub shell`</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">example</span><span class="o">:</span>
+<p>Se il login non è specificato, sarà <code>root</code>.</p>
+<p>Gli utenti standard dovranno digitare la password per la nuova identità.</p>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p>È possibile utilizzare il comando <code>exit</code>/<code>logout</code> per far uscire gli utenti che sono stati attivati. Si noti che dopo il cambio di utente non esiste una nuova <code>child shell</code> o <code>sub shell</code>, ad esempio:</p>
+<div class="highlight"><pre><span></span><code>Shell &gt; whoami
+root
+Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL
+1
+0
 
-<span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span>
-<span class="n n-Quoted">Shell &gt; whoami</span>
-<span class="n n-Quoted">root</span>
-<span class="n n-Quoted">Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL</span>
-<span class="n n-Quoted">1</span>
-<span class="n n-Quoted">0</span>
-
-<span class="n n-Quoted">Shell &gt; su - test1</span>
-<span class="n n-Quoted">Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL</span>
-<span class="n n-Quoted">1</span>
-<span class="n n-Quoted">0</span>
-<span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
+Shell &gt; su - test1
+Shell &gt; echo $SHLVL ; echo $BASH_SUBSHELL
+1
+0
 </code></pre></div>
-
-<p>Be careful! <code>su</code> and <code>su -</code> are different, as shown in the following example:</p>
+</div>
+<p>Attenzione! <code>su</code> e <code>su -</code> sono diversi, come mostrato nell'esempio seguente:</p>
 <div class="highlight"><pre><span></span><code>Shell &gt; whoami
 test1
 Shell &gt; su root
@@ -3064,7 +1874,7 @@ MAIL=/var/spool/mail/root
 LOGNAME=root
 ...
 </code></pre></div>
-<p>So, when you want to change user, remember not to forget the <code>-</code>. Since the necessary environment variable files are not loaded, problems may occur when running some programs.</p>
+<p>Quindi, quando si vuole cambiare utente, ricordarsi di non dimenticare il <code>-</code>. Poiché non vengono caricati i file delle variabili d'ambiente necessarie, potrebbero verificarsi problemi nell'esecuzione di alcuni programmi.</p>
 
 
 
@@ -3087,7 +1897,7 @@ LOGNAME=root
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de febrero de 2026 20:01:25 UTC">21 de febrero de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 de febrero de 2026 23:13:20 UTC">23 de febrero de 2026</span>
   </span>
 
     
@@ -3121,41 +1931,20 @@ LOGNAME=root
       
         <footer class="md-footer">
   
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+       
+    </div>
   
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
-    </a>
-  
-</div>
-      
-        
-<div class="md-social">
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://discord.gg/4r8AmxSB2B" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
-    </a>
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://github.com/archlatam" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -3170,70 +1959,10 @@ LOGNAME=root
     </div>
     
     
-      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
-        <div class="md-consent__overlay"></div>
-        <aside class="md-consent__inner">
-          <form class="md-consent__form md-grid md-typeset" name="consent">
-            
-
-
-  
-
-
-<h4>Política de Cookies</h4>
-<p>Utilizamos cookies para reconocer tus visitas repetidas y tus preferencias, así como para medir la eficacia de nuestra documentación y verificar si los usuarios encuentran lo que están buscando. Con tu consentimiento, nos ayudas a mejorar nuestra documentación.</p>
-<input class="md-toggle" type="checkbox" id="__settings" >
-<div class="md-consent__settings">
-  <ul class="task-list">
-    
-    
-      
-    
-    
-      
-        
-  
-  
-    
-    
-  
-  <li class="task-list-item">
-    <label class="task-list-control">
-      <input type="checkbox" name="github" checked>
-      <span class="task-list-indicator"></span>
-      GitHub
-    </label>
-  </li>
-
-      
-    
-    
-  </ul>
-</div>
-<div class="md-consent__controls">
-  
-    
-      <button class="md-button md-button--primary">Aceptar</button>
-    
-    
-    
-  
-    
-    
-    
-      <label class="md-button" for="__settings">Gestionar cookies</label>
-    
-  
-</div>
-          </form>
-        </aside>
-      </div>
-      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
-    
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"default": "stable"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "content.action.edit", "navigation.sections", "navigation.tabs", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

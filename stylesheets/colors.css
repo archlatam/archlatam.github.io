@@ -1,11 +1,5 @@
-@media screen and (max-width: 59.9375em){
-.md-nav__source {
-  background-color: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
-  display: block;
-  padding: 0 .2rem;
-}
-}
+.mastodon{color:#5b4ee2;}
+a.mastodon_rel{color:var( --md-typeset-color)!important;font-weight:bold;}
 
 [data-md-color-scheme=light] {
 --md-primary-fg-color: #292e39;
