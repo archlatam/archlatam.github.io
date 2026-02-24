@@ -1,0 +1,2773 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Comandi per gli Utenti Linux - archlatam</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1%207.775V2.75C1%201.784%201.784%201%202.75%201h5.025c.464%200%20.91.184%201.238.513l6.25%206.25a1.75%201.75%200%200%201%200%202.474l-5.026%205.026a1.75%201.75%200%200%201-2.474%200l-6.25-6.25A1.75%201.75%200%200%201%201%207.775m1.5%200c0%20.066.026.13.073.177l6.25%206.25a.25.25%200%200%200%20.354%200l5.025-5.025a.25.25%200%200%200%200-.354l-6.25-6.25a.25.25%200%200%200-.177-.073H2.75a.25.25%200%200%200-.25.25ZM6%205a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%201.75v11.5c0%20.138.112.25.25.25h3.17a.75.75%200%200%201%200%201.5H2.75A1.75%201.75%200%200%201%201%2013.25V1.75C1%20.784%201.784%200%202.75%200h8.5C12.216%200%2013%20.784%2013%201.75v7.736a.75.75%200%200%201-1.5%200V1.75a.25.25%200%200%200-.25-.25h-8.5a.25.25%200%200%200-.25.25m13.274%209.537zl-4.557%204.45a.75.75%200%200%201-1.055-.008l-1.943-1.95a.75.75%200%200%201%201.062-1.058l1.419%201.425%204.026-3.932a.75.75%200%201%201%201.048%201.074M4.75%204h4.5a.75.75%200%200%201%200%201.5h-4.5a.75.75%200%200%201%200-1.5M4%207.75A.75.75%200%200%201%204.75%207h2a.75.75%200%200%201%200%201.5h-2A.75.75%200%200%201%204%207.75%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.5%207.75A.75.75%200%200%201%207.25%207h1a.75.75%200%200%201%20.75.75v2.75h.25a.75.75%200%200%201%200%201.5h-2a.75.75%200%200%201%200-1.5h.25v-2h-.25a.75.75%200%200%201-.75-.75M8%206a1%201%200%201%201%200-2%201%201%200%200%201%200%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.499.75a.75.75%200%200%201%201.5%200v.996C5.9%202.903%206.793%203.65%207.662%204.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873%2010.794-.045%2012.622.26%2014.408.558%2016%201.94%2016%204.25c0%201.278-.954%202.575-2.44%202.734l.146.508.065.22c.203.701.412%201.455.476%202.226.142%201.707-.4%203.03-1.487%203.898C11.714%2014.671%2010.27%2015%208.75%2015h-6a.75.75%200%200%201%200-1.5h1.376a4.5%204.5%200%200%201-.563-1.191%203.84%203.84%200%200%201-.05-2.063%204.65%204.65%200%200%201-2.025-.293.75.75%200%200%201%20.525-1.406c1.357.507%202.376-.006%202.698-.318l.009-.01a.747.747%200%200%201%201.06%200%20.75.75%200%200%201-.012%201.074c-.912.92-.992%201.835-.768%202.586.221.74.745%201.337%201.196%201.621H8.75c1.343%200%202.398-.296%203.074-.836.635-.507%201.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4%202.4%200%200%201-.507-.441%203.1%203.1%200%200%201-.633-1.248.75.75%200%200%201%201.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738%200%201.25-.615%201.25-1.25%200-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706%201.345-.46.92-.27%201.774.019%203.062l.042.19.01.05c.348.443.666.949.94%201.553a.75.75%200%201%201-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7%205.527c-.814-.68-1.75-1.462-2.692-2.619a3.7%203.7%200%200%200-1.023.88c-.406.495-.663%201.036-.722%201.508.116.122.306.21.591.239.388.038.797-.06%201.032-.19a.75.75%200%200%201%20.728%201.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75%205.677V5.5c0-.984.48-1.94%201.077-2.664.46-.559%201.05-1.055%201.673-1.353z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13.78%204.22a.75.75%200%200%201%200%201.06l-7.25%207.25a.75.75%200%200%201-1.06%200L2.22%209.28a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018L6%2010.94l6.72-6.72a.75.75%200%200%201%201.06%200%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.92%206.085h.001a.749.749%200%201%201-1.342-.67c.169-.339.436-.701.849-.977C6.845%204.16%207.369%204%208%204a2.76%202.76%200%200%201%201.637.525c.503.377.863.965.863%201.725%200%20.448-.115.83-.329%201.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6%206%200%200%200-.26.16%201%201%200%200%200-.276.245.75.75%200%200%201-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1%201%200%200%200%20.277-.245C8.96%206.514%209%206.427%209%206.25a.61.61%200%200%200-.262-.525A1.27%201.27%200%200%200%208%205.5c-.369%200-.595.09-.74.187a1%201%200%200%200-.34.398M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.344%202.343za8%208%200%200%201%2011.314%2011.314A8.002%208.002%200%200%201%20.234%2010.089a8%208%200%200%201%202.11-7.746m1.06%2010.253a6.5%206.5%200%201%200%209.108-9.275%206.5%206.5%200%200%200-9.108%209.275M6.03%204.97%208%206.94l1.97-1.97a.749.749%200%200%201%201.275.326.75.75%200%200%201-.215.734L9.06%208l1.97%201.97a.749.749%200%200%201-.326%201.275.75.75%200%200%201-.734-.215L8%209.06l-1.97%201.97a.749.749%200%200%201-1.275-.326.75.75%200%200%201%20.215-.734L6.94%208%204.97%206.03a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4.72.22a.75.75%200%200%201%201.06%200l1%20.999a3.5%203.5%200%200%201%202.441%200l.999-1a.748.748%200%200%201%201.265.332.75.75%200%200%201-.205.729l-.775.776c.616.63.995%201.493.995%202.444v.327q0%20.15-.025.292c.408.14.764.392%201.029.722l1.968-.787a.75.75%200%200%201%20.556%201.392L13%207.258V9h2.25a.75.75%200%200%201%200%201.5H13v.5q-.002.615-.141%201.186l2.17.868a.75.75%200%200%201-.557%201.392l-2.184-.873A5%205%200%200%201%208%2016a5%205%200%200%201-4.288-2.427l-2.183.873a.75.75%200%200%201-.558-1.392l2.17-.868A5%205%200%200%201%203%2011v-.5H.75a.75.75%200%200%201%200-1.5H3V7.258L.971%206.446a.75.75%200%200%201%20.558-1.392l1.967.787c.265-.33.62-.583%201.03-.722a1.7%201.7%200%200%201-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72%201.28a.75.75%200%200%201%200-1.06m.53%206.28a.75.75%200%200%200-.75.75V11a3.5%203.5%200%201%200%207%200V7.25a.75.75%200%200%200-.75-.75ZM6.173%205h3.654A.17.17%200%200%200%2010%204.827V4.5a2%202%200%201%200-4%200v.327c0%20.096.077.173.173.173%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5%205.782V2.5h-.25a.75.75%200%200%201%200-1.5h6.5a.75.75%200%200%201%200%201.5H11v3.282l3.666%205.76C15.619%2013.04%2014.543%2015%2012.767%2015H3.233c-1.776%200-2.852-1.96-1.899-3.458Zm-2.4%206.565a.75.75%200%200%200%20.633%201.153h9.534a.75.75%200%200%200%20.633-1.153L12.225%2010.5h-8.45ZM9.5%202.5h-3V6c0%20.143-.04.283-.117.403L4.73%209h6.54L9.617%206.403A.75.75%200%200%201%209.5%206Z%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1.75%202.5h10.5a.75.75%200%200%201%200%201.5H1.75a.75.75%200%200%201%200-1.5m4%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5m0%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5M2.5%207.75v6a.75.75%200%200%201-1.5%200v-6a.75.75%200%200%201%201.5%200%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fonts.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/colors.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#comandi-per-gli-utenti-linux" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="archlatam" class="md-header__button md-logo" aria-label="archlatam" data-md-component="logo">
+      
+  <img src="../../assets/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            archlatam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Comandi per gli Utenti Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="archlatam" class="md-nav__button md-logo" aria-label="archlatam" data-md-component="logo">
+      
+  <img src="../../assets/favicon.png" alt="logo">
+
+    </a>
+    archlatam
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenido
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generalita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generalità
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generalità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gli-utenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gli utenti
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La shell
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandi-generali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandi generali
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandi generali">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandi-apropos-whatis-e-man" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comandi apropos, whatis e man
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="comandi apropos, whatis e man">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-apropos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando apropos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-whatis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando whatis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-man" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando man
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando shutdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autocompletamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autocompletamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizzazione-e-identificazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualizzazione e Identificazione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualizzazione e Identificazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commando-clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        commando clear
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando echo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando date
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-id-who-e-whoami" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando id, who e whoami
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#albero-dei-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Albero Dei File
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Albero Dei File">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-pwd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando pwd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando cd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-ls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando ls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-mkdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando mkdir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando touch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-rmdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando rmdir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-rm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando rm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-mv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        command mv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-cp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando cp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizzazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualizzazione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualizzazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando more
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-less" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando less
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando cat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-tac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando tac
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando head
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-tail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando tail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando sort
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-wc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando wc
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ricerca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ricerca
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ricerca">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando find
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opzione-exec-del-comando-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        opzione -exec del comando find
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-whereis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando whereis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        command grep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-caratteri-wildcards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meta-caratteri (wildcards)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reindirizzamenti-e-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reindirizzamenti e pipes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reindirizzamenti e pipes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-input-e-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard input e output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirezione-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirezione Input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirezione-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirezione Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempi-di-reindirizzamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempi di reindirizzamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#punti-speciali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Punti Speciali
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Punti Speciali">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-tee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando tee
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandi-alias-e-unalias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comandi alias e unalias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-e-funzioni-utili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alias e Funzioni Utili
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#il-carattere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il carattere ;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="comandi-per-gli-utenti-linux">Comandi per gli Utenti Linux</h1>
+<p>In questo capitolo imparerete i comandi di Linux e come utilizzarli.</p>
+<h2 id="generalita">Generalità</h2>
+<p>I sistemi Linux attuali hanno utilità grafiche dedicate al lavoro di un amministratore. Tuttavia, è importante essere in grado di utilizzare l'interfaccia in modalità riga di comando per diversi motivi:</p>
+<ul>
+<li>La maggior parte dei comandi di sistema sono comuni a tutte le distribuzioni Linux, questo non è il caso degli strumenti grafici.</li>
+<li>Può accadere che il sistema non si avvii correttamente ma che un interprete di comando di backup rimanga accessibile.</li>
+<li>L'amministrazione remota viene eseguita dalla riga di comando con un terminale SSH.</li>
+<li>Per preservare le risorse del server, l'interfaccia grafica è installata o lanciata su richiesta.</li>
+<li>L'amministrazione è eseguita da scripts.</li>
+</ul>
+<p>L'apprendimento di questi comandi consente all'amministratore di connettersi a un terminale Linux, di gestirne le risorse e i file, di identificare la stazione, il terminale e gli utenti collegati, ecc.</p>
+<h3 id="gli-utenti">Gli utenti</h3>
+<p>L'utente di un sistema Linux è definito nel file <code>/etc/passwd</code>, da:</p>
+<ul>
+<li>Un <strong>nome di login</strong>, o più comunemente chiamato "login", che non può contenere spazi.</li>
+<li>Un identificatore numerico: <strong>UID</strong> (User Identifier).</li>
+<li>Un identificatore di gruppo: <strong>GID</strong> (Group Identifier).</li>
+<li>Un <strong>interprete di comandi</strong>, ad esempio una shell, che può essere diversa da un utente all'altro.</li>
+<li>Una <strong>directory di connessione</strong>, ad esempio la <strong>directory home</strong>.</li>
+</ul>
+<p>In altri file l'utente sarà definito da:</p>
+<ul>
+<li>Una <strong>password</strong>, che verrà crittografata prima di essere memorizzata (<code>/etc/shadow</code>).</li>
+<li>Un <strong>prompt dei comandi</strong>, o <strong>prompt</strong> login, che sarà simboleggiato da un <code>#</code> per gli amministratori e da un <code>$</code> per gli altri utenti (<code>/etc/profile</code>).</li>
+</ul>
+<p>Il comando <code>passwd</code> è un comando di sistema utilizzato per modificare la password dell'utente corrente o di un altro utente specificato. L'utente che utilizza il comando deve avere i privilegi di amministratore per poter modificare la password di un altro utente. Il comando passwd richiederà all'utente di inserire la vecchia password e quindi di inserire e confermare la nuova password. La password inserita non verrà mostrata sullo schermo per motivi di sicurezza.</p>
+<p>A seconda della politica di sicurezza implementata sul sistema, la password dovrà contenere un certo numero di caratteri e soddisfare determinati requisiti di complessità.</p>
+<p>Tra gli interpreti di comando esistenti, la <strong>Bourne-Again Shell</strong> (<code>/bin/bash</code>) è quella utilizzata più frequentemente. È assegnata per impostazione predefinita ai nuovi utenti. Per vari motivi, gli utenti avanzati di Linux possono scegliere shell alternative tra la Korn Shell (<code>ksh</code>), la C Shell (<code>csh</code>), etc.</p>
+<p>La directory di accesso dell'utente è per convenzione memorizzata nella directory <code>/home</code> della workstation. Conterrà i dati personali dell'utente e i file di configurazione delle sue applicazioni. Per impostazione predefinita, al login, la directory di accesso è selezionata come directory corrente.</p>
+<p>Un'installazione di tipo workstation (con interfaccia grafica) avvia questa interfaccia sul terminale 1. Essendo Linux multiutente, è possibile connettere più utenti più volte, su diversi <strong>terminali fisici</strong> (TTY) o <strong>terminali virtuali</strong> (PTS). I terminali virtuali sono disponibili all'interno di un ambiente grafico. Un utente passa da un terminale fisico ad un altro usando <kbd>Alt</kbd> + <kbd>Fx</kbd> dalla riga di comando o utilizzando <kbd>CTRL</kbd> + <kbd>Alt</kbd> + <kbd>Fx</kbd> in modalità grafica.</p>
+<h3 id="la-shell">La shell</h3>
+<p>Una volta che l'utente è collegato a una console, la shell visualizza il <strong>prompt dei comandi</strong>. Si comporta quindi come un ciclo infinito, ripetendo lo stesso schema a ogni istruzione inserita:</p>
+<ul>
+<li>Visualizza il prompt dei comandi.</li>
+<li>Lettura del comando.</li>
+<li>Analisi della sintassi.</li>
+<li>Sostituzione di caratteri speciali.</li>
+<li>Esecuzione del comando.</li>
+<li>Visualizza il prompt dei comandi.</li>
+<li>etc.</li>
+</ul>
+<p>La sequenza chiave <kbd>CTRL</kbd> + <kbd>C</kbd> è usata per interrompere un comando in esecuzione.</p>
+<p>L'uso di un comando segue generalmente questa sequenza:</p>
+<div class="highlight"><pre><span></span><code>comando<span class="w"> </span><span class="o">[</span>opzione<span class="o">(</span>i<span class="o">)]</span><span class="w"> </span><span class="o">[</span>argomento<span class="o">(</span>i<span class="o">)]</span>
+</code></pre></div>
+<p>Il nome del comando è spesso in <strong>minuscolo</strong>.</p>
+<p>Uno spazio separa ogni oggetto.</p>
+<p>Le <strong>opzioni abbreviate</strong> iniziano con un trattino (<code>-l</code>), mentre le <strong>opzioni lunghe</strong> iniziano con due trattini (<code>--list</code>). Un doppio trattino (<code>--</code>) indica la fine dell'elenco delle opzioni.</p>
+<p>È possibile raggruppare alcune opzioni brevi insieme:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>-i<span class="w"> </span>-a
+</code></pre></div>
+<p>è equivalente a:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia
+</code></pre></div>
+<p>Dopo un'opzione possono esserci più argomenti:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia<span class="w"> </span>/etc<span class="w"> </span>/home<span class="w"> </span>/var
+</code></pre></div>
+<p>In letteratura, il termine "opzione" è equivalente al termine "parametro," che è più comunemente usato nella programmazione. Il lato opzionale di un'opzione o argomento è simboleggiata dall'inclusione in parentesi quadre <code>[</code> e <code>]</code>. Quando è possibile più di un'opzione, Una barra verticale chiamata "pipe" li separa <code>[a|e|i]</code>.</p>
+<h2 id="comandi-generali">Comandi generali</h2>
+<h3 id="comandi-apropos-whatis-e-man">comandi <code>apropos</code>, <code>whatis</code> e <code>man</code></h3>
+<p>È impossibile per un amministratore a qualsiasi livello conoscere tutti i comandi e le opzioni in dettaglio. Solitamente è disponibile un manuale per tutti i comandi installati.</p>
+<h4 id="comando-apropos">comando <code>apropos</code></h4>
+<p>Il comando <code>apropos</code> ti consente di cercare per parola chiave all'interno di queste pagine dei manuali:</p>
+<table>
+<thead>
+<tr>
+<th>Opzioni</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-s</code>, <code>--sections list</code> o <code>--section list</code></td>
+<td>Limitato alle sezioni dei manuali.</td>
+</tr>
+<tr>
+<td><code>-a</code> o <code>--and</code></td>
+<td>Visualizza solo la voce corrispondente a tutte le parole chiave fornite.</td>
+</tr>
+</tbody>
+</table>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>apropos<span class="w"> </span>clear
+clear<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">            </span>-<span class="w"> </span>clear<span class="w"> </span>the<span class="w"> </span>terminal<span class="w"> </span>screen
+clear_console<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">    </span>-<span class="w"> </span>clear<span class="w"> </span>the<span class="w"> </span>console
+clearenv<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w">         </span>-<span class="w"> </span>clear<span class="w"> </span>the<span class="w"> </span>environment
+clearerr<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w">         </span>-<span class="w"> </span>check<span class="w"> </span>and<span class="w"> </span>reset<span class="w"> </span>stream<span class="w"> </span>status
+clearerr_unlocked<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w"> </span>-<span class="w"> </span>nonlocking<span class="w"> </span>stdio<span class="w"> </span>functions
+feclearexcept<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w">    </span>-<span class="w"> </span>floating-point<span class="w"> </span>rounding<span class="w"> </span>and<span class="w"> </span>exception<span class="w"> </span>handling
+fwup_clear_status<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w"> </span>-<span class="w"> </span>library<span class="w"> </span>to<span class="w"> </span>support<span class="w"> </span>management<span class="w"> </span>of<span class="w"> </span>system<span class="w"> </span>firmware<span class="w"> </span>updates
+klogctl<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w">          </span>-<span class="w"> </span><span class="nb">read</span><span class="w"> </span>and/or<span class="w"> </span>clear<span class="w"> </span>kernel<span class="w"> </span>message<span class="w"> </span>ring<span class="w"> </span>buffer<span class="p">;</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>console_loglevel
+sgt-samegame<span class="w"> </span><span class="o">(</span><span class="m">6</span><span class="o">)</span><span class="w">     </span>-<span class="w"> </span>block-clearing<span class="w"> </span>puzzle
+syslog<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span><span class="w">           </span>-<span class="w"> </span><span class="nb">read</span><span class="w"> </span>and/or<span class="w"> </span>clear<span class="w"> </span>kernel<span class="w"> </span>message<span class="w"> </span>ring<span class="w"> </span>buffer<span class="p">;</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>console_loglevel
+timerclear<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w">       </span>-<span class="w"> </span>timeval<span class="w"> </span>operations
+XClearArea<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w">       </span>-<span class="w"> </span>clear<span class="w"> </span>area<span class="w"> </span>or<span class="w"> </span>window
+XClearWindow<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w">     </span>-<span class="w"> </span>clear<span class="w"> </span>area<span class="w"> </span>or<span class="w"> </span>window
+XSelectionClearEvent<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="o">)</span><span class="w"> </span>-<span class="w"> </span>SelectionClear<span class="w"> </span>event<span class="w"> </span>structure
+</code></pre></div>
+<p>Per trovare il comando che consentirà di cambiare la password di un account:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>apropos<span class="w"> </span>--exact<span class="w"> </span>password<span class="w">  </span>-a<span class="w"> </span>change
+chage<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">            </span>-<span class="w"> </span>change<span class="w"> </span>user<span class="w"> </span>password<span class="w"> </span>expiry<span class="w"> </span>information
+passwd<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">           </span>-<span class="w"> </span>change<span class="w"> </span>user<span class="w"> </span>password
+</code></pre></div>
+<h4 id="comando-whatis">comando <code>whatis</code></h4>
+<p>Il comando <code>whatis</code> visualizza la descrizione del comando passata come argomento:</p>
+<div class="highlight"><pre><span></span><code>whatis<span class="w"> </span>clear
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>whatis<span class="w"> </span>clear
+clear<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">            </span>-<span class="w"> </span>clear<span class="w"> </span>the<span class="w"> </span>terminal<span class="w"> </span>screen
+</code></pre></div>
+<h4 id="comando-man">comando <code>man</code></h4>
+<p>Una volta trovato con <code>apropos</code> o <code>whatis</code>, il manuale è letto da <code>man</code> ("Man è tuo amico"). Questo set di manuali è diviso in 8 sezioni, raggruppando le informazioni per argomento, la sezione predefinita è la 1:</p>
+<ol>
+<li>Programmi o comandi eseguibili.</li>
+<li>Chiamate di sistema (funzioni date dal kernel).</li>
+<li>Chiamate di libreria (funzioni date dalla libreria).</li>
+<li>File speciali (di solito si trovano in /dev).</li>
+<li>Formati di file e convenzioni (file di configurazione come etc/passwd).</li>
+<li>Giochi (come le applicazioni basate sui personaggi).</li>
+<li>Varie (es. man (7)).</li>
+<li>Comandi di amministrazione del sistema (di solito solo per root).</li>
+<li>Routine del Kernel (non standard).</li>
+</ol>
+<p>È possibile accedere alle informazioni su ciascuna sezione digitando <code>man x intro</code>, dove <code>x</code> è il numero della sezione.</p>
+<p>Il comando:</p>
+<div class="highlight"><pre><span></span><code>man<span class="w"> </span>passwd
+</code></pre></div>
+<p>dirà all'amministratore le opzioni, etc, del comando passwd. Mentre:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>man<span class="w"> </span><span class="m">5</span><span class="w"> </span>passwd
+</code></pre></div>
+<p>lo informerà sui file relativi al comando.</p>
+<p>Navigare nel manuale con le frecce <kbd>↑</kbd> e <kbd>↓</kbd>. Uscire dal manuale premendo il tasto <kbd>q</kbd>.</p>
+<h3 id="comando-shutdown">comando <code>shutdown</code></h3>
+<p>Il comando <code>shutdown</code> consente di <strong>spegnere elettronicamente</strong> un server Linux, immediatamente o dopo un certo periodo di tempo.</p>
+<div class="highlight"><pre><span></span><code>shutdown<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-r<span class="o">]</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">[</span>message<span class="o">]</span>
+</code></pre></div>
+<p>Specificare l'ora di spegnimento nel formato <code>hh:mm</code> per un'ora precisa, o <code>+mm</code> per un ritardo in minuti.</p>
+<p>Per forzare un arresto immediato, usa la parola <code>now</code> al posto del tempo. In questo caso, il messaggio opzionale non viene inviato agli altri utenti del sistema.</p>
+<p>Esempi:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root<span class="o">]</span><span class="c1"># shutdown -h 0:30 &quot;Server shutdown at 0:30&quot;</span>
+<span class="o">[</span>root<span class="o">]</span><span class="c1"># shutdown -r +5</span>
+</code></pre></div>
+<p>Opzioni:</p>
+<table>
+<thead>
+<tr>
+<th>Opzioni</th>
+<th>Osservazioni</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-h</code></td>
+<td>Arresta il sistema elettronicamente.</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>Riavvia il sistema.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comando-history">comando <code>history</code></h3>
+<p>Il comando <code>history</code> visualizza la cronologia dei comandi inseriti dall'utente.</p>
+<p>I comandi sono memorizzati nel file <code>.bash_history</code> nella directory di accesso dell'utente.</p>
+<p>Esempio di un comando history</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">history</span>
+<span class="m">147</span><span class="w"> </span>man<span class="w"> </span>ls
+<span class="m">148</span><span class="w"> </span>man<span class="w"> </span><span class="nb">history</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzioni</th>
+<th>Commenti</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-w</code></td>
+<td>Scrive la cronologia corrente nel file della cronologia</td>
+</tr>
+<tr>
+<td><code>-c</code></td>
+<td>Cancella la cronologia della sessione corrente (ma non il contenuto del file <code>.bash_history</code>).</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Manipolazione della cronologia:</li>
+</ul>
+<p>Per manipolare la history, i seguenti comandi immessi dal prompt dei comandi permetteranno di:</p>
+<table>
+<thead>
+<tr>
+<th>Chiavi</th>
+<th>Funzione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>!!</kbd></td>
+<td>Richiama l'ultimo comando eseguito.</td>
+</tr>
+<tr>
+<td><kbd>!n</kbd></td>
+<td>Richiama il comando per il suo numero nell'elenco.</td>
+</tr>
+<tr>
+<td><kbd>!string</kbd></td>
+<td>Richiama il comando più recente che inizia con la stringa.</td>
+</tr>
+<tr>
+<td><kbd>↑</kbd></td>
+<td>Naviga nella cronologia andando indietro nel tempo a partire dal comando più recente.</td>
+</tr>
+<tr>
+<td><kbd>↓</kbd></td>
+<td>Naviga nella cronologia andando avanti nel tempo.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="autocompletamento">Autocompletamento</h3>
+<p>Il completamento automatico è di grande aiuto.</p>
+<ul>
+<li>Completa i comandi, i percorsi inseriti o i nomi dei file.</li>
+<li>Una pressione del tasto <kbd>TAB</kbd> completa la voce nel caso di una soluzione singola.</li>
+<li>Nel caso di più soluzioni, premere <kbd>TAB</kbd> una seconda volta per visualizzare le opzioni.</li>
+</ul>
+<p>Se premendo due volte il tasto <kbd>TAB</kbd> non vengono presentate opzioni, non c'è soluzione al completamento attuale.</p>
+<h2 id="visualizzazione-e-identificazione">Visualizzazione e Identificazione</h2>
+<h3 id="commando-clear">commando <code>clear</code></h3>
+<p>Il comando <code>clear</code> cancella il contenuto della schermata del terminale. Più precisamente, sposta la visualizzazione in modo che il prompt dei comandi si trovi in cima allo schermo, sulla prima riga.</p>
+<p>Su un terminale fisico, il display sarà permanentemente nascosto, mentre in un'interfaccia grafica, una barra di scorrimento permetterà di tornare indietro nella cronologia del terminale virtuale.</p>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p><kbd>CTRL</kbd> + <kbd>L</kbd> avrà lo stesso effetto del comando <code>clear</code></p>
+</div>
+<h3 id="comando-echo">comando <code>echo</code></h3>
+<p>Il comando <code>echo</code> è usato per visualizzare una stringa di caratteri.</p>
+<p>Questo comando è più comunemente usato negli script amministrativi per informare l'utente durante l'esecuzione.</p>
+<p>L'opzione <code>-n</code> indica nessuna stringa di output newline (di default, stringa di output newline).</p>
+<div class="highlight"><pre><span></span><code>shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;123&quot;</span><span class="p">;</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;456&quot;</span>
+<span class="m">123456</span>
+
+shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;123&quot;</span><span class="p">;</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;456&quot;</span>
+<span class="m">123</span>
+<span class="m">456</span>
+</code></pre></div>
+<p>Per vari motivi, allo sviluppatore dello script potrebbe essere necessario utilizzare sequenze speciali (a partire da un carattere <code>\</code>). In questo caso, sara usata l'opzione <code>-e</code>, che consentirà l'interpretazione della sequenza.</p>
+<p>Tra le sequenze usate frequentemente, possiamo menzionare:</p>
+<table>
+<thead>
+<tr>
+<th>Sequenza</th>
+<th>Risultato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\a</code></td>
+<td>Invia un bip sonoro</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>Indietro</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>Aggiunge una interruzione di linea</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>Aggiunge un tab orizzontale</td>
+</tr>
+<tr>
+<td><code>\v</code></td>
+<td>Aggiunge un tab verticale</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comando-date">comando <code>date</code></h3>
+<p>Il comando <code>date</code> visualizza la data e l'ora. Il comando ha la seguente sintassi:</p>
+<div class="highlight"><pre><span></span><code>date<span class="w"> </span><span class="o">[</span>-d<span class="w"> </span>yyyyMMdd<span class="o">]</span><span class="w"> </span><span class="o">[</span>format<span class="o">]</span>
+</code></pre></div>
+<p>Esempi:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date
+Mon<span class="w"> </span>May<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">16</span>:46:53<span class="w"> </span>CEST<span class="w"> </span><span class="m">2021</span>
+$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span><span class="m">20210517</span><span class="w"> </span>+%j
+<span class="m">137</span>
+</code></pre></div>
+<p>In quest'ultimo esempio, l'opzione <code>-d</code> visualizza una determinata data. L'opzione <code>+%j</code> formatta questa data per mostrare solo il giorno dell'anno.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>Il formato di una data può cambiare in base al valore della lingua definito nella variabile ambientale '$LANG'.</p>
+</div>
+<p>La visualizzazione della data può seguire i seguenti formati:</p>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Formato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+%A</code></td>
+<td>Nome completo del giorno della settimana della località (ad esempio, Domenica)</td>
+</tr>
+<tr>
+<td><code>+%B</code></td>
+<td>Nome completo del mese della località (ad esempio, Gennaio)</td>
+</tr>
+<tr>
+<td><code>+%c</code></td>
+<td>Data e ora di Locale (ad esempio, Gio Mar 3 23:05:25 2005)</td>
+</tr>
+<tr>
+<td><code>+%d</code></td>
+<td>Giorno del mese (ad es. 01)</td>
+</tr>
+<tr>
+<td><code>+%F</code></td>
+<td>Data nel formato <code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td><code>+%G</code></td>
+<td>Anno</td>
+</tr>
+<tr>
+<td><code>+%H</code></td>
+<td>Ora (00..23)</td>
+</tr>
+<tr>
+<td><code>+%j</code></td>
+<td>Giorno dell'anno (001..366)</td>
+</tr>
+<tr>
+<td><code>+%m</code></td>
+<td>Numero del mese (01..12)</td>
+</tr>
+<tr>
+<td><code>+%M</code></td>
+<td>Minuto (00..59)</td>
+</tr>
+<tr>
+<td><code>+%R</code></td>
+<td>Tempo nel formato <code>hh:mm</code></td>
+</tr>
+<tr>
+<td><code>+%s</code></td>
+<td>Secondi dal 1° gennaio 1970</td>
+</tr>
+<tr>
+<td><code>+%S</code></td>
+<td>Secondo (00..60)</td>
+</tr>
+<tr>
+<td><code>+%T</code></td>
+<td>Tempo nel formato <code>hh:mm:ss</code></td>
+</tr>
+<tr>
+<td><code>+%u</code></td>
+<td>Giorno della settimana (<code>1</code> per Lunedì)</td>
+</tr>
+<tr>
+<td><code>+%V</code></td>
+<td>Numero della settimana (<code>+%V</code>)</td>
+</tr>
+<tr>
+<td><code>+%x</code></td>
+<td>Data nel formato <code>GG/MM/AAAA</code></td>
+</tr>
+</tbody>
+</table>
+<p>Il comando <code>date</code> consente anche di modificare la data e l'ora del sistema. In questo caso, verrà utilizzata l'opzione <code>-s</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root<span class="o">]</span><span class="c1"># date -s &quot;2021-05-24 10:19&quot;</span>
+</code></pre></div>
+<p>Il formato da utilizzare usando l'opzione <code>-s</code> è il seguente:</p>
+<div class="highlight"><pre><span></span><code>date<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;yyyy-MM-dd hh:mm[:ss]&quot;</span>
+</code></pre></div>
+<h3 id="comando-id-who-e-whoami">comando <code>id</code>, <code>who</code> e <code>whoami</code></h3>
+<p>Il comando <code>id</code> viene utilizzato per visualizzare informazioni su utenti e gruppi. Per impostazione predefinita, non viene aggiunto alcun parametro utente e vengono visualizzate le informazioni dell'utente e del gruppo attualmente connessi。</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>id<span class="w"> </span>architalia
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>architalia<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>architalia<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>architalia<span class="o">)</span>,10<span class="o">(</span>wheel<span class="o">)</span>
+</code></pre></div>
+<p>Le opzioni <code>-g</code>, <code>-G</code>, <code>-n</code> e <code>-u</code> visualizzano il gruppo principale GID, sottogruppo GIDs, nomi al posto di identificatori numerici, e l'UID dell'utente.</p>
+<p>Il comando <code>whoami</code> visualizza il login dell'utente corrente.</p>
+<p>Il solo comando <code>who</code> visualizza i nomi degli utenti connessi:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>who
+architalia<span class="w"> </span>tty1<span class="w">   </span><span class="m">2021</span>-05-24<span class="w"> </span><span class="m">10</span>:30
+root<span class="w">     </span>pts/0<span class="w">  </span><span class="m">2021</span>-05-24<span class="w"> </span><span class="m">10</span>:31
+</code></pre></div>
+<p>Dal momento che Linux è multi-utente, è possibile che più sessioni siano aperte sulla stessa stazione, sia fisicamente che attraverso la rete. È interessante sapere quali utenti sono connessi, se non solo per comunicare con loro inviando messaggi.</p>
+<ul>
+<li>tty: rappresenta un terminale.</li>
+<li>pts/: rappresenta una console virtuale in un ambiente grafico con il numero dopo aver rappresentato l'istanza della console virtuale (0, 1, 2...)</li>
+</ul>
+<p>L'opzione <code>-r</code> visualizza anche il runlevel (vedi capitolo "startup").</p>
+<h2 id="albero-dei-file">Albero Dei File</h2>
+<p>In Linux, l'albero dei file è un albero invertito, chiamato <strong>albero gerarchico singolo</strong>, la cui radice è la directory <code>/</code>.</p>
+<p>La <strong>directory corrente</strong> è la directory in cui si trova l'utente.</p>
+<p>La <strong>directory di connessione</strong> è la directory di lavoro associata all'utente. Le directory di accesso sono, per impostazione predefinita, memorizzate nella directory <code>/home</code>.</p>
+<p>Quando l'utente accede, la directory corrente è la directory di accesso.</p>
+<p>Un <strong>percorso assoluto</strong> fa riferimento ad un file dalla radice attraversando l'intero albero fino al livello del file:</p>
+<ul>
+<li><code>/home/groupA/alice/file</code></li>
+</ul>
+<p>Un <strong>percorso relativo</strong> fa riferimento allo stesso file attraversando l'intero albero dalla directory corrente:</p>
+<ul>
+<li><code>../alice/file</code></li>
+</ul>
+<p>Nell'esempio sopra, il "<code>..</code> " si riferisce alla directory principale della directory corrente.</p>
+<p>Una directory, anche se è vuota, conterrà necessariamente almeno <strong>due riferimenti</strong>:</p>
+<ul>
+<li><code>.</code>: riferimento a se stessa.</li>
+<li><code>..</code>: riferimento alla directory principale della directory corrente.</li>
+</ul>
+<p>Un percorso relativo può quindi iniziare con <code>./</code> o <code>../</code>. Quando il percorso relativo si riferisce a una sottodirectory o ad un file nella directory corrente, il <code>./</code> è spesso omesso. L'inserimento del riferimento <code>./</code> sarà veramente richiesto solo per l'esecuzione di un file eseguibile.</p>
+<p>Gli errori nei percorsi possono causare molti problemi: dalla creazione di cartelle o file nei luoghi sbagliati, alle eliminazioni involontarie, ecc. È quindi fortemente raccomandato di utilizzare il completamento automatico quando si immettono i percorsi.</p>
+<p><img alt="il nostro albero di esempio" src="../images/commands-pathabsolute.png" /></p>
+<p>Nell'esempio precedente, si vuole fornire la posizione del file <code>myfile</code> dalla directory di bob.</p>
+<ul>
+<li>In un <strong>percorso assoluto</strong>, la directory corrente non ha importanza. Iniziamo dalla radice e scendiamo fino alle directory <code>home</code>, <code>groupA</code>, <code>alice</code> e infine il file <code>myfile</code>: <code>/home/groupA/alice/myfile</code>.</li>
+<li>In un <strong>percorso relativo</strong>, il nostro punto di partenza è la directory corrente <code>bob</code>, saliamo di un livello con <code>..</code> (i.e., nella directpry <code>groupA</code>), poi giù nella directory di alice, e infine il file <code>myfile</code>: <code>../alice/myfile</code>.</li>
+</ul>
+<h3 id="comando-pwd">comando <code>pwd</code></h3>
+<p>Il comando <code>pwd</code> (Print Working Directory) visualizza il percorso assoluto della directory corrente.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">pwd</span>
+/home/architalia
+</code></pre></div>
+<p>Per utilizzare un percorso relativo per fare riferimento a un file o a una directory, o per usare il comando <code>cd</code> per spostarsi in un'altra directory, è necessario conoscere la sua posizione nell'albero dei file.</p>
+<p>A seconda del tipo di shell e dei diversi parametri del suo file di configurazione, il prompt del terminale (noto anche come prompt dei comandi) visualizzerà il percorso assoluto o relativo della directory corrente.</p>
+<h3 id="comando-cd">comando <code>cd</code></h3>
+<p>Il comando <code>cd</code> (Cambia Directory) ti permette di cambiare la directory corrente -- in altre parole, di spostarti attraverso l'albero.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/tmp
+$<span class="w"> </span><span class="nb">pwd</span>
+/tmp
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../
+$<span class="w"> </span><span class="nb">pwd</span>
+/
+$<span class="w"> </span><span class="nb">cd</span>
+$<span class="w"> </span><span class="nb">pwd</span>
+/home/architalia
+</code></pre></div>
+<p>Come puoi vedere nell'ultimo esempio sopra, il comando <code>cd</code> senza argomenti sposta la directory corrente alla <code>home directory</code>.</p>
+<h3 id="comando-ls">comando <code>ls</code></h3>
+<p>Il comando <code>ls</code> visualizza il contenuto di una directory.</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span><span class="o">[</span>-a<span class="o">]</span><span class="w"> </span><span class="o">[</span>-i<span class="o">]</span><span class="w"> </span><span class="o">[</span>-l<span class="o">]</span><span class="w"> </span><span class="o">[</span>directory1<span class="o">]</span><span class="w"> </span><span class="o">[</span>directory2<span class="o">]</span><span class="w"> </span><span class="o">[</span>…<span class="o">]</span>
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>/home
+.<span class="w">    </span>..<span class="w">    </span>architalia
+</code></pre></div>
+<p>Le opzioni principali del comando <code>ls</code> sono:</p>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Informazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-a</code></td>
+<td>Visualizza tutti i file, anche quelli nascosti. I file nascosti in Linux sono quelli che iniziano con un <code>.</code>.</td>
+</tr>
+<tr>
+<td><code>-i</code></td>
+<td>Visualizza i numeri di inode.</td>
+</tr>
+<tr>
+<td><code>-l</code></td>
+<td>Utilizza un formato di elenco lungo, cioè ogni riga visualizza informazioni di formato lungo per un file o una directory.</td>
+</tr>
+</tbody>
+</table>
+<p>Il comando <code>ls</code>, tuttavia, ha molte opzioni (vedi <code>man</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Informazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-d</code></td>
+<td>Visualizza le informazioni di una directory invece di elencare i suoi contenuti.</td>
+</tr>
+<tr>
+<td><code>-g</code></td>
+<td>Come l'opzione -l, ma non elenca il proprietario.</td>
+</tr>
+<tr>
+<td><code>-h</code></td>
+<td>Visualizza le dimensioni dei file nel formato più appropriato (byte, kilobyte, megabyte, gigabyte, ...). <code>h</code> stà per Human Readable. Deve essere utilizzato con l'opzione -l.</td>
+</tr>
+<tr>
+<td><code>-s</code></td>
+<td>Visualizza la dimensione assegnata di ogni file, in blocchi. Nel sistema operativo GNU/Linux, "block" è l'unità di archiviazione più piccola nel file system, un blocco è uguale a 4096Byte.</td>
+</tr>
+<tr>
+<td><code>-A</code></td>
+<td>Visualizza tutti i file nella directory tranne <code>.</code> e <code>..</code></td>
+</tr>
+<tr>
+<td><code>-R</code></td>
+<td>Visualizza il contenuto delle sottodirectory in modo ricorsivo.</td>
+</tr>
+<tr>
+<td><code>-F</code></td>
+<td>Visualizza il tipo di file. Stampa un<code>/</code> per una directory, <code>*</code> per gli eseguibili, <code>@</code> per un collegamento simbolico, e niente per un file di testo.</td>
+</tr>
+<tr>
+<td><code>-X</code></td>
+<td>Ordina i file in base alle loro estensioni.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Descrizione delle colonne generate dall'esecuzione del comando <code>ls -lia</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia<span class="w"> </span>/home
+<span class="m">78489</span><span class="w"> </span>drwx------<span class="w"> </span><span class="m">4</span><span class="w"> </span>architalia<span class="w"> </span>architalia<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="m">25</span><span class="w"> </span>oct.<span class="w"> </span><span class="m">08</span>:10<span class="w"> </span>architalia
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Valore</th>
+<th>Informazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>78489</code></td>
+<td>Numero di inode.</td>
+</tr>
+<tr>
+<td><code>drwx------</code></td>
+<td>Tipo di file (<code>d</code>) e permessi (<code>rwx------</code>).</td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td>Numero di sottodirectory. (<code>.</code> e <code>..</code> incluse). Per un file, rappresenta il numero di collegamenti diretti e 1 rappresenta se stesso.</td>
+</tr>
+<tr>
+<td><code>architalia</code></td>
+<td>Proprietà dell'utente.</td>
+</tr>
+<tr>
+<td><code>architalia</code></td>
+<td>Proprietà del gruppo.</td>
+</tr>
+<tr>
+<td><code>4096</code></td>
+<td>Per i file, mostra la dimensione del file. Per le directory, mostra il valore fisso di 4096 byte occupati dal nome del file. Per calcolare la dimensione totale di una directory, usa <code>du -sh architalia/</code></td>
+</tr>
+<tr>
+<td><code>25 oct. 08:10</code></td>
+<td>Ultima data di modifica.</td>
+</tr>
+<tr>
+<td><code>architalia</code></td>
+<td>Il nome del file (o directory).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Gli <strong>Alias</strong> sono spesso già posizionati nelle distribuzioni comuni.</p>
+<p>Questo è il caso dell'alias <code>ll</code>:</p>
+<div class="highlight"><pre><span></span><code>alias ll=&#39;ls -l --color=auto&#39;
+</code></pre></div>
+</div>
+<p>Il comando <code>ls</code> ha molte opzioni. Ecco alcuni esempi avanzati di utilizzo:</p>
+<ul>
+<li>Elenca i file in <code>/etc</code> in base all'ultima modifica:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-ltr<span class="w"> </span>/etc
+total<span class="w"> </span><span class="m">1332</span>
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">662</span><span class="w"> </span><span class="m">29</span><span class="w"> </span>may<span class="w">   </span><span class="m">2021</span><span class="w"> </span>logrotate.conf
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">272</span><span class="w"> </span><span class="m">17</span><span class="w"> </span>may.<span class="w">   </span><span class="m">2021</span><span class="w"> </span>mailcap
+-rw-------.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">122</span><span class="w"> </span><span class="m">12</span><span class="w"> </span>may.<span class="w">  </span><span class="m">2021</span><span class="w"> </span>securetty
+...
+-rw-r--r--.<span class="w">  </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">     </span><span class="m">85</span><span class="w"> </span><span class="m">18</span><span class="w"> </span>may.<span class="w">  </span><span class="m">17</span>:04<span class="w"> </span>resolv.conf
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">     </span><span class="m">44</span><span class="w"> </span><span class="m">18</span><span class="w"> </span>may.<span class="w">  </span><span class="m">17</span>:04<span class="w"> </span>adjtime
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">283</span><span class="w"> </span><span class="m">18</span><span class="w"> </span>may.<span class="w">  </span><span class="m">17</span>:05<span class="w"> </span>mtab
+</code></pre></div>
+<ul>
+<li>Elenca i file <code>/var</code> di dimensioni superiori a 1 megabyte ma inferiori a 1 gigabyte. L'esempio qui riportato utilizza i comandi avanzati <code>grep</code> con le espressioni regolari. I novizi non devono lottare troppo, ci sarà un tutorial speciale per introdurre queste espressioni regolari in futuro.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lhR<span class="w"> </span>/var/<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>^<span class="se">\-</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;[1-9]*\.[0-9]*M&quot;</span><span class="w"> </span>
+...
+-rw-r--r--.<span class="w"> </span><span class="m">1</span><span class="w"> </span>apache<span class="w"> </span>apache<span class="w"> </span><span class="m">1</span>.2M<span class="w"> </span><span class="m">10</span><span class="w"> </span>may.<span class="w">  </span><span class="m">13</span>:02<span class="w"> </span>XB<span class="w"> </span>RiyazBdIt.ttf
+-rw-r--r--.<span class="w"> </span><span class="m">1</span><span class="w"> </span>apache<span class="w"> </span>apache<span class="w"> </span><span class="m">1</span>.2M<span class="w"> </span><span class="m">10</span><span class="w"> </span>may.<span class="w">  </span><span class="m">13</span>:02<span class="w"> </span>XB<span class="w"> </span>RiyazBd.ttf
+-rw-r--r--.<span class="w"> </span><span class="m">1</span><span class="w"> </span>apache<span class="w"> </span>apache<span class="w"> </span><span class="m">1</span>.1M<span class="w"> </span><span class="m">10</span><span class="w"> </span>may.<span class="w">  </span><span class="m">13</span>:02<span class="w"> </span>XB<span class="w"> </span>RiyazIt.ttf
+...
+</code></pre></div>
+<p>Naturalmente, si consiglia vivamente di utilizzare il comando <code>find</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/var<span class="w"> </span>-size<span class="w"> </span>+1M<span class="w"> </span>-a<span class="w"> </span>-size<span class="w"> </span>-1024M<span class="w"> </span>-a<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-exec<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+</code></pre></div>
+<ul>
+<li>Mostra i permessi di una cartella:</li>
+</ul>
+<p>Per conoscere i permessi di una cartella, ad esempio <code>/etc</code>, il seguente comando <strong>non</strong> sarebbe appropriato:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc
+total<span class="w"> </span><span class="m">1332</span>
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">     </span><span class="m">44</span><span class="w"> </span><span class="m">18</span><span class="w"> </span>nov.<span class="w">  </span><span class="m">17</span>:04<span class="w"> </span>adjtime
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">1512</span><span class="w"> </span><span class="m">12</span><span class="w"> </span>janv.<span class="w">  </span><span class="m">2010</span><span class="w"> </span>aliases
+-rw-r--r--.<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">12288</span><span class="w"> </span><span class="m">17</span><span class="w"> </span>nov.<span class="w">  </span><span class="m">17</span>:41<span class="w"> </span>aliases.db
+drwxr-xr-x.<span class="w">  </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">4096</span><span class="w"> </span><span class="m">17</span><span class="w"> </span>nov.<span class="w">  </span><span class="m">17</span>:48<span class="w"> </span>alternatives
+...
+</code></pre></div>
+<p>Il comando precedente visualizzerà il contenuto della cartella (all'interno) per impostazione predefinita. Per la cartella stessa, è possibile utilizzare l'opzione <code>-d</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>/etc
+drwxr-xr-x.<span class="w"> </span><span class="m">69</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="m">18</span><span class="w"> </span>nov.<span class="w">  </span><span class="m">17</span>:05<span class="w"> </span>/etc
+</code></pre></div>
+<ul>
+<li>Ordina per dimensione del file, prima il più grande:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lhS
+</code></pre></div>
+<ul>
+<li>formato ora/data con <code>-l</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>--time-style<span class="o">=</span><span class="s2">&quot;+%Y-%m-%d %m-%d %H:%M&quot;</span><span class="w"> </span>/
+total<span class="w"> </span><span class="m">12378</span>
+dr-xr-xr-x.<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="m">2014</span>-11-23<span class="w"> </span><span class="m">11</span>-23<span class="w"> </span><span class="m">03</span>:13<span class="w"> </span>bin
+dr-xr-xr-x.<span class="w"> </span><span class="m">5</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="m">2014</span>-11-23<span class="w"> </span><span class="m">11</span>-23<span class="w"> </span><span class="m">05</span>:29<span class="w"> </span>boot
+</code></pre></div>
+<ul>
+<li>Aggiungere la barra <em>trailing slash</em> alla fine delle cartelle:</li>
+</ul>
+<p>Per impostazione predefinita, il comando <code>ls</code> non visualizza l'ultima slash di una cartella. In alcuni casi, come per gli script, ad esempio, è utile visualizzarla:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-dF<span class="w"> </span>/etc
+/etc/
+</code></pre></div>
+<ul>
+<li>Nascondi alcune estensioni:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>/etc<span class="w"> </span>--hide<span class="o">=</span>*.conf
+</code></pre></div>
+<h3 id="comando-mkdir">comando <code>mkdir</code></h3>
+<p>Il comando <code>mkdir</code> crea una directory o un albero di directory.</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span><span class="o">[</span>-p<span class="o">]</span><span class="w"> </span>directory<span class="w"> </span><span class="o">[</span>directory<span class="o">]</span><span class="w"> </span><span class="o">[</span>...<span class="o">]</span>
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>/home/architalia/work
+</code></pre></div>
+<p>La directory "architalia" deve essere presente per creare la directory "work".</p>
+<p>Altrimenti, si deve usare l'opzione <code>-p</code>. L'opzione <code>-p</code> crea le directory genitore se queste non esistono.</p>
+<div class="admonition danger">
+<p class="admonition-title">Pericolo</p>
+<p>Non è consigliabile usare i nomi dei comandi Linux come directory o nomi di file.</p>
+</div>
+<h3 id="comando-touch">comando <code>touch</code></h3>
+<p>Il comando <code>touch</code> modifica il timestamp di un file o crea un file vuoto se il file non esiste.</p>
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span><span class="o">[</span>-t<span class="w"> </span>date<span class="o">]</span><span class="w"> </span>file
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>touch<span class="w"> </span>/home/architalia/myfile
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Informazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-t date</code></td>
+<td>Cambia la data di ultima modifica del file con la data specificata.</td>
+</tr>
+</tbody>
+</table>
+<p>Formato data: <code>[AAAA]MMJJhhmm[ss]</code></p>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p>Il comando <code>touch</code> è usato principalmente per creare un file vuoto, ma può essere utile, ad esempio, per i backup incrementali o differenziali. Infatti, l'unico effetto dell'esecuzione di un <code>touch</code> su un file sarà quello di forzarne il salvataggio durante il backup successivo.</p>
+</div>
+<h3 id="comando-rmdir">comando <code>rmdir</code></h3>
+<p>Il comando <code>rmdir</code> elimina una directory vuota.</p>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rmdir<span class="w"> </span>/home/architalia/work
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Informazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-p</code></td>
+<td>Rimuove la cartella genitore o le cartelle fornite, se sono vuote.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p>Per eliminare una cartella non vuota e il suo contenuto, utilizzare il comando <code>rm</code>.</p>
+</div>
+<h3 id="comando-rm">comando <code>rm</code></h3>
+<p>Il comando <code>rm</code> elimina un file o una directory.</p>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span><span class="o">[</span>-f<span class="o">]</span><span class="w"> </span><span class="o">[</span>-r<span class="o">]</span><span class="w"> </span>file<span class="w"> </span><span class="o">[</span>file<span class="o">]</span><span class="w"> </span><span class="o">[</span>...<span class="o">]</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Pericolo</p>
+<p>Qualsiasi eliminazione di un file o directory è definitiva.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Opzioni</th>
+<th>Informazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-f</code></td>
+<td>Non chiedere se eliminare.</td>
+</tr>
+<tr>
+<td><code>-i</code></td>
+<td>Chiedi se cancellare.</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>Elimina una cartella e cancella ricorsivamente le sue sottocartelle.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Il comando <code>rm</code> non chiede conferma quando si eliminano i file. Tuttavia, con una distribuzione arch/arch, <code>rm</code> chiede la conferma della cancellazione perché il comando <code>rm</code> è un <code>alias</code> del comando <code>rm -i</code>. Non sorprenderti se su un'altra distribuzione, come Debian, ad esempio, non ottieni una richiesta di conferma.</p>
+</div>
+<p>L'eliminazione di una cartella con il comando <code>rm</code>, sia che la cartella sia vuota o meno, richiede l'aggiunta dell'opzione <code>-r</code>.</p>
+<p>La fine delle opzioni è segnalata alla shell da un doppio trattino <code>--</code>.</p>
+<p>Nell'esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>&gt;-hard-hard<span class="w"> </span><span class="c1"># To create an empty file called -hard-hard</span>
+hard-hard
+<span class="o">[</span>CTRL+C<span class="o">]</span><span class="w"> </span>To<span class="w"> </span>interrupt<span class="w"> </span>the<span class="w"> </span>creation<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>file
+$<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>--<span class="w"> </span>-hard-hard
+</code></pre></div>
+<p>Il nome del file hard-hard inizia con un <code>-</code>. Senza l'uso del <code>--</code> la shell avrebbe interpretato il <code>-d</code> in <code>-hard-hard</code> come un'opzione.</p>
+<h3 id="command-mv">command <code>mv</code></h3>
+<p>Il comando <code>mv</code> muove e rinomina un file.</p>
+<div class="highlight"><pre><span></span><code>mv<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>file<span class="w"> </span>...<span class="o">]</span><span class="w"> </span>destination
+</code></pre></div>
+<p>Esempi:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2
+$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2<span class="w"> </span>/tmp
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzioni</th>
+<th>Informazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-f</code></td>
+<td>Non chiedere conferma per la sovrascrittura del file di destinazione.</td>
+</tr>
+<tr>
+<td><code>-i</code></td>
+<td>Richiedere conferma per la sovrascrittura del file di destinazione (default).</td>
+</tr>
+</tbody>
+</table>
+<p>Alcuni casi concreti ti aiuteranno a capire le difficoltà che possono sorgere:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2
+</code></pre></div>
+<p>Rinomina <code>file1</code> in <code>file2</code>. Se <code>file2</code> esiste già, sostituisci il contenuto del file con <code>file1</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2<span class="w"> </span>/tmp
+</code></pre></div>
+<p>Sposta <code>file1</code> e <code>file2</code> nella cartella <code>/tmp</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>file1<span class="w"> </span>/repexist/file2
+</code></pre></div>
+<p>Sposta <code>file1</code> in <code>repexist</code> e lo rinomina <code>file2</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>file1<span class="w"> </span>file2
+</code></pre></div>
+<p><code>file1</code> è rinominato con <code>file2</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>file1<span class="w"> </span>/repexist
+</code></pre></div>
+<p>Se esiste la cartella di destinazione, <code>file1</code> viene spostato in <code>/repexist</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>file1<span class="w"> </span>/wrongrep
+</code></pre></div>
+<p>Se la directory di destinazione non esiste, <code>file1</code> viene rinominato in <code>wrongrep</code> nella directory principale.</p>
+<h3 id="comando-cp">comando <code>cp</code></h3>
+<p>Il comando <code>cp</code> copia un file.</p>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>file<span class="w"> </span>...<span class="o">]</span><span class="w"> </span>destination
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>/home/architalia<span class="w"> </span>/tmp
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzioni</th>
+<th>Informazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-i</code></td>
+<td>Richiesta di conferma per la sovrascrittura (default).</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td>Non chiedere conferma per la sovrascrittura del file di destinazione.</td>
+</tr>
+<tr>
+<td><code>-p</code></td>
+<td>Mantiene il proprietario, le autorizzazioni e il timestamp del file copiato.</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>Copia una directory con i suoi file e sottodirectory.</td>
+</tr>
+<tr>
+<td><code>-s</code></td>
+<td>Crea un collegamento simbolico invece di copiare.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>file1<span class="w"> </span>/repexist/file2
+</code></pre></div>
+<p><code>file1</code> viene copiato in <code>/repexist</code> con il nome <code>file2</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>file1<span class="w"> </span>file2
+</code></pre></div>
+<p><code>file1</code> viene copiato come <code>file2</code> in questa cartella.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>file1<span class="w"> </span>/repexist
+</code></pre></div>
+<p>Se esiste la directory di destinazione, <code>file1</code> viene copiato in <code>/repexist</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>file1<span class="w"> </span>/wrongrep
+</code></pre></div>
+<p>Se la directory di destinazione non esiste, <code>file1</code> è copiato sotto il nome <code>wrongrep</code> nella directory principale.</p>
+<h2 id="visualizzazione">Visualizzazione</h2>
+<h3 id="comando-file">comando <code>file</code></h3>
+<p>Il comando <code>file</code> visualizza il tipo di un file.</p>
+<div class="highlight"><pre><span></span><code>file<span class="w"> </span>file1<span class="w"> </span><span class="o">[</span>files<span class="o">]</span>
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>file<span class="w"> </span>/etc/passwd<span class="w"> </span>/etc
+/etc/passwd:<span class="w">    </span>ASCII<span class="w"> </span>text
+/etc:<span class="w">        </span>directory
+</code></pre></div>
+<h3 id="comando-more">comando <code>more</code></h3>
+<p>Il comando <code>more</code> visualizza il contenuto di uno o più file schermata per schermata.</p>
+<div class="highlight"><pre><span></span><code>more<span class="w"> </span>file1<span class="w"> </span><span class="o">[</span>files<span class="o">]</span>
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>more<span class="w"> </span>/etc/passwd
+root:x:0:0:root:/root:/bin/bash
+...
+</code></pre></div>
+<p>Usando il tasto <kbd>ENTER</kbd>, lo spostamento è linea per linea. Usando il tasto <kbd>SPACE</kbd>, lo spostamento è pagina per pagina. <code>/text</code> Ti consente di cercare la corrispondenza nel file.</p>
+<h3 id="comando-less">comando <code>less</code></h3>
+<p>Il comando <code>less</code> visualizza il contenuto di uno o più file. Il comando <code>less</code> è interattivo e ha i propri comandi per l'uso.</p>
+<div class="highlight"><pre><span></span><code>less<span class="w"> </span>file1<span class="w"> </span><span class="o">[</span>files<span class="o">]</span>
+</code></pre></div>
+<p>I comandi specifici per <code>less</code> sono:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Azione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>h</kbd></td>
+<td>Aiuto.</td>
+</tr>
+<tr>
+<td><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd><kbd>←</kbd></td>
+<td>Sposta su, giù di una linea, o a destra e sinistra.</td>
+</tr>
+<tr>
+<td><kbd>Invio</kbd></td>
+<td>Sposta giù di una riga.</td>
+</tr>
+<tr>
+<td><kbd>Spazio</kbd></td>
+<td>Sposta giù di una pagina.</td>
+</tr>
+<tr>
+<td><kbd>PgUp</kbd> e <kbd>PgDn</kbd></td>
+<td>Sposta su o giù di una pagina.</td>
+</tr>
+<tr>
+<td><kbd>gg</kbd> e <kbd>G</kbd></td>
+<td>Passa alla prima e all'ultima pagina</td>
+</tr>
+<tr>
+<td><code>/text</code></td>
+<td>Cerca il testo.</td>
+</tr>
+<tr>
+<td><kbd>q</kbd></td>
+<td>Chiude il comando<code>less</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comando-cat">comando <code>cat</code></h3>
+<p>Il comando <code>cat</code> concatena il contenuto di più file e visualizza il risultato sull'output standard.</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>file1<span class="w"> </span><span class="o">[</span>files<span class="o">]</span>
+</code></pre></div>
+<p>Esempio 1 - Visualizzazione del contenuto di un file in output standard:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>/etc/passwd
+</code></pre></div>
+<p>Esempio 2 - Visualizzazione del contenuto di più file in output standard:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>/etc/passwd<span class="w"> </span>/etc/group
+</code></pre></div>
+<p>Esempio 3 - Combinare il contenuto di più file in un unico file utilizzando il reindirizzamento dell'output:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>/etc/passwd<span class="w"> </span>/etc/group<span class="w"> </span>&gt;<span class="w"> </span>usersAndGroups.txt
+</code></pre></div>
+<p>Esempio 4 - Visualizzazione della numerazione di linea:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>-n<span class="w"> </span>/etc/profile
+<span class="w">     </span><span class="m">1</span><span class="w">    </span><span class="c1"># /etc/profile: system-wide .profile file for the Bourne shell (sh(1))</span>
+<span class="w">     </span><span class="m">2</span><span class="w">    </span><span class="c1"># and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).</span>
+<span class="w">     </span><span class="m">3</span>
+<span class="w">     </span><span class="m">4</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;`id -u`&quot;</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="m">5</span><span class="w">      </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span>
+<span class="w">     </span><span class="m">6</span><span class="w">    </span><span class="k">else</span>
+…
+</code></pre></div>
+<p>Example 5 - Mostra la numerazione delle righe non vuote:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>-b<span class="w"> </span>/etc/profile
+<span class="w">     </span><span class="m">1</span><span class="w">    </span><span class="c1"># /etc/profile: system-wide .profile file for the Bourne shell (sh(1))</span>
+<span class="w">     </span><span class="m">2</span><span class="w">    </span><span class="c1"># and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).</span>
+
+<span class="w">     </span><span class="m">3</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;`id -u`&quot;</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="m">4</span><span class="w">      </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span>
+<span class="w">     </span><span class="m">5</span><span class="w">    </span><span class="k">else</span>
+…
+</code></pre></div>
+<h3 id="comando-tac">comando <code>tac</code></h3>
+<p>Il comando <code>tac</code> fa quasi il contrario del comando <code>cat</code>. Visualizza il contenuto di un file a partire dalla fine (che è particolarmente interessante per la lettura dei log!).</p>
+<p>Esempio: Visualizza un file di log visualizzando prima l'ultima riga:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root<span class="o">]</span><span class="c1"># tac /var/log/messages | less</span>
+</code></pre></div>
+<h3 id="comando-head">comando <code>head</code></h3>
+<p>Il comando <code>head</code> visualizza l'inizio di un file.</p>
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>x<span class="o">]</span><span class="w"> </span>file
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-n x</code></td>
+<td>Visualizzare le prime <code>x</code> righe del file</td>
+</tr>
+</tbody>
+</table>
+<p>Per impostazione predefinita (senza l'opzione <code>-n</code>), il comando <code>head</code> visualizzerà le prime 10 righe del file.</p>
+<h3 id="comando-tail">comando <code>tail</code></h3>
+<p>Il comando <code>tail</code> visualizza la fine di un file.</p>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span><span class="o">[</span>-f<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>x<span class="o">]</span><span class="w"> </span>file
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-n x</code></td>
+<td>Visualizza le ultime <code>x</code> righe del file</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td>Visualizza le modifiche al file in tempo reale</td>
+</tr>
+</tbody>
+</table>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>/etc/passwd
+sshd:x:74:74:Privilege-separeted<span class="w"> </span>sshd:/var/empty<span class="w"> </span>/sshd:/sbin/nologin
+tcpdump::x:72:72::/:/sbin/nologin
+user1:x:500:500:grp1:/home/user1:/bin/bash
+</code></pre></div>
+<p>Con l'opzione <code>-f</code>, le informazioni di modifica del file verranno sempre emesse a meno che l'utente non esca dallo stato di monitoraggio con <kbd>CTRL</kbd> + <kbd>C</kbd>. Questa opzione è molto utilizzata per tracciare i file di log (i registri) in tempo reale.</p>
+<p>Senza l'opzione <code>-n</code>, il comando <code>tail</code> mostra le ultime 10 righe del file.</p>
+<h3 id="comando-sort">comando <code>sort</code></h3>
+<p>Il comando <code>sort</code> ordina le linee di un file.</p>
+<p>Permette di ordinare il risultato di un comando o il contenuto di un file in un determinato ordine, numerico, alfabetico, per dimensione (KB, MB, GB) o in ordine inverso.</p>
+<div class="highlight"><pre><span></span><code>sort<span class="w"> </span><span class="o">[</span>-k<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="o">]</span><span class="w"> </span><span class="o">[</span>-u<span class="o">]</span><span class="w"> </span><span class="o">[</span>-o<span class="w"> </span>file<span class="o">]</span><span class="w"> </span><span class="o">[</span>-t<span class="o">]</span><span class="w"> </span>file
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sort<span class="w"> </span>-k<span class="w"> </span><span class="m">3</span>,4<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="w"> </span>-n<span class="w"> </span>/etc/passwd
+root:x:0:0:root:/root:/bin/bash
+adm:x:3:4:adm:/var/adm/:/sbin/nologin
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-k</code></td>
+<td>Specifica le colonne da separare. È possibile specificare più colonne.</td>
+</tr>
+<tr>
+<td><code>-n</code></td>
+<td>Richiede un ordinamento numerico.</td>
+</tr>
+<tr>
+<td><code>-o file</code></td>
+<td>Salva l'ordinamento nel file specificato.</td>
+</tr>
+<tr>
+<td><code>-t</code></td>
+<td>Specificare un delimitatore, che richiede che i contenuti del file corrispondente siano contenuti di colonne regolarmente delimitate, altrimenti non possono essere ordinati correttamente.</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>Inverte l'ordine del risultato. Usato insieme all'opzione <code>-n</code> per ordinare dal più grande al più piccolo.</td>
+</tr>
+<tr>
+<td><code>-u</code></td>
+<td>Rimuovi i duplicati dopo l'ordinamento. Equivalente a <code>sort file | uniq</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Il comando <code>sort</code> ordina il file solo sullo schermo. Il file non è modificato dall'ordinamento. Per salvare l'ordinamento, utilizzare l'opzione <code>-o</code> o un reindirizzamento dell'output <code>&gt;</code>.</p>
+<p>Per impostazione predefinita, i numeri sono ordinati in base al loro carattere. Pertanto, "110" sarà prima di "20", che a sua volta sarà prima di "3". L'opzione <code>-n</code> deve essere specificata in modo che i blocchi di caratteri numerici siano ordinati in base al loro valore.</p>
+<p>Il comando <code>sort</code> inverte l'ordine dei risultati, con l'opzione <code>-r</code>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sort<span class="w"> </span>-k<span class="w"> </span><span class="m">3</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="w"> </span>-n<span class="w"> </span>-r<span class="w"> </span>/etc/passwd
+nobody:x:65534:65534:Kernel<span class="w"> </span>Overflow<span class="w"> </span>User:/:/sbin/nologin
+systemd-coredump:x:999:997:systemd<span class="w"> </span>Core<span class="w"> </span>Dumper:/:/sbin/nologin
+polkitd:x:998:996:User<span class="w"> </span><span class="k">for</span><span class="w"> </span>polkitd:/:/sbin/nologin
+</code></pre></div>
+<p>In questo esempio, il comando <code>sort</code> ordinerà il contenuto del file <code>/etc/passwd</code> dal più grande uid (identificatore utente) al più piccolo.</p>
+<p>Alcuni esempi avanzati di utilizzazione del comando <code>sort</code>:</p>
+<ul>
+<li>Mischiando i valori</li>
+</ul>
+<p>Il comando <code>sort</code> permette anche di mescolare i valori con l'opzione <code>-R</code>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sort<span class="w"> </span>-R<span class="w"> </span>/etc/passwd
+</code></pre></div>
+<ul>
+<li>Ordinamento degli indirizzi IP</li>
+</ul>
+<p>Un amministratore di sistema si trova ben presto di fronte all'elaborazione di indirizzi IP dai log dei suoi servizi, come SMTP, VSFTP o Apache. Questi indirizzi vengono tipicamente estratti con il comando <code>cut</code>.</p>
+<p>Ecco un esempio con il file <code>dns-client.txt</code>:</p>
+<div class="highlight"><pre><span></span><code>192.168.1.10
+192.168.1.200
+5.1.150.146
+208.128.150.98
+208.128.150.99
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span>dns-client.txt
+<span class="m">208</span>.128.150.99
+<span class="m">208</span>.128.150.98
+<span class="m">192</span>.168.1.200
+<span class="m">192</span>.168.1.10
+<span class="m">5</span>.1.150.146
+</code></pre></div>
+<ul>
+<li>Ordinamento dei file mediante la rimozione dei duplicati</li>
+</ul>
+<p>Il comando <code>sort</code> sa come rimuovere i duplicati dall'output del file utilizzando l'opzione <code>-u</code>.</p>
+<p>Ecco un esempio con il file <code>colours.txt</code>:</p>
+<p><div class="highlight"><pre><span></span><code>Red
+Green
+Blue
+Red
+Pink
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ sort -u colours.txt
+Blue
+Green
+Pink
+Red
+</code></pre></div></p>
+<ul>
+<li>Ordinamento dei file in base alle dimensioni</li>
+</ul>
+<p>Il comando <code>sort</code> sa come riconoscere le dimensioni dei file, da comandi come <code>ls</code> con l'opzione <code>-h</code>.</p>
+<p>Ecco un esempio con il file <code>size.txt</code>:</p>
+<div class="highlight"><pre><span></span><code>1.7G
+18M
+69K
+2.4M
+1.2M
+4.2G
+6M
+124M
+12.4M
+4G
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sort<span class="w"> </span>-hr<span class="w"> </span>size.txt
+<span class="m">4</span>.2G
+4G
+<span class="m">1</span>.7G
+124M
+18M
+<span class="m">12</span>.4M
+6M
+<span class="m">2</span>.4M
+<span class="m">1</span>.2M
+69K
+</code></pre></div>
+<h3 id="comando-wc">comando <code>wc</code></h3>
+<p>Il comando <code>wc</code> conteggia il numero di righe, parole e/o byte di un file.</p>
+<div class="highlight"><pre><span></span><code>wc<span class="w"> </span><span class="o">[</span>-l<span class="o">]</span><span class="w"> </span><span class="o">[</span>-m<span class="o">]</span><span class="w"> </span><span class="o">[</span>-w<span class="o">]</span><span class="w"> </span>file<span class="w"> </span><span class="o">[</span>files<span class="o">]</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-c</code></td>
+<td>Conta il numero di byte.</td>
+</tr>
+<tr>
+<td><code>-m</code></td>
+<td>Conta il numero di caratteri.</td>
+</tr>
+<tr>
+<td><code>-l</code></td>
+<td>Conta il numero di linee.</td>
+</tr>
+<tr>
+<td><code>-w</code></td>
+<td>Conta il numero di parole.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ricerca">Ricerca</h2>
+<h3 id="comando-find">comando <code>find</code></h3>
+<p>Il comando <code>find</code> cerca la posizione di file o cartelle.</p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>directory<span class="w"> </span><span class="o">[</span>-name<span class="w"> </span>name<span class="o">]</span><span class="w"> </span><span class="o">[</span>-type<span class="w"> </span>type<span class="o">]</span><span class="w"> </span><span class="o">[</span>-user<span class="w"> </span>login<span class="o">]</span><span class="w"> </span><span class="o">[</span>-date<span class="w"> </span>date<span class="o">]</span>
+</code></pre></div>
+<p>Poiché le opzioni del comando <code>find</code> sono numerose, è meglio fare riferimento al comando <code>man</code>.</p>
+<p>Se la cartella di ricerca non è specificata, il comando <code>find</code> effettuerà la ricerca dalla cartella corrente.</p>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-perm permissions</code></td>
+<td>Cerca i file in base ai loro permessi.</td>
+</tr>
+<tr>
+<td><code>-size size</code></td>
+<td>Ricerca dei file in base alle dimensioni.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="opzione-exec-del-comando-find">opzione <code>-exec</code> del comando <code>find</code></h3>
+<p>È possibile utilizzare l'opzione <code>-exec</code> del comando <code>find</code> per eseguire un comando su ogni riga del risultato:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/tmp<span class="w"> </span>-name<span class="w"> </span>*.txt<span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+</code></pre></div>
+<p>Il comando precedente cerca tutti i file nella cartella <code>/tmp</code> denominati <code>*.txt</code> e li elimina.</p>
+<div class="admonition tip">
+<p class="admonition-title">Comprendere l'opzione <code>-exec</code></p>
+<p>Nell'esempio precedente, il comando <code>find</code> costruirà una stringa che rappresenta il comando da eseguire.</p>
+<p>Se il comando <code>find</code> trova tre file chiamati <code>log1.txt</code>, <code>log2.txt</code> e <code>log3.txt</code>, allora il comando <code>find</code> costruirà la stringa sostituendo le parentesi nella stringa <code>rm -f {} \;</code> con uno dei risultati della ricerca, e lo farà tante volte quanti sono i risultati.</p>
+<p>Questo ci darà:</p>
+<div class="highlight"><pre><span></span><code>rm -f /tmp/log1.txt ; rm -f /tmp/log2.txt ; rm -f /tmp/log3.txt ;
+</code></pre></div>
+<p>Il carattere <code>;</code> è un carattere speciale della shell che deve essere protetto da <code>\</code> per evitare che venga interpretato troppo presto dal comando <code>find</code> (e non nel <code>-exec</code>).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Suggerimento</p>
+<p><code>$ find /tmp -name *.txt -delete</code> fa la stessa cosa.</p>
+</div>
+<h3 id="comando-whereis">comando <code>whereis</code></h3>
+<p>Il comando <code>whereis</code> ricerca i file relativi a un comando.</p>
+<div class="highlight"><pre><span></span><code>whereis<span class="w"> </span><span class="o">[</span>-b<span class="o">]</span><span class="w"> </span><span class="o">[</span>-m<span class="o">]</span><span class="w"> </span><span class="o">[</span>-s<span class="o">]</span><span class="w"> </span><span class="nb">command</span>
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>whereis<span class="w"> </span>-b<span class="w"> </span>ls
+ls:<span class="w"> </span>/bin/ls
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-b</code></td>
+<td>Esegue la ricerca solo del file binario.</td>
+</tr>
+<tr>
+<td><code>-m</code></td>
+<td>Ricerca solo per le pagine man.</td>
+</tr>
+<tr>
+<td><code>-s</code></td>
+<td>Ricerca solo per file sorgente.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="command-grep">command <code>grep</code></h3>
+<p>Il comando <code>grep</code> cerca una stringa in un file.</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="o">[</span>-w<span class="o">]</span><span class="w"> </span><span class="o">[</span>-i<span class="o">]</span><span class="w"> </span><span class="o">[</span>-v<span class="o">]</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span>file
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>grep<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;root:&quot;</span><span class="w"> </span>/etc/passwd
+root:x:0:0:root:/root:/bin/bash
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-i</code></td>
+<td>Ignora le maiuscole della stringa cercata.</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td>Esclude le linee contenenti la stringa.</td>
+</tr>
+<tr>
+<td><code>-w</code></td>
+<td>Cerca la parola esatta.</td>
+</tr>
+</tbody>
+</table>
+<p>Il comando <code>grep</code> restituisce la riga completa contenente la stringa cercata.
+* Il carattere speciale <code>^</code> viene utilizzato per cercare una stringa all'inizio di una riga.
+* Il carattere speciale <code>$</code> viene utilizzato per cercare una stringa alla fine di una riga.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>grep<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;^root&quot;</span><span class="w"> </span>/etc/passwd
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Questo comando è molto potente e si raccomanda vivamente di consultare il suo manuale. Ha numerosi derivati.</p>
+</div>
+<p>È possibile cercare una stringa in un albero di file con l'opzione <code>-R</code>.</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;Virtual&quot;</span><span class="w"> </span>/etc/httpd
+</code></pre></div>
+<h3 id="meta-caratteri-wildcards">Meta-caratteri (wildcards)</h3>
+<p>I Meta-caratteri sostituiscono uno o più caratteri (o anche un'assenza di caratteri) durante una ricerca. Questi meta-caratteri sono anche noti come wildcards.</p>
+<p>Possono essere combinati.</p>
+<p>Il carattere <code>*</code> sostituisce una stringa composta da qualsiasi carattere. Il carattere <code>*</code> può anche rappresentare un'assenza di caratteri.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/home<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;test*&quot;</span>
+/home/architalia/test
+/home/architalia/test1
+/home/architalia/test11
+/home/architalia/tests
+/home/architalia/test362
+</code></pre></div>
+<p>I Meta-caratteri consentono ricerche più complesse sostituendo tutto o parte di una parola. Sostituiscono semplicemente le incognite con questi caratteri speciali.</p>
+<p>Il carattere <code>?</code> sostituisce un singolo carattere, qualunque esso sia.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/home<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;test?&quot;</span>
+/home/architalia/test1
+/home/architalia/tests
+</code></pre></div>
+<p>Le parentesi quadre <code>[</code> e <code>]</code> sono usate per specificare i valori che un singolo carattere può assumere.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/home<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;test[123]*&quot;</span>
+/home/architalia/test1
+/home/architalia/test11
+/home/architalia/test362
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Circondare sempre le parole contenenti metacaratteri con <code>"</code> per evitare che vengano sostituite dai nomi dei file che soddisfano i criteri.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>Non confondete i meta-caratteri della shell con i meta-caratteri delle espressioni regolari. Il comando <code>grep</code> utilizza meta-caratteri di espressione regolare.</p>
+</div>
+<h2 id="reindirizzamenti-e-pipes">Reindirizzamenti e pipes</h2>
+<h3 id="standard-input-e-output">Standard input e output</h3>
+<p>Sui sistemi UNIX e Linux, ci sono tre flussi standard. Consentono ai programmi, attraverso la libreria <code>stdio.h</code>, di inviare e ricevere informazioni.</p>
+<p>Questi flussi sono chiamati canale X o descrittore di file X.</p>
+<p>Per impostazione predefinita:</p>
+<ul>
+<li>la tastiera è il dispositivo di input per il canale 0, chiamato <strong>stdin</strong> ;</li>
+<li>lo schermo è il dispositivo di uscita per i canali 1 e 2, chiamati <strong>stdout</strong> e <strong>stderr</strong>.</li>
+</ul>
+<p><img alt="canali standard" src="../images/input-output.png" /></p>
+<p><strong>stderr</strong> riceve i flussi di errore restituiti da un comando. Gli altri flussi sono diretti a <strong>stdout</strong>.</p>
+<p>Questi flussi puntano ai file delle periferiche, ma poiché tutto è un file in UNIX/Linux, i flussi di I/O possono essere facilmente indirizzati ad altri file. Questo principio è la forza della shell.</p>
+<h3 id="redirezione-input">Redirezione Input</h3>
+<p>È possibile reindirizzare il flusso di input da un altro file con il carattere <code>&lt;</code> o <code>&lt;&lt;</code>. Il comando leggerà il file invece della tastiera:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ftp<span class="w"> </span>-in<span class="w"> </span>serverftp<span class="w"> </span>&lt;&lt;<span class="w"> </span>ftp-commands.txt
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Solo i comandi che richiedono l'input da tastiera saranno in grado di gestire il reindirizzamento dell'input.</p>
+</div>
+<p>Il reindirizzamento dell'ingresso può anche essere utilizzato per simulare l'interattività dell'utente. Il comando leggerà il flusso di ingresso finché non incontrerà la parola chiave definita dopo il reindirizzamento dell'ingresso.</p>
+<p>Questa funzione è utilizzata per i comandi interattivi negli script:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ftp<span class="w"> </span>-in<span class="w"> </span>serverftp<span class="w"> </span><span class="s">&lt;&lt; END</span>
+<span class="s">user alice password</span>
+<span class="s">put file</span>
+<span class="s">bye</span>
+<span class="s">END</span>
+</code></pre></div>
+<p>La parola chiave <code>END</code> può essere sostituita da qualsiasi parola.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ftp<span class="w"> </span>-in<span class="w"> </span>serverftp<span class="w"> </span><span class="s">&lt;&lt; STOP</span>
+<span class="s">user alice password</span>
+<span class="s">put file</span>
+<span class="s">bye</span>
+<span class="s">STOP</span>
+</code></pre></div>
+<p>La shell esce dal comando <code>ftp</code> quando riceve una linea contenente solo la parola chiave.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>La parola chiave finale, qui <code>END</code> o <code>STOP</code>, deve essere l'unica parola sulla linea e deve essere all'inizio della linea.</p>
+</div>
+<p>Il reindirizzamento dello standard input è usato raramente, perché la maggior parte dei comandi accetta un nome di file come argomento.</p>
+<p>Il comando <code>wc</code> potrebbe essere usato in questo modo:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>.bash_profile
+<span class="m">27</span><span class="w"> </span>.bash_profile<span class="w"> </span><span class="c1"># the number of lines is followed by the file name</span>
+$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>&lt;<span class="w"> </span>.bash_profile
+<span class="m">27</span><span class="w"> </span><span class="c1"># returns only the number of lines</span>
+</code></pre></div>
+<h3 id="redirezione-output">Redirezione Output</h3>
+<p>L'output standard può essere reindirizzato ad altri file usando il carattere <code>&gt;</code> o <code>&gt;&gt;</code>.</p>
+<p>Il semplice reindirizzamento <code>&gt;</code> sovrascrive il contenuto del file di output:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>+%F<span class="w"> </span>&gt;<span class="w"> </span>date_file
+</code></pre></div>
+<p>Quando viene utilizzato il carattere <code>&gt;&gt;</code>, indica che il risultato del comando viene aggiunto al contenuto del file.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>+%F<span class="w"> </span>&gt;&gt;<span class="w"> </span>date_file
+</code></pre></div>
+<p>In entrambi i casi, il file viene creato automaticamente quando non esiste.</p>
+<p>L'output di errore standard può anche essere reindirizzato ad un altro file. Questa volta sarà necessario specificare il numero del canale (che può essere omesso per i canali 0 e 1):</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>/<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>errors_file
+$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>/<span class="w"> </span><span class="m">2</span>&gt;&gt;<span class="w"> </span>errors_file
+</code></pre></div>
+<h3 id="esempi-di-reindirizzamento">Esempi di reindirizzamento</h3>
+<p>Reindirizzamento di 2 output verso 2 file:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>/<span class="w"> </span>&gt;&gt;<span class="w"> </span>ok_file<span class="w"> </span><span class="m">2</span>&gt;&gt;<span class="w"> </span>nok_file
+</code></pre></div>
+<p>Reindirizzamento di 2 output a un singolo file:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>/<span class="w"> </span>&gt;&gt;<span class="w"> </span>log_file<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</code></pre></div>
+<p>Reindirizzamento del <em>stderr</em> a un "pozzo senza fondo" (<code>/dev/null</code>):</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>/<span class="w"> </span><span class="m">2</span>&gt;&gt;<span class="w"> </span>/dev/null
+</code></pre></div>
+<p>Quando entrambi i flussi di uscita vengono reindirizzati, nessuna informazione viene visualizzata sullo schermo. Per utilizzare sia il reindirizzamento dell'uscita che il mantenimento della visualizzazione, è necessario utilizzare il comando <code>tee</code>.</p>
+<h3 id="pipes">Pipes</h3>
+<p>Una <strong>pipe</strong> è un meccanismo che consente di collegare l'output standard di un primo comando all'ingresso standard di un secondo comando.</p>
+<p>Questa comunicazione è unidirezionale ed è fatta con il simbolo <code>|</code>. Il simbolo della pipe <code>|</code> è ottenuto premendo il tasto  <kbd>SHIFT</kbd> + <kbd>|</kbd> contemporaneamente.</p>
+<p><img alt="pipe" src="../images/pipe.png" /></p>
+<p>Tutti i dati inviati dal controllo a sinistra della pipe attraverso il canale di uscita standard vengono inviati al canale di ingresso standard del controllo a destra.</p>
+<p>I comandi particolarmente utilizzati dopo una pipe sono i filtri.</p>
+<ul>
+<li>Esempi:</li>
+</ul>
+<p>Mostra solo l'inizio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+</code></pre></div>
+<p>Mostra solo la fine:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail
+</code></pre></div>
+<p>Ordina il risultato:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort
+</code></pre></div>
+<p>Conta il numero di parole / caratteri:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc
+</code></pre></div>
+<p>Cerca una stringa nel risultato:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>fichier
+</code></pre></div>
+<h2 id="punti-speciali">Punti Speciali</h2>
+<h3 id="comando-tee">comando <code>tee</code></h3>
+<p>Il comando <code>tee</code> viene utilizzato per reindirizzare l'output standard di un comando a un file mantenendo la visualizzazione sullo schermo.</p>
+<p>Viene combinato con la pipe <code>|</code> per ricevere come input l'output del comando da reindirizzare:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>fic
+$<span class="w"> </span>cat<span class="w"> </span>fic
+</code></pre></div>
+<p>L'opzione <code>-a</code> aggiunge al file invece di sovrascriverlo.</p>
+<h3 id="comandi-alias-e-unalias">comandi <code>alias</code> e <code>unalias</code></h3>
+<p>L'uso di <strong>alias</strong> è un modo per chiedere alla shell di ricordare un particolare comando con le sue opzioni e di dargli un nome.</p>
+<p>Per esempio:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ll
+</code></pre></div>
+<p>sostituirà il comando:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l
+</code></pre></div>
+<p>Il comando <code>alias</code> elenca gli alias per la sessione corrente. Gli alias sono stabiliti per impostazione predefinita sulle distribuzioni Linux. Qui, gli alias per un server arch Linux:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">alias</span>
+<span class="nb">alias</span><span class="w"> </span>l.<span class="o">=</span><span class="s1">&#39;ls -d .* --color=auto&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -l --color=auto&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls --color=auto&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">vi</span><span class="o">=</span><span class="s1">&#39;vim&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">which</span><span class="o">=</span><span class="s1">&#39;alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde&#39;</span>
+</code></pre></div>
+<p>Gli alias sono definiti solo temporaneamente, per il tempo della sessione utente.</p>
+<p>Per un uso permanente, devono essere creati nel:</p>
+<ul>
+<li>file <code>.bashrc</code> nella directory di accesso dell'utente;</li>
+<li>file <code>/etc/bashrc</code> per tutti gli utenti.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>Particolare attenzione deve essere prestata quando si utilizzano alias che possono essere potenzialmente pericolosi! Ad esempio, un alias creato senza una conoscenza di base di amministratore:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">alias</span><span class="w"> </span><span class="nv">cd</span><span class="o">=</span><span class="s1">&#39;rm -Rf&#39;</span>
+</code></pre></div>
+</div>
+<p>Il comando <code>unalias</code> ti consente di eliminare gli alias.</p>
+<p>Per eliminare un singolo alias:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">unalias</span><span class="w"> </span>ll
+</code></pre></div>
+<p>Per eliminare tutti gli alias:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">unalias</span><span class="w"> </span>-a
+</code></pre></div>
+<p>Per disabilitare temporaneamente un alias, la combinazione è <code>\&lt;nome alias&gt;</code>.</p>
+<p>Ad esempio se digitiamo:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span>ls
+</code></pre></div>
+<p>potrebbe restituire quanto segue:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span><span class="nb">alias</span><span class="w"> </span>to<span class="w"> </span>«<span class="w"> </span>ls<span class="w"> </span>-rt<span class="w"> </span>»
+</code></pre></div>
+<p>Ora che questo è noto, possiamo vedere i risultati dell'utilizzo dell'alias o disabilitarlo in una volta con il carattere <code>\</code> eseguendo il seguente:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>file*<span class="w">   </span><span class="c1"># order by time</span>
+file3.txt<span class="w">  </span>file2.txt<span class="w">  </span>file1.txt
+$<span class="w"> </span><span class="se">\l</span>s<span class="w"> </span>file*<span class="w">  </span><span class="c1"># order by name</span>
+file1.txt<span class="w">  </span>file2.txt<span class="w">  </span>file3.txt
+</code></pre></div>
+<h3 id="alias-e-funzioni-utili">Alias e Funzioni Utili</h3>
+<ul>
+<li>alias di <code>grep</code>.</li>
+</ul>
+<p>Colora il risultato del comando <code>grep</code>: <code>alias grep='grep --color=auto'</code></p>
+<ul>
+<li>funzione <code>mcd</code></li>
+</ul>
+<p>È comune creare una cartella e poi spostarsi al suo interno: <code>mcd() { mkdir -p "$1"; cd "$1"; }</code></p>
+<ul>
+<li>funzione <code>cls</code></li>
+</ul>
+<p>Spostarsi in una cartella ed elencarne il contenuto: <code>cls() { cd "$1"; ls; }</code></p>
+<ul>
+<li>funzione <code>backup</code></li>
+</ul>
+<p>Crea una copia di backup di un file: <code>backup() { cp "$1"{,.bak}; }</code></p>
+<ul>
+<li>funzione <code>extract</code></li>
+</ul>
+<p>Estrae qualsiasi tipo di archivio:</p>
+<div class="highlight"><pre><span></span><code>extract<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="k">in</span>
+<span class="w">      </span>*.tar.bz2<span class="o">)</span><span class="w"> </span>tar<span class="w"> </span>xjf<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">      </span>*.tar.gz<span class="o">)</span><span class="w"> </span>tar<span class="w"> </span>xzf<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">      </span>*.bz2<span class="o">)</span><span class="w"> </span>bunzip2<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">      </span>*.rar<span class="o">)</span><span class="w"> </span>unrar<span class="w"> </span>e<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">      </span>*.gz<span class="o">)</span><span class="w"> </span>gunzip<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">      </span>*.tar<span class="o">)</span><span class="w"> </span>tar<span class="w"> </span>xf<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">      </span>*.tbz2<span class="o">)</span><span class="w"> </span>tar<span class="w"> </span>xjf<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">      </span>*.tgz<span class="o">)</span><span class="w"> </span>tar<span class="w"> </span>xzf<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">      </span>*.zip<span class="o">)</span><span class="w"> </span>unzip<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">      </span>*.Z<span class="o">)</span><span class="w"> </span>uncompress<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">      </span>*.7z<span class="o">)</span><span class="w"> </span>7z<span class="w"> </span>x<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">      </span>*<span class="o">)</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&#39;</span><span class="nv">$1</span><span class="s2">&#39; cannot be extracted via extract()&quot;</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&#39;</span><span class="nv">$1</span><span class="s2">&#39; is not a valid file&quot;</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>Se <code>l'alias cmount</code> restituisce quanto segue: <code>alias cmount="mount | column -t"</code></li>
+</ul>
+<p>Si può quindi usare <code>cmount</code> per mostrare tutti i mount del sistema in colonne come la seguente: <code>[root]# cmount</code></p>
+<p>che restituisce il nostro filesystem montato nel seguente formato:</p>
+<div class="highlight"><pre><span></span><code>/dev/simfs<span class="w">  </span>on<span class="w">  </span>/<span class="w">                                          </span><span class="nb">type</span><span class="w">  </span>simfs<span class="w">        </span><span class="o">(</span>rw,relatime,usrquota,grpquota<span class="o">)</span>
+proc<span class="w">        </span>on<span class="w">  </span>/proc<span class="w">                                      </span><span class="nb">type</span><span class="w">  </span>proc<span class="w">         </span><span class="o">(</span>rw,relatime<span class="o">)</span>
+sysfs<span class="w">       </span>on<span class="w">  </span>/sys<span class="w">                                       </span><span class="nb">type</span><span class="w">  </span>sysfs<span class="w">        </span><span class="o">(</span>rw,relatime<span class="o">)</span>
+none<span class="w">        </span>on<span class="w">  </span>/dev<span class="w">                                       </span><span class="nb">type</span><span class="w">  </span>devtmpfs<span class="w">     </span><span class="o">(</span>rw,relatime,mode<span class="o">=</span><span class="m">755</span><span class="o">)</span>
+none<span class="w">        </span>on<span class="w">  </span>/dev/pts<span class="w">                                   </span><span class="nb">type</span><span class="w">  </span>devpts<span class="w">       </span><span class="o">(</span>rw,relatime,mode<span class="o">=</span><span class="m">600</span>,ptmxmode<span class="o">=</span><span class="m">000</span><span class="o">)</span>
+none<span class="w">        </span>on<span class="w">  </span>/dev/shm<span class="w">                                   </span><span class="nb">type</span><span class="w">  </span>tmpfs<span class="w">        </span><span class="o">(</span>rw,relatime<span class="o">)</span>
+none<span class="w">        </span>on<span class="w">  </span>/proc/sys/fs/binfmt_misc<span class="w">                   </span><span class="nb">type</span><span class="w">  </span>binfmt_misc<span class="w">  </span><span class="o">(</span>rw,relatime<span class="o">)</span>
+</code></pre></div>
+<h3 id="il-carattere">Il carattere <code>;</code></h3>
+<p>Il carattere <code>;</code> concatena i comandi.</p>
+<p>Una volta che l'utente ha premuto <kbd>INVIO</kdb>, tutti i comandi verranno eseguiti in sequenza nell'ordine di immissione.</p> </p>
+<pre><code class="bash">$ ls /; cd /home; ls -lia; cd /
+</code></pre>
+
+<h2 spaces-before="0">
+  Verificare le proprie Conoscenze
+</h2>
+
+<p spaces-before="0">
+  :heavy_check_mark: Cosa definisce un utente sotto Linux? (7 risposte)
+</p>
+
+<p spaces-before="0">
+  :heavy_check_mark: Cosa caratterizza un'opzione lunga per un comando?
+</p>
+
+<p spaces-before="0">
+  :heavy_check_mark: Quali comandi ti permettono di cercare aiuto su un comando?
+</p>
+
+<ul>
+  <li>
+    [ ] <code>google</code>
+  </li>
+  <li>
+    [ ] <code>chuck --norris</code>
+  </li>
+  <li>
+    [ ] <code>info</code>
+  </li>
+  <li>
+    [ ] <code>apropos</code>
+  </li>
+  <li>
+    [ ] <code>whatis</code>
+  </li>
+</ul>
+
+<p spaces-before="0">
+  :heavy_check_mark: Quale comando ti permette di vedere la cronologia di un utente?
+</p>
+
+<p spaces-before="0">
+  :heavy_check_mark: Quale comando ti permette di cercare del testo in un file?
+</p>
+
+<ul>
+  <li>
+    [ ] <code>find</code>
+  </li>
+  <li>
+    [ ] <code>grep</code>
+  </li>
+</ul>
+
+<p spaces-before="0">
+  :heavy_check_mark: Quale comando ti permette di cercare un file?
+</p>
+
+<ul>
+  <li>
+    [ ] <code>find</code>
+  </li>
+  <li>
+    [ ] <code>grep</code>
+  </li>
+</ul>
+
+<p spaces-before="0">
+  :heavy_check_mark: Quale comando reindirizza il flusso di errore di un comando a un nuovo file <code>errors.log</code>?
+</p>
+
+<ul>
+  <li>
+    [ ] <code>ls -R / 2&gt; errors.log</code>
+  </li>
+  <li>
+    [ ] <code>ls -R / 2&gt;&gt; errors.log</code>
+  </li>
+  <li>
+    [ ] <code>ls -R / 2&gt; errors.log 2&gt;&1</code>
+  </li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última actualización">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 de febrero de 2026 23:13:20 UTC">23 de febrero de 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Creado">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de febrero de 2026 16:22:56 UTC">21 de febrero de 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+       
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "content.action.edit", "navigation.sections", "navigation.tabs", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascript/extra.js"></script>
+      
+    
+  </body>
+</html>

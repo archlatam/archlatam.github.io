@@ -1,0 +1,1542 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Installation d'Arch Linux - archlatam</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1%207.775V2.75C1%201.784%201.784%201%202.75%201h5.025c.464%200%20.91.184%201.238.513l6.25%206.25a1.75%201.75%200%200%201%200%202.474l-5.026%205.026a1.75%201.75%200%200%201-2.474%200l-6.25-6.25A1.75%201.75%200%200%201%201%207.775m1.5%200c0%20.066.026.13.073.177l6.25%206.25a.25.25%200%200%200%20.354%200l5.025-5.025a.25.25%200%200%200%200-.354l-6.25-6.25a.25.25%200%200%200-.177-.073H2.75a.25.25%200%200%200-.25.25ZM6%205a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%201.75v11.5c0%20.138.112.25.25.25h3.17a.75.75%200%200%201%200%201.5H2.75A1.75%201.75%200%200%201%201%2013.25V1.75C1%20.784%201.784%200%202.75%200h8.5C12.216%200%2013%20.784%2013%201.75v7.736a.75.75%200%200%201-1.5%200V1.75a.25.25%200%200%200-.25-.25h-8.5a.25.25%200%200%200-.25.25m13.274%209.537zl-4.557%204.45a.75.75%200%200%201-1.055-.008l-1.943-1.95a.75.75%200%200%201%201.062-1.058l1.419%201.425%204.026-3.932a.75.75%200%201%201%201.048%201.074M4.75%204h4.5a.75.75%200%200%201%200%201.5h-4.5a.75.75%200%200%201%200-1.5M4%207.75A.75.75%200%200%201%204.75%207h2a.75.75%200%200%201%200%201.5h-2A.75.75%200%200%201%204%207.75%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.5%207.75A.75.75%200%200%201%207.25%207h1a.75.75%200%200%201%20.75.75v2.75h.25a.75.75%200%200%201%200%201.5h-2a.75.75%200%200%201%200-1.5h.25v-2h-.25a.75.75%200%200%201-.75-.75M8%206a1%201%200%201%201%200-2%201%201%200%200%201%200%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.499.75a.75.75%200%200%201%201.5%200v.996C5.9%202.903%206.793%203.65%207.662%204.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873%2010.794-.045%2012.622.26%2014.408.558%2016%201.94%2016%204.25c0%201.278-.954%202.575-2.44%202.734l.146.508.065.22c.203.701.412%201.455.476%202.226.142%201.707-.4%203.03-1.487%203.898C11.714%2014.671%2010.27%2015%208.75%2015h-6a.75.75%200%200%201%200-1.5h1.376a4.5%204.5%200%200%201-.563-1.191%203.84%203.84%200%200%201-.05-2.063%204.65%204.65%200%200%201-2.025-.293.75.75%200%200%201%20.525-1.406c1.357.507%202.376-.006%202.698-.318l.009-.01a.747.747%200%200%201%201.06%200%20.75.75%200%200%201-.012%201.074c-.912.92-.992%201.835-.768%202.586.221.74.745%201.337%201.196%201.621H8.75c1.343%200%202.398-.296%203.074-.836.635-.507%201.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4%202.4%200%200%201-.507-.441%203.1%203.1%200%200%201-.633-1.248.75.75%200%200%201%201.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738%200%201.25-.615%201.25-1.25%200-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706%201.345-.46.92-.27%201.774.019%203.062l.042.19.01.05c.348.443.666.949.94%201.553a.75.75%200%201%201-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7%205.527c-.814-.68-1.75-1.462-2.692-2.619a3.7%203.7%200%200%200-1.023.88c-.406.495-.663%201.036-.722%201.508.116.122.306.21.591.239.388.038.797-.06%201.032-.19a.75.75%200%200%201%20.728%201.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75%205.677V5.5c0-.984.48-1.94%201.077-2.664.46-.559%201.05-1.055%201.673-1.353z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13.78%204.22a.75.75%200%200%201%200%201.06l-7.25%207.25a.75.75%200%200%201-1.06%200L2.22%209.28a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018L6%2010.94l6.72-6.72a.75.75%200%200%201%201.06%200%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.92%206.085h.001a.749.749%200%201%201-1.342-.67c.169-.339.436-.701.849-.977C6.845%204.16%207.369%204%208%204a2.76%202.76%200%200%201%201.637.525c.503.377.863.965.863%201.725%200%20.448-.115.83-.329%201.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6%206%200%200%200-.26.16%201%201%200%200%200-.276.245.75.75%200%200%201-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1%201%200%200%200%20.277-.245C8.96%206.514%209%206.427%209%206.25a.61.61%200%200%200-.262-.525A1.27%201.27%200%200%200%208%205.5c-.369%200-.595.09-.74.187a1%201%200%200%200-.34.398M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.344%202.343za8%208%200%200%201%2011.314%2011.314A8.002%208.002%200%200%201%20.234%2010.089a8%208%200%200%201%202.11-7.746m1.06%2010.253a6.5%206.5%200%201%200%209.108-9.275%206.5%206.5%200%200%200-9.108%209.275M6.03%204.97%208%206.94l1.97-1.97a.749.749%200%200%201%201.275.326.75.75%200%200%201-.215.734L9.06%208l1.97%201.97a.749.749%200%200%201-.326%201.275.75.75%200%200%201-.734-.215L8%209.06l-1.97%201.97a.749.749%200%200%201-1.275-.326.75.75%200%200%201%20.215-.734L6.94%208%204.97%206.03a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4.72.22a.75.75%200%200%201%201.06%200l1%20.999a3.5%203.5%200%200%201%202.441%200l.999-1a.748.748%200%200%201%201.265.332.75.75%200%200%201-.205.729l-.775.776c.616.63.995%201.493.995%202.444v.327q0%20.15-.025.292c.408.14.764.392%201.029.722l1.968-.787a.75.75%200%200%201%20.556%201.392L13%207.258V9h2.25a.75.75%200%200%201%200%201.5H13v.5q-.002.615-.141%201.186l2.17.868a.75.75%200%200%201-.557%201.392l-2.184-.873A5%205%200%200%201%208%2016a5%205%200%200%201-4.288-2.427l-2.183.873a.75.75%200%200%201-.558-1.392l2.17-.868A5%205%200%200%201%203%2011v-.5H.75a.75.75%200%200%201%200-1.5H3V7.258L.971%206.446a.75.75%200%200%201%20.558-1.392l1.967.787c.265-.33.62-.583%201.03-.722a1.7%201.7%200%200%201-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72%201.28a.75.75%200%200%201%200-1.06m.53%206.28a.75.75%200%200%200-.75.75V11a3.5%203.5%200%201%200%207%200V7.25a.75.75%200%200%200-.75-.75ZM6.173%205h3.654A.17.17%200%200%200%2010%204.827V4.5a2%202%200%201%200-4%200v.327c0%20.096.077.173.173.173%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5%205.782V2.5h-.25a.75.75%200%200%201%200-1.5h6.5a.75.75%200%200%201%200%201.5H11v3.282l3.666%205.76C15.619%2013.04%2014.543%2015%2012.767%2015H3.233c-1.776%200-2.852-1.96-1.899-3.458Zm-2.4%206.565a.75.75%200%200%200%20.633%201.153h9.534a.75.75%200%200%200%20.633-1.153L12.225%2010.5h-8.45ZM9.5%202.5h-3V6c0%20.143-.04.283-.117.403L4.73%209h6.54L9.617%206.403A.75.75%200%200%201%209.5%206Z%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1.75%202.5h10.5a.75.75%200%200%201%200%201.5H1.75a.75.75%200%200%201%200-1.5m4%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5m0%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5M2.5%207.75v6a.75.75%200%200%201-1.5%200v-6a.75.75%200%200%201%201.5%200%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fonts.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/colors.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation-darch-linux" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="archlatam" class="md-header__button md-logo" aria-label="archlatam" data-md-component="logo">
+      
+  <img src="../../../assets/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            archlatam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation d'Arch Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="archlatam" class="md-nav__button md-logo" aria-label="archlatam" data-md-component="logo">
+      
+  <img src="../../../assets/favicon.png" alt="logo">
+
+    </a>
+    archlatam
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenido
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-verification-de-signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Vérification de signature
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configuration-initiale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configuration initiale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-connexion-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Connexion Internet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-preparation-de-disque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Préparation de disque
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Préparation de disque">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bios-mbr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bios-MBR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bios-MBR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partitionnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partitionnement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatage-des-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatage des partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montage-des-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montage des partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uefi-ext4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UEFI ext4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UEFI ext4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partitionnement-de-disque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partitionnement de disque
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatage-des-partitions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatage des partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montage-des-partitions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montage des partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uefi-btrfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UEFI btrfs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UEFI btrfs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partitionnement-de-disque_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partitionnement de disque
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatage-des-partitions_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatage des partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montage-des-partitions_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montage des partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uefi-lvm-ext4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UEFI lvm-ext4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UEFI lvm-ext4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partitionnement-de-disque_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partitionnement de disque
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-un-volume-physique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Créer un volume physique
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-un-groupe-de-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Créer un groupe de volumes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-des-volumes-logiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Créer des volumes logiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatage-des-partitions_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatage des partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montage-des-partitions_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montage des partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etendre-un-groupe-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étendre un groupe LVM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-liste-de-miroirs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Liste de Miroirs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-pacstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Pacstrap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-generer-fstab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Générer Fstab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-chroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Chroot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Chroot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fuseau-horaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuseau horaire
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Localisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nom-dhote-et-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nom d'hôte et Hosts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilisateur-et-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilisateur et Root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkinitcpio-pour-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mkinitcpio pour LVM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-chargeur-de-demarrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Chargeur de démarrage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Chargeur de démarrage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grub-bios-mbr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GRUB (BIOS-MBR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grub-uefi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GRUB (UEFI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-boot-ext4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd-boot (EXT4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-boot-btrfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd-boot (BTRFS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-boot-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd-boot (LVM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-paquets-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Paquets de base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-environnement-de-bureau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Environnement de bureau
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Environnement de bureau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gnome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gnome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xfce4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xfce4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lxde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lxde
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plasma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cinnamon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cinnamon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-zram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Zram
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="installation-darch-linux">Installation d'Arch Linux</h1>
+<h2 id="1-verification-de-signature">1. Vérification de signature</h2>
+<p>Il est recommandé de vérifier la signature de l'image avant de l'utiliser, surtout si vous la téléchargez depuis un miroir HTTP, où les téléchargements sont sujets à interception pour fournir des images malveillantes.</p>
+<p>Sur un système avec <em>GnuPG</em> installé, téléchargez la <a href="https://archlinux.org/download/#checksums">signature PGP de l'ISO</a> dans le répertoire ISO et vérifiez-la avec:</p>
+<p><code>$ gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig</code></p>
+<p>Alternativement, à partir d'une installation existante d'Arch Linux, exécutez:</p>
+<p><code>$ pacman-key -v archlinux-version-x86_64.iso.sig</code></p>
+<p><br><br><br><br></p>
+<h2 id="2-configuration-initiale">2. Configuration initiale</h2>
+<p>Pour commencer, nous devons définir la langue du clavier, la langue par défaut sans entrer la commande est <code>US</code>. Les dispositions disponibles peuvent être répertoriées avec:</p>
+<p><code># ls /usr/share/kbd/keymaps/**/*.map.gz</code></p>
+<p>définir la langue de notre clavier avec la commande:</p>
+<p><code># loadkeys it</code></p>
+<p>Les caractères de la console se trouvent dans <strong>/usr/share/kbd/consolefonts/</strong> et peuvent également être définis avec setfont. Par exemple, pour utiliser l'un des plus grands caractères adaptés aux affichages HiDPI, exécutez:</p>
+<p><code># setfont ter-132b</code></p>
+<p><br><br><br><br></p>
+<h2 id="3-connexion-internet">3. Connexion Internet</h2>
+<p>Si vous avez connecté la machine à Internet via un câble ou une machine virtuelle, vous pouvez vérifier votre adresse IP acquise à l'aide de cette commande:</p>
+<p><code># ip a</code></p>
+<p>La connexion peut être testée avec une commande de test ping:</p>
+<p><code># ping -c 3 archlinux.org</code></p>
+<p>Connectez-vous au réseau Wi-Fi en utilisant l'outil iwctl:</p>
+<ul>
+<li><code># iwctl</code> Démarrer iwctl</li>
+<li><code># device list</code> Trouver le nom de votre appareil, par exemple wlan0</li>
+<li><code># station wlan0 scan</code> Rechercher les réseaux sans fil disponibles</li>
+<li><code># station wlan0 get-networks</code> Obtenez la liste des réseaux</li>
+<li><code># station wlan0</code> connect yournetworkname  Connection à votre réseau</li>
+<li><code># exit</code></li>
+</ul>
+<p>Si dans le cas où nos appareils sont désactivés et que nous ne pouvons pas exécuter ** iwctl **:</p>
+<ul>
+<li><code># rfkill list</code> Vérification du statut bloqué ou débloqué des appareils</li>
+<li><code># rfkill unblock all</code> Débloquez tous nos appareils bloqués</li>
+<li><code># systemctl restart iwd</code> Redémarrez le service iwd</li>
+</ul>
+<p>Réessayez <code># iwctl</code> et procédez comme ci-dessus.</p>
+<p><br><br><br><br></p>
+<h2 id="4-preparation-de-disque">4. Préparation de disque</h2>
+<ul>
+<li><a href="#bios-mbr">Bios-MBR ext4</a></li>
+<li><a href="#uefi-ext4">UEFI ext4</a></li>
+<li><a href="#uefi-btrfs">UEFI btrfs</a></li>
+<li><a href="#uefi-lvm-ext4">UEFI lvm EXT4</a></li>
+</ul>
+<p><br><br><br><br></p>
+<h3 id="bios-mbr">Bios-MBR</h3>
+<h4 id="partitionnement">Partitionnement</h4>
+<p>Identifiez votre disque pour connaître la convention de nommage à utiliser. Par exemple, dans le cas d'un <strong>SSD / dev / sda</strong> ou dans le cas d'un <strong>M.2 /dev/nvme0n1</strong> et, enfin, le <strong>disque virtuel /dev/vda</strong>.</p>
+<p><code># lsblk -l</code></p>
+<p>Une fois le nom de notre disque identifié, utilisez <strong>cfdisk</strong>, ici nous supposerons avoir <strong>/dev/sda</strong>. On peut vous demander le type de table de partitionnement si le disque est brut. Dans ce cas, sélectionnez <strong>DOS</strong> :</p>
+<p><code># cfdisk /dev/sda</code></p>
+<p>Créez les partitions nécessaires pour l'installation de base, en supposant que nous avons un <strong>SSD 128 GiB</strong> :</p>
+<ul>
+<li><code># 4 GiB</code> Créez une partition pour le swap et sélectionnez le type de partition swap</li>
+<li><code># 124 GiB</code> Créez la partition Root</li>
+<li><code># write (yes)</code> et <code>quit</code> Écrire les modifications et quitter</li>
+</ul>
+<h4 id="formatage-des-partitions">Formatage des partitions</h4>
+<ul>
+<li><code># mkswap /dev/sda1</code> Partition swap</li>
+<li><code># mkfs.ext4 /dev/sda2</code> Partition Root en EXT4</li>
+</ul>
+<h4 id="montage-des-partitions">Montage des partitions</h4>
+<ul>
+<li><code># mount /dev/sda2 /mnt</code> Monter la partition root</li>
+<li><code># swapon /dev/sda1</code> Monter la partition swap</li>
+</ul>
+<p><br><br><br><br></p>
+<h3 id="uefi-ext4">UEFI ext4</h3>
+<h4 id="partitionnement-de-disque">Partitionnement de disque</h4>
+<p>Identifiez votre disque pour connaître la convention de nommage à utiliser. Par exemple, dans le cas d'un <strong>SSD /dev/sda</strong> ou dans le cas d'un <strong>M.2 /dev/nvme0n1</strong> et, enfin, le <strong>Disque virtuel /dev/vda</strong>.</p>
+<p><code># lsblk -l</code></p>
+<p>En supposant que nous avons un <strong>SSD 128 GiB</strong> et que nous utiliserons un partitionnement GPT pour l'installation UEFI :</p>
+<p><code># cfdisk /dev/sda</code></p>
+<ul>
+<li><code># 512 Mib</code> Créez une partition EFI et sélectionnez le type de partition système EFI</li>
+<li><code># 4 GiB</code> Créez une partition pour le swap et sélectionnez le type de partition swap</li>
+<li><code># 23,5 GiB</code>  Créez la partition Root</li>
+<li><code># 100 GiB</code>  Créez la partition Home</li>
+<li><code># write (yes)</code> et <code>quit</code> Écrire les modifications et quitter</li>
+</ul>
+<h4 id="formatage-des-partitions_1">Formatage des partitions</h4>
+<ul>
+<li><code># mkfs.vfat -F32 /dev/sda1</code> Partition système EFI en FAT32 pour le boot</li>
+<li><code># mkswap /dev/sda2</code> Partition swap</li>
+<li><code># mkfs.ext4 /dev/sda3</code> Partition root en EXT4</li>
+<li><code># mkfs.ext4 /dev/sda4</code> Partition home en EXT4</li>
+</ul>
+<h4 id="montage-des-partitions_1">Montage des partitions</h4>
+<ul>
+<li><code># mount /dev/sda3 /mnt</code> Monter la partition root</li>
+<li><code># mkdir -p /mnt/{home,boot}</code> Créer des répertoires /home et /boot</li>
+<li><code># mount /dev/sda4 /mnt/home</code> Monter la partition home</li>
+<li><code># mount /dev/sda1 /mnt/boot</code> Monter la partition boot</li>
+<li><code># swapon /dev/sda2</code> Monter la partition swap</li>
+</ul>
+<p><br><br><br><br></p>
+<h3 id="uefi-btrfs">UEFI btrfs</h3>
+<h4 id="partitionnement-de-disque_1">Partitionnement de disque</h4>
+<p>Identifiez votre disque pour connaître la convention de nommage à utiliser. Par exemple, dans le cas d'un <strong>SSD /dev/sda</strong> ou dans le cas d'un <strong>M.2 /dev/nvme0n1</strong> et, enfin, le <strong>Disque virtuel /dev/vda</strong>.</p>
+<p><code># lsblk -l</code></p>
+<p>En supposant que nous avons un <strong>SSD 128 GiB</strong> et que nous utiliserons un partitionnement GPT pour l'installation UEFI :</p>
+<p><code># cfdisk /dev/sda</code></p>
+<ul>
+<li><code># 512 Mib</code> Créez une partition EFI et sélectionnez le type de partition système EFI</li>
+<li><code># 27,5 GiB</code>  Créez la partition Root</li>
+<li><code># 100 GiB</code>  Créez la partition Home</li>
+<li><code># write (yes)</code> et <code>quit</code> Écrire les modifications et quitter</li>
+</ul>
+<h4 id="formatage-des-partitions_2">Formatage des partitions</h4>
+<ul>
+<li><code># mkfs.vfat -F32 /dev/sda1</code> Partition système EFI en FAT32 pour le boot</li>
+<li><code># mkfs.btrfs /dev/sda2</code> Partition root en BTRFS</li>
+<li><code># mkfs.btrfs /dev/sda3</code> Partition home en BTRFS</li>
+</ul>
+<h4 id="montage-des-partitions_2">Montage des partitions</h4>
+<p>Créer des sous-volumes <strong>@</strong> et <strong>@home</strong>:</p>
+<ul>
+<li>
+<p><code># mount /dev/sda2 /mnt</code></p>
+</li>
+<li>
+<p><code># btrfs su cr /mnt/@</code></p>
+</li>
+<li>
+<p><code># umount /mnt</code></p>
+</li>
+<li>
+<p><code># mount /dev/sda3 /mnt</code></p>
+</li>
+<li>
+<p><code># btrfs su cr /mnt/@home</code></p>
+</li>
+<li>
+<p><code># umount /mnt</code></p>
+</li>
+<li>
+<p><code># mount -o noatime,ssd,space_cache=v2,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt</code></p>
+</li>
+<li>
+<p><code># mkdir -p /mnt/{home,boot}</code> Créer des répertoires /home et /boot</p>
+</li>
+<li><code># mount /dev/sda1 /mnt/boot</code></li>
+<li><code># mount -o noatime,ssd,space_cache=v2,compress=zstd,discard=async,subvol=@home /dev/sda3 /mnt/home</code></li>
+</ul>
+<p><br><br><br><br></p>
+<h3 id="uefi-lvm-ext4">UEFI lvm-ext4</h3>
+<h4 id="partitionnement-de-disque_2">Partitionnement de disque</h4>
+<p>Identifiez votre disque pour connaître la convention de nommage à utiliser. Par exemple, dans le cas d'un <strong>SSD /dev/sda</strong> ou dans le cas d'un <strong>M.2 /dev/nvme0n1</strong> et, enfin, le <strong>Disque virtuel /dev/vda</strong>.</p>
+<p><code># lsblk -l</code></p>
+<p>En supposant que nous avons <strong>3 disques de 128 GiB</strong> pour LVM: <strong>sda sdb sdc</strong> utilisez <strong>cfdisk</strong> un par un :</p>
+<p><code># cfdifk /dev/sda</code></p>
+<ul>
+<li><code># 512 Mib</code> Créez une partition EFI et sélectionnez le type de partition système EFI</li>
+<li><code># 127,5 GiB</code>  Créez une partition et sélectionnez le type LVM</li>
+<li><code># write (yes)</code> et <code>quit</code> Écrire les modifications et quitter</li>
+</ul>
+<p><code># cfdifk /dev/sdb</code></p>
+<ul>
+<li><code># 128 GiB</code>  Créez une partition et sélectionnez le type LVM</li>
+<li><code># write (yes)</code> et <code>quit</code> Écrire les modifications et quitter</li>
+</ul>
+<p><code># cfdifk /dev/sdc</code></p>
+<ul>
+<li><code># 128 GiB</code>  Créez une partition et sélectionnez le type LVM</li>
+<li><code># write (yes)</code> et <code>quit</code> Écrire les modifications et quitter</li>
+</ul>
+<p>Pour créer des partitions sous LVM, il nous faut d'abord créer un volume physique :</p>
+<h4 id="creer-un-volume-physique">Créer un volume physique</h4>
+<p><code># pvcreate /dev/sda2 /dev/sdb1 /dev/sdc1</code></p>
+<h4 id="creer-un-groupe-de-volumes">Créer un groupe de volumes</h4>
+<p>Créez et étendez votre groupe de volumes ; vous devez créer un groupe de volumes sur un ou plusieurs volumes physiques <code># vgcreate group_volume physical_volume</code> par exemple :</p>
+<p><code># vgcreate lvm /dev/sda2 /dev/sdb1 /dev/sdc1</code></p>
+<p>Cette commande configura tout d'abord les trois partitions comme volumes physiques (si nécessaire), puis crée le groupe de volumes avec les trois volumes. La commande vous alertera si elle détecte un système de fichiers existant sur l'un ou l'autre des périphériques.</p>
+<h4 id="creer-des-volumes-logiques">Créer des volumes logiques</h4>
+<p>Créez des volumes logiques, pour une configuration de base, il nous faudrait chacun pour root, swap et home.</p>
+<ul>
+<li><code># lvcreate -L 120G lvm -n root</code></li>
+<li><code># lvcreate -L 8G lvm -n swap</code></li>
+<li><code># lvcreate -l 100%FREE lvm -n home</code></li>
+</ul>
+<h4 id="formatage-des-partitions_3">Formatage des partitions</h4>
+<ul>
+<li><code># mkfs.vfat -F32 /dev/sda1</code> Partition système EFI en FAT32 pour le boot</li>
+<li><code># mkfs.ext4 /dev/lvm/root</code></li>
+<li><code># mkfs.ext4 /dev/lvm/home</code></li>
+<li><code># mkswap /dev/lvm/swap</code> </li>
+</ul>
+<h4 id="montage-des-partitions_3">Montage des partitions</h4>
+<ul>
+<li><code># mount /dev/lvm/root /mnt</code> Monter la partition root</li>
+<li><code># mkdir -p /mnt/{home,boot}</code> Créer des répertoires /home et /boot</li>
+<li><code># mount /dev/lvm/home /mnt/home</code></li>
+<li><code># mount /dev/sda1 /mnt/boot</code> </li>
+<li><code># swapon /dev/lvm/swap</code></li>
+</ul>
+<h4 id="etendre-un-groupe-lvm">Étendre un groupe LVM</h4>
+<p>Si à l'avenir vous souhaitez ajouter un nouveau volume physique au groupe, consultez quelle commande utiliser, en supposant un quatrième disque sdd et l'avoir partitionné comme précédemment, nous étendons l'espace par exemple à <code>/dev/lvm/home</code> :</p>
+<ul>
+<li><code># pvcreate /dev/sdd1</code></li>
+<li><code># vgextend lvm /dev/sdd1</code></li>
+<li><code># lvextend -l +100%FREE /dev/lvm/home</code></li>
+</ul>
+<h2 id="5-liste-de-miroirs">5. Liste de Miroirs</h2>
+<p>Enregistrez la liste de miroirs pour les dépôts dans <strong>/etc/pacman.d/mirrorlist</strong> en utilisant l'outil <strong>reflector</strong>, en spécifiant le pays pour synchroniser les serveurs, par exemple <strong>it</strong>. Plusieurs pays peuvent être ajoutés en utilisant une virgule, par exemple <strong>it,us</strong>:</p>
+<p><code># reflector --verbose -c it -a 12 --sort rate --save /etc/pacman.d/mirrorlist</code></p>
+<p><br><br><br><br></p>
+<h2 id="6-pacstrap">6. Pacstrap</h2>
+<p>Installer le noyau <strong>linux</strong> et les paquets de base pour créer notre système Arch, ajouter également un éditeur tel que <strong>vim</strong>. Si vous suivez l'installation pour <strong>lvm</strong>, ajoutez le paquet <code>lvm2</code> à la commande suivante :</p>
+<p><code># pacstrap -K /mnt base base-devel linux linux-firmware vim</code> </p>
+<p><br><br><br><br></p>
+<h2 id="7-generer-fstab">7. Générer Fstab</h2>
+<p>Le fichier /etc/fstab vous permet de contrôler les systèmes de fichiers qui sont montés sur votre système Linux lors du démarrage, y compris les partitions Windows et les partages réseau :</p>
+<p><code># genfstab -U /mnt &gt; /mnt/etc/fstab</code></p>
+<p><br><br><br><br></p>
+<h2 id="8-chroot">8. Chroot</h2>
+<p>Entrez dans le chroot et configurez les étapes suivantes : Configuration de l'heure locale, de l'horloge système, de la langue, des mappages de clavier, de localhost, du mot de passe Root, de la création de l'utilisateur et de son mot de passe.</p>
+<p>Entrez dans le chroot :</p>
+<p><code># arch-chroot /mnt</code></p>
+<p><br><br><br><br></p>
+<h3 id="fuseau-horaire">Fuseau horaire</h3>
+<ul>
+<li><code># ln -sf /usr/share/zoneinfo/Europe/Italy /etc/localtime</code></li>
+<li><code># hwclock --systohc</code></li>
+</ul>
+<p><br><br><br><br></p>
+<h3 id="localisation">Localisation</h3>
+<ul>
+<li><code># echo "it_IT.UTF-8 UTF-8" &gt;&gt; /etc/locale.gen</code></li>
+<li><code># locale-gen</code></li>
+<li><code># echo "LANG=it_IT.UTF-8" &gt;&gt; /etc/locale.conf</code></li>
+<li><code># echo "KEYMAP=it" &gt;&gt; /etc/vconsole.conf</code></li>
+</ul>
+<p><br><br><br><br></p>
+<h3 id="nom-dhote-et-hosts">Nom d'hôte et Hosts</h3>
+<ul>
+<li><code># echo "NOMDEVOTREAMACHINE" &gt; /etc/hostname</code></li>
+<li><code># echo "127.0.0.1 localhost" &gt;&gt; /etc/hosts</code></li>
+<li><code># echo "::1       localhost" &gt;&gt; /etc/hosts</code></li>
+</ul>
+<p><br><br><br><br></p>
+<h3 id="utilisateur-et-root">Utilisateur et Root</h3>
+<p>Configurez le mot de passe Root, faites attention !</p>
+<p><code># passwd</code></p>
+<p>Configurez un nouvel utilisateur en minuscules, en créant le répertoire <code>/home/USERNAME</code> avec <code>-m</code>, le groupe <code>wheel</code> avec <code>-G</code> et le shell avec <code>-s</code> :</p>
+<p><code># useradd -mG wheel -s /bin/bash USERNAME</code></p>
+<p>Configurez le nom réel (qui apparaît en graphique avec une majuscule en début de nom par exemple <strong>"Alessio"</strong>)</p>
+<p><code># usermod -c 'NOMRÉEL' USERNAME</code></p>
+<p>Configurez un mot de passe pour le nouvel utilisateur ajouté, faites attention !</p>
+<p><code># passwd USERNAME</code></p>
+<p>Configurez le fichier sudoers pour le groupe wheel :</p>
+<p><code># echo "USERNAME ALL=(ALL:ALL) ALL" &gt;&gt; /etc/sudoers.d/USERNAME</code></p>
+<p><br><br><br><br></p>
+<h3 id="mkinitcpio-pour-lvm">mkinitcpio pour LVM</h3>
+<p>ajouter <strong>lvm2</strong> aux hooks dans <strong>/etc/mkinitcpio.conf</strong></p>
+<p><code>HOOKS="base udev ... block lvm2 filesystems"</code></p>
+<p>puis utilisez la commande :</p>
+<p><code># mkinitcpio -p linux</code></p>
+<p><br><br><br><br></p>
+<h2 id="9-chargeur-de-demarrage">9. Chargeur de démarrage</h2>
+<h3 id="grub-bios-mbr">GRUB (BIOS-MBR)</h3>
+<ul>
+<li><code># pacman -S grub</code></li>
+<li><code># grub-install --target=i386-pc /dev/sda</code></li>
+<li><code># grub-mkconfig -o /boot/grub/grub.cfg</code></li>
+</ul>
+<p><br><br><br><br></p>
+<h3 id="grub-uefi">GRUB (UEFI)</h3>
+<ul>
+<li><code># pacman -S grub</code></li>
+<li><code># grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB</code></li>
+<li><code># grub-mkconfig -o /boot/grub/grub.cfg</code></li>
+</ul>
+<p>GRUB prend en charge entièrement le démarrage sécurisé en utilisant des clés CA ou shim, cependant, la commande d'installation diffère selon celle que vous avez l'intention d'utiliser.</p>
+<p>Pour utiliser des clés CA, la commande est :</p>
+<p><code># grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB --modules="tpm" --disable-shim-lock</code></p>
+<p>Pour utiliser shim-lock, la commande est :</p>
+<p><code># grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB --modules="normal test efi_gop efi_uga search echo linux all_video gfxmenu gfxterm_background gfxterm_menu gfxterm loadenv configfile tpm"</code></p>
+<p><br><br><br><br></p>
+<h3 id="systemd-boot-ext4">Systemd-boot (EXT4)</h3>
+<ul>
+<li><code># pacman -S efibootmgr</code></li>
+<li><code># bootctl --path=/boot install</code></li>
+<li><code># echo "default arch-*" &gt;&gt; /boot/loader/loader.conf</code></li>
+<li><code># vim /boot/loader/entries/arch.conf</code></li>
+</ul>
+<p>Maintenant, créez la configuration du fichier <strong>arch.conf</strong> ouvert avec <strong>vim</strong>, il est important d'écrire la partition boot racine correcte telle que <code>root=/dev/sdax</code> où <code>x</code> est le numéro de la partition racine.</p>
+<ul>
+<li><code>title   Arch Linux</code></li>
+<li><code>linux   /vmlinuz-linux</code></li>
+<li><code>initrd  /initramfs-linux.img</code></li>
+<li><code>options root=/dev/sdax rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_level=3</code></li>
+</ul>
+<p><br><br><br><br></p>
+<h3 id="systemd-boot-btrfs">Systemd-boot (BTRFS)</h3>
+<ul>
+<li><code># pacman -S efibootmgr</code></li>
+<li><code># bootctl --path=/boot install</code></li>
+<li><code># echo "default arch-*" &gt;&gt; /boot/loader/loader.conf</code></li>
+<li><code># vim /boot/loader/entries/arch.conf</code></li>
+</ul>
+<p>Maintenant, créez la configuration du fichier <strong>arch.conf</strong> ouvert avec <strong>vim</strong>, il est important d'écrire la partition boot racine correcte telle que <code>root=/dev/sdax</code> où <code>x</code> est le numéro de la partition root, ajoutez le drapeau pour le sous-volume <strong>@</strong>.</p>
+<ul>
+<li><code>title   Arch Linux</code></li>
+<li><code>linux   /vmlinuz-linux</code></li>
+<li><code>initrd  /initramfs-linux.img</code></li>
+<li><code>options root=/dev/sdax rootflags=subvol=@ rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_level=3</code></li>
+</ul>
+<p><br><br><br><br></p>
+<h3 id="systemd-boot-lvm">Systemd-boot (LVM)</h3>
+<ul>
+<li><code># pacman -S efibootmgr</code></li>
+<li><code># bootctl --path=/boot install</code></li>
+<li><code># echo "default arch-*" &gt;&gt; /boot/loader/loader.conf</code></li>
+<li><code># vim /boot/loader/entries/arch.conf</code></li>
+</ul>
+<p>Maintenant, créez la configuration du fichier <strong>arch.conf</strong> ouvert avec <strong>vim</strong>, il est important d'écrire la partition boot racine correcte telle que pour <strong>lvm</strong> <code>root=/dev/mapper/lvm-root</code></p>
+<ul>
+<li><code>title   Arch Linux (LVM)</code></li>
+<li><code>linux   /vmlinuz-linux</code></li>
+<li><code>initrd  /initramfs-linux.img</code></li>
+<li><code>options root=/dev/mapper/lvm-root rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_level=3</code></li>
+</ul>
+<p><br><br><br><br></p>
+<h2 id="10-paquets-de-base">10. Paquets de base</h2>
+<p><code># pacman -S xorg wpa_supplicant wireless_tools netctl net-tools iw networkmanager alsa-utils pipewire-pulse mtools dosfstools mtools ntfs-3g f2fs-tools dosfstools exfatprogs fuse firewalld acpi cronie git reflector bluez bluez-utils cups reflector</code></p>
+<p><br><br><br><br></p>
+<h2 id="11-environnement-de-bureau">11. Environnement de bureau</h2>
+<p>Choisissez parmi les environnements de bureau populaires suggérés :</p>
+<h3 id="gnome">Gnome</h3>
+<p>Gnome complet avec le gestionnaire d'affichage GDM</p>
+<ul>
+<li><code># pacman -S gnome gnome-extra gdm</code> </li>
+<li><code># systemctl enable gdm</code></li>
+</ul>
+<h3 id="xfce4">Xfce4</h3>
+<p>xfce4 avec le gestionnaire d'affichage Lightdm</p>
+<ul>
+<li><code># pacman -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings</code></li>
+<li><code># systemctl enable lightdm</code></li>
+</ul>
+<h3 id="lxde">Lxde</h3>
+<p>lxde avec le gestionnaire d'affichage Lightdm</p>
+<ul>
+<li><code># pacman -S lxde lxde-common lxsession openbox</code></li>
+<li><code># systemctl enable lightdm</code></li>
+</ul>
+<h3 id="mate">Mate</h3>
+<p>mate avec le gestionnaire d'affichage Lightdm</p>
+<ul>
+<li><code># pacman -S mate mate-extra</code></li>
+<li><code># systemctl enable lightdm</code></li>
+</ul>
+<h3 id="plasma">Plasma</h3>
+<p>plasma kde avec le gestionnaire d'affichage SDDM</p>
+<ul>
+<li><code># pacman -S plasma kde-applications sddm</code></li>
+<li><code># systemctl enable sddm</code></li>
+</ul>
+<h3 id="cinnamon">Cinnamon</h3>
+<p>cinnamon avec le gestionnaire d'affichage Lightdm</p>
+<ul>
+<li><code># pacman -S cinnamon nemo-fileroller gnome-terminal lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings xdg-user-dirs-gtk</code></li>
+<li><code># systemctl enable lightdm</code></li>
+</ul>
+<p><br><br><br><br></p>
+<h2 id="12-services">12. Services</h2>
+<p>Si vous avez activé le service pour le gestionnaire d'affichage, vous pouvez passer à l'activation des autres services nécessaires.</p>
+<ul>
+<li><code># systemctl enable NetworkManager</code> Soyez prudent, il est sensible à la casse.</li>
+<li><code># systemctl enable bluetooth</code></li>
+<li><code># systemctl enable reflector</code></li>
+<li><code># systemctl enable cronie</code></li>
+<li><code># systemctl enable firewalld</code> </li>
+</ul>
+<p><br><br><br><br></p>
+<h2 id="13-zram">13. Zram</h2>
+<p>L'exemple suivant décrit comment configurer le swapping automatique vers <em>zram</em> au démarrage en utilisant une seule règle <em>udev</em>. Aucun paquet supplémentaire ne devrait être nécessaire pour que cela fonctionne.</p>
+<p>Chargez explicitement le module au démarrage :</p>
+<ul>
+<li>
+<p><code># vim /etc/modules-load.d/zram.conf</code></p>
+</li>
+<li>
+<p><code>zram</code></p>
+</li>
+</ul>
+<p>Créez la règle <em>udev</em> suivante en ajustant l'attribut disksize selon la taille de la swap, dans cet exemple, c'est <em>16G</em>:</p>
+<ul>
+<li>
+<p><code># vim /etc/udev/rules.d/99-zram.rules</code></p>
+</li>
+<li>
+<p><code>ACTION=="add", KERNEL=="zram0", ATTR{comp_algorithm}="zstd", ATTR{disksize}="16G", RUN="/usr/bin/mkswap -U clear /dev/%k", TAG+="systemd"</code></p>
+</li>
+</ul>
+<p>Ajoutez <strong>/dev/zram</strong> à votre fstab avec une priorité supérieure à la valeur par défaut :</p>
+<ul>
+<li>
+<p><code># vim /etc/fstab</code></p>
+</li>
+<li>
+<p><code>/dev/zram0 none swap defaults,pri=100 0 0</code></p>
+</li>
+</ul>
+<p><br><br><br><br></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última actualización">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 de febrero de 2026 23:13:20 UTC">23 de febrero de 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Creado">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de febrero de 2026 20:01:25 UTC">21 de febrero de 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+       
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "content.action.edit", "navigation.sections", "navigation.tabs", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascript/extra.js"></script>
+      
+    
+  </body>
+</html>

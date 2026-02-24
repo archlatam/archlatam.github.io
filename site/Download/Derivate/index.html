@@ -1,0 +1,945 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Derivate - archlatam</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1%207.775V2.75C1%201.784%201.784%201%202.75%201h5.025c.464%200%20.91.184%201.238.513l6.25%206.25a1.75%201.75%200%200%201%200%202.474l-5.026%205.026a1.75%201.75%200%200%201-2.474%200l-6.25-6.25A1.75%201.75%200%200%201%201%207.775m1.5%200c0%20.066.026.13.073.177l6.25%206.25a.25.25%200%200%200%20.354%200l5.025-5.025a.25.25%200%200%200%200-.354l-6.25-6.25a.25.25%200%200%200-.177-.073H2.75a.25.25%200%200%200-.25.25ZM6%205a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%201.75v11.5c0%20.138.112.25.25.25h3.17a.75.75%200%200%201%200%201.5H2.75A1.75%201.75%200%200%201%201%2013.25V1.75C1%20.784%201.784%200%202.75%200h8.5C12.216%200%2013%20.784%2013%201.75v7.736a.75.75%200%200%201-1.5%200V1.75a.25.25%200%200%200-.25-.25h-8.5a.25.25%200%200%200-.25.25m13.274%209.537zl-4.557%204.45a.75.75%200%200%201-1.055-.008l-1.943-1.95a.75.75%200%200%201%201.062-1.058l1.419%201.425%204.026-3.932a.75.75%200%201%201%201.048%201.074M4.75%204h4.5a.75.75%200%200%201%200%201.5h-4.5a.75.75%200%200%201%200-1.5M4%207.75A.75.75%200%200%201%204.75%207h2a.75.75%200%200%201%200%201.5h-2A.75.75%200%200%201%204%207.75%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.5%207.75A.75.75%200%200%201%207.25%207h1a.75.75%200%200%201%20.75.75v2.75h.25a.75.75%200%200%201%200%201.5h-2a.75.75%200%200%201%200-1.5h.25v-2h-.25a.75.75%200%200%201-.75-.75M8%206a1%201%200%201%201%200-2%201%201%200%200%201%200%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.499.75a.75.75%200%200%201%201.5%200v.996C5.9%202.903%206.793%203.65%207.662%204.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873%2010.794-.045%2012.622.26%2014.408.558%2016%201.94%2016%204.25c0%201.278-.954%202.575-2.44%202.734l.146.508.065.22c.203.701.412%201.455.476%202.226.142%201.707-.4%203.03-1.487%203.898C11.714%2014.671%2010.27%2015%208.75%2015h-6a.75.75%200%200%201%200-1.5h1.376a4.5%204.5%200%200%201-.563-1.191%203.84%203.84%200%200%201-.05-2.063%204.65%204.65%200%200%201-2.025-.293.75.75%200%200%201%20.525-1.406c1.357.507%202.376-.006%202.698-.318l.009-.01a.747.747%200%200%201%201.06%200%20.75.75%200%200%201-.012%201.074c-.912.92-.992%201.835-.768%202.586.221.74.745%201.337%201.196%201.621H8.75c1.343%200%202.398-.296%203.074-.836.635-.507%201.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4%202.4%200%200%201-.507-.441%203.1%203.1%200%200%201-.633-1.248.75.75%200%200%201%201.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738%200%201.25-.615%201.25-1.25%200-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706%201.345-.46.92-.27%201.774.019%203.062l.042.19.01.05c.348.443.666.949.94%201.553a.75.75%200%201%201-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7%205.527c-.814-.68-1.75-1.462-2.692-2.619a3.7%203.7%200%200%200-1.023.88c-.406.495-.663%201.036-.722%201.508.116.122.306.21.591.239.388.038.797-.06%201.032-.19a.75.75%200%200%201%20.728%201.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75%205.677V5.5c0-.984.48-1.94%201.077-2.664.46-.559%201.05-1.055%201.673-1.353z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13.78%204.22a.75.75%200%200%201%200%201.06l-7.25%207.25a.75.75%200%200%201-1.06%200L2.22%209.28a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018L6%2010.94l6.72-6.72a.75.75%200%200%201%201.06%200%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.92%206.085h.001a.749.749%200%201%201-1.342-.67c.169-.339.436-.701.849-.977C6.845%204.16%207.369%204%208%204a2.76%202.76%200%200%201%201.637.525c.503.377.863.965.863%201.725%200%20.448-.115.83-.329%201.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6%206%200%200%200-.26.16%201%201%200%200%200-.276.245.75.75%200%200%201-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1%201%200%200%200%20.277-.245C8.96%206.514%209%206.427%209%206.25a.61.61%200%200%200-.262-.525A1.27%201.27%200%200%200%208%205.5c-.369%200-.595.09-.74.187a1%201%200%200%200-.34.398M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.344%202.343za8%208%200%200%201%2011.314%2011.314A8.002%208.002%200%200%201%20.234%2010.089a8%208%200%200%201%202.11-7.746m1.06%2010.253a6.5%206.5%200%201%200%209.108-9.275%206.5%206.5%200%200%200-9.108%209.275M6.03%204.97%208%206.94l1.97-1.97a.749.749%200%200%201%201.275.326.75.75%200%200%201-.215.734L9.06%208l1.97%201.97a.749.749%200%200%201-.326%201.275.75.75%200%200%201-.734-.215L8%209.06l-1.97%201.97a.749.749%200%200%201-1.275-.326.75.75%200%200%201%20.215-.734L6.94%208%204.97%206.03a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4.72.22a.75.75%200%200%201%201.06%200l1%20.999a3.5%203.5%200%200%201%202.441%200l.999-1a.748.748%200%200%201%201.265.332.75.75%200%200%201-.205.729l-.775.776c.616.63.995%201.493.995%202.444v.327q0%20.15-.025.292c.408.14.764.392%201.029.722l1.968-.787a.75.75%200%200%201%20.556%201.392L13%207.258V9h2.25a.75.75%200%200%201%200%201.5H13v.5q-.002.615-.141%201.186l2.17.868a.75.75%200%200%201-.557%201.392l-2.184-.873A5%205%200%200%201%208%2016a5%205%200%200%201-4.288-2.427l-2.183.873a.75.75%200%200%201-.558-1.392l2.17-.868A5%205%200%200%201%203%2011v-.5H.75a.75.75%200%200%201%200-1.5H3V7.258L.971%206.446a.75.75%200%200%201%20.558-1.392l1.967.787c.265-.33.62-.583%201.03-.722a1.7%201.7%200%200%201-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72%201.28a.75.75%200%200%201%200-1.06m.53%206.28a.75.75%200%200%200-.75.75V11a3.5%203.5%200%201%200%207%200V7.25a.75.75%200%200%200-.75-.75ZM6.173%205h3.654A.17.17%200%200%200%2010%204.827V4.5a2%202%200%201%200-4%200v.327c0%20.096.077.173.173.173%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5%205.782V2.5h-.25a.75.75%200%200%201%200-1.5h6.5a.75.75%200%200%201%200%201.5H11v3.282l3.666%205.76C15.619%2013.04%2014.543%2015%2012.767%2015H3.233c-1.776%200-2.852-1.96-1.899-3.458Zm-2.4%206.565a.75.75%200%200%200%20.633%201.153h9.534a.75.75%200%200%200%20.633-1.153L12.225%2010.5h-8.45ZM9.5%202.5h-3V6c0%20.143-.04.283-.117.403L4.73%209h6.54L9.617%206.403A.75.75%200%200%201%209.5%206Z%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1.75%202.5h10.5a.75.75%200%200%201%200%201.5H1.75a.75.75%200%200%201%200-1.5m4%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5m0%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5M2.5%207.75v6a.75.75%200%200%201-1.5%200v-6a.75.75%200%200%201%201.5%200%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fonts.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/colors.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arch-linux-arm-2009" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="archlatam" class="md-header__button md-logo" aria-label="archlatam" data-md-component="logo">
+      
+  <img src="../../assets/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            archlatam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Derivate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="archlatam" class="md-nav__button md-logo" aria-label="archlatam" data-md-component="logo">
+      
+  <img src="../../assets/favicon.png" alt="logo">
+
+    </a>
+    archlatam
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenido
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arch-linux-arm-2009" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arch Linux ARM (2009)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archbang-2010" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ArchBang (2010)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archex-2011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ArchEX (2011)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archcraft-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archcraft (2021)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core (2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parabola-gnulinux-libre-2011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parabola GNU/Linux-libre (2011)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manjaro-linux-2011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manjaro Linux (2011)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blackarch-linux-2012-httpsblackarchorg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BlackArch Linux (2012) https://blackarch.org/
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blendos-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BlendOS (2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bluestar-linux-2013" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bluestar Linux (2013)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#puppyrus-a-2013" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PuppyRus-A (2013)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archstrike-2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ArchStrike (2014)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaos-2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KaOS (2014)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arcolinux-2017" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ArcoLinux (2017)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archlabs-2017" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ArchLabs (2017)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archman-linux-2017" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archman Linux (2017)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arch-linux-32-2017" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arch Linux 32 (2017)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebornos-2017" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RebornOS (2017)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artix-linux-2016" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artix Linux (2016)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#garuda-linux-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Garuda Linux (2020)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperbola-gnulinux-libre-2017" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hyperbola GNU/Linux-libre (2017)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instantos-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instantOS (2019)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chimeraos-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ChimeraOS (2019)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tearch-linux-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TeArch Linux (2020)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crystal-linux-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crystal Linux (2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endeavouros-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EndeavourOS (2019)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Derivate</h1>
+
+<h2 id="arch-linux-arm-2009"><a href="https://archlinuxarm.org/">Arch Linux ARM (2009)</a></h2>
+<p><img alt="image" src="https://archlinuxarm.org/forum/styles/simplecorp/imageset/ALARM-2.png" /></p>
+<p>Arch Linux ARM è una distribuzione di Linux per computer ARM. Forniamo supporto software e kernel mirato per ARMv7 con NEON e ARMv8 AArch64 su una varietà di dispositivi consumer e piattaforme di sviluppo. La nostra collaborazione con Arch Linux porta agli utenti la migliore piattaforma, i pacchetti più recenti e il supporto all'installazione.</p>
+<p>Arch Linux ARM continua la filosofia di Arch Linux di semplicità e centrismo sull'utente, mirando e accogliendo gli utenti Linux competenti offrendo loro completo controllo e responsabilità sul sistema. Vengono fornite istruzioni per navigare le sfumature dell'installazione su varie piattaforme ARM; tuttavia, il sistema stesso offre poco aiuto all'utente.</p>
+<p>L'intera distribuzione è in un ciclo di aggiornamento continuo che può essere aggiornato quotidianamente attraverso piccoli pacchetti anziché grandi aggiornamenti su un calendario di rilascio definito. La maggior parte dei pacchetti non viene modificata rispetto a ciò che l'upstream developer ha originalmente rilasciato.</p>
+<p><br></p>
+<h2 id="archbang-2010"><a href="https://sourceforge.net/projects/archbang/">ArchBang (2010)</a></h2>
+<p><img alt="derivate" src="https://github.com/ArchItalia/site/assets/117321045/36f9d8c7-caa5-4ca0-9d8f-3648022741f2" /></p>
+<p>ArchBang è una distribuzione Linux basata su Arch Linux, che combinando la leggerezza di Openbox con l'estrema personalizzazione di Arch Linux, offre un'esperienza di primo livello per utenti esperti e appassionati di Linux.</p>
+<p>In particolare, ArchBang si concentra su un'installazione minimale iniziale, che può essere configurata e personalizzata a piacere dall'utente, utilizzando strumenti come il terminale e i file di configurazione.</p>
+<p>ArchBang è nota per la sua velocità e leggerezza, grazie alla scelta di programmi leggeri e snelli, meno onerosi in termini di risorse di sistema. Questo rende la distribuzione ideale per computer vecchi o poco potenti con poche risorse.</p>
+<p><br></p>
+<h2 id="archex-2011"><a href="https://archex.exton.net/">ArchEX (2011)</a></h2>
+<p><img alt="derivate" src="https://github.com/ArchItalia/site/assets/117321045/6e06fdd7-3b6b-48b9-9c8e-0fb393fb7ee7" /></p>
+<p>ArchEX è una distribuzione Linux basata su Arch Linux, ma con diverse modifiche e ottimizzazioni per migliorare la facilità d'uso e la stabilità. È adatta per gli utenti avanzati che vogliono un sistema Linux personalizzato e altamente configurabile.</p>
+<p>ArchEX è fornito con un ambiente desktop LXDE / LXQT preinstallato, ma altri desktop possono essere facilmente installati tramite il gestore dei pacchetti Pacman di Arch Linux. Inoltre, sono disponibili anche una vasta gamma di programmi e applicazioni preinstallati per soddisfare diverse esigenze di utilizzo.</p>
+<p>Gli utenti di ArchEX possono anche godere della flessibilità e della personalizzazione di Arch Linux, grazie alla sua natura rolling release. Ciò significa che le ultime versioni del software possono essere installate in qualsiasi momento e non è necessario effettuare una reinstallazione completa del sistema. In sostanza, ArchEX fornisce un sistema Linux altamente personalizzabile e veloce, ideale per gli utenti avanzati che cercano un ambiente di sviluppo Linux personalizzato.</p>
+<p><br></p>
+<h2 id="archcraft-2021"><a href="https://archcraft.io/">Archcraft (2021)</a></h2>
+<p><img alt="derivate" src="https://seeklogo.com/images/A/archcraft-logo-7C0C9A2F58-seeklogo.com.png" /></p>
+<p>Archcraft è solo un'altra distribuzione di Linux, creata sopra a Arch Linux. Utilizza window manager e applicazioni leggere, il che la rende super veloce. Con impostazioni preconfigurate, Archcraft ti fornisce la migliore esperienza di window manager "out of the box". È molto minimale e leggera. Può funzionare con meno di 500Mb di memoria poiché utilizza solo window manager e alcune applicazioni leggere. Colori piatti e pastelli, la coerenza tra tutti gli elementi UI e vari temi rendono Archcraft molto pulita, minimalista e sorprendente.Con software aggiornato e supporto integrato per AUR, e essendo leggera, Archcraft ti dà il potere di fare ciò che vuoi con il tuo PC Linux.</p>
+<p><br></p>
+<h2 id="core-2023"><a href="https://architalia.github.io/site/">Core (2023)</a></h2>
+<p><img alt="derivate" src="https://github.com/ArchItalia/site/assets/117321045/f37028d4-ea0b-4754-b085-6a1151cf20d1" /></p>
+<p>Core (Architalia-live) è una distribuzione live che consente l'installazione di Arch Linux in modo completamente manuale grazie alla presenza della console e degli script. Allo stesso tempo, include una shell minimale di Gnome con pacchetti utili per una facile gestione dell'installazione. La connessione a Internet avviene tramite NetworkManager, integrato nella shell di Gnome, e ogni utente può accedere alle guide in formato PDF della community Architalia.</p>
+<p><br></p>
+<h2 id="parabola-gnulinux-libre-2011"><a href="https://www.parabola.nu/">Parabola GNU/Linux-libre (2011)</a></h2>
+<p><img alt="derivate" src="https://github.com/ArchItalia/site/assets/117321045/ffa0d997-ebe4-49bd-99b7-9ca1af8d1c77" /></p>
+<p>Basata sulla distribuzione Arch, Parabola è un sistema operativo completo e facile da usare, adatto all'uso quotidiano, ma che mantiene il fascino per gli utenti avanzati di Arch. Parabola segue le linee guida della GNU Free System Distribution Guidelines (FSDG), che richiede che il codice sorgente di ogni parte del sistema sia liberamente disponibile, modificabile e ridistribuibile. Tutti i pacchetti di Parabola sono compilati dal codice sorgente in ambienti di chroot puliti e con la rete disabilitata, al fine di sostituire qualsiasi software e opere d'arte nel sistema Arch standard che non rispettino le linee guida GNU. Sono disponibili LiveISO, installer e pacchetti per le architetture CPU armv7h, i686 e x86_64.</p>
+<p><br></p>
+<h2 id="manjaro-linux-2011"><a href="https://manjaro.org/">Manjaro Linux (2011)</a></h2>
+<p><img alt="derivate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Manjaro_logo_text.svg/2560px-Manjaro_logo_text.svg.png" /></p>
+<p>Manjaro è un sistema operativo Linux gratuito e open source che enfatizza la privacy dell'utente e il controllo dell'hardware. È facile da usare e adatto a coloro che sono nuovi ai computer e può essere installato su una vasta gamma di dispositivi. Le architetture supportate includono x86-64 e ARM, rendendolo una scelta ideale per qualsiasi dispositivo o ambiente informatico. Manjaro offre numerose opzioni di personalizzazione e applicazioni, oltre a funzionalità di sicurezza e privacy. Offre anche diverse interfacce utente grafiche.</p>
+<p><br></p>
+<h2 id="blackarch-linux-2012-httpsblackarchorg">BlackArch Linux (2012) https://blackarch.org/</h2>
+<p><img alt="derivate" src="https://github.com/ArchItalia/site/assets/117321045/cb212b67-be2c-4a2e-8ec8-d7730e6a6c3b" /></p>
+<p>BlackArch Linux è una distribuzione basata su Arch Linux dedicata agli specialisti di penetrazione e ai ricercatori di sicurezza informatica. Il repository contiene 2864 strumenti. È possibile installare gli strumenti singolarmente o in gruppi. BlackArch Linux è compatibile con le installazioni esistenti di Arch. </p>
+<p><br></p>
+<h2 id="blendos-2023"><a href="https://blendos.co/">BlendOS (2023)</a></h2>
+<p><img alt="derivate" src="https://user-images.githubusercontent.com/26926757/235855282-34d9a8f5-f92b-4ce3-855e-9e2e6551a3bf.png" /></p>
+<p>blendOS è una distribuzione basata su Arch Linux, a rilascio continuo, che automatizza l'installazione di software dalle distribuzioni supportate (Arch, Fedora e Ubuntu) in contenitori. blendOS cerca di rendere la gestione del software tra i contenitori nativa e fornisce accesso alla directory home dell'utente per ciascun contenitore.</p>
+<p><br></p>
+<h2 id="bluestar-linux-2013"><a href="https://bluestarlinux.org/">Bluestar Linux (2013)</a></h2>
+<p><img alt="bluestar" src="https://github.com/ArchItalia/site/assets/117321045/ec7904b8-39b3-4b25-9242-41a17130d8b2" /></p>
+<p>Bluestar Linux è una distribuzione GNU/Linux basata su Arch Linux. La distribuzione Bluestar presenta pacchetti aggiornati, una vasta gamma di software per desktop e multimediale nell'installazione predefinita e un DVD desktop live.</p>
+<p><br></p>
+<h2 id="puppyrus-a-2013"><a href="https://puppyrus.org/">PuppyRus-A (2013)</a></h2>
+<p><img alt="logo" src="https://github.com/ArchItalia/site/assets/117321045/ac92b45a-20f0-4b7b-bacb-600218f2f29e" /></p>
+<p>PuppyRus Linux è un sistema operativo veloce e leggero che funziona praticamente su qualsiasi computer, anche quelli obsoleti. È possibile utilizzarlo in modalità di installazione completa, nonché utilizzare la versione LiveCD o USB-Flash. Il sistema PuppyRus Linux può essere installato come sistema aggiuntivo, senza dover modificare il sistema operativo principale.</p>
+<p><br></p>
+<h2 id="archstrike-2014"><a href="https://archstrike.org/">ArchStrike (2014)</a></h2>
+<p><img alt="derivate" src="https://archstrike.org/img/archstrike.svg" /></p>
+<p>ArchStrike è una distribuzione Linux specializzata nella sicurezza informatica, basata su Arch Linux. Essa comprende una vasta gamma di strumenti per l'hacking etico e la protezione dei sistemi, tra cui scanner di vulnerabilità, applicazioni per la sicurezza delle reti, analizzatori di pacchetti, framework per l'exploit e molto altro ancora. I pacchetti software sono regolarmente aggiornati per garantire la massima efficienza e sicurezza. ArchStrike è disponibile come immagine ISO scaricabile o come pacchetto aggiuntivo per Arch Linux.</p>
+<p><br></p>
+<h2 id="kaos-2014"><a href="https://kaosx.us/">KaOS (2014)</a></h2>
+<p><img alt="derivate" src="https://kaosx.us/img/kaos_logo.svg" /></p>
+<p>KaOS ha scelto di utilizzare il kernel Linux come base (sebbene il kernel Illumos sia sotto costante valutazione e un cambiamento futuro sia un desiderio). Dopo questa scelta, il miglior gestore di pacchetti disponibile, il modo più flessibile di creare pacchetti e la manutenzione del repository è pacman/makepkg per una distro rolling come KaOS. Per quanto riguarda l'ambiente desktop, non ci sarà mai un cambiamento, sia che sia basato su Linux o Illumos, KDE Plasma sarà la scelta, Qt il toolkit. Con queste scelte in atto, è stata avviata, nell'aprile 2013, la creazione di pacchetti per questa distribuzione indipendente. KaOS è una distribuzione completamente creata da zero, ogni pacchetto in ogni repository è creato da e per KaOS. Nel luglio 2013 è stata raggiunta l'obiettivo iniziale di circa 1500 pacchetti.</p>
+<p><br></p>
+<h2 id="arcolinux-2017"><a href="https://arcolinux.info/">ArcoLinux (2017)</a></h2>
+<p><img alt="derivate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Arcolinux.svg/598px-Arcolinux.svg.png?20180609082016" /></p>
+<p>ArcoLinux (precedentemente noto come ArchMerge) è una distribuzione basata su Arch Linux. Lo sviluppo avviene in tre rami - ArcoLinux, ArcoLinuxD e ArcoLinuxB. ArcoLinux è una distribuzione completa che include l'ambiente desktop Xfce (oltre ai window manager Openbox e i3). ArcoLinuxD è una distribuzione minimale che include degli script che permettono agli utenti esperti di installare qualsiasi ambiente desktop e applicazione. ArcoLinuxB è un progetto che dà agli utenti la possibilità di creare distribuzioni personalizzate, e inoltre sviluppa diverse edizioni comunitarie con ambienti desktop preconfigurati, come Awesome, bspwm, Budgie, Cinnamon, Deepin, GNOME, MATE e KDE Plasma. ArcoLinux offre anche vari tutorial video, poiché enfatizza l'apprendimento e l'acquisizione di competenze Linux.</p>
+<p><br></p>
+<h2 id="archlabs-2017"><a href="https://archlabslinux.com/">ArchLabs (2017)</a></h2>
+<p><img alt="derivate" src="https://forum.archlabslinux.com/uploads/default/original/2X/8/8176d8df022f3839faad08fa20328025749c9ad2.png" /></p>
+<p>ArchLabs è una distribuzione basata su Arch Linux e che utilizza il window manager Openbox come interfaccia desktop principale. ArchLabs è una distribuzione a 64 bit con release continue, che fornisce un DVD live. La distribuzione può essere installata utilizzando il programma di installazione AL-Installer.</p>
+<p><br></p>
+<h2 id="archman-linux-2017"><a href="https://archman.org/">Archman Linux (2017)</a></h2>
+<p><img alt="derivate" src="https://github.com/ArchItalia/site/assets/117321045/8c7c6681-79bc-4998-8f20-b4d0941a8e7d" /></p>
+<p>Archman GNU/Linux è una distribuzione basata su Arch Linux che presenta il programma di installazione del sistema Calamares e un ambiente desktop preconfigurato. Archman presenta inoltre il gestore dei pacchetti Pamac per l'installazione facile dei pacchetti di nuovo software.</p>
+<p><br></p>
+<h2 id="arch-linux-32-2017"><a href="https://archlinux32.org/">Arch Linux 32 (2017)</a></h2>
+<p><img alt="derivate" src="https://github.com/ArchItalia/site/assets/117321045/1c7c1db8-0e20-4bb7-b66f-95775a8dfada" /></p>
+<p>Archlinux32 è una distribuzione Linux basata su Arch Linux, ma progettata per supportare i sistemi a 32 bit. È un progetto comunitario che si dedica alla creazione e al mantenimento di pacchetti e repository per i sistemi a 32 bit. Archlinux32 si concentra sulla semplicità, la personalizzazione e la leggerezza, con una vasta gamma di pacchetti software disponibili attraverso il suo sistema di gestione dei pacchetti Pacman. La distribuzione è altamente modularizzata, consentendo agli utenti di creare un sistema personalizzato adatto alle loro esigenze specifiche. Archlinux32 è un'opzione ideale per i vecchi computer a 32 bit o per gli utenti che cercano una versione leggera e personalizzabile di Arch Linux.</p>
+<p><br></p>
+<h2 id="rebornos-2017"><a href="https://rebornos.org/">RebornOS (2017)</a></h2>
+<p><img alt="derivate" src="https://www.rebornos.org/wp-content/uploads/2021/08/LogoWeb-0006-min-300x154.png" /></p>
+<p>RebornOS è una moderna distribuzione basata su Arch con l'installatore più avanzato, la possibilità di scegliere cosa installare e molti desktop e wm.</p>
+<p><br></p>
+<h2 id="artix-linux-2016"><a href="https://artixlinux.org/">Artix Linux (2016)</a></h2>
+<p><img alt="derivate" src="https://seeklogo.com/images/A/artix-linux-logo-E1F82C6DDD-seeklogo.com.png" /></p>
+<p>Artix Linux è una distribuzione a rilascio progressivo basata su Arch Linux che utilizza init come OpenRC, runit, s6 o Dinit, al contrario di init systemd di Arch Linux. </p>
+<p><br></p>
+<h2 id="garuda-linux-2020"><a href="https://garudalinux.org/">Garuda Linux (2020)</a></h2>
+<p><img alt="derivate" src="https://garudalinux.org/images/garuda/home/garudalinux2.png" /></p>
+<p>Garuda Linux è una distribuzione Linux basata su Arch Linux. Garuda Linux è disponibile per i principali ambienti desktop, fra cui una versione modificata di KDE Plasma 5. L'aggiornamento avviene tramite rolling release e il gestore di pacchetti è quello di Arch Linux, ovvero Pacman.</p>
+<p><br></p>
+<h2 id="hyperbola-gnulinux-libre-2017"><a href="https://www.hyperbola.info/">Hyperbola GNU/Linux-libre (2017)</a></h2>
+<p><img alt="derivate" src="https://github.com/ArchItalia/site/assets/117321045/fa0c035a-f1a1-4542-9723-35de241ca045" /></p>
+<p>Hyperbola GNU/Linux-libre è una distribuzione del sistema operativo Linux basata su Arch Linux. Hyperbola mette l'accento sulla libertà e sulla privacy dei suoi utenti, fornendo solo software libero ed evitando qualsiasi tipo di software proprietario. Hyperbola utilizza esclusivamente pacchetti liberi di software e firmware, tra cui il kernel Linux-libre, che è una versione del kernel Linux senza driver proprietari o non liberi inclusi. L'obiettivo principale di Hyperbola è di fornire un'alternativa alla maggior parte delle distribuzioni Linux che utilizzano software proprietario o non liberi. Hyperbola è anche progettata per essere altamente personalizzabile e configurabile, e può essere utilizzata su diverse piattaforme hardware, compresi i sistemi embedded, i server, i desktop e i laptop.</p>
+<p><br></p>
+<h2 id="instantos-2019"><a href="https://instantos.io/">instantOS (2019)</a></h2>
+<p><img alt="cd" src="https://github.com/ArchItalia/site/assets/117321045/07bd7da2-63b0-43fb-b5a0-4f79bdcaaf01" /></p>
+<p>InstantOS è una distribuzione Linux basata su Arch Linux che offre un'esperienza desktop Linux completamente personalizzabile e minimalista. L'ambiente desktop predefinito di InstantOS è basato su Openbox, ma offre anche una vasta gamma di altri gestori di finestre, tra cui i3, bspwm, awesome, DWM e altri. InstantOS è un'opzione leggera e veloce per chi cerca un'esperienza desktop Linux superiore.</p>
+<p><br></p>
+<h2 id="chimeraos-2019"><a href="https://chimeraos.org/">ChimeraOS (2019)</a></h2>
+<p><img alt="derivate" src="https://chimeraos.org/logo.svg" /></p>
+<p>ChimeraOS è un sistema operativo basato su Arch Linux che offre un'esperienza utente ottimizzata per i giochi. È progettato per essere facile da usare e configurare, utilizzando una combinazione di strumenti automatizzati e controlli manuali avanzati. ChimeraOS offre anche una vasta gamma di driver e librerie ottimizzati per i giochi, nonché una vasta scelta di applicazioni e giochi preinstallati.</p>
+<p><br></p>
+<h2 id="tearch-linux-2020"><a href="https://tearch.github.io/">TeArch Linux (2020)</a></h2>
+<p><img alt="derivate" src="https://tearch-linux.gitlab.io/web/res/tearch-logo-arch.svg" /></p>
+<p>TeaArch-Linux is arch linux based end user distribution. TeArch linux provide easy installation and usage for archlinux.
+TeArch-linux is Turkiye origin distribution. 🇹🇷 Our main puppose is creating easy usable GNU/Linux for everyone.</p>
+<p><br></p>
+<h2 id="crystal-linux-2022"><a href="https://crystal-arch.github.io/">Crystal Linux (2022)</a></h2>
+<p><img alt="derivate" src="https://getcryst.al/site/svg/crystal-logo.svg" /></p>
+<p>Crystal Linux is a brand new Arch Linux based distribution. It tries to be as friendly, powerful and easy to use as possible.</p>
+<p><br></p>
+<h2 id="endeavouros-2019"><a href="https://endeavouros.com/">EndeavourOS (2019)</a></h2>
+<p><img alt="derivate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/EndeavourOS_Logo.svg/800px-EndeavourOS_Logo.svg.png" /></p>
+<p>EndeavourOS è una distribuzione Linux basata su Arch Linux, successore di Antergos, il cui sviluppo è iniziato nel 2019. Come Antergos, supporta l'installazione degli ambienti Xfce, Budgie, Cinnamon, Deepin, GNOME, i3, KDE Plasma 5, LXQt, MATE.</p>
+<p><br></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última actualización">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 de febrero de 2026 23:13:20 UTC">23 de febrero de 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Creado">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de febrero de 2026 20:01:25 UTC">21 de febrero de 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+       
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "content.action.edit", "navigation.sections", "navigation.tabs", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascript/extra.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2370 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>File System - archlatam</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1%207.775V2.75C1%201.784%201.784%201%202.75%201h5.025c.464%200%20.91.184%201.238.513l6.25%206.25a1.75%201.75%200%200%201%200%202.474l-5.026%205.026a1.75%201.75%200%200%201-2.474%200l-6.25-6.25A1.75%201.75%200%200%201%201%207.775m1.5%200c0%20.066.026.13.073.177l6.25%206.25a.25.25%200%200%200%20.354%200l5.025-5.025a.25.25%200%200%200%200-.354l-6.25-6.25a.25.25%200%200%200-.177-.073H2.75a.25.25%200%200%200-.25.25ZM6%205a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%201.75v11.5c0%20.138.112.25.25.25h3.17a.75.75%200%200%201%200%201.5H2.75A1.75%201.75%200%200%201%201%2013.25V1.75C1%20.784%201.784%200%202.75%200h8.5C12.216%200%2013%20.784%2013%201.75v7.736a.75.75%200%200%201-1.5%200V1.75a.25.25%200%200%200-.25-.25h-8.5a.25.25%200%200%200-.25.25m13.274%209.537zl-4.557%204.45a.75.75%200%200%201-1.055-.008l-1.943-1.95a.75.75%200%200%201%201.062-1.058l1.419%201.425%204.026-3.932a.75.75%200%201%201%201.048%201.074M4.75%204h4.5a.75.75%200%200%201%200%201.5h-4.5a.75.75%200%200%201%200-1.5M4%207.75A.75.75%200%200%201%204.75%207h2a.75.75%200%200%201%200%201.5h-2A.75.75%200%200%201%204%207.75%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.5%207.75A.75.75%200%200%201%207.25%207h1a.75.75%200%200%201%20.75.75v2.75h.25a.75.75%200%200%201%200%201.5h-2a.75.75%200%200%201%200-1.5h.25v-2h-.25a.75.75%200%200%201-.75-.75M8%206a1%201%200%201%201%200-2%201%201%200%200%201%200%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.499.75a.75.75%200%200%201%201.5%200v.996C5.9%202.903%206.793%203.65%207.662%204.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873%2010.794-.045%2012.622.26%2014.408.558%2016%201.94%2016%204.25c0%201.278-.954%202.575-2.44%202.734l.146.508.065.22c.203.701.412%201.455.476%202.226.142%201.707-.4%203.03-1.487%203.898C11.714%2014.671%2010.27%2015%208.75%2015h-6a.75.75%200%200%201%200-1.5h1.376a4.5%204.5%200%200%201-.563-1.191%203.84%203.84%200%200%201-.05-2.063%204.65%204.65%200%200%201-2.025-.293.75.75%200%200%201%20.525-1.406c1.357.507%202.376-.006%202.698-.318l.009-.01a.747.747%200%200%201%201.06%200%20.75.75%200%200%201-.012%201.074c-.912.92-.992%201.835-.768%202.586.221.74.745%201.337%201.196%201.621H8.75c1.343%200%202.398-.296%203.074-.836.635-.507%201.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4%202.4%200%200%201-.507-.441%203.1%203.1%200%200%201-.633-1.248.75.75%200%200%201%201.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738%200%201.25-.615%201.25-1.25%200-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706%201.345-.46.92-.27%201.774.019%203.062l.042.19.01.05c.348.443.666.949.94%201.553a.75.75%200%201%201-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7%205.527c-.814-.68-1.75-1.462-2.692-2.619a3.7%203.7%200%200%200-1.023.88c-.406.495-.663%201.036-.722%201.508.116.122.306.21.591.239.388.038.797-.06%201.032-.19a.75.75%200%200%201%20.728%201.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75%205.677V5.5c0-.984.48-1.94%201.077-2.664.46-.559%201.05-1.055%201.673-1.353z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13.78%204.22a.75.75%200%200%201%200%201.06l-7.25%207.25a.75.75%200%200%201-1.06%200L2.22%209.28a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018L6%2010.94l6.72-6.72a.75.75%200%200%201%201.06%200%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.92%206.085h.001a.749.749%200%201%201-1.342-.67c.169-.339.436-.701.849-.977C6.845%204.16%207.369%204%208%204a2.76%202.76%200%200%201%201.637.525c.503.377.863.965.863%201.725%200%20.448-.115.83-.329%201.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6%206%200%200%200-.26.16%201%201%200%200%200-.276.245.75.75%200%200%201-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1%201%200%200%200%20.277-.245C8.96%206.514%209%206.427%209%206.25a.61.61%200%200%200-.262-.525A1.27%201.27%200%200%200%208%205.5c-.369%200-.595.09-.74.187a1%201%200%200%200-.34.398M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.344%202.343za8%208%200%200%201%2011.314%2011.314A8.002%208.002%200%200%201%20.234%2010.089a8%208%200%200%201%202.11-7.746m1.06%2010.253a6.5%206.5%200%201%200%209.108-9.275%206.5%206.5%200%200%200-9.108%209.275M6.03%204.97%208%206.94l1.97-1.97a.749.749%200%200%201%201.275.326.75.75%200%200%201-.215.734L9.06%208l1.97%201.97a.749.749%200%200%201-.326%201.275.75.75%200%200%201-.734-.215L8%209.06l-1.97%201.97a.749.749%200%200%201-1.275-.326.75.75%200%200%201%20.215-.734L6.94%208%204.97%206.03a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4.72.22a.75.75%200%200%201%201.06%200l1%20.999a3.5%203.5%200%200%201%202.441%200l.999-1a.748.748%200%200%201%201.265.332.75.75%200%200%201-.205.729l-.775.776c.616.63.995%201.493.995%202.444v.327q0%20.15-.025.292c.408.14.764.392%201.029.722l1.968-.787a.75.75%200%200%201%20.556%201.392L13%207.258V9h2.25a.75.75%200%200%201%200%201.5H13v.5q-.002.615-.141%201.186l2.17.868a.75.75%200%200%201-.557%201.392l-2.184-.873A5%205%200%200%201%208%2016a5%205%200%200%201-4.288-2.427l-2.183.873a.75.75%200%200%201-.558-1.392l2.17-.868A5%205%200%200%201%203%2011v-.5H.75a.75.75%200%200%201%200-1.5H3V7.258L.971%206.446a.75.75%200%200%201%20.558-1.392l1.967.787c.265-.33.62-.583%201.03-.722a1.7%201.7%200%200%201-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72%201.28a.75.75%200%200%201%200-1.06m.53%206.28a.75.75%200%200%200-.75.75V11a3.5%203.5%200%201%200%207%200V7.25a.75.75%200%200%200-.75-.75ZM6.173%205h3.654A.17.17%200%200%200%2010%204.827V4.5a2%202%200%201%200-4%200v.327c0%20.096.077.173.173.173%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5%205.782V2.5h-.25a.75.75%200%200%201%200-1.5h6.5a.75.75%200%200%201%200%201.5H11v3.282l3.666%205.76C15.619%2013.04%2014.543%2015%2012.767%2015H3.233c-1.776%200-2.852-1.96-1.899-3.458Zm-2.4%206.565a.75.75%200%200%200%20.633%201.153h9.534a.75.75%200%200%200%20.633-1.153L12.225%2010.5h-8.45ZM9.5%202.5h-3V6c0%20.143-.04.283-.117.403L4.73%209h6.54L9.617%206.403A.75.75%200%200%201%209.5%206Z%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1.75%202.5h10.5a.75.75%200%200%201%200%201.5H1.75a.75.75%200%200%201%200-1.5m4%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5m0%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5M2.5%207.75v6a.75.75%200%200%201-1.5%200v-6a.75.75%200%200%201%201.5%200%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fonts.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/colors.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-system" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="archlatam" class="md-header__button md-logo" aria-label="archlatam" data-md-component="logo">
+      
+  <img src="../../assets/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            archlatam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              File System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="archlatam" class="md-nav__button md-logo" aria-label="archlatam" data-md-component="logo">
+      
+  <img src="../../assets/favicon.png" alt="logo">
+
+    </a>
+    archlatam
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenido
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#partizionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partizionamento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partizionamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convenzioni-di-denominazione-per-i-nomi-dei-file-del-dispositivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convenzioni di denominazione per i nomi dei file del dispositivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numero-di-partizione-del-dispositivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numero di partizione del dispositivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-parted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando parted
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-cfdisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando cfdisk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestore-di-volumi-logici-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestore di volumi logici (LVM)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestore di volumi logici (LVM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#il-meccanismo-di-scrittura-di-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il Meccanismo di Scrittura di LVM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandi-lvm-per-la-gestione-dei-volumi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandi LVM per la gestione dei volumi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandi LVM per la gestione dei volumi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-pvcreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando pvcreate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-vgcreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando vgcreate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-lvcreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando lvcreate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandi-lvm-per-visualizzare-le-informazioni-sui-volumi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandi LVM per visualizzare le informazioni sui volumi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandi LVM per visualizzare le informazioni sui volumi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-pvdisplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando pvdisplay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-vgdisplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando vgdisplay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-lvdisplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando lvdisplay
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparazione-dei-supporti-fisici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparazione dei supporti fisici
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struttura-di-un-file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struttura di un file system
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Struttura di un file system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-mkfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando mkfs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot-sector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boot sector
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#super-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Super block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabella-degli-inode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabella degli inode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riparazione-del-file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Riparazione del file system
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Riparazione del file system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-fsck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando fsck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizzazione-di-un-file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organizzazione di un file system
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organizzazione di un file system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-etcfstab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        file /etc/fstab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandi-di-gestione-del-montaggio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandi di gestione del montaggio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandi di gestione del montaggio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-di-montaggio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando di montaggio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-umount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando umount
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convenzione-di-denominazione-dei-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convenzione di denominazione dei file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Convenzione di denominazione dei file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dettagli-del-nome-di-un-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dettagli del nome di un file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dettagli del nome di un file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descrizione-supplementare-della-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descrizione supplementare della directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-speciali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File speciali
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-di-comunicazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File di comunicazione
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-di-collegamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File di collegamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributi-dei-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attributi dei file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributi dei file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permessi-di-base-di-file-e-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permessi di base di file e directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipo-di-utente-corrispondente-allautorizzazione-di-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipo di utente corrispondente all'autorizzazione di base
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-degli-attributi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestione degli attributi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestione degli attributi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando chmod
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="comando chmod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rappresentazione-ottale-o-numerica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rappresentazione ottale (o numerica):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rappresentazione-simbolica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rappresentazione simbolica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diritti-predefiniti-e-maschera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diritti predefiniti e maschera
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diritti predefiniti e maschera">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-umask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comando umask
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="file-system">File System</h1>
+<p>In questo capitolo imparerai come lavorare con i filesystems.</p>
+<h2 id="partizionamento">Partizionamento</h2>
+<p>Il partizionamento consente l'installazione di diversi sistemi operativi, poiché è impossibile far convivere più sistemi operativi sulla stessa unità logica. Il partizionamento consente anche di separare i dati dal punto di vista logico (sicurezza, ottimizzazione degli accessi, ...).</p>
+<p>La divisione del disco fisico in volumi partizionati è registrata nella tabella delle partizioni, memorizzata nel primo settore del disco (MBR: <em>Master Boot Record</em>).</p>
+<p>Per i formati di tabelle di partizione <strong>MBR</strong>, lo stesso disco fisico può essere suddiviso in un massimo di 4 partizioni:</p>
+<ul>
+<li><em>Partizione primaria</em> (o partizione principale)</li>
+<li><em>Partizione estesa</em></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>Per ogni disco fisico può esserci una sola partizione estesa, cioè un disco fisico può avere nella tabella delle partizioni MBR fino a un massimo di:</p>
+<ol>
+<li>Tre partizioni primarie più una partizione estesa</li>
+<li>Quattro partizioni primarie</li>
+</ol>
+<p>La partizione estesa non può scrivere dati e formattare e può contenere solo partizioni logiche. Il disco fisico più grande che può essere riconosciuto dalla tabella delle partizioni MBR è di <strong>2 TB</strong>.</p>
+</div>
+<p><img alt="Suddivisione in sole 4 partizioni primarie" src="../images/07-file-systems-001.png" /></p>
+<p><img alt="Suddivisione in 3 partizioni primarie e una estesa" src="../images/07-file-systems-002.png" /></p>
+<h3 id="convenzioni-di-denominazione-per-i-nomi-dei-file-del-dispositivo">Convenzioni di denominazione per i nomi dei file del dispositivo</h3>
+<p>Nel mondo di GNU/Linux, tutto è un file. Per i dischi, vengono riconosciuti dal sistema come:</p>
+<table>
+<thead>
+<tr>
+<th>Hardware</th>
+<th>Nome del file del dispositivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Disco rigido IDE</td>
+<td>/dev/hd[a-d]</td>
+</tr>
+<tr>
+<td>Disco rigido SCSI/SATA/USB</td>
+<td>/dev/sd[a-z]</td>
+</tr>
+<tr>
+<td>Unità ottica</td>
+<td>/dev/cdrom or /dev/sr0</td>
+</tr>
+<tr>
+<td>Floppy disk</td>
+<td>/dev/fd[0-7]</td>
+</tr>
+<tr>
+<td>Stampante (25 pin)</td>
+<td>/dev/lp[0-2...]</td>
+</tr>
+<tr>
+<td>Stampante (USB)</td>
+<td>/dev/usb/lp[0-15]</td>
+</tr>
+<tr>
+<td>Mouse</td>
+<td>/dev/mouse</td>
+</tr>
+<tr>
+<td>Disco rigido virtuale</td>
+<td>/dev/vd[a-z]</td>
+</tr>
+</tbody>
+</table>
+<p>Il kernel Linux contiene i driver per la maggior parte dei dispositivi hardware.</p>
+<p>Quelli che chiamiamo <em>dispositivi</em> sono i file, memorizzati senza <code>/dev</code>, che identificano i diversi hardware rilevati dalla scheda madre.</p>
+<p>Il servizio udev è responsabile dell'applicazione delle convenzioni di denominazione (regole) e della loro applicazione ai dispositivi rilevati.</p>
+<p>Per ulteriori informazioni, vedere <a href="https://www.kernel.org/doc/html/latest/admin-guide/devices.html">qui</a>.</p>
+<h3 id="numero-di-partizione-del-dispositivo">Numero di partizione del dispositivo</h3>
+<p>Il numero dopo il dispositivo di blocco (dispositivo di memorizzazione) indica una partizione. Per le tabelle di partizione MBR, il numero 5 deve essere la prima partizione logica.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>Attenzione prego! Il numero di partizione citato si riferisce principalmente al numero di partizione del dispositivo a blocchi (dispositivo di archiviazione).</p>
+</div>
+<p><img alt="Identificazione delle partizioni" src="../images/07-file-systems-003.png" /></p>
+<p>Esistono almeno due comandi per il partizionamento di un disco: <code>fdisk</code> e <code>cfdisk</code>. Entrambi i comandi hanno un menu interattivo. <code>cfdisk</code> è più affidabile e meglio ottimizzato, quindi è il migliore da usare.</p>
+<p>L'unica ragione per usare <code>fdisk</code> è quando si vogliono elencare tutti i dispositivi logici con l'opzione <code>-l</code>. <code>fdisk</code> utilizza tabelle di partizione MBR, pertanto non è supportato per le tabelle di partizione <strong>GPT</strong> e non può essere usato per dischi di dimensioni superiori a <strong>2 TB</strong>.</p>
+<div class="highlight"><pre><span></span><code>sudo fdisk -l
+sudo fdisk -l /dev/sdc
+sudo fdisk -l /dev/sdc2
+</code></pre></div>
+<h3 id="comando-parted">comando <code>parted</code></h3>
+<p>Il comando <code>parted</code> (<em>partition editor</em>) è in grado di partizionare un disco senza gli inconvenienti di <code>fdisk</code>.</p>
+<p>Il comando <code>parted</code> può essere usato sia dalla riga di comando che in modo interattivo. Dispone inoltre di una funzione di recupero in grado di riscrivere una tabella di partizione cancellata.</p>
+<div class="highlight"><pre><span></span><code>parted [-l] [device]
+</code></pre></div>
+<p>Come interfaccia grafica, c'è il completissimo strumento <code>gparted</code>: <em>Gnome</em> <em>PARtition</em> <em>EDitor</em>.</p>
+<p>Il comando <code>gparted -l</code> elenca tutti i dispositivi logici di un computer.</p>
+<p>Il comando <code>gparted</code>, se eseguito senza argomenti, mostrerà una modalità interattiva con le sue opzioni interne:</p>
+<ul>
+<li><code>help</code> o un comando errato visualizzerà queste opzioni.</li>
+<li><code>print all</code> in questa modalità avrà lo stesso risultato di <code>gparted -l</code> dalla riga di comando.</li>
+<li><code>quit</code> per tornare al prompt.</li>
+</ul>
+<h3 id="comando-cfdisk">comando <code>cfdisk</code></h3>
+<p>Il comando <code>cfdisk</code> viene utilizzato per gestire le partizioni.</p>
+<div class="highlight"><pre><span></span><code>cfdisk device
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>$ sudo cfdisk /dev/sda
+                                 Disk: /dev/sda
+               Size: 16 GiB, 17179869184 bytes, 33554432 sectors
+                       Label: dos, identifier: 0xcf173747
+    Device        Boot       Start        End    Sectors   Size   Id Type
+&gt;&gt;  /dev/sda1     *           2048    2099199    2097152     1G   83 Linux
+    /dev/sda2              2099200   33554431   31455232    15G   8e Linux LVM
+ lqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk
+ x Partition type: Linux (83)                                                 x
+ x     Attributes: 80                                                         x
+ xFilesystem UUID: 54a1f5a7-b8fa-4747-a87c-2dd635914d60                       x
+ x     Filesystem: xfs                                                        x
+ x     Mountpoint: /boot (mounted)                                            x
+ mqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj
+     [Bootable]  [ Delete ]  [ Resize ]  [  Quit  ]  [  Type  ]  [  Help  ]
+     [  Write ]  [  Dump  ]
+</code></pre></div>
+<p>La preparazione, senza <em>LVM</em>, dei supporti fisici avviene in cinque fasi:</p>
+<ul>
+<li>Impostazione del disco fisico;</li>
+<li>Partizionamento dei volumi (divisione geografica del disco, possibilità di installare più sistemi, ...);</li>
+<li>Creazione dei file system (permette al sistema operativo di gestire i file, la struttura ad albero, i diritti, ...);</li>
+<li>Montaggio dei file system (registrazione del file system nella struttura ad albero);</li>
+<li>Gestire l'accesso degli utenti.</li>
+</ul>
+<h2 id="gestore-di-volumi-logici-lvm">Gestore di volumi logici (LVM)</h2>
+<p><strong>L</strong>ogical <strong>V</strong>olume <strong>M</strong>anager (<em>LVM]</em>)</p>
+<p>La partizione creata dalla <strong>partizione standard</strong> non può regolare dinamicamente le risorse del disco rigido; una volta montata la partizione, la capacità è completamente fissa, questo vincolo è inaccettabile per il server. Anche se la partizione standard può essere espansa o ridotta forzatamente con alcuni mezzi tecnici, è facile che si verifichi una perdita di dati. LVM può risolvere questo problema molto bene. LVM è disponibile in Linux dalla versione 2.4 del kernel e le sue caratteristiche principali sono:</p>
+<ul>
+<li>Capacità del disco più flessibile;</li>
+<li>Movimento di dati online;</li>
+<li>Dischi in modalità <em>stripe</em>;</li>
+<li>Volumi Mirrored (ricopiati);</li>
+<li>Istantanee del volume_(snapshot_).</li>
+</ul>
+<p>Il principio di LVM è molto semplice:</p>
+<ul>
+<li>tra il disco fisico (o la partizione del disco) e il file system viene aggiunto un livello di astrazione logica</li>
+<li>unire più dischi (o partizioni di dischi) in un Gruppo di Volumi<strong>(VG</strong>)</li>
+<li>eseguire le operazioni di gestione del disco su di essi attraverso una funzionalità chiamata Logical Volume<strong>(LV</strong>).</li>
+</ul>
+<p><strong>Il supporto fisico</strong>: Il supporto di memorizzazione di LVM può essere l'intero disco rigido, una partizione del disco o un array RAID. Il dispositivo deve essere convertito, o inizializzato, in LVM Physical Volume (<strong>PV</strong>), prima di poter eseguire ulteriori operazioni.</p>
+<p><strong>PV (Physical Volume)</strong>: Il blocco logico di archiviazione di base di LVM. Per creare un volume fisico, è possibile utilizzare una partizione del disco o il disco stesso.</p>
+<p><strong>VG (Volume Group)</strong>: Simile ai dischi fisici di una partizione standard, un VG è costituito da uno o più PV.</p>
+<p><strong>LV (Logical Volume)</strong>: Simile alle partizioni del disco rigido nelle partizioni standard, il LV è costruito sopra il VG. È possibile impostare un file system su LV.</p>
+<p><b><font color="blue">PE</font></b>: L'unità di memoria più piccola che può essere allocata in un volume fisico, per impostazione predefinita <b>4MB</b>. È possibile specificare una dimensione aggiuntiva.</p>
+<p><b><font color="blue">LE</font></b>: La più piccola unità di memoria che può essere allocata in un Logical Volume. Nella stessa VG, PE e LE sono uguali e corrispondono uno a uno.</p>
+<p><img alt="Gruppo di volumi, dimensione PE pari a 4MB" src="../images/07-file-systems-004.png" /></p>
+<p>Lo svantaggio è che se uno dei volumi fisici va fuori servizio, tutti i volumi logici che utilizzano questo volume fisico vanno persi. È necessario utilizzare LVM sui dischi raid.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>LVM è gestito solo dal sistema operativo. Pertanto il <em>BIOS</em> ha bisogno di almeno una partizione senza LVM per l'avvio.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Informazione</p>
+<p>Nel disco fisico, l'unità di memorizzazione più piccola è il <strong>sector</strong>; nel file system, l'unità di memorizzazione più piccola di GNU/Linux è il <strong>block</strong>, che è chiamato <strong>cluster</strong> nel sistema operativo Windows; nel RAID, l'unità di memorizzazione più piccola è il <strong>chunk</strong>.</p>
+</div>
+<h3 id="il-meccanismo-di-scrittura-di-lvm">Il Meccanismo di Scrittura di LVM</h3>
+<p>Per l'archiviazione dei dati in <strong>LV</strong> esistono diversi meccanismi di memorizzazione, due dei quali sono:</p>
+<ul>
+<li>Volumi lineari;</li>
+<li>Volumi in modalità <em>stripe</em>;</li>
+<li>Volumi Mirrored.</li>
+</ul>
+<p><img alt="Volumi lineari" src="../images/07-file-systems-005.png" /></p>
+<p><img alt="Volumi in modalità stripe" src="../images/07-file-systems-006.png" /></p>
+<h3 id="comandi-lvm-per-la-gestione-dei-volumi">Comandi LVM per la gestione dei volumi</h3>
+<p>I principali comandi rilevanti sono i seguenti:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Elemento</th>
+<th style="text-align: center;">PV</th>
+<th style="text-align: center;">VG</th>
+<th style="text-align: center;">LV</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">scan</td>
+<td style="text-align: center;">pcscan</td>
+<td style="text-align: center;">vgscan</td>
+<td style="text-align: center;">lvscan</td>
+</tr>
+<tr>
+<td style="text-align: center;">create</td>
+<td style="text-align: center;">pvcreate</td>
+<td style="text-align: center;">vgcreate</td>
+<td style="text-align: center;">lvcreate</td>
+</tr>
+<tr>
+<td style="text-align: center;">display</td>
+<td style="text-align: center;">pvdisplay</td>
+<td style="text-align: center;">vgdisplay</td>
+<td style="text-align: center;">lvdisplay</td>
+</tr>
+<tr>
+<td style="text-align: center;">remove</td>
+<td style="text-align: center;">pvremove</td>
+<td style="text-align: center;">vgremove</td>
+<td style="text-align: center;">lvremove</td>
+</tr>
+<tr>
+<td style="text-align: center;">extend</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">vgextend</td>
+<td style="text-align: center;">lvextend</td>
+</tr>
+<tr>
+<td style="text-align: center;">reduce</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">vgreduce</td>
+<td style="text-align: center;">lvreduce</td>
+</tr>
+<tr>
+<td style="text-align: center;">informazioni sintetiche</td>
+<td style="text-align: center;">pvs</td>
+<td style="text-align: center;">vgs</td>
+<td style="text-align: center;">lvs</td>
+</tr>
+</tbody>
+</table>
+<h4 id="comando-pvcreate">comando <code>pvcreate</code></h4>
+<p>Il comando <code>pvcreate</code> viene utilizzato per creare volumi fisici. Trasforma le partizioni (o i dischi) di Linux in volumi fisici.</p>
+<div class="highlight"><pre><span></span><code>pvcreate [-opzioni] partizione
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>[root]# pvcreate /dev/hdb1
+pvcreate -- physical volume « /dev/hdb1 » successfully created
+</code></pre></div>
+<p>È anche possibile utilizzare un disco intero (il che facilita l'aumento delle dimensioni del disco in ambienti virtuali, ad esempio).</p>
+<div class="highlight"><pre><span></span><code>[root]# pvcreate /dev/hdb
+pvcreate -- physical volume « /dev/hdb » successfully created
+
+# It can also be written in other ways, such as
+[root]# pvcreate /dev/sd{b,c,d}1
+[root]# pvcreate /dev/sd[b-d]1
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-f</code></td>
+<td>Forza la creazione del volume (disco già trasformato in volume fisico). Usare con estrema cautela.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="comando-vgcreate">comando <code>vgcreate</code></h4>
+<p>Il comando <code>vgcreate</code> viene utilizzato per creare gruppi di volumi. Raggruppa uno o più volumi fisici in un gruppo di volumi.</p>
+<div class="highlight"><pre><span></span><code>vgcreate &lt;VG_name&gt; &lt;PV_name...&gt; [opzione] 
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>[root]# vgcreate volume1 /dev/hdb1
+…
+vgcreate – volume group « volume1 » successfully created and activated
+
+[root]# vgcreate vg01 /dev/sd{b,c,d}1
+[root]# vgcreate vg02 /dev/sd[b-d]1
+</code></pre></div>
+<h4 id="comando-lvcreate">comando <code>lvcreate</code></h4>
+<p>Il comando <code>lvcreate</code> crea volumi logici. Il file system viene quindi creato su questi volumi logici.</p>
+<div class="highlight"><pre><span></span><code>lvcreate -L size [-n name] VG_name
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>[root]# lvcreate –L 600M –n VolLog1 volume1
+lvcreate -- logical volume « /dev/volume1/VolLog1 » successfully created
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-L size</code></td>
+<td>Imposta la dimensione del volume logico in K, M o G.</td>
+</tr>
+<tr>
+<td><code>-n name</code></td>
+<td>Imposta il nome del LV. File speciale creato in <code>/dev/nome_volume</code> con questo nome.</td>
+</tr>
+<tr>
+<td><code>-l numero</code></td>
+<td>Imposta la percentuale della capacità del disco rigido da utilizzare. È possibile utilizzare anche il numero di PE. Un PE equivale a 4 MB.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Informazione</p>
+<p>Dopo aver creato un volume logico con il comando <code>lvcreate</code>, la regola di denominazione del sistema operativo è - <code>/dev/VG_name/LV_name</code>, questo tipo di file è un soft link (altrimenti noto come link simbolico). Il file di collegamento punta a file come <code>/dev/dm-0</code> e <code>/dev/dm-1</code>.</p>
+</div>
+<h3 id="comandi-lvm-per-visualizzare-le-informazioni-sui-volumi">Comandi LVM per visualizzare le informazioni sui volumi</h3>
+<h4 id="comando-pvdisplay">comando <code>pvdisplay</code></h4>
+<p>Il comando <code>pvdisplay</code> consente di visualizzare le informazioni sui volumi fisici.</p>
+<div class="highlight"><pre><span></span><code>pvdisplay /dev/PV_name
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>[root]# pvdisplay /dev/PV_name
+</code></pre></div>
+<h4 id="comando-vgdisplay">comando <code>vgdisplay</code></h4>
+<p>Il comando <code>vgdisplay</code> consente di visualizzare le informazioni sui gruppi di volumi.</p>
+<div class="highlight"><pre><span></span><code>vgdisplay VG_name
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>[root]# vgdisplay volume1
+</code></pre></div>
+<h4 id="comando-lvdisplay">comando <code>lvdisplay</code></h4>
+<p>Il comando <code>lvdisplay</code> consente di visualizzare le informazioni sui volumi logici.</p>
+<div class="highlight"><pre><span></span><code>lvdisplay /dev/VG_name/LV_name
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>[root]# lvdisplay /dev/volume1/VolLog1
+</code></pre></div>
+<h3 id="preparazione-dei-supporti-fisici">Preparazione dei supporti fisici</h3>
+<p>La preparazione con LVM del supporto fisico si articola come segue:</p>
+<ul>
+<li>Impostazione del disco fisico</li>
+<li>Partizione dei volumi</li>
+<li><strong>Volume fisico LVM</strong></li>
+<li><strong>Gruppi di volumi LVM</strong></li>
+<li><strong>Volumi logici LVM</strong></li>
+<li>Creazione di file system</li>
+<li>Montaggio dei file system</li>
+<li>Gestire l'accesso degli utenti</li>
+</ul>
+<h2 id="struttura-di-un-file-system">Struttura di un file system</h2>
+<p>Un <strong>FS</strong> del <em>file system</em> è responsabile delle seguenti azioni:</p>
+<ul>
+<li>Protezione dei diritti di accesso e modifica dei file;</li>
+<li>Manipolazione dei file: creazione, lettura, modifica e cancellazione;</li>
+<li>Individuazione dei file sul disco;</li>
+<li>Gestione dello spazio della partizione.</li>
+</ul>
+<p>Il sistema operativo Linux è in grado di utilizzare diversi file system (ext2, ext3, ext4, FAT16, FAT32, NTFS, HFS, BtrFS, JFS, XFS, ...).</p>
+<h3 id="comando-mkfs">comando <code>mkfs</code></h3>
+<p>Il comando <code>mkfs</code>(make file system) consente di creare un file system Linux.</p>
+<div class="highlight"><pre><span></span><code>mkfs [-t fstype] filesys
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>[root]# mkfs -t ext4 /dev/sda1
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-t</code></td>
+<td>Indica il tipo di file system da utilizzare.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>Senza un file system non è possibile utilizzare lo spazio su disco.</p>
+</div>
+<p>Ogni file system ha una struttura identica su ogni partizione. Un <strong>Boot Sector</strong> e un <strong>Super block</strong> inizializzati dal sistema, quindi una <strong>Inode table</strong> e un <strong>Data block</strong> inizializzati dall'amministratore.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>L'unica eccezione è la partizione <strong>swap</strong>.</p>
+</div>
+<h3 id="boot-sector">Boot sector</h3>
+<p>Il boot sector è il primo settore del supporto di memorizzazione avviabile, ovvero cilindro 0, traccia 0, settore 1 (1 settore equivale a 512 byte). Si compone di tre parti:</p>
+<ol>
+<li>MBR (master boot record): 446 byte.</li>
+<li>DPT (tabella di partizione del disco): 64 byte.</li>
+<li>BRID (boot record ID): 2 byte.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBR</td>
+<td>Memorizza il "boot loader" (o "GRUB"); carica il kernel, passa i parametri; fornisce un'interfaccia di menu all'avvio; trasferisce a un altro loader, ad esempio quando sono installati più sistemi operativi.</td>
+</tr>
+<tr>
+<td>DPT</td>
+<td>Registra lo stato della partizione dell'intero disco.</td>
+</tr>
+<tr>
+<td>BRID</td>
+<td>Determina se il dispositivo è utilizzabile per l'avvio.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="super-block">Super block</h3>
+<p>La dimensione della tabella del <strong>Super block</strong> è definita al momento della creazione. È presente in ogni partizione e contiene gli elementi necessari per il suo utilizzo.</p>
+<p>Descrive il File System:</p>
+<ul>
+<li>Nome del Volume Logico;</li>
+<li>Nome del File System;</li>
+<li>Tipo di File System;</li>
+<li>Stato del File System;</li>
+<li>Dimensione del File System;</li>
+<li>Numero di blocchi liberi;</li>
+<li>Puntatore all'inizio dell'elenco dei blocchi liberi;</li>
+<li>Dimensione dell'elenco di inode;</li>
+<li>Numero ed elenco degli inode liberi.</li>
+</ul>
+<p>Una copia viene caricata nella memoria centrale non appena il sistema viene inizializzato. Questa copia viene aggiornata non appena viene modificata e il sistema la salva periodicamente ( comando <code>sync</code>).</p>
+<p>Quando il sistema si arresta, copia anche questa tabella in memoria nel suo blocco.</p>
+<h3 id="tabella-degli-inode">Tabella degli inode</h3>
+<p>La dimensione della <strong>tabella degli inode</strong> è definita al momento della sua creazione ed è memorizzata nella partizione. È costituito da record, chiamati inode, corrispondenti ai file creati. Ogni record contiene gli indirizzi dei blocchi di dati che compongono il file.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Il numero di inode è unico all'interno di un file system.</p>
+</div>
+<p>Una copia viene caricata nella memoria centrale non appena il sistema viene inizializzato. Questa copia viene aggiornata non appena viene modificata e il sistema la salva periodicamente ( comando <code>sync</code>).</p>
+<p>Quando il sistema si arresta, copia anche questa tabella in memoria nel suo blocco.</p>
+<p>Un file è gestito dal suo numero di inode.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>La dimensione della tabella degli inode determina il numero massimo di file che il FS può contenere.</p>
+</div>
+<p>Informazioni presenti nella <em>tabella degli inode</em>:</p>
+<ul>
+<li>Numero di inode;</li>
+<li>Tipo di file e autorizzazioni di accesso;</li>
+<li>Numero di identificazione del proprietario;</li>
+<li>Numero di identificazione del gruppo proprietario;</li>
+<li>Numero di collegamenti in questo file;</li>
+<li>Dimensione del file in byte;</li>
+<li>Data dell'ultimo accesso al file;</li>
+<li>Data dell'ultima modifica del file;</li>
+<li>Data dell'ultima modifica dell'inode (= creazione);</li>
+<li>Tabella di diversi puntatori (tabella dei blocchi) ai blocchi logici contenenti i pezzi del file.</li>
+</ul>
+<h3 id="data-block">Data block</h3>
+<p>La sua dimensione corrisponde al resto dello spazio disponibile della partizione. Quest'area contiene i cataloghi corrispondenti a ciascuna directory e i blocchi di dati corrispondenti ai contenuti dei file.</p>
+<p><strong>Per garantire la coerenza del file system</strong>, un'immagine del superblocco e della tabella degli inode viene caricata in memoria (RAM) al momento del caricamento del sistema operativo, in modo che tutte le operazioni di I/O vengano effettuate attraverso queste tabelle di sistema. Quando l'utente crea o modifica i file, questa immagine di memoria viene aggiornata per prima. Il sistema operativo deve quindi aggiornare regolarmente il superblocco del disco logico<code>(</code> comando<code>sync</code> ).</p>
+<p>Queste tabelle vengono scritte sul disco rigido quando il sistema viene spento.</p>
+<div class="admonition danger">
+<p class="admonition-title">Attenzione</p>
+<p>In caso di arresto improvviso, il file system potrebbe perdere la sua consistenza e causare la perdita di dati.</p>
+</div>
+<h3 id="riparazione-del-file-system">Riparazione del file system</h3>
+<p>È possibile verificare la consistenza di un file system con il comando <code>fsck</code>.</p>
+<p>In caso di errori, vengono proposte soluzioni per riparare le incongruenze. Dopo la riparazione, i file che rimangono senza voci nella tabella degli inode vengono allegati alla cartella <code>/lost+found</code> dell'unità logica.</p>
+<h4 id="comando-fsck">comando <code>fsck</code></h4>
+<p>Il comando <code>fsck</code> è uno strumento di controllo e riparazione dell'integrità in modalità console per i file system di Linux.</p>
+<div class="highlight"><pre><span></span><code>fsck [-sACVRTNP] [ -t fstype ] filesys
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>[root]# fsck /dev/sda1
+</code></pre></div>
+<p>Per controllare la partizione root, è possibile creare un file <code>forcefsck</code> e riavviare o eseguire <code>shutdown</code> con l'opzione <code>-F</code>.</p>
+<div class="highlight"><pre><span></span><code>[root]# touch /forcefsck
+[root]# reboot
+or
+[root]# shutdown –r -F now
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>La partizione da controllare deve essere smontata.</p>
+</div>
+<h2 id="organizzazione-di-un-file-system">Organizzazione di un file system</h2>
+<p>Per definizione, un file system è una struttura ad albero di directory costruita a partire da una directory principale (un dispositivo logico può contenere un solo file system).</p>
+<p><img alt="Organizzazione di un file system" src="../images/07-file-systems-008.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>In Linux tutto è un file.</p>
+</div>
+<p>Documento di testo, directory, binario, partizione, risorsa di rete, schermo, tastiera, kernel Unix, programma utente, ...</p>
+<p>Linux rispetta lo standard <strong>FHS</strong><em>(Filesystems Hierarchy Standard</em>) (vedi <code>man hier</code>) che definisce i nomi delle cartelle e i loro ruoli.</p>
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Funzionalità</th>
+<th>Abbreviazione di</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td>Contiene directory speciali</td>
+<td></td>
+</tr>
+<tr>
+<td><code>/boot</code></td>
+<td>File relativi all'avvio del sistema</td>
+<td></td>
+</tr>
+<tr>
+<td><code>/sbin</code></td>
+<td>Comandi necessari per l'avvio e la riparazione del sistema</td>
+<td><em>binari di sistema</em></td>
+</tr>
+<tr>
+<td><code>/bin</code></td>
+<td>Eseguibili dei comandi di base del sistema</td>
+<td><em>binari</em></td>
+</tr>
+<tr>
+<td><code>/usr/bin</code></td>
+<td>Comandi di amministrazione del sistema</td>
+<td></td>
+</tr>
+<tr>
+<td><code>/lib</code></td>
+<td>Librerie condivise e moduli del kernel</td>
+<td><em>librerie</em></td>
+</tr>
+<tr>
+<td><code>/usr</code></td>
+<td>Tutto ciò che non è necessario per il funzionamento minimo del sistema</td>
+<td><em>Risorse di sistema UNIX</em></td>
+</tr>
+<tr>
+<td><code>/mnt</code></td>
+<td>Per il montaggio di SF temporanei</td>
+<td><em>mount</em></td>
+</tr>
+<tr>
+<td><code>/media</code></td>
+<td>Per il montaggio di supporti rimovibili</td>
+<td></td>
+</tr>
+<tr>
+<td><code>/misc</code></td>
+<td>Per montare la directory condivisa del servizio NFS.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>/root</code></td>
+<td>Directory di accesso dell'amministratore</td>
+<td></td>
+</tr>
+<tr>
+<td><code>/home</code></td>
+<td>Dati utente</td>
+<td></td>
+</tr>
+<tr>
+<td><code>/tmp</code></td>
+<td>File temporanei</td>
+<td><em>temporanei</em></td>
+</tr>
+<tr>
+<td><code>/dev</code></td>
+<td>File speciali del dispositivo</td>
+<td><em>dispositivo</em></td>
+</tr>
+<tr>
+<td><code>/etc</code></td>
+<td>File di configurazione e scripts</td>
+<td><em>configurazione del testo modificabile</em></td>
+</tr>
+<tr>
+<td><code>/opt</code></td>
+<td>Specifico per le applicazioni installate</td>
+<td><em>opzionale</em></td>
+</tr>
+<tr>
+<td><code>/proc</code></td>
+<td>File system virtuale che rappresenta diversi processi</td>
+<td><em>processi</em></td>
+</tr>
+<tr>
+<td><code>/var</code></td>
+<td>File variabili vari</td>
+<td><em>variabili</em></td>
+</tr>
+<tr>
+<td><code>/sys</code></td>
+<td>File system virtuale, simile a /proc</td>
+<td></td>
+</tr>
+<tr>
+<td><code>/run</code></td>
+<td>Questo è /var/run</td>
+<td></td>
+</tr>
+<tr>
+<td><code>/srv</code></td>
+<td>Service Data Directory</td>
+<td><em>servizio</em></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Per eseguire un montaggio o uno smontaggio, a livello di albero, non ci si deve trovare sotto il suo punto di montaggio.</li>
+<li>Il montaggio su una directory non vuota non cancella il contenuto. È solo nascosta.</li>
+<li>Solo l'amministratore può eseguire il montaggio.</li>
+<li>I punti di montaggio da montare automaticamente all'avvio devono essere inseriti in <code>/etc/fstab</code>.</li>
+</ul>
+<h3 id="file-etcfstab">file <code>/etc/fstab</code></h3>
+<p>Il file <code>/etc/fstab</code> viene letto all'avvio del sistema e contiene i montaggi da eseguire. Ogni file system da montare è descritto su una singola riga, con i campi separati da spazi o tabulazioni.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Le righe vengono lette in sequenza (<code>fsck</code>, <code>mount</code>, <code>umount</code>).</p>
+</div>
+<div class="highlight"><pre><span></span><code>/dev/mapper/VolGroup-lv_root   /         ext4    defaults        1   1
+UUID=46….92                    /boot     ext4    defaults        1   2
+/dev/mapper/VolGroup-lv_swap   swap      swap    defaults        0   0
+tmpfs                          /dev/shm  tmpfs   defaults        0   0
+devpts                         /dev/pts  devpts  gid=5,mode=620  0   0
+sysfs                          /sys      sysfs   defaults        0   0
+proc                           /proc     proc    defaults        0   0
+  1                              2         3        4            5   6
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Colonna</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Dispositivo del file system<code>(/dev/sda1</code>, UUID=..., ...)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Nome del punto di montaggio, <strong>percorso assoluto</strong> (eccetto <strong>swap</strong>)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tipo di filesystem (ext4, swap, ...)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Opzioni speciali per il montaggio (<code>default</code>, <code>ro</code>, ...)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Abilitare o disabilitare la gestione del backup (0:non eseguito il backup, 1:eseguito il backup)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Ordine di controllo quando si controlla lo SF con il comando <code>fsck</code> (0:nessun controllo, 1:priorità, 2:non priorità)</td>
+</tr>
+</tbody>
+</table>
+<p>Il comando <code>mount -a</code> consente di eseguire il montaggio automatico in base al contenuto del file di configurazione <code>/etc/fstab</code>; le informazioni montate vengono poi scritte in <code>/etc/mtab</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>Solo i punti di montaggio elencati in <code>/etc/fstab</code> saranno montati al riavvio. In generale, si sconsiglia di scrivere le unità flash USB e i dischi rigidi rimovibili nel file <code>/etc/fstab</code>, perché quando il dispositivo esterno viene scollegato e riavviato, il sistema segnalerà che il dispositivo non può essere trovato, con conseguente mancato avvio. Quindi cosa dovrei fare? Montaggio temporaneo, ad esempio:</p>
+<div class="highlight"><pre><span></span><code>Shell<span class="w"> </span>&gt;<span class="w"> </span>mkdir<span class="w"> </span>/mnt/usb<span class="w">     </span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>mount<span class="w"> </span>-t<span class="w">  </span>vfat<span class="w">  </span>/dev/sdb1<span class="w">  </span>/mnt/usb<span class="w">  </span>
+
+<span class="c1"># Read the information of the USB flash disk</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/mnt/usb/
+
+<span class="c1"># When not needed, execute the following command to pull out the USB flash disk</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>umount<span class="w"> </span>/mnt/usb
+</code></pre></div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Informazione</p>
+<p>È possibile fare una copia del file <code>/etc/mtab</code> o copiare il suo contenuto in <code>/etc/fstab</code>.
+Se si desidera visualizzare l'UUID del numero di partizione del dispositivo, digitare il seguente comando: <code>lsblk -o name,uuid</code>. UUID è l'abbreviazione di <code>Universally Unique Identifier</code>.</p>
+</div>
+<h3 id="comandi-di-gestione-del-montaggio">Comandi di gestione del montaggio</h3>
+<h4 id="comando-di-montaggio">comando di <code>montaggio</code></h4>
+<p>Il comando <code>mount</code> consente di montare e visualizzare le unità logiche nella struttura.</p>
+<div class="highlight"><pre><span></span><code>mount [-option] [device] [directory]
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>[root]# mount /dev/sda7 /home
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-n</code></td>
+<td>Imposta il montaggio senza scrivere in <code>/etc/mtab</code>.</td>
+</tr>
+<tr>
+<td><code>-t</code></td>
+<td>Indica il tipo di file system da utilizzare.</td>
+</tr>
+<tr>
+<td><code>-a</code></td>
+<td>Monta tutti i filesystem menzionati in <code>/etc/fstab</code>.</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>Monta il file system in sola lettura (equivalente a <code>-o ro</code>).</td>
+</tr>
+<tr>
+<td><code>-w</code></td>
+<td>Monta il file system in lettura/scrittura, per impostazione predefinita (equivalente a <code>-o rw</code>).</td>
+</tr>
+<tr>
+<td><code>-o</code></td>
+<td>Argomento seguito da un elenco di opzioni separate da virgole (<code>remount</code>, <code>ro</code>, ...).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Il solo comando <code>mount</code> visualizza tutti i file system montati.</p>
+</div>
+<h4 id="comando-umount">comando <code>umount</code></h4>
+<p>Il comando <code>umount</code> viene utilizzato per smontare le unità logiche.</p>
+<div class="highlight"><pre><span></span><code>umount [-option] [device] [directory]
+</code></pre></div>
+<p>Esempio:</p>
+<div class="highlight"><pre><span></span><code>[root]# umount /home
+[root]# umount /dev/sda7
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-n</code></td>
+<td>Imposta la rimozione del montaggio senza scrivere in <code>/etc/mtab</code>.</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>Rimonta in sola lettura se <code>umount</code> fallisce.</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td>Forza la rimozione del montaggio.</td>
+</tr>
+<tr>
+<td><code>-a</code></td>
+<td>Rimuove i montaggi di tutti i filesystem menzionati in <code>/etc/fstab</code>.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Durante lo smontaggio, non si deve rimanere al di sotto del punto di montaggio. In caso contrario, viene visualizzato il seguente messaggio di errore: <code>device is busy</code>.</p>
+</div>
+<h2 id="convenzione-di-denominazione-dei-file">Convenzione di denominazione dei file</h2>
+<p>Come in ogni sistema, per potersi orientare nella struttura ad albero e nella gestione dei file, è importante rispettare le regole di denominazione dei file.</p>
+<ul>
+<li>I file sono codificati con 255 caratteri;</li>
+<li>È possibile utilizzare tutti i caratteri ASCII;</li>
+<li>Le lettere maiuscole e minuscole sono differenziate;</li>
+<li>La maggior parte dei file non ha il concetto di estensione. Nel mondo GNU/Linux, la maggior parte delle estensioni dei file non è richiesta, tranne alcune (ad esempio, .jpg, .mp4, .gif, ecc.).</li>
+</ul>
+<p>I gruppi di parole separati da spazi devono essere racchiusi tra virgolette:</p>
+<div class="highlight"><pre><span></span><code>[root]# mkdir &quot;working dir&quot;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Sebbene non ci sia nulla di tecnicamente sbagliato nel creare un file o una directory con uno spazio al suo interno, è generalmente una "best practice" da evitare e sostituire ogni spazio con un trattino basso.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Il <strong>.</strong> all'inizio del nome del file serve solo a nasconderlo a un semplice <code>ls</code>.</p>
+</div>
+<p>Esempi di convenzione sull'estensione dei file:</p>
+<ul>
+<li><code>.c</code>: file sorgente in linguaggio C;</li>
+<li><code>.h</code>: file di intestazione C e Fortran;</li>
+<li><code>.o</code>: file oggetto in linguaggio C;</li>
+<li><code>.tar</code>: file di dati archiviati con l'utilità <code>tar</code>;</li>
+<li><code>.cpio</code>: file di dati archiviati con l'utilità <code>cpio</code>;</li>
+<li><code>.gz</code>: file di dati compressi con l'utilità <code>gzip</code>;</li>
+<li><code>.tgz</code>: file di dati archiviati con l'utilità <code>tar</code> e compressi con l'utilità <code>gzip</code>;</li>
+<li><code>.html</code>: pagina web.</li>
+</ul>
+<h3 id="dettagli-del-nome-di-un-file">Dettagli del nome di un file</h3>
+<div class="highlight"><pre><span></span><code>[root]# ls -liah /usr/bin/passwd
+266037 -rwsr-xr-x 1 root 59K mars 22 2019 /usr/bin/passwd
+1 2 3 4 5 6 7 8 9
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parte</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1</code></td>
+<td>Numero di inode</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>Tipo di file (primo carattere del blocco di 10), "-" significa che si tratta di un file ordinario.</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>Diritti di accesso (ultimi 9 caratteri del blocco di 10)</td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td>Se si tratta di una directory, questo numero rappresenta il numero di sottodirectory presenti nella directory, comprese quelle nascoste. Se si tratta di un file, indica il numero di collegamenti, quando il numero è 1, ovvero, c'è un solo collegamento, quello relativo al file stesso.</td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td>Nome del proprietario</td>
+</tr>
+<tr>
+<td><code>6</code></td>
+<td>Nome del gruppo</td>
+</tr>
+<tr>
+<td><code>7</code></td>
+<td>Dimensione (byte, kilo, mega)</td>
+</tr>
+<tr>
+<td><code>8</code></td>
+<td>Data dell'ultimo aggiornamento</td>
+</tr>
+<tr>
+<td><code>9</code></td>
+<td>Nome del file</td>
+</tr>
+</tbody>
+</table>
+<p>Nel mondo GNU/Linux esistono sette tipi di file:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Tipi di file</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>-</strong></td>
+<td>Rappresenta un file ordinario. Compresi i file di testo semplice (ASCII); file binari (binario); file in formato dati (dati); vari file compressi.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>d</strong></td>
+<td>Rappresenta un file di directory.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>b</strong></td>
+<td>Rappresenta un file di dispositivo a blocchi. Include tutti i tipi di dischi rigidi, unità USB e così via.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>c</strong></td>
+<td>Rappresenta un file di dispositivo di caratteri. Dispositivo di interfaccia della porta seriale, come il mouse, la tastiera, ecc.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>s</strong></td>
+<td>Rappresenta un file socket. Si tratta di un file appositamente utilizzato per la comunicazione di rete.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>p</strong></td>
+<td>Rappresenta un file pipe. È un tipo di file speciale. Lo scopo principale è quello di risolvere gli errori causati da più programmi che accedono a un file contemporaneamente. FIFO è l'abbreviazione del first-in-first out.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>l</strong></td>
+<td>I file soft link, chiamati anche file di collegamento simbolico, sono simili ai collegamenti di Windows. File di collegamento rigido, noto anche come file di collegamento fisico.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="descrizione-supplementare-della-directory">Descrizione supplementare della directory</h4>
+<p>In ogni directory ci sono due file nascosti: <strong>.</strong> e <strong>..</strong>. È necessario utilizzare <code>ls -al</code> per visualizzarli, ad esempio:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># . Indica che nella directory corrente, ad esempio, è necessario eseguire uno script in una directory, di solito:</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>./scripts
+
+<span class="c1"># .. rappresenta la directory un livello sopra la directory corrente, ad esempio:</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/etc/
+Shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+Shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">pwd</span>
+/
+
+<span class="c1"># Per una directory vuota, la sua quarta parte deve essere maggiore o uguale a 2. Perché ci sono &quot;.&quot; e &quot;..&quot;</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>mkdir<span class="w"> </span>/tmp/t1
+Shell<span class="w"> </span>&gt;<span class="w"> </span>ls<span class="w"> </span>-ldi<span class="w"> </span>/tmp/t1
+<span class="m">1179657</span><span class="w"> </span>drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Nov<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">18</span>:41<span class="w"> </span>/tmp/t1
+</code></pre></div>
+<h4 id="file-speciali">File speciali</h4>
+<p>Per comunicare con le periferiche (dischi rigidi, stampanti...), Linux utilizza dei file di interfaccia chiamati file speciali (<em>device file</em> o <em>special file</em>). Consentono l'identificazione da parte delle periferiche.</p>
+<p>Questi file sono speciali perché non contengono dati, ma specificano la modalità di accesso per comunicare con il dispositivo.</p>
+<p>Sono definiti in due modalità:</p>
+<ul>
+<li>modalità <strong>a blocchi</strong>;</li>
+<li>modalità a <strong>carattere</strong>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Block device file</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/dev/sda
+brw-------<span class="w">   </span><span class="m">1</span><span class="w">   </span>root<span class="w">  </span>root<span class="w">  </span><span class="m">8</span>,<span class="w"> </span><span class="m">0</span><span class="w"> </span>jan<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1970</span><span class="w"> </span>/dev/sda
+
+<span class="c1"># Character device file</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/dev/tty0
+crw-------<span class="w">   </span><span class="m">1</span><span class="w">   </span>root<span class="w">  </span>root<span class="w">  </span><span class="m">8</span>,<span class="w"> </span><span class="m">0</span><span class="w"> </span>jan<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1970</span><span class="w"> </span>/dev/tty0
+</code></pre></div>
+<h4 id="file-di-comunicazione">File di comunicazione</h4>
+<p>Si tratta dei file pipe (<em>pipes</em>) e <em>socket</em>.</p>
+<ul>
+<li>
+<p>I <strong>file Pipe</strong> passano le informazioni tra i processi tramite FIFO_(First In, First Out_). Un processo scrive informazioni transitorie su un file <em>pipe</em> e un altro le legge. Dopo la lettura, le informazioni non sono più accessibili.</p>
+</li>
+<li>
+<p>I <strong>file socket</strong> consentono la comunicazione bidirezionale tra processi (su sistemi locali o remoti). Utilizzano un <em>inode</em> del file system.</p>
+</li>
+</ul>
+<h4 id="file-di-collegamento">File di collegamento</h4>
+<p>Questi file danno la possibilità di assegnare diversi nomi logici allo stesso file fisico. Viene quindi creato un nuovo punto di accesso al file.</p>
+<p>Esistono due tipi di file di collegamento:</p>
+<ul>
+<li>File di collegamento soft, chiamato anche file di collegamento simbolico;</li>
+<li>File di collegamento hard, chiamato anche file di collegamento fisico.</li>
+</ul>
+<p>Le loro caratteristiche principali sono:</p>
+<table>
+<thead>
+<tr>
+<th>Tipi di link</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file soft link</td>
+<td>Una scorciatoia simile a quella di Windows. Ha un permesso di 777 e punta al file originale. Quando il file originale viene eliminato, il file collegato e il file originale vengono visualizzati in rosso.</td>
+</tr>
+<tr>
+<td>File hard link</td>
+<td>Il file originale ha lo stesso numero di <em>inode</em> del file collegato. Ha lo stesso numero <em>inode</em> del file collegato fisicamente. Possono essere aggiornati in modo sincrono, includendo il contenuto del file e quando è stato modificato. Non è possibile attraversare le partizioni, né i file system. Non può essere utilizzato per le directory.</td>
+</tr>
+</tbody>
+</table>
+<p>Esempi specifici sono i seguenti:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Permissions and the original file to which they point</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc/rc.locol
+lrwxrwxrwx<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">13</span><span class="w"> </span>Oct<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="m">15</span>:41<span class="w"> </span>/etc/rc.local<span class="w"> </span>-&gt;<span class="w"> </span>rc.d/rc.local
+
+<span class="c1"># When deleting the original file. &quot;-s&quot; represents the soft link option</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>touch<span class="w"> </span>/root/Afile
+Shell<span class="w"> </span>&gt;<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/root/Afile<span class="w"> </span>/root/slink1
+Shell<span class="w"> </span>&gt;<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/root/Afile
+</code></pre></div>
+<p><img alt="Presentare l'effetto" src="../images/07-file-systems-019.png" /></p>
+<div class="highlight"><pre><span></span><code>Shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/paul/
+Shell<span class="w"> </span>&gt;<span class="w"> </span>ls<span class="w"> </span>–li<span class="w"> </span>letter
+<span class="m">666</span><span class="w"> </span>–rwxr--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span>…<span class="w"> </span>letter
+
+<span class="c1"># The ln command does not add any options, indicating a hard link</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>ln<span class="w"> </span>/home/paul/letter<span class="w"> </span>/home/jack/read
+
+<span class="c1"># The essence of hard links is the file mapping of the same inode number in different directories.</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>ls<span class="w"> </span>–li<span class="w"> </span>/home/*/*
+<span class="m">666</span><span class="w"> </span>–rwxr--r--<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span>…<span class="w"> </span>letter
+<span class="m">666</span><span class="w"> </span>–rwxr--r--<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span>…<span class="w"> </span><span class="nb">read</span>
+
+<span class="c1"># If you use a hard link to a directory, you will be prompted:</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>ln<span class="w">  </span>/etc/<span class="w">  </span>/root/etc_hardlink
+ln:<span class="w"> </span>/etc:<span class="w"> </span>hard<span class="w"> </span>link<span class="w"> </span>not<span class="w"> </span>allowed<span class="w"> </span><span class="k">for</span><span class="w"> </span>directory
+</code></pre></div>
+<h2 id="attributi-dei-file">Attributi dei file</h2>
+<p>Linux è un sistema operativo multiutente in cui il controllo dell'accesso ai file è essenziale.</p>
+<p>Questi controlli sono funzioni di:</p>
+<ul>
+<li>permessi di accesso ai file ;</li>
+<li>utenti (<em>ugo</em> <em>Users Groups Others</em>).</li>
+</ul>
+<h3 id="permessi-di-base-di-file-e-directory">Permessi di base di file e directory</h3>
+<p>La descrizione dei <strong>permessi dei file</strong> è la seguente:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Permessi dei file</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">r</td>
+<td>Leggi. Consente la lettura di un file<code>(cat</code>, <code>less</code>, ...) e la copia di un file<code>(cp</code>, ...).</td>
+</tr>
+<tr>
+<td style="text-align: center;">w</td>
+<td>Scrivere. Consente di modificare il contenuto del file<code>(cat</code>, <code>&gt;&gt;,</code> <code>vim</code>, ...).</td>
+</tr>
+<tr>
+<td style="text-align: center;">x</td>
+<td>Eseguire. Considera il file come un file <strong>eseguibile</strong>(binario o script).</td>
+</tr>
+<tr>
+<td style="text-align: center;">-</td>
+<td>Nessun diritto</td>
+</tr>
+</tbody>
+</table>
+<p>La descrizione dei <strong>permessi delle directory</strong> è la seguente:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Autorizzazioni delle directory</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">r</td>
+<td>Leggi. Consente di leggere il contenuto di una directory<code>(ls -R</code>).</td>
+</tr>
+<tr>
+<td style="text-align: center;">w</td>
+<td>Scrivere. Permette di creare ed eliminare file/directory in questa directory, come i comandi <code>mkdir</code>, <code>rmdir</code>, <code>rm</code>, <code>touch</code> e così via.</td>
+</tr>
+<tr>
+<td style="text-align: center;">x</td>
+<td>Eseguire. Consente la discesa nella directory(<code>cd</code>).</td>
+</tr>
+<tr>
+<td style="text-align: center;">-</td>
+<td>Nessun diritto</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Informazione</p>
+<p>Per i permessi di una directory, <code>r</code> e <code>x</code> di solito appaiono contemporaneamente. Lo spostamento o la ridenominazione di un file dipende dal fatto che la directory in cui si trova il file abbia il permesso <code>w</code>, così come l'eliminazione di un file.</p>
+</div>
+<h3 id="tipo-di-utente-corrispondente-allautorizzazione-di-base">Tipo di utente corrispondente all'autorizzazione di base</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Tipo utente</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">u</td>
+<td>Proprietario</td>
+</tr>
+<tr>
+<td style="text-align: center;">g</td>
+<td>Gruppo proprietario</td>
+</tr>
+<tr>
+<td style="text-align: center;">o</td>
+<td>Altri utenti</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Informazione</p>
+<p>In alcuni comandi è possibile designarli tutti con <strong>a</strong> (<em>all</em>). <strong>a = ugo</strong>.</p>
+</div>
+<h3 id="gestione-degli-attributi">Gestione degli attributi</h3>
+<p>La visualizzazione dei diritti si effettua con il comando <code>ls -l</code>. Si tratta degli ultimi 9 caratteri di un blocco di 10. Più precisamente 3 volte 3 caratteri.</p>
+<div class="highlight"><pre><span></span><code>[root]# ls -l /tmp/myfile
+-rwxrw-r-x  1  root  sys  ... /tmp/myfile
+  1  2  3       4     5
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parte</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Permessi del proprietario (<strong>u</strong>ser), qui <code>rwx</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Permessi del gruppo proprietario (<strong>g</strong>roup), qui <code>rw-</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Permessi di altri utenti (<strong>o</strong>thers), qui <code>r-x</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Proprietario del file</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Gruppo proprietario del file</td>
+</tr>
+</tbody>
+</table>
+<p>Per impostazione predefinita, il <em>proprietario</em> di un file è colui che lo ha creato. Il <em>gruppo</em> del file è il gruppo del proprietario che ha creato il file. Gli <em>altri</em> sono quelli che non rientrano nei casi precedenti.</p>
+<p>Gli attributi vengono modificati con il comando <code>chmod</code>.</p>
+<p>Solo l'amministratore e il proprietario di un file possono modificarne i diritti.</p>
+<h4 id="comando-chmod">comando <code>chmod</code></h4>
+<p>Il comando <code>chmod</code> consente di modificare i permessi di accesso a un file.</p>
+<div class="highlight"><pre><span></span><code>chmod [opzione] modalità file
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Osservazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-R</code></td>
+<td>Modifica ricorsivamente i permessi della directory e di tutti i file in essa contenuti.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p>I diritti dei file e delle directory non sono dissociati. Per alcune operazioni, sarà necessario conoscere i diritti della directory contenente il file. Un file protetto da scrittura può essere cancellato da un altro utente, purché i diritti della directory che lo contiene consentano a questo utente di eseguire questa operazione.</p>
+</div>
+<p>L'indicazione della modalità può essere una rappresentazione ottale (ad esempio <code>744</code>) o una rappresentazione simbolica ([<code>ugoa</code>][<code>+=-</code>][<code>rwxst</code>]).</p>
+<h5 id="rappresentazione-ottale-o-numerica">Rappresentazione ottale (o numerica):</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Numero</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">4</td>
+<td>r</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>s</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>x</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>Sommare i tre numeri per ottenere un'autorizzazione di tipo utente. ad es. <strong>755=rwxr-xr-x</strong>.</p>
+<p><img alt="Rappresentazione ottale" src="../images/07-file-systems-011.png" /></p>
+<p><img alt="Diritti 777" src="../images/07-file-systems-012.png" /></p>
+<p><img alt="Diritti 741" src="../images/07-file-systems-013.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Informazione</p>
+<p>A volte si vedrà <code>chmod 4755</code>. Il numero 4 si riferisce al permesso speciale <strong>set uid</strong>. I permessi speciali non verranno per il momento ampliati in questa sede, ma solo come nozioni di base.</p>
+</div>
+<div class="highlight"><pre><span></span><code>[root]# ls -l /tmp/fil*
+-rwxrwx--- 1 root root … /tmp/file1
+-rwx--x--- 1 root root … /tmp/file2
+-rwx--xr-- 1 root root … /tmp/file3
+
+[root]# chmod 741 /tmp/file1
+[root]# chmod -R 744 /tmp/file2
+[root]# ls -l /tmp/fic*
+-rwxr----x 1 root root … /tmp/file1
+-rwxr--r-- 1 root root … /tmp/file2
+</code></pre></div>
+<h5 id="rappresentazione-simbolica">rappresentazione simbolica</h5>
+<p>Questo metodo può essere considerato come un'associazione "letterale" tra un tipo di utente, un operatore e i diritti.</p>
+<p><img alt="Metodo simbolico" src="../images/07-file-systems-014.png" /></p>
+<div class="highlight"><pre><span></span><code>[root]# chmod -R u+rwx,g+wx,o-r /tmp/file1
+[root]# chmod g=x,o-r /tmp/file2
+[root]# chmod -R o=r /tmp/file3
+</code></pre></div>
+<h2 id="diritti-predefiniti-e-maschera">Diritti predefiniti e maschera</h2>
+<p>Quando un file o una directory viene creata, ha già dei permessi.</p>
+<ul>
+<li>Per una directory: <code>rwxr-xr-x</code> o <em>755</em>.</li>
+<li>Per un file: <code>rw-r-r-</code> o <em>644</em>.</li>
+</ul>
+<p>Questo comportamento è definito dalla <strong>maschera predefinita</strong>.</p>
+<p>Il principio è quello di rimuovere il valore definito dalla maschera al massimo dei diritti senza il diritto di esecuzione.</p>
+<p>Per una directory :</p>
+<p><img alt="Come funziona il SUID" src="../images/07-file-systems-017.png" /></p>
+<p>Per un file, i diritti di esecuzione vengono rimossi:</p>
+<p><img alt="Diritti predefiniti di un file" src="../images/07-file-systems-018.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Informazione</p>
+<p>Il file `/etc/login.defs' definisce l'UMASK predefinito, con un valore di <strong>022</strong>. Ciò significa che il permesso di creare un file è 755 (rwxr-xr-x). Tuttavia, per motivi di sicurezza, GNU/Linux non prevede il permesso <strong>x</strong> per i file appena creati; questa restrizione si applica a root (uid=0) e agli utenti ordinari (uid&gt;=1000).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># root user</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>touch<span class="w"> </span>a.txt
+Shell<span class="w"> </span>&gt;<span class="w"> </span>ll
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">     </span><span class="m">0</span><span class="w"> </span>Oct<span class="w">  </span><span class="m">8</span><span class="w"> </span><span class="m">13</span>:00<span class="w"> </span>a.txt
+</code></pre></div>
+</div>
+<h3 id="comando-umask">comando <code>umask</code></h3>
+<p>Il comando <code>umask</code> consente di visualizzare e modificare la maschera.</p>
+<div class="highlight"><pre><span></span><code>umask [opzione] [modalità]
+</code></pre></div>
+<p>Esempio:
+<div class="highlight"><pre><span></span><code>$ umask 033
+$ umask
+0033
+$ umask -S
+u=rwx,g=r,o=r
+$ touch umask_033
+$ ls -la  umask_033
+-rw-r--r-- 1 architalia architalia 0 nov.   4 16:44 umask_033
+$ umask 025
+$ umask -S
+u=rwx,g=rx,o=w
+$ touch umask_025
+$ ls -la  umask_025
+-rw-r---w- 1 architalia architalia 0 nov.   4 16:44 umask_025
+</code></pre></div></p>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-S</code></td>
+<td>Visualizzazione simbolica dei diritti dei file.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione</p>
+<p><code>umask</code> non influisce sui file esistenti. <code>umask -S</code> visualizza i diritti dei file (senza il diritto di esecuzione) dei file che verranno creati. Quindi, non è la visualizzazione della maschera utilizzata per sottrarre il valore massimo.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p><code>umask</code> modifica la maschera fino alla disconnessione.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Informazione</p>
+<p>Il comando <code>umask</code> appartiene ai comandi incorporati di bash, quindi quando si usa <code>man umask</code>, vengono visualizzati tutti i comandi incorporati. Se si desidera visualizzare solo la guida di <code>umask</code>, è necessario utilizzare il comando <code>help umask</code>.</p>
+</div>
+<p>Per mantenere il valore, è necessario modificare i seguenti file di profilo:</p>
+<p>Per tutti gli utenti:</p>
+<ul>
+<li><code>/etc/profile</code></li>
+<li><code>/etc/bashrc</code></li>
+</ul>
+<p>Per un particolare utente:</p>
+<ul>
+<li><code>~/.bashrc</code></li>
+</ul>
+<p>Quando viene scritto il file di cui sopra, esso sovrascrive il parametro <strong>UMASK</strong> di <code>/etc/login.defs</code>. Se si desidera migliorare la sicurezza del sistema operativo, è possibile impostare umask a <strong>027</strong> o <strong>077</strong>.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última actualización">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 de febrero de 2026 23:13:20 UTC">23 de febrero de 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Creado">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de febrero de 2026 16:22:56 UTC">21 de febrero de 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+       
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "content.action.edit", "navigation.sections", "navigation.tabs", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascript/extra.js"></script>
+      
+    
+  </body>
+</html>
