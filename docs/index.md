@@ -10,7 +10,7 @@ En estos recursos, los usuarios pueden encontrar informaci√≥n detallada sobre c√
 
 ## Todos los canales oficiales
 
-- [:fontawesome-solid-house-circle-check: Sitio oficial](https://archlatam.github.io/site/)
+- [:fontawesome-solid-house-circle-check: Sitio oficial](https://archlatam.github.io/)
 - [:fontawesome-brands-github: GitHub](https://github.com/archlatam)
 - [:fontawesome-brands-discord: Discord](https://discord.gg/4eF5pGNgyz)
 - [:fontawesome-solid-download: Descargar ISO](https://drive.google.com/file/d/1zIZdMy3yOYOONfzueWH81Keha4ztxuLF/view?usp=drive_link)
