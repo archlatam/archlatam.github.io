@@ -34,6 +34,12 @@ Si eres un entusiasta de Arch Linux, apoya a nuestra comunidad en Archlatam y ay
 
 Support the Archlatam community of Arch Linux by making a donation to help us grow. If you're a passionate Arch Linux user, donate today and help us ensure the continuity of our services and provide even more support and resources to all of our members. Thank you for your support!
 
-[Donaciones Paypal](https://www.paypal.com/donate/?hosted_button_id=3C4YAF9NXMEWL)
+[Donaciones Paypal]()
+
+<form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="992A7JFKCFALJ" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_AR/i/scr/pixel.gif" width="1" height="1" />
+</form>
 
 <br><br>

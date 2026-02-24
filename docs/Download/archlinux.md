@@ -1,17 +1,16 @@
-# Download live iso
-
+# descargar iso en vivo
 
 ## Archiso
 
 ![iso](../images/live/iso.png)
 
-Sempre aggiornata, dal server Italiano archmirror.it
- 
-[Download :fontawesome-regular-circle-down:](https://archmirror.it/repos/iso/latest/archlinux-x86_64.iso)
+Siempre actualizado, desde el servidor.
 
-Verifica della firma
+[Download :fontawesome-regular-circle-down:](https://archlinux.org/download/)
 
-E' raccomandata la verifica della firma dell'immagine prima dell'utilizzo, specialmente se è stata scaricata da un mirror HTTP, dove i download possono essere soggetti ad intercettazioni per fornire immagini malevoli. Su un sistema con GnuPG installato, eseguire il comando seguente per scaricare la firma PGP ISO > nella directory col file ISO, e verificarla con:
+Verificación de firma
+
+Se recomienda verificar la firma de la imagen antes de usarla, especialmente si se descargó de un servidor HTTP, donde las descargas pueden ser interceptadas y enviar imágenes maliciosas. En un sistema con GnuPG instalado, ejecute el siguiente comando para descargar la firma ISO de PGP al directorio del archivo ISO y verificarla con:
 
 `$ gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig`
 
@@ -25,7 +24,7 @@ In alternativa, da un'installazione esistente di Arch Linux eseguire:
 
 ![iso](../images/live/vm.png)
 
-Immagini ufficiali per macchina virtuale, l'immagine di base è pensata per l'uso locale ed è preconfigurata con (utente: arch - password: arch) e sshd in esecuzione.
+Imágenes oficiales de máquinas virtuales, la imagen base está destinada para uso local y viene preconfigurada con (usuario: arch - contraseña: arch) y sshd ejecutándose.
 
 [Download :fontawesome-regular-circle-down:](https://gitlab.archlinux.org/archlinux/arch-boxes/-/jobs/artifacts/master/browse/output?job=build:secure)
 
@@ -35,7 +34,7 @@ Immagini ufficiali per macchina virtuale, l'immagine di base è pensata per l'us
 
 ![iso](../images/live/dck.png)
 
-Immagine ufficiale Docker
+Imagen oficial de Docker
 
 `docker pull archlinux`
 
@@ -47,9 +46,8 @@ Immagine ufficiale Docker
 
 ![iso](../images/live/arm.png)
 
-Arch Linux ARM è una distribuzione di Linux per computer ARM
+Arch Linux ARM es una distribución de Linux para computadoras ARM.
 
 [Download :fontawesome-regular-circle-down:](https://archlinuxarm.org/about/downloads)
-
 
 <br><br><br><br>

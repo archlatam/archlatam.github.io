@@ -1,56 +1,57 @@
-Yay è un helper per il AUR di Archlinux che semplifica notevolmente la gestione dei pacchetti. Il AUR (Arch User Repository) è una collezione di pacchetti mantenuti dagli utenti di Archlinux, che non sono ufficialmente supportati dal team di sviluppo di Arch.
+# Yay - AUR Helper
 
-Cos'è Yay AUR helper?
+Yay es un helper para el AUR de Archlinux que simplifica considerablemente la gestión de paquetes. El AUR (Arch User Repository) es una colección de paquetes mantenidos por los usuarios de Archlinux, que no son oficialmente soportados por el equipo de desarrollo de Arch.
 
-Yay è una versione avanzata di Yaourt, un'altra utility per la gestione di pacchetti AUR. Tuttavia, Yay ha alcune funzionalità aggiuntive che fanno la differenza, come:
+## ¿Qué es Yay AUR helper?
 
-- Installazione automatica delle dipendenze
-- Compatibilità con pacman, il gestore di pacchetti ufficiale di Archlinux
-- Interfaccia completa per la gestione dei pacchetti (installazione, aggiornamento, rimozione e ricerca)
-- Configurazione delle impostazioni predefinite attraverso il file yay.conf
+Yay es una versión avanzada de Yaourt, otra utilidad para la gestión de paquetes AUR. Sin embargo, Yay tiene algunas funcionalidades adicionales que hacen la diferencia, como:
 
-Come installare Yay AUR helper?
+- Instalación automática de las dependencias
+- Compatibilidad con pacman, el gestor de paquetes oficial de Archlinux
+- Interfaz completa para la gestión de paquetes (instalación, actualización, eliminación y búsqueda)
+- Configuración de los ajustes predeterminados a través del archivo yay.conf
+
+## Cómo instalar Yay AUR helper?
 
 ```
 pacman -S --needed git base-devel
-clone di git https://aur.archlinux.org/yay.git
+git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
-<br><br>
 
-Ecco la lista completa di tutti i comandi esistenti per Yay:
+## Lista completa de comandos para Yay
 
-- `$ yay`  *nessuna opzione* - Aggiorna il database dei pacchetti e cerca nuovi aggiornamenti per i pacchetti installati.
-- `$ yay -h` - Mostra la guida degli aiuti per Yay.
-- `$ yay -S nome_pacchetto` - Installa un pacchetto dal repo dei pacchetti.
-- `$ yay -Su` - Aggiorna solo i pacchetti installati che hanno aggiornamenti disponibili.
-- `$ yay -Syyu` - Aggiorna il database dei pacchetti e tutti i pacchetti installati nel sistema.
-- `$ yay -R nome_pacchetto` - Rimuove un pacchetto dal sistema.
-- `$ yay -Rs nome_pacchetto` - Rimuove il pacchetto e tutte le sue dipendenze che non sono utilizzate da altri pacchetti.
-- `$ yay -Syu nome_pacchetto` - Aggiorna solo il pacchetto specificato.
-- `$ yay -Ss nome_pacchetto` - Cerca un pacchetto tramite il nome.
-- `$ yay -Si nome_pacchetto` - Mostra informazioni dettagliate sul pacchetto specificato, come descritto e dipendenze.
-- `$ yay -Q` - Mostra la lista dei pacchetti installati nel sistema.
-- `$ yay -Qe` - Mostra solo i pacchetti esplicitamente installati dall'utente (escludendo quelli installati come dipendenze).
-- `$ yay -Ql nome_pacchetto` - Mostra i file di un pacchetto specificato.
-- `$ yay -Qu` - Verifica se ci sono aggiornamenti disponibili per i pacchetti installati.
-- `$ yay -Qdt` - Mostra le dipendenze non utilizzate nella cache dei pacchetti.
-- `$ yay -Y` - Scarica e visualizza il PKGBUILD di un pacchetto specificato senza installarlo.
-- `$ yay -Yc` - Rimuove i pacchetti archiviati nella cache che non sono installati. 
-- `$ yay -G nome_pacchetto` - Scarica il pacchetto senza installarlo. 
-- `$ yay -P nome_pacchetto` - Crea un pacchetto a partire dai sorgenti.
-- `$ yay -Sc` - Scansione alla ricerca di fonti di dati più vecchie rispetto a quelle attualmente installate.
-- `$ yay -Sl` - Mostra la lista dei repo dei pacchetti.
-- `$ yay -Syy` - Aggiorna il database dei pacchetti.
-- `$ yay -U ` `nome_file_pacchetto` - Aggiorna un pacchetto installato o installa un nuovo pacchetto dal file di pacchetto locale.
-- `$ yay -F ` `nome_pacchetto` - Ricarica i pacchetti disabilitati in modo sicuro.
-- `$ yay -Qm` - Mostra l'elenco dei pacchetti AUR installati nel sistema.
-- `$ yay -Rns` - Rimuove un pacchetto e tutte le sue dipendenze, incluse quelle che vengono utilizzate da altri pacchetti in modo sicuro.
-- `$ yay -Sdd` - Installa un pacchetto e le sue dipendenze necessarie in modo sicuro.
-- `$ yay -Yc --aur` - Rimuove i pacchetti della cache AUR.
-- `$ yay -Fyy` - Forza la ri-sincronizzazione della cache.
-- `$ yay -Fy` - Aggiorna i pacchetti che si trovano nella cache della repo.
-- `$ yay -Scu` - Effettua una scansione per verificare che i pacchetti installati e le dipendenze siano aggiornati in modo sicuro.
-- `$ yay -Qkk` - Aggiorna la lista dei pacchetti archiviati orfani.
-- `$ yay -Scc` - Cancella tutti i dati della cache dei pacchetti.
+- `$ yay`  *sin opción* - Actualiza la base de datos de paquetes y busca nuevas actualizaciones para los paquetes instalados.
+- `$ yay -h` - Muestra la guía de ayuda para Yay.
+- `$ yay -S nombre_paquete` - Instala un paquete del repositorio de paquetes.
+- `$ yay -Su` - Actualiza solo los paquetes instalados que tienen actualizaciones disponibles.
+- `$ yay -Syyu` - Actualiza la base de datos de paquetes y todos los paquetes instalados en el sistema.
+- `$ yay -R nombre_paquete` - Elimina un paquete del sistema.
+- `$ yay -Rs nombre_paquete` - Elimina el paquete y todas sus dependencias que no son utilizadas por otros paquetes.
+- `$ yay -Syu nombre_paquete` - Actualiza solo el paquete especificado.
+- `$ yay -Ss nombre_paquete` - Busca un paquete por el nombre.
+- `$ yay -Si nombre_paquete` - Muestra información detallada sobre el paquete especificado, como descripción y dependencias.
+- `$ yay -Q` - Muestra la lista de paquetes instalados en el sistema.
+- `$ yay -Qe` - Muestra solo los paquetes explícitamente instalados por el usuario (excluyendo los instalados como dependencias).
+- `$ yay -Ql nombre_paquete` - Muestra los archivos de un paquete especificado.
+- `$ yay -Qu` - Verifica si hay actualizaciones disponibles para los paquetes instalados.
+- `$ yay -Qdt` - Muestra las dependencias no utilizadas en la caché de paquetes.
+- `$ yay -Y` - Descarga y visualiza el PKGBUILD de un paquete especificado sin instalarlo.
+- `$ yay -Yc` - Elimina los paquetes almacenados en la caché que no están instalados.
+- `$ yay -G nombre_paquete` - Descarga el paquete sin instalarlo.
+- `$ yay -P nombre_paquete` - Crea un paquete a partir de las fuentes.
+- `$ yay -Sc` - Escaneo en busca de fuentes de datos más antiguas que las actualmente instaladas.
+- `$ yay -Sl` - Muestra la lista de los repos de paquetes.
+- `$ yay -Syy` - Actualiza la base de datos de paquetes.
+- `$ yay -U ` `nombre_archivo_paquete` - Actualiza un paquete instalado o instala un nuevo paquete desde el archivo de paquete local.
+- `$ yay -F ` `nombre_paquete` - Recarga los paquetes deshabilitados de forma segura.
+- `$ yay -Qm` - Muestra la lista de paquetes AUR instalados en el sistema.
+- `$ yay -Rns` - Elimina un paquete y todas sus dependencias, incluyendo las que son utilizadas por otros paquetes de forma segura.
+- `$ yay -Sdd` - Instala un paquete y sus dependencias necesarias de forma segura.
+- `$ yay -Yc --aur` - Elimina los paquetes de la caché AUR.
+- `$ yay -Fyy` - Fuerza la re-sincronización de la caché.
+- `$ yay -Fy` - Actualiza los paquetes que se encuentran en la caché del repositorio.
+- `$ yay -Scu` - Realiza un escaneo para verificar que los paquetes instalados y las dependencias estén actualizados de forma segura.
+- `$ yay -Qkk` - Actualiza la lista de paquetes huérfanos almacenados.
+- `$ yay -Scc` - Borra todos los datos de la caché de paquetes.

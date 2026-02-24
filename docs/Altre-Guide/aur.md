@@ -1,95 +1,97 @@
-ArchLinux è una distribuzione Linux nota per la sua architettura modulare e snella, adatta ad utenti avanzati. Uno dei suoi punti di forza è la vastissima disponibilità di pacchetti disponibili tramite il sistema di gestione dei pacchetti Pacman. Tuttavia, non tutti i pacchetti sono presenti nei repository ufficiali e, in questi casi, gli utenti possono utilizzare l'AUR (Arch User Repository), una collezione di pacchetti creati e mantenuti dalla comunità degli utenti di ArchLinux. 
+# AUR (Arch User Repository)
 
-Gli utenti sono in grado di compilare i pacchetti AUR in modo da poterli installare sul proprio sistema. Qui di seguito una descrizione completa e approfondita su come questo processo sia in grado di funzionare.
+ArchLinux es una distribución Linux conocida por su arquitectura modular y ligera, adecuada para usuarios avanzados. Uno de sus puntos fuertes es la enorme disponibilidad de paquetes disponibles a través del sistema de gestión de paquetes Pacman. Sin embargo, no todos los paquetes están presentes en los repositories oficiales y, en estos casos, los usuarios pueden utilizar el AUR (Arch User Repository), una colección de paquetes creados y mantenidos por la comunidad de usuarios de ArchLinux.
 
-**Step 1: Installazione del pacchetto base-devel**
+Los usuarios son capaces de compilar los paquetes AUR para poder instalarlos en su sistema. A continuación una descripción completa y detallada de cómo este proceso es capaz de funcionar.
 
-Per compilare i pacchetti AUR su ArchLinux, è necessario installare il pacchetto base-devel, che contiene tutti gli strumenti necessari per la compilazione. Per farlo, eseguire il seguente comando da terminale:
+**Step 1: Instalación del paquete base-devel**
+
+Para compilar los paquetes AUR en ArchLinux, es necesario instalar el paquete base-devel, que contiene todas las herramientas necesarias para la compilación. Para hacerlo, ejecutar el siguiente comando desde la terminal:
 
 ```
 sudo pacman -S base-devel
 ```
 
-Questo installerà tutti i pacchetti necessari per la compilazione, inclusi gli strumenti di base del compilatore (pacchetti come automake, autoconf, gcc, binutils, etc).
+Esto instalará todas las herramientas necesarias para la compilación, incluyendo las herramientas básicas del compilador (paquetes como automake, autoconf, gcc, binutils, etc).
 
-**Step 2: Scaricare il pacchetto AUR tramite Git**
+**Step 2: Descargar el paquete AUR mediante Git**
 
-Per accedere al pacchetto AUR, è necessario scaricare il file PKGBUILD. Questo definisce come il pacchetto deve essere compilato ed installato sul sistema. Il modo più semplice per farlo è utilizzare il software di gestione dei pacchetti AUR, ovvero git.
+Para acceder al paquete AUR, es necesario descargar el archivo PKGBUILD. Este define cómo el paquete debe ser compilado e instalado en el sistema. La forma más simple de hacerlo es utilizar el software de gestión de paquetes AUR, es decir, git.
 
-Per prima cosa, è necessario installare git. Per farlo, digitare il seguente comando da terminale:
+Lo primero que hay que hacer es instalar git. Para hacerlo, escribir el siguiente comando desde la terminal:
 
 ```
 sudo pacman -S git
 ```
 
-Una volta installato, è possibile scaricare i pacchetti AUR con il seguente comando:
+Una vez instalado, es posible descargar los paquetes AUR con el siguiente comando:
 
 ```
-git clone https://aur.archlinux.org/nomepacchetto.git
+git clone https://aur.archlinux.org/nombrepaquete.git
 ```
 
-Ricordati di sostituire nomepacchetto con il nome del pacchetto che si vuole scaricare.
+Recuerda reemplazar nombrepaquete con el nombre del paquete que quieres descargar.
 
-**Step 3: Compilare il pacchetto AUR**
+**Step 3: Compilar el paquete AUR**
 
-Dopo aver scaricato il file PKGBUILD, è possibile compilare il pacchetto. Per farlo, navigare nella cartella del pacchetto AUR, dove è stato scaricato il file PKGBUILD. 
+Después de descargar el archivo PKGBUILD, es posible compilar el paquete. Para hacerlo, navegar a la carpeta del paquete AUR, donde se ha descargado el archivo PKGBUILD.
 
-Dopo essere entrati nella directory della cartella del pacchetto, eseguire il comando:
+Después de entrar en el directorio de la carpeta del paquete, ejecutar el comando:
 
 ```
 makepkg -s
 ```
 
-Questa opzione indica a makepkg di installare tutte le dipendenze necessarie al momento della compilazione. Le dipendenze verranno ricercate dai repository ufficiali e dal AUR.
+Esta opción indica a makepkg que instale todas las dependencias necesarias en el momento de la compilación. Las dependencias serán buscadas en los repositories oficiales y en el AUR.
 
-Il processo di compilazione avrà inizio automaticamente. Questo potrebbe richiedere un po' di tempo, a seconda delle dimensioni e della complessità del pacchetto.
+El proceso de compilación se inicie automáticamente. Esto podría llevar un poco de tiempo, dependiendo del tamaño y la complejidad del paquete.
 
-Alla fine della compilazione, verrà creato un pacchetto installabile con estensione .pkg.tar.xz.
+Al final de la compilación, se creará un paquete instalable con extensión .pkg.tar.xz.
 
-**Step 4: Installare il pacchetto AUR**
+**Step 4: Instalar el paquete AUR**
 
-Una volta terminata la compilazione, sarà possibile installare il pacchetto tramite il seguente comando:
+Una vez terminada la compilación, será posible instalar el paquete mediante el siguiente comando:
 
 ```
-sudo pacman -U nomepacchetto.pkg.tar.xz
+sudo pacman -U nombrepaquete.pkg.tar.xz
 ```
 
-Dove nuevamente nomepacchetto dovrà essere sostituito dal nome del pacchetto generato dal comando makepkg.
+Donde nuevamente nombrepaquete deberá ser reemplazado por el nombre del paquete generado por el comando makepkg.
 
-**Esempi di compilazione pacchetto AUR**
+**Ejemplos de compilación de paquete AUR**
 
-Per dare un esempio di compilazione di un pacchetto AUR, consideriamo il pacchetto Clean.
+Para dar un ejemplo de compilación de un paquete AUR, consideremos el paquete Clean.
 
-1. Installa il pacchetto base-devel come indicato in precedenza.
+1. Instala el paquete base-devel como se indicó anteriormente.
 
-2. Installa git con il comando:
+2. Instala git con el comando:
 
 ```
 sudo pacman -S git
 ```
 
-3. Scarica il pacchetto Clean tramite Git utilizzando il comando:
+3. Descarga el paquete Clean mediante Git utilizando el comando:
 
 ```
 git clone https://aur.archlinux.org/clean.git
 ```
 
-4. Accedi alla directory del pacchetto clean.
+4. Accede al directorio del paquete clean.
 
 ```
 cd clean
 ```
 
-5. Compilazione del pacchetto 
+5. Compilación del paquete 
 
 ```
 makepkg -s
 ```
 
-6. Installazione del pacchetto 
+6. Instalación del paquete 
 
 ```
 sudo pacman -U clean*.pkg.tar.xz
 ```
 
-Questi sono i passaggi necessari per compilare e installare con successo il pacchetto Flameshot. Questo esempio può essere utilizzato come riferimento per la compilazione di altri pacchetti AUR.
+Estos son los pasos necesarios para compilar e instalar con éxito el paquete Clean. Este ejemplo puede ser utilizado como referencia para la compilación de otros paquetes AUR.

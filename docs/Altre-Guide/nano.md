@@ -1,17 +1,17 @@
-Il sistema operativo Arch Linux supporta anche la distribuzione Nano del software di editing. Nano fornisce un ambiente di editing di testo leggero e facile da usare su Arch Linux. Di seguito sono elencati alcuni dei comandi utilizzabili in Nano su Arch Linux:
+El sistema operativo Arch Linux también es compatible con la distribución Nano de software de edición de texto. Nano ofrece un entorno de edición de texto ligero y fácil de usar en Arch Linux. Algunos de los comandos disponibles en Nano en Arch Linux incluyen:
 
-- `nano nome_file`: Aprire un file esistente in Nano
-- `Ctrl + O`: Salvare il file
-- `Ctrl + X`: Uscire da Nano
-- `Ctrl + K`: Tagliare una riga
-- `Ctrl + U`: Incollare una riga
-- `Ctrl + Space`: Inserire il cursore
-- `Ctrl + W`: Cerca una parola nel testo
-- `Ctrl + G`: Visualizza la guida di Nano
-- `Ctrl + C`: Visualizza informazioni sul testo selezionato
+- `nano nome_file`: Abrir un archivo existente en Nano
+- `Ctrl + O`: guardar el archivo
+- `Ctrl + X`: Salir de Nano
+- `Ctrl + K`: Cortar una línea
+- `Ctrl + U`: Pegar una línea
+- `Ctrl + Space`: Insertar el cursor
+- `Ctrl + W`: Buscar una palabra en el text
+- `Ctrl + G`: Mostrar la ayuda de Nano
+- `Ctrl + C`: Mostrar información sobre el texto seleccionado
 
-Per salvare un file e modificarne il nome di salvataggio, è possibile utilizzare il seguente comando:
+Para guardar un archivo y cambiar su nombre, puede usar el siguiente comando:
 
-- `:w nome_file` Salvare il file con un nuovo nome
+- `:w nome_file` filename Guardar el archivo con un nuevo nombre
 
-In questo modo, il file verrà salvato con il nuovo nome specificato dopo i due punti e "w". Nano su Arch Linux continua ad essere una soluzione affidabile e semplice per l'editing di testo.
+Esto guardará el archivo con el nuevo nombre especificado después de los dos puntos y la "w". Nano en Arch Linux sigue siendo una solución fiable y sencilla para la edición de texto.
