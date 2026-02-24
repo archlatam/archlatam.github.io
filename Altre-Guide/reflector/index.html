@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../nano/">
+      
       
       
         
@@ -140,6 +142,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#reflector" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -266,10 +273,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../.." class="md-tabs__link">
           
   
@@ -318,26 +327,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   
@@ -355,7 +369,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -407,17 +421,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
         
           
-          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="">
             
   
   
@@ -542,26 +559,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="">
             
   
   
@@ -579,7 +601,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -758,6 +780,44 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -790,6 +850,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -806,27 +868,26 @@
 
 
 
-  <h1>Reflector</h1>
-
-<p>La funzione di <code>reflector</code> su ArchLinux è un'utility che consente di selezionare, scaricare e aggiornare l'elenco dei mirror ArchLinux. La sua funzione principale è quella di selezionare il mirror più veloce e affidabile in base alla posizione geografica dell'utente.</p>
-<p>Ecco di seguito i comandi più utilizzati per la gestione di <code>reflector</code> su ArchLinux:</p>
+<h1 id="reflector">Reflector</h1>
+<p>La función de <code>reflector</code> en ArchLinux es una utilidad que permite seleccionar, descargar y actualizar la lista de mirrors de ArchLinux. Su función principal es seleccionar el mirror más rápido y fiable en función de la posición geográfica del usuario.</p>
+<p>A continuación se presentan los comandos más utilizados para la gestión de <code>reflector</code> en ArchLinux:</p>
 <ul>
-<li><code>sudo reflector --country &lt;nome_paese&gt; --age &lt;età&gt; --protocol &lt;tipo_protocollo&gt; --sort &lt;tipo_ordinamento&gt; --save &lt;file_destinazione&gt;</code> questocomando seleziona i mirror del paese specificato dall'utente (<code>--country</code>) e con un'età massima specificata in ore (<code>--age</code>). Si possono anche specificare il tipo di protocollo (<code>--protocol</code>) e il tipo di ordinamento (<code>--sort</code>). Infine, i risultati ottenuti possono essere salvati in un file specificato dall'utente (<code>--save</code>).</li>
-<li><code>sudo reflector --latest &lt;n_migliori_mirrors&gt; --protocol &lt;tipo_protocollo&gt; --sort &lt;tipo_ordinamento&gt; --save &lt;file_destinazione&gt;</code> con questo comando vengono selezionati i <code>n</code> (<code>--latest</code>) mirror più aggiornati, in base al protocollo (<code>--protocol</code>) e al tipo di ordinamento (<code>--sort</code>). Anche in questo caso, il risultato può essere salvato in un file specificato dall'utente (<code>--save</code>).</li>
-<li><code>sudo reflector --help</code> con questo comando si può avere una lista completa di tutti i comandi disponibili e una descrizione dettagliata delle opzioni di <code>reflector</code>.</li>
+<li><code>sudo reflector --country &lt;nombre_país&gt; --age &lt;edad&gt; --protocol &lt;tipo_protocolo&gt; --sort &lt;tipo_orden&gt; --save &lt;archivo_destino&gt;</code> Este comando selecciona los mirrors del país especificado por el usuario (<code>--country</code>) y con una edad máxima especificada en horas (<code>--age</code>). También se puede especificar el tipo de protocolo (<code>--protocol</code>) y el tipo de ordenamiento (<code>--sort</code>). Finalmente, los resultados obtenidos pueden ser guardados en un archivo especificado por el usuario (<code>--save</code>).</li>
+<li><code>sudo reflector --latest &lt;n_mejores_mirrors&gt; --protocol &lt;tipo_protocolo&gt; --sort &lt;tipo_orden&gt; --save &lt;archivo_destino&gt;</code> Con este comando se seleccionan los <code>n</code> (<code>--latest</code>) mirrors más actualizados, en base al protocolo (<code>--protocol</code>) y al tipo de ordenamiento (<code>--sort</code>). También en este caso, el resultado puede ser guardado en un archivo especificado por el usuario (<code>--save</code>).</li>
+<li><code>sudo reflector --help</code> Con este comando se puede tener una lista completa de todos los comandos disponibles y una descripción detallada de las opciones de <code>reflector</code>.</li>
 </ul>
-<p>In generale, la funzione di <code>reflector</code> su ArchLinux è utile per mantenere aggiornati i propri mirror e assicurarsi di avere una connessione veloce e affidabile quando si effettuano operazioni di installazione o aggiornamento dei pacchetti sul sistema.</p>
-<p><br><br></p>
-<p>Ecco di seguito i passi necessari per configurare e abilitare il servizio <code>reflector</code> su ArchLinux:</p>
+<p>En general, la función de <code>reflector</code> en ArchLinux es útil para mantener actualizados los mirrors y asegurarse de tener una conexión rápida y fiable cuando se realizan operaciones de instalación o actualización de paquetes en el sistema.</p>
+<hr />
+<p>A continuación se presentan los pasos necesarios para configurar y habilitar el servicio <code>reflector</code> en ArchLinux:</p>
 <ol>
 <li>
-<p>Installare <code>reflector</code>: Digitare <code>sudo pacman -S reflector</code> nel terminale per installare l'utility.</p>
+<p>Instalar <code>reflector</code>: Escribir <code>sudo pacman -S reflector</code> en la terminal para instalar la utilidad.</p>
 </li>
 <li>
-<p>Creare un file di configurazione personalizzato: Digitare <code>sudo cp /etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf.backup</code> per creare una copia di backup del file di configurazione predefinito. Successivamente, digitare <code>sudo nano /etc/xdg/reflector/reflector.conf</code> per aprire il file di configurazione con l'editor di testo <code>nano</code> (si può usare anche un altro editor di testo a piacere).</p>
+<p>Crear un archivo de configuración personalizado: Escribir <code>sudo cp /etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf.backup</code> para crear una copia de respaldo del archivo de configuración predeterminado. Después, escribir <code>sudo nano /etc/xdg/reflector/reflector.conf</code> para abrir el archivo de configuración con el editor de texto <code>nano</code> (también se puede usar otro editor de texto a elección).</p>
 </li>
 <li>
-<p>Configurare il file di configurazione: Nel file di configurazione è possibile specificare le opzioni desiderate, come il paese da cui selezionare i mirror (<code>--country</code>), l'età massima dei mirror (<code>--age</code>), il tipo di protocollo (<code>--protocol</code>) e il tipo di ordinamento (<code>--sort</code>). Ecco un esempio di file di configurazione:</p>
+<p>Configurar el archivo de configuración: En el archivo de configuración es posible especificar las opciones deseadas, como el país del cual seleccionar los mirrors (<code>--country</code>), la edad máxima de los mirrors (<code>--age</code>), el tipo de protocolo (<code>--protocol</code>) y el tipo de ordenamiento (<code>--sort</code>). Aquí hay un ejemplo de archivo de configuración:</p>
 </li>
 </ol>
 <div class="highlight"><pre><span></span><code>--country Italy
@@ -834,22 +895,22 @@
 --latest 10
 --sort rate
 </code></pre></div>
-<p>Questo esempio seleziona i 10 migliori mirror italiani (<code>--country Italy</code>), utilizzando il protocollo HTTPS (<code>--protocol https</code>) e ordinandoli in base alla velocità (<code>--sort rate</code>).</p>
+<p>Este ejemplo selecciona los 10 mejores mirrors italianos (<code>--country Italy</code>), utilizando el protocolo HTTPS (<code>--protocol https</code>) y ordenándolos por velocidad (<code>--sort rate</code>).</p>
 <ol>
 <li>
-<p>Salvare e chiudere il file di configurazione: Una volta terminata la configurazione, digitare <code>Ctrl+X</code>, poi <code>Y</code> e infine <code>Invio</code> per salvare le modifiche e chiudere l'editor di testo <code>nano</code>.</p>
+<p>Guardar y cerrar el archivo de configuración: Una vez terminada la configuración, escribir <code>Ctrl+X</code>, luego <code>Y</code> y finalmente <code>Enter</code> para guardar los cambios y cerrar el editor de texto <code>nano</code>.</p>
 </li>
 <li>
-<p>Eseguire <code>reflector</code> per aggiornare gli elenchi dei mirror: Digitare il comando <code>sudo reflector --verbose --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist</code> per eseguire <code>reflector</code> utilizzando le impostazioni configurate nell'ultimo passaggio. In questo esempio, i risultati ottenuti dall'esecuzione del comando vengono salvati nel file <code>/etc/pacman.d/mirrorlist</code>, che è il file da cui <code>pacman</code> legge l'elenco dei mirror al momento dell'aggiornamento dei pacchetti.</p>
+<p>Ejecutar <code>reflector</code> para actualizar las listas de mirrors: Escribir el comando <code>sudo reflector --verbose --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist</code> para ejecutar <code>reflector</code> usando la configuración establecida en el paso anterior. En este ejemplo, los resultados obtenidos de la ejecución del comando se guardan en el archivo <code>/etc/pacman.d/mirrorlist</code>, que es el archivo desde el cual <code>pacman</code> lee la lista de mirrors al momento de actualizar los paquetes.</p>
 </li>
 <li>
-<p>Abilitare e avviare il servizio <code>reflector.timer</code>: Una volta che gli elenchi dei mirror sono stati aggiornati con successo, è possibile abilitare e avviare il servizio di <code>reflector</code> in modo che gli elenchi dei mirror vengano aggiornati automaticamente in futuro. Per fare ciò, digitare:</p>
+<p>Habilitar e iniciar el servicio <code>reflector.timer</code>: Una vez que las listas de mirrors han sido actualizadas con éxito, es posible habilitar e iniciar el servicio de <code>reflector</code> para que las listas de mirrors se actualicen automáticamente en el futuro. Para hacer esto, escribir:</p>
 </li>
 </ol>
 <div class="highlight"><pre><span></span><code>sudo systemctl enable reflector.timer
 sudo systemctl start reflector.timer
 </code></pre></div>
-<p>Il primo comando abilita il servizio <code>reflector.timer</code>, mentre il secondo lo avvia immediatamente. Da questo momento in poi, il servizio sarà eseguito automaticamente ogni volta che si avvia il sistema, aggiornando gli elenchi dei mirror in base alle impostazioni specificate nel file di configurazione di <code>reflector</code>.</p>
+<p>El primer comando habilita el servicio <code>reflector.timer</code>, mientras que el segundo lo inicia inmediatamente. A partir de este momento, el servicio se ejecutará automáticamente cada vez que se inicie el sistema, actualizando las listas de mirrors según la configuración especificada en el archivo de configuración de <code>reflector</code>.</p>
 
 
 
@@ -872,7 +933,7 @@ sudo systemctl start reflector.timer
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 de febrero de 2026 23:13:20 UTC">23 de febrero de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 de febrero de 2026 13:54:23 UTC">24 de febrero de 2026</span>
   </span>
 
     
@@ -906,6 +967,28 @@ sudo systemctl start reflector.timer
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../nano/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Nano">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Nano
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
