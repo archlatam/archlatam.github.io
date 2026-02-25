@@ -345,8 +345,8 @@ date -s "yyyy-MM-dd hh:mm[:ss]"
 El comando `id` se usa para mostrar información sobre usuarios y grupos. Por defecto, no se añade ningún parámetro de usuario y se muestra la información del usuario y del grupo actualmente conectados。
 
 ```bash
-$ id architalia
-uid=1000(architalia) gid=1000(architalia) groups=1000(architalia),10(wheel)
+$ id archlatam
+uid=1000(archlatam) gid=1000(archlatam) groups=1000(archlatam),10(wheel)
 ```
 
 Las opciones `-g`, `-G`, `-n` y `-u` muestran el grupo principal GID, subgrupos GIDs, nombres en lugar de identificadores numéricos, y el UID del usuario.
@@ -357,7 +357,7 @@ El solo comando `who` muestra los nombres de los usuarios conectados:
 
 ```bash
 $ who
-architalia tty1   2021-05-24 10:30
+archlat tty1   2021-05-24 10:30
 root     pts/0  2021-05-24 10:31
 ```
 
@@ -410,7 +410,7 @@ El comando `pwd` (Print Working Directory) muestra la ruta absoluta del director
 
 ```bash
 $ pwd
-/home/architalia
+/home/archlatam
 ```
 
 Para utilizar una ruta relativa para hacer referencia a un archivo o a un directorio, o para usar el comando `cd` para moverse a otro directorio, es necesario conocer su posición en el árbol de archivos.
@@ -430,7 +430,7 @@ $ pwd
 /
 $ cd
 $ pwd
-/home/architalia
+/home/archlatam
 ```
 
 Como puedes ver en el último ejemplo anterior, el comando `cd` sin argumentos mueve el directorio actual al `directorio home`.
@@ -447,7 +447,7 @@ Ejemplo:
 
 ```bash
 $ ls /home
-.    ..    architalia
+.    ..    archlatam
 ```
 
 Las opciones principales del comando `ls` son:
@@ -475,7 +475,7 @@ El comando `ls`, sin embargo, tiene muchas opciones (ver `man`):
 
 ```bash
 $ ls -lia /home
-78489 drwx------ 4 architalia architalia 4096 25 oct. 08:10 architalia
+78489 drwx------ 4 archlatam archlatam 4096 25 oct. 08:10 archlatam
 ```
 
 | Valor           | Información                                                                                                                                                                                                              |
@@ -483,11 +483,11 @@ $ ls -lia /home
 | `78489`         | Número de inode.                                                                                                                                                                                                         |
 | `drwx------`    | Tipo de archivo (`d`) y permisos (`rwx------`).                                                                                                                                                                          |
 | `4`             | Número de subdirectorios. (`.` y `..` incluidas). Para un archivo, representa el número de enlaces directos y 1 representa sí mismo.                                                                                     |
-| `architalia`    | Propietario del usuario.                                                                                                                                                                                                 |
-| `architalia`    | Propietario del grupo.                                                                                                                                                                                                   |
-| `4096`          | Para los archivos, muestra el tamaño del archivo. Para los directorios, muestra el valor fijo de 4096 bytes ocupados por el nombre del archivo. Para calcular el tamaño total de un directorio, usa `du -sh architalia/` |
+| `archlatam`    | Propietario del usuario.                                                                                                                                                                                                 |
+| `archlatam`    | Propietario del grupo.                                                                                                                                                                                                   |
+| `4096`          | Para los archivos, muestra el tamaño del archivo. Para los directorios, muestra el valor fijo de 4096 bytes ocupados por el nombre del archivo. Para calcular el tamaño total de un directorio, usa `du -sh archlatam/` |
 | `25 oct. 08:10` | Fecha de última modificación.                                                                                                                                                                                            |
-| `architalia`    | El nombre del archivo (o directorio).                                                                                                                                                                                    |
+| `archlatam`    | El nombre del archivo (o directorio).                                                                                                                                                                                    |
 
 !!! Note "Nota"
 
@@ -594,10 +594,10 @@ mkdir [-p] directory [directory] [...]
 Ejemplo:
 
 ```bash
-$ mkdir /home/architalia/work
+$ mkdir /home/archlatam/work
 ```
 
-El directorio "architalia" debe estar presente para crear el directorio "work".
+El directorio "archlatam" debe estar presente para crear el directorio "work".
 
 De lo contrario, se debe usar la opción `-p`. La opción `-p` crea los directorios padre si estos no existen.
 
@@ -616,7 +616,7 @@ touch [-t date] file
 Ejemplo:
 
 ```bash
-$ touch /home/architalia/myfile
+$ touch /home/archlatam/myfile
 ```
 
 | Opción    | Información                                                                   |
@@ -636,7 +636,7 @@ El comando `rmdir` elimina un directorio vacío.
 Ejemplo:
 
 ```bash
-$ rmdir /home/architalia/work
+$ rmdir /home/archlatam/work
 ```
 
 | Opción | Información                                                              |
@@ -695,8 +695,8 @@ mv file [file ...] destination
 Ejemplos:
 
 ```bash
-$ mv /home/architalia/file1 /home/architalia/file2
-$ mv /home/architalia/file1 /home/architalia/file2 /tmp
+$ mv /home/archlatam/file1 /home/archlatam/file2
+$ mv /home/archlatam/file1 /home/archlatam/file2 /tmp
 ```
 
 | Opciones | Información                                                                   |
@@ -707,13 +707,13 @@ $ mv /home/architalia/file1 /home/architalia/file2 /tmp
 Algunos casos concretos te ayudará a entender las dificultades que pueden surgir:
 
 ```bash
-$ mv /home/architalia/file1 /home/architalia/file2
+$ mv /home/archlatam/file1 /home/archlatam/file2
 ```
 
 Renomba `file1` a `file2`. Si `file2` ya existe, reemplaza el contenido del archivo con `file1`.
 
 ```bash
-$ mv /home/architalia/file1 /home/architalia/file2 /tmp
+$ mv /home/archlatam/file1 /home/archlatam/file2 /tmp
 ```
 
 Mueve `file1` y `file2` a la carpeta `/tmp`.
@@ -753,7 +753,7 @@ cp file [file ...] destination
 Ejemplo:
 
 ```bash
-$ cp -r /home/architalia /tmp
+$ cp -r /home/archlatam /tmp
 ```
 
 | Opciones | Información                                                                     |
@@ -1210,11 +1210,11 @@ El carácter `*` sustituye una cadena compuesta por cualquier carácter. El car�
 
 ```bash
 $ find /home -name "test*"
-/home/architalia/test
-/home/architalia/test1
-/home/architalia/test11
-/home/architalia/tests
-/home/architalia/test362
+/home/archlatam/test
+/home/archlatam/test1
+/home/archlatam/test11
+/home/archlatam/tests
+/home/archlatam/test362
 ```
 
 Los meta-caracteres permiten búsquedas más complejas sustituyendo todo o parte de una palabra. Simplemente sustituyen las incógnitas con estos caracteres especiales.
@@ -1223,17 +1223,17 @@ El carácter `?` sustituye un solo carácter, cualquiera que sea.
 
 ```bash
 $ find /home -name "test?"
-/home/architalia/test1
-/home/architalia/tests
+/home/archlatam/test1
+/home/archlatam/tests
 ```
 
 Los corchetes `[` y `]` se usan para especificar los valores que un solo carácter puede tomar.
 
 ```bash
 $ find /home -name "test[123]*"
-/home/architalia/test1
-/home/architalia/test11
-/home/architalia/test362
+/home/archlatam/test1
+/home/archlatam/test11
+/home/archlatam/test362
 ```
 
 !!! Note "Nota"

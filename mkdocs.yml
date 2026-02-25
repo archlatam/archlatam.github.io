@@ -8,7 +8,7 @@ nav:
           - "Descargar": Download/archlinux.md
           - "🇦🇷 Instalación de Arch Linux": "en/Archlinux-Guide/guida-es.md"
       - "Otras guías":
-          - "Comandos Linux": "Altre-Guide/comandi-linux.md"
+          - "Comandos Linux": "Altre-Guide/comando-linux.md"
           - "Pacman": "Altre-Guide/Pacman.md"
           - "AUR": "Altre-Guide/aur.md"
           - "Yay": "Altre-Guide/yay.md"
