@@ -4,7 +4,7 @@
 
 Archlatam es una comunidad dedicada a la distribución Arch Linux y sus derivados. Esta comunidad está formada por entusiastas de Linux y la tecnología de código abierto que se reúnen para compartir información, recursos y conocimientos sobre Arch Linux y sus diversas modificaciones.
 
-Los usuarios de Archlatam participan en foros, chatean en salas de chat o grupos sociales y comparten guías, programas y soluciones a problemas técnicos relacionados con Arch Linux y sus derivados. Architalia ofrece una amplia gama de servicios, incluyendo una wiki, un foro y una colección de guías para instalar y configurar Arch Linux.
+Los usuarios de Archlatam participan en foros, chatean en salas de chat o grupos sociales y comparten guías, programas y soluciones a problemas técnicos relacionados con Arch Linux y sus derivados. Archlatam ofrece una amplia gama de servicios, incluyendo una wiki, un foro y una colección de guías para instalar y configurar Arch Linux.
 
 En estos recursos, los usuarios pueden encontrar información detallada sobre cómo usar esta distribución, así como consejos para personalizarla según sus necesidades. En resumen, Archlatam es una vibrante comunidad de entusiastas de Linux que unen fuerzas para apoyar y promover Arch Linux y sus numerosos derivados.
 
