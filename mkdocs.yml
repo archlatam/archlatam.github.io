@@ -1,20 +1,22 @@
-site_name: archlatam
+site_name: '' 
 
 nav:
-  - "Home":
-      - "Bienvenido": index.md
-      - "Arch Linux":
-          - "Que es Archlinux?": Archlinux-Guida/about-arch.md
-          - "Descargar": Download/archlinux.md
-          - "🇦🇷 Instalación de Arch Linux": "en/Archlinux-Guide/guida-es.md"
-      - "Otras guías":
-          - "Comandos Linux": "Altre-Guide/comando-linux.md"
-          - "Pacman": "Altre-Guide/Pacman.md"
-          - "AUR": "Altre-Guide/aur.md"
-          - "Yay": "Altre-Guide/yay.md"
-          - "Vim": "Altre-Guide/vim.md"
-          - "Nano": "Altre-Guide/nano.md"
-          - "Reflector": "Altre-Guide/reflector.md"
+  - 'Home':
+       - "Bienvenido": index.md
+
+  - "Arch Linux":
+       - "Que es Archlinux?": Archlinux-Guida/about-arch.md
+       - "Descargar": Download/archlinux.md
+       - "🇦🇷 Instalación de Arch Linux": "en/Archlinux-Guide/guida-es.md"
+          
+  - "Otras guías":
+       - "Comandos Linux": "Altre-Guide/comando-linux.md"
+       - "Pacman": "Altre-Guide/Pacman.md"
+       - "AUR": "Altre-Guide/aur.md"
+       - "Yay": "Altre-Guide/yay.md"
+       - "Vim": "Altre-Guide/vim.md"
+       - "Nano": "Altre-Guide/nano.md"
+       - "Reflector": "Altre-Guide/reflector.md"
 
 theme:
   name: material
