@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -2573,14 +2573,14 @@ $<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span><
 </code></pre></div>
 <h3 id="comando-id-who-y-whoami">comando <code>id</code>, <code>who</code> y <code>whoami</code></h3>
 <p>El comando <code>id</code> se usa para mostrar información sobre usuarios y grupos. Por defecto, no se añade ningún parámetro de usuario y se muestra la información del usuario y del grupo actualmente conectados。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>id<span class="w"> </span>architalia
-<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>architalia<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>architalia<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>architalia<span class="o">)</span>,10<span class="o">(</span>wheel<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>id<span class="w"> </span>archlatam
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>archlatam<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>archlatam<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>archlatam<span class="o">)</span>,10<span class="o">(</span>wheel<span class="o">)</span>
 </code></pre></div>
 <p>Las opciones <code>-g</code>, <code>-G</code>, <code>-n</code> y <code>-u</code> muestran el grupo principal GID, subgrupos GIDs, nombres en lugar de identificadores numéricos, y el UID del usuario.</p>
 <p>El comando <code>whoami</code> muestra el login del usuario actual.</p>
 <p>El solo comando <code>who</code> muestra los nombres de los usuarios conectados:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>who
-architalia<span class="w"> </span>tty1<span class="w">   </span><span class="m">2021</span>-05-24<span class="w"> </span><span class="m">10</span>:30
+archlat<span class="w"> </span>tty1<span class="w">   </span><span class="m">2021</span>-05-24<span class="w"> </span><span class="m">10</span>:30
 root<span class="w">     </span>pts/0<span class="w">  </span><span class="m">2021</span>-05-24<span class="w"> </span><span class="m">10</span>:31
 </code></pre></div>
 <p>Dado que Linux es multiusuario, es posible que más sesiones estén abiertas en la misma estación, ya sea físicamente o a través de la red. Es interesante saber qué usuarios están conectados, si no es solo para comunicarse con ellos enviando mensajes.</p>
@@ -2619,7 +2619,7 @@ root<span class="w">     </span>pts/0<span class="w">  </span><span class="m">20
 <h3 id="comando-pwd">comando <code>pwd</code></h3>
 <p>El comando <code>pwd</code> (Print Working Directory) muestra la ruta absoluta del directorio actual.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">pwd</span>
-/home/architalia
+/home/archlatam
 </code></pre></div>
 <p>Para utilizar una ruta relativa para hacer referencia a un archivo o a un directorio, o para usar el comando <code>cd</code> para moverse a otro directorio, es necesario conocer su posición en el árbol de archivos.</p>
 <p>Dependiendo del tipo de shell y de los diferentes parámetros de su archivo de configuración, el prompt del terminal (también conocido como prompt de comandos) mostrará la ruta absoluta o relativa del directorio actual.</p>
@@ -2633,7 +2633,7 @@ $<span class="w"> </span><span class="nb">pwd</span>
 /
 $<span class="w"> </span><span class="nb">cd</span>
 $<span class="w"> </span><span class="nb">pwd</span>
-/home/architalia
+/home/archlatam
 </code></pre></div>
 <p>Como puedes ver en el último ejemplo anterior, el comando <code>cd</code> sin argumentos mueve el directorio actual al <code>directorio home</code>.</p>
 <h3 id="comando-ls">comando <code>ls</code></h3>
@@ -2642,7 +2642,7 @@ $<span class="w"> </span><span class="nb">pwd</span>
 </code></pre></div>
 <p>Ejemplo:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>/home
-.<span class="w">    </span>..<span class="w">    </span>architalia
+.<span class="w">    </span>..<span class="w">    </span>archlatam
 </code></pre></div>
 <p>Las opciones principales del comando <code>ls</code> son:</p>
 <table>
@@ -2714,7 +2714,7 @@ $<span class="w"> </span><span class="nb">pwd</span>
 <li>Descripción de las columnas generadas por la ejecución del comando <code>ls -lia</code>:</li>
 </ul>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lia<span class="w"> </span>/home
-<span class="m">78489</span><span class="w"> </span>drwx------<span class="w"> </span><span class="m">4</span><span class="w"> </span>architalia<span class="w"> </span>architalia<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="m">25</span><span class="w"> </span>oct.<span class="w"> </span><span class="m">08</span>:10<span class="w"> </span>architalia
+<span class="m">78489</span><span class="w"> </span>drwx------<span class="w"> </span><span class="m">4</span><span class="w"> </span>archlatam<span class="w"> </span>archlatam<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="m">25</span><span class="w"> </span>oct.<span class="w"> </span><span class="m">08</span>:10<span class="w"> </span>archlatam
 </code></pre></div>
 <table>
 <thead>
@@ -2737,23 +2737,23 @@ $<span class="w"> </span><span class="nb">pwd</span>
 <td>Número de subdirectorios. (<code>.</code> y <code>..</code> incluidas). Para un archivo, representa el número de enlaces directos y 1 representa sí mismo.</td>
 </tr>
 <tr>
-<td><code>architalia</code></td>
+<td><code>archlatam</code></td>
 <td>Propietario del usuario.</td>
 </tr>
 <tr>
-<td><code>architalia</code></td>
+<td><code>archlatam</code></td>
 <td>Propietario del grupo.</td>
 </tr>
 <tr>
 <td><code>4096</code></td>
-<td>Para los archivos, muestra el tamaño del archivo. Para los directorios, muestra el valor fijo de 4096 bytes ocupados por el nombre del archivo. Para calcular el tamaño total de un directorio, usa <code>du -sh architalia/</code></td>
+<td>Para los archivos, muestra el tamaño del archivo. Para los directorios, muestra el valor fijo de 4096 bytes ocupados por el nombre del archivo. Para calcular el tamaño total de un directorio, usa <code>du -sh archlatam/</code></td>
 </tr>
 <tr>
 <td><code>25 oct. 08:10</code></td>
 <td>Fecha de última modificación.</td>
 </tr>
 <tr>
-<td><code>architalia</code></td>
+<td><code>archlatam</code></td>
 <td>El nombre del archivo (o directorio).</td>
 </tr>
 </tbody>
@@ -2838,9 +2838,9 @@ dr-xr-xr-x.<span class="w"> </span><span class="m">5</span><span class="w"> </sp
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span><span class="o">[</span>-p<span class="o">]</span><span class="w"> </span>directory<span class="w"> </span><span class="o">[</span>directory<span class="o">]</span><span class="w"> </span><span class="o">[</span>...<span class="o">]</span>
 </code></pre></div>
 <p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>/home/architalia/work
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>/home/archlatam/work
 </code></pre></div>
-<p>El directorio "architalia" debe estar presente para crear el directorio "work".</p>
+<p>El directorio "archlatam" debe estar presente para crear el directorio "work".</p>
 <p>De lo contrario, se debe usar la opción <code>-p</code>. La opción <code>-p</code> crea los directorios padre si estos no existen.</p>
 <div class="admonition danger">
 <p class="admonition-title">Peligro</p>
@@ -2851,7 +2851,7 @@ dr-xr-xr-x.<span class="w"> </span><span class="m">5</span><span class="w"> </sp
 <div class="highlight"><pre><span></span><code>touch<span class="w"> </span><span class="o">[</span>-t<span class="w"> </span>date<span class="o">]</span><span class="w"> </span>file
 </code></pre></div>
 <p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>touch<span class="w"> </span>/home/architalia/myfile
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>touch<span class="w"> </span>/home/archlatam/myfile
 </code></pre></div>
 <table>
 <thead>
@@ -2875,7 +2875,7 @@ dr-xr-xr-x.<span class="w"> </span><span class="m">5</span><span class="w"> </sp
 <h3 id="comando-rmdir">comando <code>rmdir</code></h3>
 <p>El comando <code>rmdir</code> elimina un directorio vacío.</p>
 <p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rmdir<span class="w"> </span>/home/architalia/work
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rmdir<span class="w"> </span>/home/archlatam/work
 </code></pre></div>
 <table>
 <thead>
@@ -2943,8 +2943,8 @@ $<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>--<
 <div class="highlight"><pre><span></span><code>mv<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>file<span class="w"> </span>...<span class="o">]</span><span class="w"> </span>destination
 </code></pre></div>
 <p>Ejemplos:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2
-$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2<span class="w"> </span>/tmp
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/archlatam/file1<span class="w"> </span>/home/archlatam/file2
+$<span class="w"> </span>mv<span class="w"> </span>/home/archlatam/file1<span class="w"> </span>/home/archlatam/file2<span class="w"> </span>/tmp
 </code></pre></div>
 <table>
 <thead>
@@ -2965,10 +2965,10 @@ $<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span c
 </tbody>
 </table>
 <p>Algunos casos concretos te ayudará a entender las dificultades que pueden surgir:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/archlatam/file1<span class="w"> </span>/home/archlatam/file2
 </code></pre></div>
 <p>Renomba <code>file1</code> a <code>file2</code>. Si <code>file2</code> ya existe, reemplaza el contenido del archivo con <code>file1</code>.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span class="w"> </span>/home/architalia/file2<span class="w"> </span>/tmp
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>/home/archlatam/file1<span class="w"> </span>/home/archlatam/file2<span class="w"> </span>/tmp
 </code></pre></div>
 <p>Mueve <code>file1</code> y <code>file2</code> a la carpeta <code>/tmp</code>.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>file1<span class="w"> </span>/repexist/file2
@@ -2988,7 +2988,7 @@ $<span class="w"> </span>mv<span class="w"> </span>/home/architalia/file1<span c
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>file<span class="w"> </span>...<span class="o">]</span><span class="w"> </span>destination
 </code></pre></div>
 <p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>/home/architalia<span class="w"> </span>/tmp
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>/home/archlatam<span class="w"> </span>/tmp
 </code></pre></div>
 <table>
 <thead>
@@ -3435,23 +3435,23 @@ root:x:0:0:root:/root:/bin/bash
 <p>Pueden ser combinados.</p>
 <p>El carácter <code>*</code> sustituye una cadena compuesta por cualquier carácter. El carácter <code>*</code> también puede representar una ausencia de caracteres.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/home<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;test*&quot;</span>
-/home/architalia/test
-/home/architalia/test1
-/home/architalia/test11
-/home/architalia/tests
-/home/architalia/test362
+/home/archlatam/test
+/home/archlatam/test1
+/home/archlatam/test11
+/home/archlatam/tests
+/home/archlatam/test362
 </code></pre></div>
 <p>Los meta-caracteres permiten búsquedas más complejas sustituyendo todo o parte de una palabra. Simplemente sustituyen las incógnitas con estos caracteres especiales.</p>
 <p>El carácter <code>?</code> sustituye un solo carácter, cualquiera que sea.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/home<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;test?&quot;</span>
-/home/architalia/test1
-/home/architalia/tests
+/home/archlatam/test1
+/home/archlatam/tests
 </code></pre></div>
 <p>Los corchetes <code>[</code> y <code>]</code> se usan para especificar los valores que un solo carácter puede tomar.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/home<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;test[123]*&quot;</span>
-/home/architalia/test1
-/home/architalia/test11
-/home/architalia/test362
+/home/archlatam/test1
+/home/archlatam/test11
+/home/archlatam/test362
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
