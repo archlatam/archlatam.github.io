@@ -13,13 +13,13 @@ En estos recursos, los usuarios pueden encontrar informaci√≥n detallada sobre c√
 - [:fontawesome-solid-house-circle-check: Sitio oficial](https://archlatam.github.io/)
 - [:fontawesome-brands-github: GitHub]()
 - [:fontawesome-brands-discord: Discord](https://discord.gg/4eF5pGNgyz)
-- [:fontawesome-solid-download: Descargar ISO](https://sourceforge.net/projects/archlatam/files/release-2026.02/core-2026.02.23-x86_64.iso/download)
+- [:fontawesome-solid-download: Descargar ISO](https://sourceforge.net/projects/archlatam/files/release-2026.02-2/core-2026.02.27-x86_64.iso/download)
 
 <br>
 
 ## Equipo ArchLatam
 
-![teamwork](https://github.com/ArchItalia/site/assets/117321045/26acc862-534d-4b67-8c9d-8b04d2bae806)
+![teamwork](images/team.png)
 
 - **Jose Dragic** - Founder
 - **Joaquin (Pato) Decima** - Colaborador, site Admin - [:fontawesome-brands-github: GitHub](https://github.com/JoaquinDecima)
