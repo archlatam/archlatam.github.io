@@ -13,9 +13,13 @@ En estos recursos, los usuarios pueden encontrar informaci√≥n detallada sobre c√
 - [:fontawesome-solid-house-circle-check: Sitio oficial](https://archlatam.github.io/)
 - [:fontawesome-brands-github: GitHub]()
 - [:fontawesome-brands-discord: Discord](https://discord.gg/4eF5pGNgyz)
-- [:fontawesome-solid-download: Descargar ISO](https://sourceforge.net/projects/archlatam/files/release202607/core-linux-202607.iso/download)
+- [:fontawesome-solid-download: Descargar ISO](https://sourceforge.net/projects/archlatam/files/release202609/core-linux-202609.iso/download)
 
-sha1sum ```5bcdb793ea9913b83b0f415e3efb6614c0b4dcfe core-linux-202607.iso```
+- sha1sum 
+
+```
+5ef981f6d8be244fb8753d0925a48466ea9566ee core-linux-202609.iso
+```
 
 <br>
 
