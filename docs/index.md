@@ -16,9 +16,8 @@ En estos recursos, los usuarios pueden encontrar informaci√≥n detallada sobre c√
 - [:fontawesome-solid-download: Descargar ISO](https://sourceforge.net/projects/archlatam/files/release202612/core-linux-202612.iso/download)
 
 - sha1sum 
-
 ```
-e95199806cc0199e259ff9d0b726e906a8acd4f9 core-linux-202612.iso
+51fe7432198c75b578242b254eec51e2618b18d3 core-linux-202612.iso
 ```
 
 <br>
