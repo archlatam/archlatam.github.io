@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1423,7 +1423,7 @@ $ sudo groupmod -n GroupC GroupB
 Shell<span class="w"> </span>&gt;<span class="w"> </span>id<span class="w"> </span>testa
 <span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>testa<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>testa<span class="o">)</span><span class="w"> </span><span class="nv">group</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>testa<span class="o">)</span>
 Shell<span class="w"> </span>&gt;<span class="w"> </span>groupdel<span class="w"> </span>testa
-groupdel:<span class="w"> </span>cannot<span class="w"> </span>remove<span class="w"> </span>the<span class="w"> </span>primary<span class="w"> </span>group<span class="w"> </span>of<span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;testa&#39;</span>
+groupdel:<span class="w"> </span>cannot<span class="w"> </span>remove<span class="w"> </span>the<span class="w"> </span>primary<span class="w"> </span>group<span class="w"> </span>of<span class="w"> </span>user<span class="w"> </span><span class="s1">'testa'</span>
 
 Shell<span class="w"> </span>&gt;<span class="w"> </span>groupadd<span class="w"> </span>-g<span class="w"> </span><span class="m">1001</span><span class="w"> </span>testb
 Shell<span class="w"> </span>&gt;<span class="w"> </span>usermod<span class="w"> </span>-G<span class="w"> </span>testb<span class="w"> </span>root
@@ -1809,11 +1809,11 @@ root:$6$...:15399:0:99999:7
 <p>Per ogni riga del file <code>/etc/passwd</code> deve esserci una riga corrispondente nel file <code>/etc/shadow</code>.</p>
 </div>
 <p>Per la conversione della data e dell'ora, fare riferimento al seguente formato di comando:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Il timestamp viene convertito in una data, &quot;17718&quot; indica il timestamp da inserire.</span>
-Shell<span class="w"> </span>&gt;<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;1970-01-01 17718 days&quot;</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Il timestamp viene convertito in una data, "17718" indica il timestamp da inserire.</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">"1970-01-01 17718 days"</span><span class="w"> </span>
 
-<span class="c1"># La data è convertita in un timestamp, &quot;2018-07-06&quot; indica la data da compilare.</span>
-Shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(($(</span>date<span class="w"> </span>--date<span class="o">=</span><span class="s2">&quot;2018-07-06&quot;</span><span class="w"> </span>+%s<span class="k">)</span><span class="o">/</span><span class="m">86400</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
+<span class="c1"># La data è convertita in un timestamp, "2018-07-06" indica la data da compilare.</span>
+Shell<span class="w"> </span>&gt;<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(($(</span>date<span class="w"> </span>--date<span class="o">=</span><span class="s2">"2018-07-06"</span><span class="w"> </span>+%s<span class="k">)</span><span class="o">/</span><span class="m">86400</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
 </code></pre></div>
 <h2 id="proprietari-dei-file">Proprietari dei file</h2>
 <div class="admonition danger">
@@ -2063,7 +2063,7 @@ Shell &gt; passwd -n 60 -x 90 -w 80 -i 10 patrick
 <p>Quando si gestiscono gli account utente tramite script di shell, può essere utile impostare una password predefinita dopo la creazione dell'utente.</p>
 <p>Questo può essere fatto passando la password al comando <code>passwd</code>.</p>
 <p>Esempio:</p>
-<div class="highlight"><pre><span></span><code>$ sudo echo &quot;azerty,1&quot; | passwd --stdin philippe
+<div class="highlight"><pre><span></span><code>$ sudo echo "azerty,1" | passwd --stdin philippe
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione</p>
@@ -2118,7 +2118,7 @@ Shell &gt; passwd -n 60 -x 90 -w 80 -i 10 patrick
 <div class="highlight"><pre><span></span><code># Il comando `chage` offre anche una modalità interattiva.
 $ sudo chage philippe
 
-# L&#39;opzione `-d` costringe la password a essere cambiata al login.
+# L'opzione `-d` costringe la password a essere cambiata al login.
 $ sudo chage -d 0 philippe
 </code></pre></div>
 <p><img alt="Gestione degli account utente con chage" src="../images/chage-timeline.png" /></p>
@@ -2244,7 +2244,7 @@ drwx------ 2 test1 test1 4096 Oct  8 13:10 /home/test1/
 </code></pre></div>
 <p>Esempi:</p>
 <div class="highlight"><pre><span></span><code>$ sudo su - alain
-[albert]$ su - root -c &quot;passwd alain&quot;
+[albert]$ su - root -c "passwd alain"
 </code></pre></div>
 <table>
 <thead>
@@ -2403,7 +2403,7 @@ LOGNAME=root
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "content.action.edit", "navigation.sections", "navigation.tabs", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascript/extra.js"></script>
       

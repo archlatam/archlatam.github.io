@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -996,20 +996,20 @@ Exec=/usr/bin/mkinitcpio -P
 <p><br><br><br></p>
 <p>Creiamo il file 10-nvidia-drm-outputclass.conf.</p>
 <p><code>$ sudo vim /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</code></p>
-<p><div class="highlight"><pre><span></span><code>Section &quot;OutputClass&quot;
-Identifier &quot;intel&quot;
-MatchDriver &quot;i915&quot;
-Driver &quot;modesetting&quot;
+<p><div class="highlight"><pre><span></span><code>Section "OutputClass"
+Identifier "intel"
+MatchDriver "i915"
+Driver "modesetting"
 EndSection
 
-Section &quot;OutputClass&quot;
-Identifier &quot;nvidia&quot;
-MatchDriver &quot;nvidia-drm&quot;
-Driver &quot;nvidia&quot;
-Option &quot;AllowEmptyInitialConfiguration&quot;
-Option &quot;PrimaryGPU&quot; &quot;yes&quot;
-ModulePath &quot;/usr/lib/nvidia/xorg&quot;
-ModulePath &quot;/usr/lib/xorg/modules&quot;
+Section "OutputClass"
+Identifier "nvidia"
+MatchDriver "nvidia-drm"
+Driver "nvidia"
+Option "AllowEmptyInitialConfiguration"
+Option "PrimaryGPU" "yes"
+ModulePath "/usr/lib/nvidia/xorg"
+ModulePath "/usr/lib/xorg/modules"
 EndSection
 </code></pre></div>
 <br><br><br></p>
@@ -1020,7 +1020,7 @@ EndSection
 <div class="highlight"><pre><span></span><code>[Desktop Entry]
 Type=Application
 Name=Optimus
-Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot;
+Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
 NoDisplay=true
 X-GNOME-Autostart-Phase=DisplayServer
 </code></pre></div>
@@ -1028,7 +1028,7 @@ X-GNOME-Autostart-Phase=DisplayServer
 <p><div class="highlight"><pre><span></span><code>[Desktop Entry]
 Type=Application
 Name=Optimus
-Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot;
+Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
 NoDisplay=true
 X-GNOME-Autostart-Phase=DisplayServer
 </code></pre></div>
@@ -1063,12 +1063,12 @@ Aggiungiamo il permesso di esecuzione</p>
 <p><br><br></p>
 <h3 id="xinitrc">Xinitrc</h3>
 <p>Aggiungi al file .xinitrc o crealo se non esiste in ~/.xinitrc</p>
-<p><div class="highlight"><pre><span></span><code>xrandr --output &lt;nome-output&gt; --set &quot;Sincronizzazione PRIME&quot; 1
+<p><div class="highlight"><pre><span></span><code>xrandr --output &lt;nome-output&gt; --set "Sincronizzazione PRIME" 1
 </code></pre></div>
 <br><br></p>
 <p>Per finire Aggiungi il parametro kernel nella configurazione del tuo bootloader: <code>nvidia_drm.modeset=1</code></p>
 <p>GRUB:</p>
-<div class="highlight"><pre><span></span><code>GRUB_CMDLINE_LINUX=&quot;nvidia-drm.modeset=1&quot;
+<div class="highlight"><pre><span></span><code>GRUB_CMDLINE_LINUX="nvidia-drm.modeset=1"
 </code></pre></div>
 <p><code># grub-mkconfig -o /boot/grub/grub.cfg</code></p>
 <p><br><br> </p>
@@ -1114,20 +1114,20 @@ Exec=/usr/bin/mkinitcpio -P
 <p><br><br><br></p>
 <p>Create the file 10-nvidia-drm-outputclass.conf.</p>
 <p><code>$ sudo vim /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</code></p>
-<p><div class="highlight"><pre><span></span><code>Section &quot;OutputClass&quot;
-Identifier &quot;intel&quot;
-MatchDriver &quot;i915&quot;
-Driver &quot;modesetting&quot;
+<p><div class="highlight"><pre><span></span><code>Section "OutputClass"
+Identifier "intel"
+MatchDriver "i915"
+Driver "modesetting"
 EndSection
 
-Section &quot;OutputClass&quot;
-Identifier &quot;nvidia&quot;
-MatchDriver &quot;nvidia-drm&quot;
-Driver &quot;nvidia&quot;
-Option &quot;AllowEmptyInitialConfiguration&quot;
-Option &quot;PrimaryGPU&quot; &quot;yes&quot;
-ModulePath &quot;/usr/lib/nvidia/xorg&quot;
-ModulePath &quot;/usr/lib/xorg/modules&quot;
+Section "OutputClass"
+Identifier "nvidia"
+MatchDriver "nvidia-drm"
+Driver "nvidia"
+Option "AllowEmptyInitialConfiguration"
+Option "PrimaryGPU" "yes"
+ModulePath "/usr/lib/nvidia/xorg"
+ModulePath "/usr/lib/xorg/modules"
 EndSection
 </code></pre></div>
 <br><br><br></p>
@@ -1138,7 +1138,7 @@ EndSection
 <div class="highlight"><pre><span></span><code>[Desktop Entry]
 Type=Application
 Name=Optimus
-Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot;
+Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
 NoDisplay=true
 X-GNOME-Autostart-Phase=DisplayServer
 </code></pre></div>
@@ -1146,7 +1146,7 @@ X-GNOME-Autostart-Phase=DisplayServer
 <p><div class="highlight"><pre><span></span><code>[Desktop Entry]
 Type=Application
 Name=Optimus
-Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot;
+Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
 NoDisplay=true
 X-GNOME-Autostart-Phase=DisplayServer
 </code></pre></div>
@@ -1181,12 +1181,12 @@ Add execute permission</p>
 <p><br><br></p>
 <h3 id="xinitrc_1">Xinitrc</h3>
 <p>Add to the .xinitrc file or create it if it doesn't exist in ~/.xinitrc</p>
-<p><div class="highlight"><pre><span></span><code>xrandr --output &lt;output-name&gt; --set &quot;PRIME Synchronization&quot; 1
+<p><div class="highlight"><pre><span></span><code>xrandr --output &lt;output-name&gt; --set "PRIME Synchronization" 1
 </code></pre></div>
 <br><br></p>
 <p>Finally, add the kernel parameter to your bootloader configuration: <code>nvidia_drm.modeset=1</code></p>
 <p>GRUB:</p>
-<div class="highlight"><pre><span></span><code>GRUB_CMDLINE_LINUX=&quot;nvidia-drm.modeset=1&quot;
+<div class="highlight"><pre><span></span><code>GRUB_CMDLINE_LINUX="nvidia-drm.modeset=1"
 </code></pre></div>
 <p><code># grub-mkconfig -o /boot/grub/grub.cfg</code></p>
 <p><br><br> </p>
@@ -1292,7 +1292,7 @@ options root=/dev/xxx rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.lo
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "content.action.edit", "navigation.sections", "navigation.tabs", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascript/extra.js"></script>
       
