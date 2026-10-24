@@ -11,13 +11,14 @@ En estos recursos, los usuarios pueden encontrar informaci√≥n detallada sobre c√
 ## Todos los canales oficiales
 
 - [:fontawesome-solid-house-circle-check: Sitio oficial](https://archlatam.github.io/)
-- [:fontawesome-brands-github: GitHub]()
+- [:fontawesome-brands-github: GitHub](<>)
 - [:fontawesome-brands-discord: Discord](https://discord.gg/4eF5pGNgyz)
-- [:fontawesome-solid-download: Descargar ISO](https://sourceforge.net/projects/archlatam/files/release202621/Core-2026.06.02-x86_64.iso/download)
+- [:fontawesome-solid-download: Descargar ISO](https://sourceforge.net/projects/archlatam/files/release202623/Core-2026.10.24-x86_64.iso/download)
 
-- sha1sum 
+- sha1sum
+
 ```
-2c6dafac6f2279ba688d7fe62d159ece1f479b96 Core-2026.06.02-x86_64.iso
+4fd7631b49f5cd3f3f7ce1f0c72d2cf900c2352c Core-2026.10.24-x86_64.iso
 ```
 
 <br>
@@ -28,7 +29,7 @@ En estos recursos, los usuarios pueden encontrar informaci√≥n detallada sobre c√
 
 - **Jose Dragic** - Founder
 - **Joaquin (Pato) Decima** - Colaborador, site Admin - [:fontawesome-brands-github: GitHub](https://github.com/JoaquinDecima)
-- **Faustino Echevarrieta** - Colaborador, site Admin - [:fontawesome-brands-github: GitHub]()
+- **Faustino Echevarrieta** - Colaborador, site Admin - [:fontawesome-brands-github: GitHub](<>)
 
 <br>
 
@@ -40,7 +41,7 @@ Si eres un entusiasta de Arch Linux, apoya a nuestra comunidad en Archlatam y ay
 
 Support the Archlatam community of Arch Linux by making a donation to help us grow. If you're a passionate Arch Linux user, donate today and help us ensure the continuity of our services and provide even more support and resources to all of our members. Thank you for your support!
 
-[Donaciones Paypal]()
+[Donaciones Paypal](<>)
 
 <form action="https://www.paypal.com/donate" method="post" target="_top">
 <input type="hidden" name="hosted_button_id" value="992A7JFKCFALJ" />

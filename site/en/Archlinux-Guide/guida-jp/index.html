@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
   
@@ -1255,7 +1255,7 @@
 
 <p>＃Arch Linuxのインストール</p>
 <h2 id="1">1.署名の検証</h2>
-<p>特にHTTPミラーからのダウンロードの場合、悪意のあるイメージを提供するためにインターセプトされる可能性があるため、使用前にイメージの署名を確認することが推奨されます。<em> GnuPG </em>がインストールされたシステムでは、ISOディレクトリに<a href="https://archlinux.org/download/#checksums">PGP ISO署名</a>をダウンロードして、次のコマンドで検証します。</p>
+<p>特にHTTPミラーからのダウンロードの場合、悪意のあるイメージを提供するためにインターセプトされる可能性があるため、使用前にイメージの署名を確認することが推奨されます。* GnuPG *がインストールされたシステムでは、ISOディレクトリに<a href="https://archlinux.org/download/#checksums">PGP ISO署名</a>をダウンロードして、次のコマンドで検証します。</p>
 <p><code>$ gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig</code></p>
 <p>または、Arch Linuxの既存のインストールから実行します。</p>
 <p><code>$ pacman-key -v archlinux-version-x86_64.iso.sig</code></p>
@@ -1282,7 +1282,7 @@
 <li><code># station wlan0</code> あなたのネットワーク名に接続</li>
 <li><code># exit</code></li>
 </ul>
-<p>デバイスが無効になっていて<strong> iwctl </strong>を実行できない場合は、次のようにします。</p>
+<p>デバイスが無効になっていて** iwctl **を実行できない場合は、次のようにします。</p>
 <ul>
 <li><code># rfkill list</code> デバイスのブロックまたはアンブロックされた状態を確認します。</li>
 <li><code># rfkill unblock all</code> ブロックされたデバイスをすべて解除します。</li>
@@ -1300,11 +1300,11 @@
 <p><br><br><br><br></p>
 <h3 id="bios-mbr">Bios-MBR</h3>
 <h4 id="_1">パーティショニング</h4>
-<p>ディスクの名前付け規則を知るためにディスクを識別します。例えば、<strong> SSD / dev / sda </strong>の場合や、<strong> M.2 / dev / nvme0n1 </strong>の場合、そして最後に<strong>仮想ディスク/ dev / vda</strong>の場合。</p>
+<p>ディスクの名前付け規則を知るためにディスクを識別します。例えば、** SSD / dev / sda <strong>の場合や、</strong> M.2 / dev / nvme0n1 <strong>の場合、そして最後に</strong>仮想ディスク/ dev / vda**の場合。</p>
 <p><code># lsblk -l</code></p>
-<p>ディスクの名前付けが特定されたら、ここでは<strong> / dev / sda </strong>を持っていると仮定します。 <strong>cfdisk</strong>を使用します。rawディスクの場合はパーティショニングテーブルのタイプを尋ねられる場合があります。この場合は、「DOS」を選択してください。</p>
+<p>ディスクの名前付けが特定されたら、ここでは** / dev / sda **を持っていると仮定します。 <strong>cfdisk</strong>を使用します。rawディスクの場合はパーティショニングテーブルのタイプを尋ねられる場合があります。この場合は、「DOS」を選択してください。</p>
 <p><code># cfdisk /dev/sda</code></p>
-<p>基本的なインストールのために必要なパーティションを作成します。<strong> 128GiB SSD </strong>を持っていると仮定する場合：</p>
+<p>基本的なインストールのために必要なパーティションを作成します。** 128GiB SSD **を持っていると仮定する場合：</p>
 <ul>
 <li><code># 4Gib</code> スワップ用のパーティションを作成し、スワップタイプを選択します</li>
 <li><code># 124Gib</code> ルートパーティションを作成します</li>
@@ -1323,7 +1323,7 @@
 <p><br><br><br><br></p>
 <h3 id="uefi-ext4">UEFI ext4</h3>
 <h4 id="_4">ディスクのパーティショニング</h4>
-<p>ディスクの名前付け規則を知るためにディスクを識別します。例えば、<strong> SSD /dev/sda </strong>の場合や、<strong> M.2 /dev/nvme0n1 </strong>の場合、そして最後に<strong>仮想ディスク/ dev / vda</strong>の場合。</p>
+<p>ディスクの名前付け規則を知るためにディスクを識別します。例えば、** SSD /dev/sda <strong>の場合や、</strong> M.2 /dev/nvme0n1 <strong>の場合、そして最後に</strong>仮想ディスク/ dev / vda**の場合。</p>
 <p><code># lsblk -l</code></p>
 <p>** 128GiB SSD **を持っているとし、UEFIインストールのためにGPTパーティショニングを使用する場合：</p>
 <p><code># cfdisk /dev/sda</code></p>
@@ -1352,7 +1352,7 @@
 <p><br><br><br><br></p>
 <h3 id="uefi-btrfs">UEFI btrfs</h3>
 <h4 id="_7">ディスクのパーティショニング</h4>
-<p>ディスクの名前付け規則を知るためにディスクを識別します。例えば、<strong> SSD /dev/sda </strong>の場合や、<strong> M.2 /dev/nvme0n1 </strong>の場合、そして最後に<strong>仮想ディスク/ dev / vda</strong>の場合。</p>
+<p>ディスクの名前付け規則を知るためにディスクを識別します。例えば、** SSD /dev/sda <strong>の場合や、</strong> M.2 /dev/nvme0n1 <strong>の場合、そして最後に</strong>仮想ディスク/ dev / vda**の場合。</p>
 <p><code># lsblk -l</code></p>
 <p>** 128GiB SSD **を持っているとし、UEFIインストールのためにGPTパーティショニングを使用する場合：</p>
 <p><code># cfdisk /dev/sda</code></p>
@@ -1405,7 +1405,7 @@
 <p><br><br><br><br></p>
 <h3 id="uefi-lvm-ext4">UEFI lvm-ext4</h3>
 <h4 id="_10">ディスクのパーティショニング</h4>
-<p>ディスクの名前付け規則を知るためにディスクを識別します。例えば、<strong> SSD /dev/sda </strong>の場合や、<strong> M.2 /dev/nvme0n1 </strong>の場合、そして最後に<strong>仮想ディスク/ dev / vda</strong>の場合。</p>
+<p>ディスクの名前付け規則を知るためにディスクを識別します。例えば、** SSD /dev/sda <strong>の場合や、</strong> M.2 /dev/nvme0n1 <strong>の場合、そして最後に</strong>仮想ディスク/ dev / vda**の場合。</p>
 <p><code># lsblk -l</code></p>
 <p>** 3 128GiBディスク <strong>を持ち、LVMのために：</strong> sda sdb sdc <strong>を使用する場合、1つのディスクずつ</strong> cfdisk **を使用してください。</p>
 <p><code># cfdifk /dev/sda</code></p>
@@ -1461,11 +1461,11 @@
 <li><code># lvextend -l +100%FREE /dev/lvm/home</code></li>
 </ul>
 <h2 id="5">5.ミラーリスト</h2>
-<p>国を指定して<strong> reflector </strong>を使用して、リポジトリのミラーリストを<strong> /etc/pacman.d/mirrorlist </strong>に保存します。複数の国を追加することもできます。例えば、<strong> it、us </strong>：</p>
+<p>国を指定して** reflector <strong>を使用して、リポジトリのミラーリストを</strong> /etc/pacman.d/mirrorlist <strong>に保存します。複数の国を追加することもできます。例えば、</strong> it、us **：</p>
 <p><code># reflector --verbose -c it -a 12 --sort rate --save /etc/pacman.d/mirrorlist</code></p>
 <p><br><br><br><br></p>
 <h2 id="6">6.パックストラップ</h2>
-<p>** Linuxカーネル<strong>と基本パッケージをインストールして、Archシステムを作成し、</strong> vim <strong>などのエディターを追加します。 </strong>lvm**のインストールの場合は、次のコマンドに<code>lvm2</code>パッケージを追加してください。</p>
+<p>** Linuxカーネル<strong>と基本パッケージをインストールして、Archシステムを作成し、</strong> vim **などのエディターを追加します。 <strong>lvm</strong>のインストールの場合は、次のコマンドに<code>lvm2</code>パッケージを追加してください。</p>
 <p><code># pacstrap -K /mnt base base-devel linux linux-firmware vim</code> </p>
 <p><br><br><br><br></p>
 <h2 id="7fstab">7.fstabを生成する</h2>
@@ -1732,10 +1732,10 @@ Lightdmディスプレイマネージャーでcinnamonを使う</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "content.action.edit", "navigation.sections", "navigation.tabs", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "content.action.edit", "navigation.sections", "navigation.tabs", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascript/extra.js"></script>
       
