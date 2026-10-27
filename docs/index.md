@@ -12,13 +12,14 @@ En estos recursos, los usuarios pueden encontrar informaci√≥n detallada sobre c√
 
 - [:fontawesome-solid-house-circle-check: Sitio oficial](https://archlatam.github.io/)
 - [:fontawesome-brands-github: GitHub](<>)
-- [:fontawesome-brands-discord: Discord](https://discord.gg/4eF5pGNgyz)
-- [:fontawesome-solid-download: Descargar ISO](https://sourceforge.net/projects/archlatam/files/release202623/Core-2026.10.24-x86_64.iso/download)
+- [:fontawesome-brands-discord: Discord](https://discord.gg/4r8AmxSB2B)
+- [:fontawesome-solid-download: Descargar ISO (Core 2026.10.26)](https://pub-04b3c5b42a064156917ed392b1f1d587.r2.dev/iso/Core-2026.10.26-x86_64.iso)
+- [:fontawesome-solid-file-shield: Descargar sha256 (Core 2026.10.26)](https://pub-04b3c5b42a064156917ed392b1f1d587.r2.dev/iso/Core-2026.10.26-x86_64.iso.sha256)
 
-- sha1sum
+Para verificar la descarga, guarda el archivo `.sha256` en la misma carpeta que la ISO y ejecuta:
 
 ```
-4fd7631b49f5cd3f3f7ce1f0c72d2cf900c2352c Core-2026.10.24-x86_64.iso
+sha256sum -c Core-2026.10.26-x86_64.iso.sha256
 ```
 
 <br>
