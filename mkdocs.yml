@@ -8,6 +8,8 @@ nav:
        - "Que es Archlinux?": Archlinux-Guida/about-arch.md
        - "Descargar": Download/archlinux.md
        - "🇦🇷 Instalación de Arch Linux": "en/Archlinux-Guide/guida-es.md"
+       - "🇬🇧 Arch Linux Installation": "en/Archlinux-Guide/guide.md"
+       - "🇧🇷 Instalação do Arch Linux": "en/Archlinux-Guide/guida-pt.md"
           
   - "Otras guías":
        - "Comandos Linux": "Altre-Guide/comando-linux.md"
