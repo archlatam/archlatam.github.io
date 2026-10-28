@@ -969,13 +969,13 @@ $ umask -S
 u=rwx,g=r,o=r
 $ touch umask_033
 $ ls -la  umask_033
--rw-r--r-- 1 architalia architalia 0 nov.   4 16:44 umask_033
+-rw-r--r-- 1 archlatam archlatam 0 nov.   4 16:44 umask_033
 $ umask 025
 $ umask -S
 u=rwx,g=rx,o=w
 $ touch umask_025
 $ ls -la  umask_025
--rw-r---w- 1 architalia architalia 0 nov.   4 16:44 umask_025
+-rw-r---w- 1 archlatam archlatam 0 nov.   4 16:44 umask_025
 ```
 
 | Opzione | Descrizione                                     |

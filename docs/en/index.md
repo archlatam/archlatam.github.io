@@ -1,18 +1,16 @@
 # Welcome
 
-## Architalia Community
+## ArchLatam Linux Community
 
+![image](../images/archlatam.png)
 
+ArchLatam is a community dedicated to Arch Linux and its derivatives. It is made up of Linux and open source enthusiasts who come together to share information, resources, and knowledge about Arch Linux and its various modifications.
 
-![image](../images/logo/logo2.png)
+ArchLatam users take part in forums and chat groups, and share guides, programs, and solutions to technical problems related to Arch Linux and its derivatives. ArchLatam offers a collection of guides for installing and configuring Arch Linux.
 
-Architalia is an Italian community dedicated to the distribution of Arch Linux and its derivatives. This community is made up of Linux and open source technology enthusiasts who come together to share information, resources, and knowledge about Arch Linux and its various modifications.
+In these resources, users can find detailed information on how to use this distribution, as well as tips on how to customize it to their needs.
 
-Architalia users participate in forum discussions, chat on social media groups, and share guides, programs, and technical solutions to problems related to Arch Linux and its derivatives. Architalia offers a wide range of services, including a wiki, a forum, and a collection of guides for installing and configuring Arch Linux.
-
-In these resources, users can find detailed information on how to use this distribution, as well as tips on how to customize it to their needs. In summary, Architalia is a community animated by Linux enthusiasts who join forces to support and promote Arch Linux and its multiple derivations.
-
-Visit the official channels [Facebook](https://www.facebook.com/groups/architalia), [YouTube](https://www.youtube.com/@ArchItalia), [GitHub](https://github.com/ArchItalia).
+Visit the official channels: [Website](https://archlatam.github.io/), [Discord](https://discord.gg/4r8AmxSB2B).
 <br><br>
 
 
@@ -20,9 +18,7 @@ Visit the official channels [Facebook](https://www.facebook.com/groups/architali
 
 ![iso](../images/pp.png)
 
-Support the ArchItalia community, make a donation to help us grow.
+Support the ArchLatam community, make a donation to help us grow.
 [Paypal Donation](https://www.paypal.com/donate/?hosted_button_id=3C4YAF9NXMEWL)
 
 <br><br>
-
-
