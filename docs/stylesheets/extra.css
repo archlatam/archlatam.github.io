@@ -1,5 +1,10 @@
  /*extra css archlatam*/
 
+ 
+ *{
+ font-family: 'Architalia Text';
+ }
+
 
 body {
 
@@ -38,6 +43,7 @@ a.md-tabs__link{
 }
 
 code, pre {
+  font-family: 'Architalia mono';
   font-weight:bold;
   font-size: 15px!important;
   line-height: 1.6;
