@@ -157,73 +157,78 @@
           KDE Plasma listo para trabajar.
         </p>
 
+        <div class="shots-grid">
           <figure class="shot shot-wide">
             <div class="shot-frame">
               <div class="shot-chrome">
                 <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
                 <span class="shot-title">Escritorio · Plasma</span>
               </div>
-            <div class="shot-canvas">
-            <img src="media/desktop.png" alt="Escritorio de Core con KDE Plasma" loading="lazy">
-            </div>
+              <div class="shot-canvas">
+                <img src="media/desktop.png" alt="Escritorio de Core Linux con KDE Plasma"
+                     width="1920" height="1080" loading="lazy" decoding="async">
+              </div>
             </div>
             <figcaption>Escritorio principal con panel y dock</figcaption>
           </figure>
 
+          <!--
+            Capturas 2-4 desactivadas (uso futuro): están completas y ya viven
+            dentro de .shots-grid. Para publicarlas, borrar las dos líneas que
+            abren y cierran este comentario; el resto no hay que moverlo.
 
-          <!-- Captura 2: menú / launcher -->
-<!-- <figure class="shot"> -->
-<!--   <div class="shot-frame"> -->
-<!--     <div class="shot-chrome"> -->
-<!--       <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span> -->
-<!--       <span class="shot-title">Aplicaciones</span> -->
-<!--     </div> -->
-<!--     <div class="shot-canvas"> -->
-<!--       <img src="media/apps.png" alt="Dolphin, GParted y Kate en Core con KDE Plasma" loading="lazy"> -->
-<!--     </div> -->
-<!--   </div> -->
-<!--   <figcaption>Lanzador de aplicaciones</figcaption> -->
-<!-- </figure> -->
-<!---->
-<!--           <!-- Captura 3: terminal / sistema --> 
-<!--           <figure class="shot"> -->
-<!--             <div class="shot-frame"> -->
-<!--               <div class="shot-chrome"> -->
-<!--                 <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span> -->
-<!--                 <span class="shot-title">Konsole</span> -->
-<!--               </div> -->
-<!--               <div class="shot-canvas plasma-term"> -->
-<!--                 <img src="media/sistema.png" alt="Escritorio de Core con KDE Plasma" loading="lazy"> -->
-<!--               </div> -->
-<!--             </div> -->
-<!--             <figcaption>Terminal y sistema</figcaption> -->
-<!--           </figure> -->
-<!---->
-<!--           <!-- Captura 4: snapshots / settings -->
-          <!--           <figure class="shot"> -->
+            Captura 2: menú / launcher
+            <figure class="shot">
+              <div class="shot-frame">
+                <div class="shot-chrome">
+                  <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                  <span class="shot-title">Aplicaciones</span>
+                </div>
+                <div class="shot-canvas">
+                  <img src="media/apps.png" alt="Dolphin, GParted y Kate en Core con KDE Plasma" loading="lazy">
+                </div>
+              </div>
+              <figcaption>Lanzador de aplicaciones</figcaption>
+            </figure>
 
-<!--             <div class="shot-frame"> -->
-<!--               <div class="shot-chrome"> -->
-<!--                 <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span> -->
-<!--                 <span class="shot-title">Snapshots</span> -->
-<!--               </div> -->
-<!--               <div class="shot-canvas plasma-snap"> -->
-<!--                 <img src="media/snapshots.png" alt="Escritorio de Core con KDE Plasma" loading="lazy"> -->
-<!--                 <div class="fake-list"> -->
-<!--                   <div class="fake-row on"></div> -->
-<!--                   <div class="fake-row"></div> -->
-<!--                   <div class="fake-row"></div> -->
-<!--                 </div> -->
-<!--               </div> -->
-<!--             </div> -->
-<!--             <figcaption>Puntos de restauración</figcaption> -->
-<!--           </figure> -->
-<!--         </div> -->
+            Captura 3: terminal / sistema
+            <figure class="shot">
+              <div class="shot-frame">
+                <div class="shot-chrome">
+                  <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                  <span class="shot-title">Konsole</span>
+                </div>
+                <div class="shot-canvas plasma-term">
+                  <img src="media/sistema.png" alt="Escritorio de Core con KDE Plasma" loading="lazy">
+                </div>
+              </div>
+              <figcaption>Terminal y sistema</figcaption>
+            </figure>
 
-        <!-- <p class="shots-hint"> -->
-        <!--   Para usar fotos reales: guarda PNG/JPG en <code>media/</code> y cambia el -->
-        <!--   <code>shot-canvas</code> por <code>&lt;img src="media/tu-captura.png" alt="..."&gt;</code>. -->
-        <!-- </p> -->
+            Captura 4: snapshots / settings
+            <figure class="shot">
+              <div class="shot-frame">
+                <div class="shot-chrome">
+                  <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                  <span class="shot-title">Snapshots</span>
+                </div>
+                <div class="shot-canvas plasma-snap">
+                  <img src="media/snapshots.png" alt="Escritorio de Core con KDE Plasma" loading="lazy">
+                  <div class="fake-list">
+                    <div class="fake-row on"></div>
+                    <div class="fake-row"></div>
+                    <div class="fake-row"></div>
+                  </div>
+                </div>
+              </div>
+              <figcaption>Puntos de restauración</figcaption>
+            </figure>
+
+            Nota vieja (cuando las capturas eran maquetas): para usar fotos
+            reales, guardar PNG/JPG en media/ y cambiar el shot-canvas por una
+            etiqueta img con src="media/tu-captura.png" y su alt.
+          -->
+        </div>
       </div>
     </section>
 
@@ -426,7 +431,6 @@
         <p class="meta">Basado en Arch Linux · KDE Plasma · x86_64 · Comunidad ArchLatam</p>
       </div>
     </section>
-  </main>
 
     <!-- Donate -->
     <section class="section cta">
