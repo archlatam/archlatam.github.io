@@ -19,4 +19,4 @@ GPL v3 - Ver [LICENSE](LICENSE)
 
 ---
 
-*ArchLatam - bringing Arch Linux to Latin America*
+*by ArchLatam - bringing Arch Linux to Latin America*
