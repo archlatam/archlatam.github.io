@@ -170,18 +170,33 @@ code {
   overflow: hidden;
 }
 
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.6rem;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.85rem 0.35rem 0.55rem;
-  margin-bottom: 1.6rem;
   border-radius: 999px;
   background: var(--accent-soft);
   border: 1px solid rgb(158 206 106 / 0.25);
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--accent);
+}
+
+a.badge {
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+a.badge:hover {
+  border-color: rgb(158 206 106 / 0.5);
 }
 
 .badge .dot {
