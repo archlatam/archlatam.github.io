@@ -56,6 +56,20 @@
           </a>
         </div>
 
+        <div class="term" aria-hidden="true">
+          <div class="term-chrome">
+            <span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span>
+            <span class="term-title"><span class="logo-mark small"></span> archlatam · bash</span>
+          </div>
+          <div class="term-body">
+            <div class="term-path">~/archlatam</div>
+            <div class="term-line">
+              <span class="term-prompt">❯</span>
+              <span class="term-typed" id="typed">Core Linux Latinoamérica. Listo para usar.</span><span class="term-cursor"></span>
+            </div>
+          </div>
+        </div>
+
         <h1>
           Core Linux Latinoamérica.<br>
           <span class="accent">Listo para usar.</span>
@@ -546,6 +560,29 @@
       e.target.textContent = 'Copiado';
       setTimeout(() => e.target.textContent = 'Copiar', 1500);
     });
+
+    // Terminal del hero: escribe el texto letra por letra
+    (() => {
+      const el = document.getElementById('typed');
+      if (!el) return;
+      const full = el.textContent;
+      const line = el.closest('.term-line');
+      const cursor = line.querySelector('.term-cursor');
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      line.style.minHeight = line.offsetHeight + 'px'; // evita saltos de layout
+      el.textContent = '';
+      cursor.classList.add('typing');
+      let i = 0;
+      const tick = () => {
+        el.textContent = full.slice(0, ++i);
+        if (i < full.length) {
+          setTimeout(tick, 45 + Math.random() * 55);
+        } else {
+          cursor.classList.remove('typing');
+        }
+      };
+      setTimeout(tick, 600);
+    })();
 
     const bar = document.getElementById('bar');
     window.addEventListener('scroll', () => {
