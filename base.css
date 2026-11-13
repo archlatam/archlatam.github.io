@@ -119,9 +119,26 @@ code {
   margin-left: auto;
 }
 
-@media (min-width: 780px) {
+.nav a { white-space: nowrap; }
+
+@media (min-width: 1040px) {
   .nav { display: flex; }
   .actions { margin-left: 0; }
+}
+
+/* Barra superior en celular: que nada se parta en dos líneas */
+@media (max-width: 480px) {
+  .top-bar .wrap { gap: 0.75rem; }
+  .actions { gap: 0.45rem; }
+  .actions .btn {
+    height: 34px;
+    padding: 0 0.8rem;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .actions .btn.ghost { display: none; }
 }
 
 /* ---------- Botones ---------- */
@@ -138,6 +155,8 @@ code {
   border: 1px solid transparent;
   transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.15s;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .btn:active { transform: scale(0.97); }
 
