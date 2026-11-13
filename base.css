@@ -199,6 +199,21 @@ a.badge:hover {
   border-color: rgb(158 206 106 / 0.5);
 }
 
+.badge.beta {
+  background: rgb(255 184 77 / 0.12);
+  border-color: rgb(255 184 77 / 0.3);
+  color: #ffb84d;
+}
+
+.badge.beta:hover {
+  border-color: rgb(255 184 77 / 0.6);
+}
+
+.badge.beta .dot {
+  background: #ffb84d;
+  box-shadow: 0 0 8px #ffb84d;
+}
+
 .badge .dot {
   width: 7px;
   height: 7px;
