@@ -339,13 +339,41 @@
           <div class="download-card beta">
             <div class="download-badge beta">Beta</div>
             <div class="download-info">
-              <div class="download-name">ISO Beta</div>
+              <div class="download-name">Core-2026.11.12-x86_64.iso</div>
               <div class="download-meta">x86_64 · KDE Plasma · Rolling · Live + instalador · En pruebas</div>
             </div>
             <div class="download-actions">
               <a class="btn primary" href="https://drive.google.com/file/d/1cNdkS4_lWEZx4EBEr54cDWtznEDsBNaU/view?usp=drivesdk" target="_blank" rel="noopener">Descargar ISO beta</a>
+              <a class="btn ghost" href="https://drive.google.com/file/d/1sVMKQCMprGraA0mQlzY-C5kFkpwoGprK/view?usp=drive_link" target="_blank" rel="noopener">Archivo SHA256</a>
             </div>
           </div>
+        </div>
+
+        <figure class="shot shot-wide beta-shot">
+          <div class="shot-frame">
+            <div class="shot-chrome">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+              <span class="shot-title">Escritorio · ISO Beta</span>
+            </div>
+            <div class="shot-canvas">
+              <img src="media/beta.png" alt="Escritorio de la ISO beta con KDE Plasma y Dolphin"
+                   width="1710" height="961" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <figcaption>Así se ve la ISO beta</figcaption>
+        </figure>
+
+        <div class="dl-steps">
+          <h3 class="dl-steps-title">Verificar la descarga</h3>
+          <p class="dl-steps-lead">
+            Guarda el archivo <code>.sha256</code> en la misma carpeta que la ISO y ejecuta:
+          </p>
+          <div class="code-block compact">
+            <code>sha256sum -c Core-2026.11.12-x86_64.iso.sha256</code>
+          </div>
+          <p class="dl-steps-note">
+            Debe mostrar <code>OK</code>. Si falla, vuelve a descargar la ISO.
+          </p>
         </div>
 
         <div class="dl-steps">

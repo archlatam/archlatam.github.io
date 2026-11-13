@@ -945,3 +945,7 @@ figcaption {
   background: rgb(158 206 106 / 0.25);
   color: var(--text);
 }
+
+.beta-shot {
+  margin: 0 0 2.25rem;
+}
