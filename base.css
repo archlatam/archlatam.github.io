@@ -804,6 +804,20 @@ figcaption {
   background: #ffb84d;
 }
 
+.beta-announce {
+  margin: 0 0 1rem;
+  padding: 0.9rem 1.15rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: rgb(158 206 106 / 0.08);
+  border: 1px solid rgb(158 206 106 / 0.3);
+  border-radius: var(--radius-sm);
+}
+
+.beta-announce strong {
+  color: var(--accent);
+}
+
 .beta-warning {
   margin: 0 0 2rem;
   padding: 0.9rem 1.15rem;

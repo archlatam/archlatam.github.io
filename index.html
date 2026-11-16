@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="base.css?v=20261113b">
+  <link rel="stylesheet" href="base.css?v=20261116a">
 </head>
 <body>
   <header class="top-bar" id="bar">
@@ -29,7 +29,7 @@
         <a href="#features">Características</a>
         <a href="#shots">Capturas</a>
         <a href="#download">Descargar</a>
-        <a href="#beta">ISO Beta</a>
+        <a href="#beta">Pre-release</a>
         <a href="#community">Comunidad</a>
         <a href="#support">Soporte</a>
       </nav>
@@ -52,7 +52,7 @@
           </div>
           <a class="badge beta" href="#beta">
             <span class="dot"></span>
-            Beta 2 · 2026.11.15 · x86_64
+            Pre-release 1 «Pampa» · 2026.11.16 · x86_64
           </a>
         </div>
 
@@ -340,31 +340,36 @@
       </div>
     </section>
 
-    <!-- ISO BETA -->
+    <!-- PRE-RELEASE -->
     <section class="section alt" id="beta">
       <div class="wrap">
-        <div class="section-label">05 · ISO Beta</div>
-        <h2>Prueba la próxima ISO.<br><span class="muted">Antes que nadie.</span></h2>
+        <div class="section-label">05 · Pre-release</div>
+        <h2>Pre-release 1 «Pampa».<br><span class="muted">Instálala en tu equipo.</span></h2>
         <p class="section-lead">
-          Compilación de pruebas con las novedades que todavía están en desarrollo.
-          Puede tener errores: no la uses en tu equipo de trabajo ni en producción.
+          Compilación previa con las novedades que van a llegar a la ISO estable.
+          Se puede instalar en una máquina real, tanto en equipos de escritorio como portátiles.
         </p>
 
+        <div class="beta-announce" role="note">
+          <strong>Publicación oficial muy pronto.</strong>
+          Estamos cerrando los últimos detalles para lanzar la ISO oficial de ArchLatam.
+        </div>
+
         <div class="beta-warning" role="note">
-          <strong>Versión beta.</strong>
-          Úsala en una máquina virtual o en un equipo de pruebas. Si encuentras un fallo, repórtalo para ayudarnos a corregirlo.
+          <strong>Versión pre-release.</strong>
+          Puede tener errores. Haz una copia de tus datos antes de instalar y, si encuentras un fallo, repórtalo para ayudarnos a corregirlo.
         </div>
 
         <div class="dl-grid">
           <div class="download-card beta">
-            <div class="download-badge beta">Beta 2</div>
+            <div class="download-badge beta">Pre-release 1</div>
             <div class="download-info">
-              <div class="download-name">Core-2026.11.15-x86_64.iso</div>
-              <div class="download-meta">x86_64 · KDE Plasma · Rolling · Live + instalador · En pruebas</div>
+              <div class="download-name">Core-2026.11.16-x86_64.iso</div>
+              <div class="download-meta">x86_64 · KDE Plasma · Rolling · Live + instalador · Pampa</div>
             </div>
             <div class="download-actions">
-              <a class="btn primary" href="https://drive.google.com/file/d/1CR25omm99iaoOnFj6tU-Jvs4HTGewL9o/view?usp=drive_link" target="_blank" rel="noopener">Descargar ISO beta</a>
-              <a class="btn ghost" href="https://drive.google.com/file/d/1EFZLZhbkTHHdM78haHkjaQjKfsOgGWkM/view?usp=drive_link" target="_blank" rel="noopener">Archivo SHA256</a>
+              <a class="btn primary" href="https://drive.google.com/file/d/1rB03qEG8X-ZrZro_yU57e2nkejOX3dN7/view?usp=drive_link" target="_blank" rel="noopener">Descargar ISO</a>
+              <a class="btn ghost" href="https://drive.google.com/file/d/1WbbwCRY6f2WKkujlWhFPWg7tLgsz2rVp/view?usp=drive_link" target="_blank" rel="noopener">Archivo SHA256</a>
             </div>
           </div>
         </div>
@@ -373,14 +378,14 @@
           <div class="shot-frame">
             <div class="shot-chrome">
               <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-              <span class="shot-title">Escritorio · ISO Beta</span>
+              <span class="shot-title">Escritorio · Pre-release 1</span>
             </div>
             <div class="shot-canvas">
-              <img src="media/beta.png" alt="Escritorio de la ISO beta con KDE Plasma y Dolphin"
+              <img src="media/beta.png" alt="Escritorio de la ISO Pre-release 1 Pampa con KDE Plasma y Dolphin"
                    width="1710" height="961" loading="lazy" decoding="async">
             </div>
           </div>
-          <figcaption>Así se ve la ISO beta</figcaption>
+          <figcaption>Así se ve Pre-release 1 «Pampa»</figcaption>
         </figure>
 
         <div class="dl-steps">
@@ -389,7 +394,7 @@
             Guarda el archivo <code>.sha256</code> en la misma carpeta que la ISO y ejecuta:
           </p>
           <div class="code-block compact">
-            <code>sha256sum -c Core-2026.11.15-x86_64.iso.sha256</code>
+            <code>sha256sum -c Core-2026.11.16-x86_64.iso.sha256</code>
           </div>
           <p class="dl-steps-note">
             Debe mostrar <code>OK</code>. Si falla, vuelve a descargar la ISO.
@@ -397,19 +402,19 @@
         </div>
 
         <div class="dl-steps">
-          <h3 class="dl-steps-title">Qué esperar de la beta</h3>
+          <h3 class="dl-steps-title">Qué esperar de esta versión</h3>
           <div class="use-grid">
             <div class="use">
               <h3>Novedades en prueba</h3>
-              <p>Cambios del instalador, temas y paquetes nuevos que aún no llegaron a la ISO estable.</p>
+              <p>Cambios del instalador, temas y paquetes nuevos que van a llegar a la ISO oficial.</p>
             </div>
             <div class="use">
               <h3>Posibles fallos</h3>
-              <p>El instalador o el escritorio pueden fallar. Si algo no funciona, usa la ISO estable.</p>
+              <p>Al ser una versión previa, algo puede fallar. Si algo no funciona, usa la ISO estable de Core.</p>
             </div>
             <div class="use">
               <h3>Tu opinión cuenta</h3>
-              <p>Reporta errores y cuéntanos tu experiencia en nuestro <a class="card-link" href="https://discord.gg/4r8AmxSB2B" target="_blank" rel="noopener">Discord</a>, e indica que es la beta.</p>
+              <p>Reporta errores y cuéntanos tu experiencia en nuestro <a class="card-link" href="https://discord.gg/4r8AmxSB2B" target="_blank" rel="noopener">Discord</a>, e indica que es la Pre-release 1.</p>
             </div>
           </div>
         </div>
